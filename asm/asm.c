@@ -30,7 +30,7 @@ void	parse_cmd(char *cmd, char *dest, int fd, size_t max_length)
 		|| *(line + ft_strlen(line) - 1) != '"')
 		print_error(ERR_INVALID_COMMAND);
 	ft_strncpy(dest, line + ft_strlen(cmd) + 2,
-	ft_strlen(line + ft_strlen(cmd) + 2) - 1);
+		ft_strlen(line + ft_strlen(cmd) + 2) - 1);
 	pr_free(line);
 }
 
