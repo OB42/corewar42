@@ -71,7 +71,7 @@ int		main(int argc, char *argv[])
 		print_error(ERR_FILE_READING);
 	ft_bzero(&header, sizeof(header_t));
 	header.magic = COREWAR_EXEC_MAGIC;
-	header.prog_size = 0x42424242;
+	header.prog_size = 0x42424242;//a definir dans parse_code
 	parse_cmd(NAME_CMD_STRING, header.prog_name, input_fd, PROG_NAME_LENGTH);
 	parse_cmd(COMMENT_CMD_STRING, header.comment, input_fd, COMMENT_LENGTH);
 	save_file(argv[1], header);//, parse_code(header, input_fd));
