@@ -100,6 +100,5 @@ int		main(int argc, char *argv[])
 	parse_cmd(NAME_CMD_STRING, header.prog_name, input_fd, PROG_NAME_LENGTH);
 	parse_cmd(COMMENT_CMD_STRING, header.comment, input_fd, COMMENT_LENGTH);
 	save_file(argv[1], header);//, parse_code(header, input_fd));
-	while (1){}
 	return (0);
 }
