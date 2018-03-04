@@ -52,7 +52,6 @@ void	parse_cmd(char *cmd, char *dest, int fd, size_t max_length)
 		ft_strcpy(dest + ft_strlen(dest), temp);
 		if (!end)
 			ft_memcpy(dest + ft_strlen(dest), "\n", 2);
-		ft_printf("%s\n", dest);
 		pr_free(line);
 		if (!end && get_next_line(fd, &line) != 1)
 			print_error(ERR_GNL);
@@ -101,5 +100,6 @@ int		main(int argc, char *argv[])
 	parse_cmd(NAME_CMD_STRING, header.prog_name, input_fd, PROG_NAME_LENGTH);
 	parse_cmd(COMMENT_CMD_STRING, header.comment, input_fd, COMMENT_LENGTH);
 	save_file(argv[1], header);//, parse_code(header, input_fd));
+	while (1){}
 	return (0);
 }
