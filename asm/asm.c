@@ -12,26 +12,52 @@
 
 #include "asm.h"
 
-void	parse_cmd(char *cmd, char *dest, int fd, size_t max_length)
+char	*check_cmd(char *cmd, int fd, char **line, size_t max_length)
 {
-	char *line;
+	char *temp;
 
-	line = 0;
-	while (!line || *line == COMMENT_CHAR)
+	*line = 0;
+	while (!(*line) || **line == COMMENT_CHAR)
 	{
-		pr_free(line);
-		if (get_next_line(fd, &line) != 1)
+		pr_free(*line);
+		if (get_next_line(fd, line) != 1)
 			print_error(ERR_GNL);
 	}
-	if (ft_strlen(line) > max_length)
-		print_error(ERR_COMMAND_LENGTH);
-	if (ft_strncmp(cmd, line, ft_strlen(cmd))
-		|| ft_strncmp(line + ft_strlen(cmd), " \"", 2)
-		|| *(line + ft_strlen(line) - 1) != '"')
+	if (ft_strncmp(cmd, *line, ft_strlen(cmd))
+		|| ft_strncmp(*line + ft_strlen(cmd), " \"", 2))
 		print_error(ERR_INVALID_COMMAND);
-	ft_strncpy(dest, line + ft_strlen(cmd) + 2,
-		ft_strlen(line + ft_strlen(cmd) + 2) - 1);
-	pr_free(line);
+	if (ft_strlen(temp = *line + ft_strlen(cmd) + 2) > max_length)
+		print_error(ERR_COMMAND_LENGTH);
+	return (temp);
+}
+
+void	parse_cmd(char *cmd, char *dest, int fd, size_t max_length)
+{
+	char	*line;
+	char	*temp;
+	int		end;
+
+	end = 0;
+	temp = check_cmd(cmd, fd, &line, max_length);
+	while (!end)
+	{
+		if ((end = !!ft_strchr(temp, '"')))
+		{
+			if (ft_strchr(ft_strchr(temp, '"') + 1, '"'))
+				print_error(ERR_SYNTAX);
+			*ft_strchr(temp, '"') = 0;
+		}
+		if (ft_strlen(dest) + ft_strlen(temp) + !end > max_length)
+			print_error(ERR_COMMAND_LENGTH);
+		ft_strcpy(dest + ft_strlen(dest), temp);
+		if (!end)
+			ft_memcpy(dest + ft_strlen(dest), "\n", 2);
+		ft_printf("%s\n", dest);
+		pr_free(line);
+		if (!end && get_next_line(fd, &line) != 1)
+			print_error(ERR_GNL);
+		temp = line;
+	}
 }
 
 void	save_file(char *input_filename, header_t header)//, char *code_buffer)
