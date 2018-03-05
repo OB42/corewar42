@@ -12,7 +12,7 @@
 
 #include "asm.h"
 
-void	save_file(char *input_filename, header_t header, char *champion)
+void	save_file(char *input_filename, header_t *header, char *champion)
 {
 	int			output_fd;
 	char		*output_filename;
@@ -28,7 +28,7 @@ void	save_file(char *input_filename, header_t header, char *champion)
 	write(output_fd, champion, ft_strlen(champion));
 }
 
-char	*parse_champion(header_t header, int input_fd)
+char	*parse_champion(header_t *header, int input_fd)
 {
 	static char	champion[CHAMP_MAX_SIZE + 1];
 	char		*line;
@@ -37,19 +37,19 @@ char	*parse_champion(header_t header, int input_fd)
 
 	g = 1;
 	ft_bzero(champion, CHAMP_MAX_SIZE + 1);
-	champion[CHAMP_MAX_SIZE] = EOF;
+	//champion[CHAMP_MAX_SIZE] = EOF;
 	line = 0;
 	i = 0;
 	while (g == 1)
 	{
 		skip_empty_lines(&line, input_fd, &g);
 		if (line)
-			parse_op(split_op(line), header, champion, &i);
+			parse_op(split_op(line), header, champion);
 		pr_free(line);
 		if ((g = get_next_line(input_fd, &line)) == -1)
 			print_error(ERR_GNL);
 	}
-	champion[CHAMP_MAX_SIZE] = 0;
+	//champion[CHAMP_MAX_SIZE] = 0;
 	return (champion);
 }
 
@@ -67,9 +67,8 @@ int		main(int argc, char *argv[])
 		print_error(ERR_FILE_READING);
 	ft_bzero(&header, sizeof(header_t));
 	header.magic = COREWAR_EXEC_MAGIC;
-	header.prog_size = 0x42424242;//a definir dans parse_champion
 	parse_cmd(NAME_CMD_STRING, header.prog_name, input_fd, PROG_NAME_LENGTH);
 	parse_cmd(COMMENT_CMD_STRING, header.comment, input_fd, COMMENT_LENGTH);
-	save_file(argv[1], header, parse_champion(header, input_fd));
+	save_file(argv[1], &header, parse_champion(&header, input_fd));
 	return (0);
 }

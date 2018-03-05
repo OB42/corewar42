@@ -14,7 +14,7 @@
 
 int valid_label(char *label)
 {
-	while (*label)
+	while (*label && label[1])
 	{
 		if (!ft_strchr(LABEL_CHARS, *label))
 			print_error(ERR_INVALID_LABEL);
@@ -41,7 +41,7 @@ t_label		*add_label(char *name, int location)
 		temp = labels;
 		while (temp)
 		{
-			if (!ft_strcmp(name, ((t_label *)temp)->name))
+			if (!ft_strcmp(name, ((t_label *)(temp->content))->name))
 				return (temp->content);
 			temp = temp->next;
 		}

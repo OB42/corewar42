@@ -52,22 +52,24 @@ t_op	*get_op(char *name)
 	return (find_op(op_tab, name));
 }
 
-int		parse_op(char **op_arr, header_t header, char *champion, int *i)
+int		parse_op(char **op_arr, header_t *header, char *champion)
 {
 	int		o;
 	t_op	*op;
 
 	o = 0;
 	if (op_arr[0] && op_arr[0][ft_strlen(op_arr[0]) - 1] == LABEL_CHAR)
-		add_label(op_arr[o++], *i);
+	{
+		op_arr[0][ft_strlen(op_arr[0]) - 1] = 0;
+		add_label(op_arr[o++], header->prog_size);
+	}
+	op = get_op(op_arr[o++]);
+	if (ft_arrstrlen(&(op_arr[o])) != op->arg_len)
+		print_error(ERR_ARG_LEN);
 	while (op_arr[o])
 	{
-		op = get_op(op_arr[o]);
-		if (ft_arrstrlen(&(op_arr[o])) != op->arg_len)
-			print_error(ERR_ARG_LEN);
-		//parse_args
 		o++;
 	}
 	pr_free_char_arr(op_arr);
-	return (*i);
+	return (0);
 }

@@ -48,15 +48,9 @@ typedef struct		s_label
 	int				location;
 }					t_label;
 
-typedef struct		s_labels
-{
-	t_list			*to_replace;
-	t_list			*labes;
-}					t_labels;
-
 t_label		*get_label(char *name);
 t_label		*add_label(char *name, int location);
-int			parse_op(char **op_arr, header_t header, char *champion, int *i);
+int			parse_op(char **op_arr, header_t *header, char *champion);
 char		*check_cmd(char *cmd, int fd, char **line, size_t max_length);
 void		parse_cmd(char *cmd, char *dest, int fd, size_t max_length);
 void		skip_empty_lines(char **line, int input_fd, int *g);
