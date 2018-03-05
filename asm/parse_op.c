@@ -31,69 +31,25 @@ t_op	*get_op(char *name)
 {
 	static t_op	op_tab[17] = {
 		{"live", 1, {T_DIR}},
-		{"ld", 2, {T_DIR | T_I, T_REG}},
-		{"st", 2, {T_REG, T_I | T_REG}},
+		{"ld", 2, {T_DIR | T_IND, T_REG}},
+		{"st", 2, {T_REG, T_IND | T_REG}},
 		{"add", 3, {T_REG, T_REG, T_REG}},
 		{"sub", 3, {T_REG, T_REG, T_REG}},
-		{"and", 3, {T_REG | T_DIR | T_I, T_REG | T_I | T_DIR, T_REG}},
-		{"or", 3, {T_REG | T_I | T_DIR, T_REG | T_I | T_DIR, T_REG}},
-		{"xor", 3, {T_REG | T_I | T_DIR, T_REG | T_I | T_DIR, T_REG}},
+		{"and", 3, {T_REG | T_DIR | T_IND, T_REG | T_IND | T_DIR, T_REG}},
+		{"or", 3, {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}},
+		{"xor", 3, {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}},
 		{"zjmp", 1, {T_DIR}},
-		{"ldi", 3, {T_REG | T_DIR | T_I, T_DIR | T_REG, T_REG}},
-		{"sti", 3, {T_REG, T_REG | T_DIR | T_I, T_DIR | T_REG}},
+		{"ldi", 3, {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}},
+		{"sti", 3, {T_REG, T_REG | T_DIR | T_IND, T_DIR | T_REG}},
 		{"fork", 1, {T_DIR}},
-		{"lld", 2, {T_DIR | T_I, T_REG}},
-		{"lldi", 3, {T_REG | T_DIR | T_I, T_DIR | T_REG, T_REG}},
+		{"lld", 2, {T_DIR | T_IND, T_REG}},
+		{"lldi", 3, {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}},
 		{"lfork", 1, {T_DIR}},
 		{"aff", 1, {T_REG}},
 		{0, 0, {0}}
 	};
 
 	return (find_op(op_tab, name));
-}
-
-int valid_label(char *label)
-{
-	while (*label)
-	{
-		if (!ft_strchr(LABEL_CHARS, *label))
-			print_error(ERR_INVALID_LABEL);
-		label++;
-	}
-	return (1);
-}
-
-t_label		*get_label(char *name)
-{
-	return (add_label(name, -1));
-}
-
-t_label		*add_label(char *name, int location)
-{
-	static t_list	*labels;
-	t_list			*temp;
-	t_label			label;
-
-	if (location < 0)
-	{
-		temp = labels;
-		while (temp)
-		{
-			if (!ft_strcmp(name, ((t_label *)temp)->name))
-				return (temp->content);
-			temp = temp->next;
-		}
-	}
-	else if (!add_label(name, -1))
-	{
-		label = (t_label){name, location};
-		if (!(temp = ft_lstnew(&label, sizeof(t_label))))
-			print_error(ERR_MALLOC);
-		temp->next = labels;
-		labels = temp;
-		return (labels->content);
-	}
-	return (0);
 }
 
 int		parse_op(char **op_arr, header_t header, char *champion, int *i)
@@ -106,10 +62,11 @@ int		parse_op(char **op_arr, header_t header, char *champion, int *i)
 		add_label(op_arr[o++], *i);
 	while (op_arr[o])
 	{
-		op = get_op(op_arr[o++]);
+		op = get_op(op_arr[o]);
 		if (ft_arrstrlen(&(op_arr[o])) != op->arg_len)
 			print_error(ERR_ARG_LEN);
 		//parse_args
+		o++;
 	}
 	pr_free_char_arr(op_arr);
 	return (*i);

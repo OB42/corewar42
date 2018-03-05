@@ -54,6 +54,7 @@ typedef struct		s_labels
 	t_list			*labes;
 }					t_labels;
 
+t_label		*get_label(char *name);
 t_label		*add_label(char *name, int location);
 int			parse_op(char **op_arr, header_t header, char *champion, int *i);
 char		*check_cmd(char *cmd, int fd, char **line, size_t max_length);
