@@ -17,7 +17,7 @@ char	**while_blank(char *str, char **words, int save, int w)
 	int s;
 
 	s = 0;
-	while (str[s] && (str[s] == ' ' || str[s] == '\n' || str[s] == 9
+	while (str[s] && (str[s] == ' ' || str[s] == '\n' || str[s] == '\t'
 	|| str[s] == SEPARATOR_CHAR))
 		s++;
 	if (save)
@@ -33,7 +33,7 @@ char	**while_char(char *str, char **words, int save, int w)
 	int		s;
 
 	s = 0;
-	while (str[s] && str[s] != ' ' && str[s] != '\n' && str[s] != 9
+	while (str[s] && str[s] != ' ' && str[s] != '\n' && str[s] != '\t'
 	&& str[s] != SEPARATOR_CHAR)
 		s++;
 	if (save)
@@ -47,8 +47,11 @@ char	**while_char(char *str, char **words, int save, int w)
 		words[w++] = (char*)pr_malloc(sizeof(char) * s + 1);
 	s = 0;
 	while (str[s] && str[s] != ' ' && str[s] != '\n' && str[s] != SEPARATOR_CHAR
-			&& str[s++] != 9)
-		words[w - 1][s - 1] = str[s - 1];
+			&& str[s] != '\t')
+	{
+		words[w - 1][s] = str[s];
+		s++;
+	}
 	if (s)
 		words[w - 1][s] = '\0';
 	if (str[s])

@@ -52,22 +52,65 @@ t_op	*get_op(char *name)
 	return (find_op(op_tab, name));
 }
 
-int		parse_op(char **op_arr, header_t header, char *champion)
+int valid_label(char *label)
+{
+	while (*label)
+	{
+		if (!ft_strchr(LABEL_CHARS, *label))
+			print_error(ERR_INVALID_LABEL);
+		label++;
+	}
+	return (1);
+}
+
+t_label		*get_label(char *name)
+{
+	return (add_label(name, -1));
+}
+
+t_label		*add_label(char *name, int location)
+{
+	static t_list	*labels;
+	t_list			*temp;
+	t_label			label;
+
+	if (location < 0)
+	{
+		temp = labels;
+		while (temp)
+		{
+			if (!ft_strcmp(name, ((t_label *)temp)->name))
+				return (temp->content);
+			temp = temp->next;
+		}
+	}
+	else if (!add_label(name, -1))
+	{
+		label = (t_label){name, location};
+		if (!(temp = ft_lstnew(&label, sizeof(t_label))))
+			print_error(ERR_MALLOC);
+		temp->next = labels;
+		labels = temp;
+		return (labels->content);
+	}
+	return (0);
+}
+
+int		parse_op(char **op_arr, header_t header, char *champion, int *i)
 {
 	int		o;
-	int		i;
 	t_op	*op;
 
-	i = 0;
 	o = 0;
 	if (op_arr[0] && op_arr[0][ft_strlen(op_arr[0]) - 1] == LABEL_CHAR)
+		add_label(op_arr[o++], *i);
+	while (op_arr[o])
 	{
-		o++;
-		//set_label(op_arr[o++], header, i);//TODO
+		op = get_op(op_arr[o++]);
+		if (ft_arrstrlen(&(op_arr[o])) != op->arg_len)
+			print_error(ERR_ARG_LEN);
+		//parse_args
 	}
-	op = get_op(op_arr[o++]);
-	if (ft_arrstrlen(&(op_arr[o])) != op->arg_len)
-		print_error(ERR_ARG_LEN);
 	pr_free_char_arr(op_arr);
-	return (i);
+	return (*i);
 }

@@ -44,7 +44,7 @@ char	*parse_champion(header_t header, int input_fd)
 	{
 		skip_empty_lines(&line, input_fd, &g);
 		if (line)
-			i += parse_op(split_op(line), header, champion + i);
+			parse_op(split_op(line), header, champion, &i);
 		pr_free(line);
 		if ((g = get_next_line(input_fd, &line)) == -1)
 			print_error(ERR_GNL);

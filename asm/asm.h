@@ -30,7 +30,8 @@
 # define ERR_INVALID_COMMAND "A command is invalid\n"
 # define ERR_WRONG_EXTENSION "The filename extension must be .s\n"
 # define ERR_UNKNOWN_OPERATION "Unknown operation\n"
-# define ERR_ARG_LEN "Wrong number of arguments"
+# define ERR_ARG_LEN "Wrong number of arguments\n"
+# define ERR_INVALID_LABEL "Invalid label\n"
 # define INPUT_EXTENSION ".s"
 # define OUTPUT_EXTENSION ".cor"
 
@@ -47,16 +48,23 @@ typedef struct		s_label
 	int				location;
 }					t_label;
 
-int	parse_op(char **op_arr, header_t header, char *champion);
-char	*check_cmd(char *cmd, int fd, char **line, size_t max_length);
-void	parse_cmd(char *cmd, char *dest, int fd, size_t max_length);
-void	skip_empty_lines(char **line, int input_fd, int *g);
-void	pr_free_char_arr(char **to_free);
-int		ft_arrstrlen(char **arr);
-int		empty_line(char *str);
-void	*pr_malloc(size_t n);
-void	pr_free(void *p);
-void	print_error(char *err);
-char	**split_op(char *str);
-char	**while_char(char *str, char **words, int save, int w);
+typedef struct		s_labels
+{
+	t_list			*to_replace;
+	t_list			*labes;
+}					t_labels;
+
+t_label		*add_label(char *name, int location);
+int			parse_op(char **op_arr, header_t header, char *champion, int *i);
+char		*check_cmd(char *cmd, int fd, char **line, size_t max_length);
+void		parse_cmd(char *cmd, char *dest, int fd, size_t max_length);
+void		skip_empty_lines(char **line, int input_fd, int *g);
+void		pr_free_char_arr(char **to_free);
+int			ft_arrstrlen(char **arr);
+int			empty_line(char *str);
+void		*pr_malloc(size_t n);
+void		pr_free(void *p);
+void		print_error(char *err);
+char		**split_op(char *str);
+char		**while_char(char *str, char **words, int save, int w);
 #endif
