@@ -12,59 +12,12 @@
 
 #include "asm.h"
 
-char	*check_cmd(char *cmd, int fd, char **line, size_t max_length)
-{
-	char *temp;
-
-	*line = 0;
-	while (!(*line) || **line == COMMENT_CHAR)
-	{
-		pr_free(*line);
-		if (get_next_line(fd, line) != 1)
-			print_error(ERR_GNL);
-	}
-	if (ft_strncmp(cmd, *line, ft_strlen(cmd))
-		|| ft_strncmp(*line + ft_strlen(cmd), " \"", 2))
-		print_error(ERR_INVALID_COMMAND);
-	if (ft_strlen(temp = *line + ft_strlen(cmd) + 2) > max_length)
-		print_error(ERR_COMMAND_LENGTH);
-	return (temp);
-}
-
-void	parse_cmd(char *cmd, char *dest, int fd, size_t max_length)
-{
-	char	*line;
-	char	*temp;
-	int		end;
-
-	end = 0;
-	temp = check_cmd(cmd, fd, &line, max_length);
-	while (!end)
-	{
-		if ((end = !!ft_strchr(temp, '"')))
-		{
-			if (ft_strchr(ft_strchr(temp, '"') + 1, '"'))
-				print_error(ERR_SYNTAX);
-			*ft_strchr(temp, '"') = 0;
-		}
-		if (ft_strlen(dest) + ft_strlen(temp) + !end > max_length)
-			print_error(ERR_COMMAND_LENGTH);
-		ft_strcpy(dest + ft_strlen(dest), temp);
-		if (!end)
-			ft_memcpy(dest + ft_strlen(dest), "\n", 2);
-		pr_free(line);
-		if (!end && get_next_line(fd, &line) != 1)
-			print_error(ERR_GNL);
-		temp = line;
-	}
-}
-
-void	save_file(char *input_filename, header_t header)//, char *code_buffer)
+void	save_file(char *input_filename, header_t header, char *champion)
 {
 	int			output_fd;
 	char		*output_filename;
 
-	input_filename[ft_strlen(input_filename) - 2] = 0;
+	input_filename[ft_strlen(input_filename) - ft_strlen(INPUT_EXTENSION)] = 0;
 	if (!(output_filename = ft_strjoin(input_filename, OUTPUT_EXTENSION)))
 		print_error(ERR_MALLOC);
 	if ((output_fd = open(output_filename, O_WRONLY | O_CREAT,
@@ -72,16 +25,33 @@ void	save_file(char *input_filename, header_t header)//, char *code_buffer)
 		print_error(ERR_FILE_CREATION);
 	pr_free(output_filename);
 	write(output_fd, &header, sizeof(header_t));
-	//write(output_fd, code_buffer, ft_strlen(code_buffer));
-	//pr_free(code_buffer);
+	write(output_fd, champion, ft_strlen(champion));
 }
 
-/*
-//TODO
-char	*parse_code(header_t header, int input_fd)
+char	*parse_champion(header_t header, int input_fd)
 {
-	return ();
-}*/
+	static char	champion[CHAMP_MAX_SIZE + 1];
+	char		*line;
+	int			g;
+	int			i;
+
+	g = 1;
+	ft_bzero(champion, CHAMP_MAX_SIZE + 1);
+	champion[CHAMP_MAX_SIZE] = EOF;
+	line = 0;
+	i = 0;
+	while (g == 1)
+	{
+		skip_empty_lines(&line, input_fd, &g);
+		if (line)
+			i += parse_op(split_op(line), header, champion + i);
+		pr_free(line);
+		if ((g = get_next_line(input_fd, &line)) == -1)
+			print_error(ERR_GNL);
+	}
+	champion[CHAMP_MAX_SIZE] = 0;
+	return (champion);
+}
 
 int		main(int argc, char *argv[])
 {
@@ -97,9 +67,9 @@ int		main(int argc, char *argv[])
 		print_error(ERR_FILE_READING);
 	ft_bzero(&header, sizeof(header_t));
 	header.magic = COREWAR_EXEC_MAGIC;
-	header.prog_size = 0x42424242;//a definir dans parse_code
+	header.prog_size = 0x42424242;//a definir dans parse_champion
 	parse_cmd(NAME_CMD_STRING, header.prog_name, input_fd, PROG_NAME_LENGTH);
 	parse_cmd(COMMENT_CMD_STRING, header.comment, input_fd, COMMENT_LENGTH);
-	save_file(argv[1], header);//, parse_code(header, input_fd));
+	save_file(argv[1], header, parse_champion(header, input_fd));
 	return (0);
 }
