@@ -30,35 +30,65 @@ t_op	*find_op(t_op op_tab[], char *name)
 t_op	*get_op(char *name)
 {
 	static t_op	op_tab[17] = {
-		{"live", 1, {T_DIR}},
-		{"ld", 2, {T_DIR | T_IND, T_REG}},
-		{"st", 2, {T_REG, T_IND | T_REG}},
-		{"add", 3, {T_REG, T_REG, T_REG}},
-		{"sub", 3, {T_REG, T_REG, T_REG}},
-		{"and", 3, {T_REG | T_DIR | T_IND, T_REG | T_IND | T_DIR, T_REG}},
-		{"or", 3, {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}},
-		{"xor", 3, {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}},
-		{"zjmp", 1, {T_DIR}},
-		{"ldi", 3, {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}},
-		{"sti", 3, {T_REG, T_REG | T_DIR | T_IND, T_DIR | T_REG}},
-		{"fork", 1, {T_DIR}},
-		{"lld", 2, {T_DIR | T_IND, T_REG}},
-		{"lldi", 3, {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}},
-		{"lfork", 1, {T_DIR}},
-		{"aff", 1, {T_REG}},
+		{"live", 1, {T_DIR}, 1},
+		{"ld", 2, {T_DIR | T_IND, T_REG}, 2},
+		{"st", 2, {T_REG, T_IND | T_REG}, 3},
+		{"add", 3, {T_REG, T_REG, T_REG}, 4},
+		{"sub", 3, {T_REG, T_REG, T_REG}, 5},
+		{"and", 3, {T_REG | T_DIR | T_IND, T_REG | T_IND | T_DIR, T_REG}, 6},
+		{"or", 3, {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}, 7},
+		{"xor", 3, {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}, 8},
+		{"zjmp", 1, {T_DIR}, 9},
+		{"ldi", 3, {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}, 10},
+		{"sti", 3, {T_REG, T_REG | T_DIR | T_IND, T_DIR | T_REG}, 11},
+		{"fork", 1, {T_DIR}, 12},
+		{"lld", 2, {T_DIR | T_IND, T_REG}, 13},
+		{"lldi", 3, {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}, 14},
+		{"lfork", 1, {T_DIR}, 15},
+		{"aff", 1, {T_REG}, 16},
 		{0, 0, {0}}
 	};
 
 	return (find_op(op_tab, name));
 }
 
+char 	get_ocp(char **op_arr, int o, int label)
+{
+	char ocp;
+
+	ocp = 0;
+	while (op_arr[o])
+	{
+		if (op_arr[o][0] == 'r')
+			ocp += 2 << ((o - label) * 2);
+		else if (op_arr[o][0] == DIRECT_CHAR)
+			ocp += 1 << ((o - label) * 2);
+		else
+			ocp += 3 << ((o - label) * 2);
+		o++;
+	}
+	return (ocp);
+}
+
+void put_bytes(header_t *header, char *champion, char *str, int i)
+{
+	if (header->prog_size + i <= CHAMP_MAX_SIZE)
+		ft_strncpy(champion + header->prog_size, str, i);
+	else
+		print_error(ERR_CHAMPION_SIZE);
+	header->prog_size += i;
+}
+
 int		parse_op(char **op_arr, header_t *header, char *champion)
 {
 	int		o;
 	t_op	*op;
-
+	char 	ocp;
+	int		label;
 	o = 0;
-	if (op_arr[0] && op_arr[0][ft_strlen(op_arr[0]) - 1] == LABEL_CHAR)
+
+	label = (op_arr[0] && op_arr[0][ft_strlen(op_arr[0]) - 1] == LABEL_CHAR);
+	if (label)
 	{
 		op_arr[0][ft_strlen(op_arr[0]) - 1] = 0;
 		add_label(op_arr[o++], header->prog_size);
@@ -66,8 +96,19 @@ int		parse_op(char **op_arr, header_t *header, char *champion)
 	op = get_op(op_arr[o++]);
 	if (ft_arrstrlen(&(op_arr[o])) != op->arg_len)
 		print_error(ERR_ARG_LEN);
+	ocp = get_ocp(op_arr, o, label);
+	if (op->op_code != 1 && op->op_code != 9)
+		put_bytes(header, champion, &ocp, 1);
+	put_bytes(header, champion, &(op->op_code), 1);
 	while (op_arr[o])
 	{
+		/*if (op_arr[o] == 'r')
+			parse_register(op, op_arr[o], ocp);
+		else if (op_arr[o] == DIRECT_CHAR)
+			parse_direct(op, op_arr[o], ocp);
+		else
+			parse_value(op, op_arr[o], ocp);
+		*/
 		o++;
 	}
 	pr_free_char_arr(op_arr);

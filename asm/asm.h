@@ -32,6 +32,7 @@
 # define ERR_UNKNOWN_OPERATION "Unknown operation\n"
 # define ERR_ARG_LEN "Wrong number of arguments\n"
 # define ERR_INVALID_LABEL "Invalid label\n"
+# define ERR_CHAMPION_SIZE "The champion is too large\n"
 # define INPUT_EXTENSION ".s"
 # define OUTPUT_EXTENSION ".cor"
 
@@ -40,6 +41,7 @@ typedef struct		s_op
 	char			*name;
 	int				arg_len;
 	int				args_type[3];
+	char			op_code;
 }					t_op;
 
 typedef struct		s_label
