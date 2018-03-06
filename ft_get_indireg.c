@@ -6,21 +6,21 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 20:54:24 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/06 21:32:11 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/06 22:05:52 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "LIBFT/libft.h"
 #include "op.h"
 
-char	*ft_get_ind(t_ins *ins, char *curseur, int n_param)
+unsigned char	*ft_get_ind(t_ins *ins, unsigned char *curseur, int n_param)
 {
 	if (n_param == 1)
 		ins->param[n_param] = 16 * *(curseur) + *(curseur + 1);
 	return(curseur + 2);
 }
 
-char	*ft_get_dir(t_ins *ins, char *curseur, int n_param)
+unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param)
 {
 	if(ft_strcmp (ins->name, "ldi") == 0 ||
 		ft_strcmp (ins->name, "sti") == 0 ||
@@ -40,7 +40,7 @@ char	*ft_get_dir(t_ins *ins, char *curseur, int n_param)
 	}
 }
 
-char	*ft_get_reg(t_ins *ins, char *curseur, int n_param)
+unsigned char	*ft_get_reg(t_ins *ins, unsigned char *curseur, int n_param)
 {
 	ins->param[n_param] = *curseur;
 	return (curseur + 1);
