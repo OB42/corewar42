@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 12:56:03 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/06 19:23:34 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/06 21:58:48 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,17 @@ header_t	ft_get_header(int fd)
 	return (header);
 }
 
-void	ft_ncpy(char *dest, char *src, int n)
+void	ft_ncpy(unsigned char *dest, char *src, int n)
 {
 	int i;
 
 	i = 0;
 	while (i < n)
 	{
-			dest[i] = src[i];
+			if (src[i] < 0)
+				dest[i] = src[i] + 256;
+			else
+				dest[i] = src[i];
 		i++;
 	}
 }

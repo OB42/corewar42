@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/06 19:09:45 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/06 22:02:52 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,7 @@ typedef struct	s_ins
 {
 	char	*name;
 	int		ocp;
-	int		param1;
-	int		param2;
-	int		param3;
+	int		param[3];
 }				t_ins;
 
 typedef	struct	s_op
@@ -101,7 +99,7 @@ header_t;
 typedef struct	s_champ
 {
 	header_t		header;
-	char			*code;
+	unsigned char	*code;
 	int				reg[REG_NUMBER];
 	int				placed;
 	int				color;
@@ -118,6 +116,9 @@ typedef struct	s_corewar
 
 header_t	ft_get_header(int fd);
 t_champ		ft_get_champ(char *filename);
-void		ft_get_var(t_ins *ins, char *code_champ);
-t_ins		*ft_get_instru(char *code_champ);
-int			ft_get_int(char *code_champ, int size);
+void		ft_get_var(t_ins *ins, unsigned char *code_champ);
+t_ins		*ft_get_instru(unsigned char *code_champ);
+int			ft_get_int(unsigned char *code_champ, int size);
+unsigned char	*ft_get_ind(t_ins *ins, unsigned char *curseur, int n_param);
+unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param);
+unsigned char	*ft_get_reg(t_ins *ins, unsigned char *curseur, int n_param);

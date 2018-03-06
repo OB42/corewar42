@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 13:06:45 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/06 19:26:58 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/06 22:02:48 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ void	ft_print_code(t_champ champ)
 	i = 0;
 	while (i < champ.header.prog_size)
 	{
-		if (champ.code[i] < 0)
-			ft_printf("%02x ", 256 + champ.code[i]);
-		else
-			ft_printf("%02x ", champ.code[i]);
+		ft_printf("%02x ", champ.code[i]);
 		i++;
 		if ((i % 16) == 0)
 			ft_printf("\n");

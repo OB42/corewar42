@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 15:54:36 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/06 19:16:49 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/06 22:02:50 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,30 +47,31 @@ int	ft_is_instruc(char c)
 	return (0);
 }
 
-void	ft_get_var(t_ins *ins, char *code_champ)
+void	ft_get_var(t_ins *ins, unsigned char *code_champ)
 {
 	if (ins->ocp < 0)
-	{
-		ft_printf("ocp negative\n");
 		ins->ocp = 256 + ins->ocp;
-		ft_printf("%d\n", ins->ocp);
-	}
 	if ((ins->ocp & 0x80) && (ins->ocp & 0x40))
-		ft_printf("1er param = IND\n");
+		code_champ = ft_get_ind(ins, code_champ, 0);
 	else if (ins->ocp & 0x80)
-		ft_printf("1er param = DIR\n");
+		code_champ = ft_get_dir(ins, code_champ, 0);
 	else if (ins->ocp & 0x40)
-		ft_printf("1er param = REG\n");
+		code_champ = ft_get_reg(ins, code_champ, 0);
 	if (ins->ocp & 0x20 && ins->ocp & 0x10)
-		ft_printf("2e param = IND\n");
+		code_champ = ft_get_ind(ins, code_champ, 1);
 	else if (ins->ocp & 0x20)
-		ft_printf("2e param = DIR\n");
+		code_champ = ft_get_dir(ins, code_champ, 1);
 	else if (ins->ocp & 0x10)
-		ft_printf("2e param = REG\n");
-	code_champ++;
+		code_champ = ft_get_reg(ins, code_champ, 1);
+	if (ins->ocp & 8 && ins->ocp & 4)
+		code_champ = ft_get_ind(ins, code_champ, 2);
+	else if (ins->ocp & 8)
+		code_champ = ft_get_dir(ins, code_champ, 2);
+	else if (ins->ocp & 4)
+		code_champ = ft_get_reg(ins, code_champ, 2);
 }
 
-t_ins	*ft_get_instru(char *code_champ)
+t_ins	*ft_get_instru(unsigned char *code_champ)
 {
 	t_op		*op_tab;
 	t_ins	*ins;
@@ -84,11 +85,13 @@ t_ins	*ft_get_instru(char *code_champ)
 		ft_bzero(ins, sizeof(t_ins));
 		ins->name = op_tab[(int)*(code_champ) - 1].name;
 		if (op_tab[(int)*(code_champ) - 1].ocp == 1)
+		{
 			ins->ocp = (int) *(code_champ + 1);
+			ft_get_var(ins, code_champ + 2);
+		}
 		else
-			ins->param1 = ft_get_int(code_champ + 2, op_tab[(int)*(code_champ - 1)].size_no_ocp);
-		ft_get_var(ins, code_champ + 2);
-		ft_printf("\nname = %s,ocp = %d, param %d\n", ins->name, ins->ocp, ins->param1);
+			ins->param[0] = ft_get_int(code_champ + 1, op_tab[(int)*(code_champ - 1)].size_no_ocp);
+		ft_printf("\nname = %s,ocp = %d, param %d %d %d\n", ins->name, ins->ocp, ins->param[0], ins->param[1], ins->param[2]);
 	}
 	else
 		ft_printf("bad instruction\n");
