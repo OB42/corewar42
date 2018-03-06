@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vm.c                                               :+:      :+:    :+:   */
+/*   ft_print_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rthys <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/05 11:10:45 by rthys             #+#    #+#             */
-/*   Updated: 2018/03/06 16:12:31 by mlegeay          ###   ########.fr       */
+/*   Created: 2018/03/06 10:59:03 by mlegeay           #+#    #+#             */
+/*   Updated: 2018/03/06 16:20:35 by mlegeay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
 
-int		main(int  ac, char **av)
+void		ft_print_map(char *arena)
 {
-	t_corewar	corewar;
+	int		i;
+	int		x;
 
-	init_all(&corewar);
-//	get_champs(ac, av, &arena);
-	if (load_arena(&corewar) == -1)
-		return (-1);
-	ft_print_map(corewar.arena);
-	return (0);
+	x = 0;
+	i = 0;
+	while (i < (4*MEM_SIZE))
+	{
+		x = 0;
+		while (x < 4)
+		{
+			printf("%c", arena[i]);
+			i++;
+			x++;
+		}
+		printf("-");
+	}
 }

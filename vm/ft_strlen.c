@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vm.c                                               :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rthys <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: obenazzo <obenazzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/05 11:10:45 by rthys             #+#    #+#             */
-/*   Updated: 2018/03/06 16:12:31 by mlegeay          ###   ########.fr       */
+/*   Created: 2016/09/07 03:03:47 by obenazzo          #+#    #+#             */
+/*   Updated: 2018/03/06 12:15:30 by mlegeay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vm.h"
+#include "ft_printf/libft.h"
 
-int		main(int  ac, char **av)
+size_t	ft_strlen(const char *str)
 {
-	t_corewar	corewar;
+	int i;
 
-	init_all(&corewar);
-//	get_champs(ac, av, &arena);
-	if (load_arena(&corewar) == -1)
-		return (-1);
-	ft_print_map(corewar.arena);
-	return (0);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }

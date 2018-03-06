@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vm.c                                               :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rthys <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: obenazzo <obenazzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/05 11:10:45 by rthys             #+#    #+#             */
-/*   Updated: 2018/03/06 16:12:31 by mlegeay          ###   ########.fr       */
+/*   Created: 2017/11/08 10:54:33 by obenazzo          #+#    #+#             */
+/*   Updated: 2017/11/08 10:54:40 by obenazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vm.h"
+#include "libft.h"
 
-int		main(int  ac, char **av)
+void	error(void)
 {
-	t_corewar	corewar;
-
-	init_all(&corewar);
-//	get_champs(ac, av, &arena);
-	if (load_arena(&corewar) == -1)
-		return (-1);
-	ft_print_map(corewar.arena);
-	return (0);
+	write(2, "ERROR\n", 6);
+	exit(0);
 }

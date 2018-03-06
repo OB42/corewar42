@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vm.c                                               :+:      :+:    :+:   */
+/*   padding.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rthys <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: obenazzo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/05 11:10:45 by rthys             #+#    #+#             */
-/*   Updated: 2018/03/06 16:12:31 by mlegeay          ###   ########.fr       */
+/*   Created: 2017/12/22 15:06:05 by obenazzo          #+#    #+#             */
+/*   Updated: 2017/12/22 16:50:48 by obenazzo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vm.h"
+#include "ft_printf.h"
 
-int		main(int  ac, char **av)
+int			padding(int zero, int l, int *printed)
 {
-	t_corewar	corewar;
+	char	*a;
 
-	init_all(&corewar);
-//	get_champs(ac, av, &arena);
-	if (load_arena(&corewar) == -1)
-		return (-1);
-	ft_print_map(corewar.arena);
-	return (0);
+	if (l < 1 || !(a = ft_ntchar(l, zero ? '0' : ' ')))
+		return (0);
+	ft_write_count(a, l, printed, 0);
+	free(a);
+	return (1);
 }

@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vm.c                                               :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rthys <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: obenazzo <obenazzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/05 11:10:45 by rthys             #+#    #+#             */
-/*   Updated: 2018/03/06 16:12:31 by mlegeay          ###   ########.fr       */
+/*   Created: 2017/11/08 10:54:33 by obenazzo          #+#    #+#             */
+/*   Updated: 2018/03/06 12:16:50 by mlegeay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vm.h"
+#include "ft_printf/libft.h"
 
-int		main(int  ac, char **av)
+void	*ft_memcpy(void *d, const void *s, size_t n)
 {
-	t_corewar	corewar;
-
-	init_all(&corewar);
-//	get_champs(ac, av, &arena);
-	if (load_arena(&corewar) == -1)
-		return (-1);
-	ft_print_map(corewar.arena);
-	return (0);
+	while (n--)
+		*((char *)d + n) = *((char *)s + n);
+	return (d);
 }
