@@ -55,28 +55,46 @@ t_op	*get_op(char *name)
 char 	get_ocp(char **op_arr, int o, int label)
 {
 	char ocp;
+	int a;
+	char t;
+	int n;
 
+	n = ft_arrstrlen(op_arr - o);
+	a = 0;
 	ocp = 0;
 	while (op_arr[o])
 	{
 		if (op_arr[o][0] == 'r')
-			ocp += 2 << ((o - label) * 2);
+			t = 1;
 		else if (op_arr[o][0] == DIRECT_CHAR)
-			ocp += 1 << ((o - label) * 2);
+			t = 2;
 		else
-			ocp += 3 << ((o - label) * 2);
+			t = 3;
+		ocp += t << (6 - 2 * a);
+		a++;
 		o++;
 	}
 	return (ocp);
 }
 
-void put_bytes(header_t *header, char *champion, char *str, int i)
+void save_bytes(header_t *header, char *champion, char *str, int i)
 {
 	if (header->prog_size + i <= CHAMP_MAX_SIZE)
 		ft_strncpy(champion + header->prog_size, str, i);
 	else
 		print_error(ERR_CHAMPION_SIZE);
 	header->prog_size += i;
+}
+
+void	parse_register(header_t *header, t_op *op, char *arg, char *champion)
+{
+	char	r;
+
+	if (ft_strlen(arg) > 3 || !(arg[1]) || !ft_isdigit(arg[1])
+	|| (arg[2] && !ft_isdigit(arg[2])))
+		print_error(ERR_SYNTAX);
+	r = ft_atoi(arg + 1);
+	save_bytes(header, champion, &r, 1);
 }
 
 int		parse_op(char **op_arr, header_t *header, char *champion)
@@ -96,18 +114,18 @@ int		parse_op(char **op_arr, header_t *header, char *champion)
 	op = get_op(op_arr[o++]);
 	if (ft_arrstrlen(&(op_arr[o])) != op->arg_len)
 		print_error(ERR_ARG_LEN);
-	ocp = get_ocp(op_arr, o, label);
+	op->ocp = get_ocp(op_arr, o, label);
+	save_bytes(header, champion, &(op->op_code), 1);
 	if (op->op_code != 1 && op->op_code != 9)
-		put_bytes(header, champion, &ocp, 1);
-	put_bytes(header, champion, &(op->op_code), 1);
+		save_bytes(header, champion, &(op->ocp), 1);
 	while (op_arr[o])
 	{
-		/*if (op_arr[o] == 'r')
-			parse_register(op, op_arr[o], ocp);
-		else if (op_arr[o] == DIRECT_CHAR)
-			parse_direct(op, op_arr[o], ocp);
+		if (op_arr[o][0] == 'r')
+			parse_register(header, op, op_arr[o], champion);
+		/*else if (op_arr[o] == DIRECT_CHAR)
+			parse_direct(header, op, op_arr[o], champion);
 		else
-			parse_value(op, op_arr[o], ocp);
+			parse_value(header, op, op_arr[o], champion);
 		*/
 		o++;
 	}

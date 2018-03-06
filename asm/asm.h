@@ -42,6 +42,7 @@ typedef struct		s_op
 	int				arg_len;
 	int				args_type[3];
 	char			op_code;
+	char			ocp;
 }					t_op;
 
 typedef struct		s_label
@@ -50,6 +51,14 @@ typedef struct		s_label
 	int				location;
 }					t_label;
 
+typedef struct		s_labels
+{
+	t_list			*to_replace;
+	t_list			*saved;
+}					t_labels;
+
+char		**w_char(char *str, char **words, int save, int w);
+char		**split(char *str);
 t_label		*get_label(char *name);
 t_label		*add_label(char *name, int location);
 int			parse_op(char **op_arr, header_t *header, char *champion);

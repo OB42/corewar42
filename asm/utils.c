@@ -16,7 +16,9 @@ int		empty_line(char *str)
 {
 	while (str && *str)
 	{
-		if (!ft_strchr(" \t\n\v\f\r", *str) && *str != COMMENT_CHAR)
+		if (*str == COMMENT_CHAR)
+			break ;
+		if (!ft_strchr(" \t\n\v\f\r", *str))
 			return (0);
 		str++;
 	}
@@ -48,7 +50,7 @@ int		ft_arrstrlen(char **arr)
 	int i;
 
 	i = 0;
-	while (arr[i])
+	while (arr && arr[i])
 		i++;
 	return (i);
 }
