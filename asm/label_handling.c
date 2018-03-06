@@ -23,22 +23,32 @@ int valid_label(char *label)
 	return (1);
 }
 
-t_label		*get_label(char *name)
+t_label		*get_label(char *name, int type)
 {
-	return (add_label(name, -1));
+	return (add_label(name, -1, type));
 }
 
-t_label		*add_label(char *name, int location)
+t_label		*new_label(char *name, int location)
 {
-	static t_list	*labels;
+	t_label	*temp;
+
+	temp = pr_malloc(sizeof(t_label));
+	temp->location = location;
+	temp->name = pr_malloc(ft_strlen(name) + 1);
+	ft_strcpy(temp->name, name);
+	return (temp);
+}
+t_label		*add_label(char *name, int location, int type)
+{
+	static t_labels	labels = {0, 0};
 	t_list			*temp;
-	t_label			label;
+	t_label			*label;
 
 	if (!valid_label(name))
 		print_error(ERR_INVALID_LABEL);
 	if (location < 0)
 	{
-		temp = labels;
+		temp = (type ? (labels.to_replace) : (labels.saved));
 		while (temp)
 		{
 			if (!ft_strcmp(name, ((t_label *)(temp->content))->name))
@@ -46,13 +56,15 @@ t_label		*add_label(char *name, int location)
 			temp = temp->next;
 		}
 	}
-	else if (!add_label(name, -1))
+	else if (!add_label(name, -1, type))
 	{
-		label = (t_label){name, location};
-		if (!(temp = ft_lstnew(&label, sizeof(t_label))))
+		label = new_label(name, location);
+		if (!(temp = ft_lstnew(label, sizeof(t_label))))
 			print_error(ERR_MALLOC);
-		temp->next = labels;
-		return ((labels = temp)->content);
+		pr_free(label);
+		temp->next = (type ? (labels.to_replace) : (labels.saved));
+		type ? (labels.to_replace = temp) : (labels.saved = temp);
+		return (temp->content);
 	}
 	return (0);
 }

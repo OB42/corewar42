@@ -25,6 +25,7 @@ typedef	struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+short			ft_atos(const char *str);
 void			error();
 int				sml(int a, int b);
 int				big(int a, int b);

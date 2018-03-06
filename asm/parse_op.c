@@ -52,7 +52,7 @@ t_op	*get_op(char *name)
 	return (find_op(op_tab, name));
 }
 
-char 	get_ocp(char **op_arr, int o, int label)
+char 	get_ocp(char **op_arr, int o)
 {
 	char ocp;
 	int a;
@@ -77,10 +77,10 @@ char 	get_ocp(char **op_arr, int o, int label)
 	return (ocp);
 }
 
-void save_bytes(header_t *header, char *champion, char *str, int i)
+void save_bytes(header_t *header, char *champion, void *temp, int i)
 {
 	if (header->prog_size + i <= CHAMP_MAX_SIZE)
-		ft_strncpy(champion + header->prog_size, str, i);
+		ft_memcpy(champion + header->prog_size, temp, i);
 	else
 		print_error(ERR_CHAMPION_SIZE);
 	header->prog_size += i;
@@ -97,36 +97,82 @@ void	parse_register(header_t *header, t_op *op, char *arg, char *champion)
 	save_bytes(header, champion, &r, 1);
 }
 
+void	parse_direct(header_t *header, t_op *op, char *arg, char *champion)
+{
+	int	r;
+
+	r = 0;
+	if (arg[1] == LABEL_CHAR)
+	{
+		add_label(arg + 2, header->prog_size, 1);
+		save_bytes(header, champion, &r, 2);
+	}
+	else
+	{
+		r = endian_swap_u32(ft_atoi(arg + 1));
+		save_bytes(header, champion, &r, sizeof(int));
+	}
+}
+
+short swap16(short n)
+{
+	return (n << 8) | ((n >> 8) & 0xFF);
+}
+
+void	parse_indirect(header_t *header, t_op *op, char *arg, char *champion)
+{
+	short	r;
+
+	r = 0;
+	if (arg[0] == LABEL_CHAR)
+	{
+		add_label(arg + 1, header->prog_size, 1);
+	}
+	else
+		r = swap16(ft_atos(arg));
+	save_bytes(header, champion, &r, sizeof(short));
+}
+
 int		parse_op(char **op_arr, header_t *header, char *champion)
 {
 	int		o;
 	t_op	*op;
 	char 	ocp;
-	int		label;
+	int		arv;
+
 	o = 0;
 
-	label = (op_arr[0] && op_arr[0][ft_strlen(op_arr[0]) - 1] == LABEL_CHAR);
-	if (label)
+	if (op_arr[0] && op_arr[0][ft_strlen(op_arr[0]) - 1] == LABEL_CHAR && !op_arr[1])
 	{
 		op_arr[0][ft_strlen(op_arr[0]) - 1] = 0;
-		add_label(op_arr[o++], header->prog_size);
+		add_label(op_arr[o++], header->prog_size, 0);
+		pr_free_char_arr(op_arr);
+		return (0);
 	}
 	op = get_op(op_arr[o++]);
 	if (ft_arrstrlen(&(op_arr[o])) != op->arg_len)
 		print_error(ERR_ARG_LEN);
-	op->ocp = get_ocp(op_arr, o, label);
+	op->ocp = get_ocp(op_arr, o);
 	save_bytes(header, champion, &(op->op_code), 1);
 	if (op->op_code != 1 && op->op_code != 9)
 		save_bytes(header, champion, &(op->ocp), 1);
 	while (op_arr[o])
 	{
 		if (op_arr[o][0] == 'r')
+		{
 			parse_register(header, op, op_arr[o], champion);
-		/*else if (op_arr[o] == DIRECT_CHAR)
+			arv += T_REG;
+		}
+		else if (op_arr[o][0] == DIRECT_CHAR)
+		{
+			arv += T_DIR;
 			parse_direct(header, op, op_arr[o], champion);
+		}
 		else
-			parse_value(header, op, op_arr[o], champion);
-		*/
+		{
+			arv += T_IND;
+			parse_indirect(header, op, op_arr[o], champion);
+		}
 		o++;
 	}
 	pr_free_char_arr(op_arr);

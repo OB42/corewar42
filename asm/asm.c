@@ -14,8 +14,8 @@
 
 int endian_swap_u32(int n)
 {
-	return (((n >> 24)&0xFF) | ((n << 8)&0xFF0000) | ((n >> 8)&0xFF00)
-	| ((n << 24)&0xFF000000));
+	n = ((n << 8) & 0xFF00FF00) | ((n >> 8) & 0xFF00FF );
+	return (n << 16) | ((n >> 16) & 0xFFFF);
 }
 
 void	save_file(char *input_filename, header_t *header, char *champion)
@@ -43,27 +43,23 @@ char	*parse_champion(header_t *header, int input_fd)
 	static char	champion[CHAMP_MAX_SIZE + 1];
 	char		*line;
 	int			g;
-	int			i;
 
 	g = 1;
-	ft_bzero(champion, CHAMP_MAX_SIZE + 1);
-	//champion[CHAMP_MAX_SIZE] = EOF;
 	line = 0;
-	i = 0;
+	ft_bzero(champion, CHAMP_MAX_SIZE + 1);
 	while (g == 1)
 	{
 		skip_empty_lines(&line, input_fd, &g);
 		if (line)
 		{
-			if (ft_strchr(line, '#'))
-				*ft_strchr(line, '#') = 0;
+			if (ft_strchr(line, COMMENT_CHAR))
+				*ft_strchr(line, COMMENT_CHAR) = 0;
 			parse_op(split_op(line), header, champion);
 		}
 		pr_free(line);
 		if ((g = get_next_line(input_fd, &line)) == -1)
 			print_error(ERR_GNL);
 	}
-	//champion[CHAMP_MAX_SIZE] = 0;
 	return (champion);
 }
 

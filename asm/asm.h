@@ -57,10 +57,11 @@ typedef struct		s_labels
 	t_list			*saved;
 }					t_labels;
 
+int			endian_swap_u32(int n);
 char		**w_char(char *str, char **words, int save, int w);
 char		**split(char *str);
-t_label		*get_label(char *name);
-t_label		*add_label(char *name, int location);
+t_label		*get_label(char *name, int type);
+t_label		*add_label(char *name, int location, int type);
 int			parse_op(char **op_arr, header_t *header, char *champion);
 char		*check_cmd(char *cmd, int fd, char **line, size_t max_length);
 void		parse_cmd(char *cmd, char *dest, int fd, size_t max_length);
