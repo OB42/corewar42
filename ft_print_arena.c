@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_print_arena.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: obenazzo <obenazzo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/07 03:03:47 by obenazzo          #+#    #+#             */
-/*   Updated: 2018/03/06 12:15:30 by mlegeay          ###   ########.fr       */
+/*   Created: 2018/03/07 14:37:46 by mlegeay           #+#    #+#             */
+/*   Updated: 2018/03/07 16:19:26 by mlegeay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf/libft.h"
+#include "op.h"
 
-size_t	ft_strlen(const char *str)
+void    ft_print_arena(unsigned char	*arena)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (i < MEM_SIZE)
+	{
+		ft_printf("%02x ", arena[i]);
 		i++;
-	return (i);
+		if ((i % 16) == 0)
+			ft_printf("\n");
+	}
 }
