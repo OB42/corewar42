@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/07 21:50:34 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/07 22:08:49 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,17 @@ typedef char	t_arg_type;
 # define COREWAR_EXEC_MAGIC	0xea83f3
 
 
-typedef struct	s_ins
+typedef struct s_proc	t_proc;
+
+typedef struct s_ins	t_ins;
+
+struct	s_ins
 {
 	char	*name;
 	int		ocp;
 	int		param[3];
-}				t_ins;
+	void	(*fun)(t_ins*, t_proc*);
+};
 
 typedef	struct	s_op
 {
@@ -84,7 +89,7 @@ typedef	struct	s_op
 	int		length;
 	int		ocp;
 	int		size_no_ocp;
-	void	*fun;
+	void	(*fun)(t_ins*, t_proc*);
 }				t_op;
 
 typedef struct	header_s
@@ -113,7 +118,7 @@ typedef struct	s_corewar
 	int		cycle_to_die_current;
 }				t_corewar;
 
-typedef struct	s_proc
+struct	s_proc
 {
 	int				pc;
 	unsigned char	*curseur;
@@ -123,7 +128,7 @@ typedef struct	s_proc
 	t_champ			champ;
 	int				reg[REG_NUMBER];
 	struct s_proc	*nxt;
-}				t_proc;
+};
 
 header_t		ft_get_header(int fd);
 t_champ			ft_get_champ(char *filename);
