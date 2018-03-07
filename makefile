@@ -5,7 +5,10 @@ SRC = main.c\
 	  ft_get_instru.c\
 	  ft_get_int.c\
 	  ft_get_indireg.c\
-	  ft_loop.c
+	  ft_loop.c\
+	  ft_live.c\
+	  ft_ld.c\
+	  ft_st.c\
 
 
 OBJ = $(SRC:.c=.o)

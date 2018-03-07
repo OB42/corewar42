@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/07 15:15:43 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/07 16:25:04 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,8 +118,10 @@ typedef struct	s_proc
 	int				pc;
 	char			*curseur;
 	int				carry;
-	struct s_proc	*nxt;
 	int				player;
+	int				live;
+	t_champ			champ;
+	struct s_proc	*nxt;
 }				t_proc;
 
 header_t	ft_get_header(int fd);
@@ -131,3 +133,6 @@ unsigned char	*ft_get_ind(t_ins *ins, unsigned char *curseur, int n_param);
 unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param);
 unsigned char	*ft_get_reg(t_ins *ins, unsigned char *curseur, int n_param);
 void			ft_loop(t_corewar corewar);
+void			ft_live(t_ins *ins, t_proc *proc);
+void			ft_ld(t_ins *ins, t_proc *proc);
+void			ft_st(t_ins	*ins, t_proc *proc);

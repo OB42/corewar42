@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/07 15:15:55 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/07 15:40:44 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,35 @@
 #include "LIBFT/libft.h"
 #include "op.h"
 
+void	ft_val_proc(t_proc *lst_proc, t_corewar corewar, int i, t_proc *init)
+{
+	lst_proc->curseur = corewar.arena + i * (MEM_SIZE / corewar.nb_champ);
+	lst_proc->pc = 0;
+	lst_proc->carry = 0;
+	lst_proc->nxt = init;
+	lst_proc->player = i;
+	lst_proc->live = 0;
+}
+	
+
 t_proc	*ft_init_proc(t_corewar corewar)
 {
 	t_proc	*lst_proc;
 	t_proc	*init;
 	int		i;
 
-	i = 1;
+	i = 0;
 	if (!(lst_proc = malloc(sizeof(t_proc))))
 		exit(1);
 	init = lst_proc;
-	lst_proc->pc = 0;
-	lst_proc->curseur = corewar.arena;
-	lst_proc->carry = 0;
-	lst_proc->nxt = init;
-	lst_proc->player = i;
+	ft_val_proc(lst_proc, corewar, i, init);
 	while(corewar.tab_champ[i].code)
 	{
+		i++;
 		if (!(lst_proc->nxt = malloc(sizeof(t_proc))))
 			exit(1);
+		ft_val_proc(lst_proc, corewar, i, init);
 		lst_proc = lst_proc->nxt;
-		lst_proc->pc = 0;
-		lst_proc->curseur = corewar.arena + i * (MEM_SIZE / corewar.nb_champ);
-		lst_proc->carry = 0;
-		lst_proc->nxt = init;
-		lst_proc->player = i + 1;
-		i++;
 	}
 	return (lst_proc);
 }
