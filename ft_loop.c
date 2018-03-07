@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/07 15:40:44 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/07 17:21:12 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,11 @@ void	ft_loop(t_corewar corewar)
 
 	lst_proc = ft_init_proc(corewar);
 	while (lst_proc)
+	{
 		lst_proc = lst_proc->nxt;
+		ft_print_arena(corewar.arena);
+		while (1)
+			;
+	}
 }
 

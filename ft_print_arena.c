@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_st.c                                            :+:      :+:    :+:   */
+/*   ft_print_arena.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/07 15:48:38 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/07 16:35:14 by vburidar         ###   ########.fr       */
+/*   Created: 2018/03/07 14:37:46 by mlegeay           #+#    #+#             */
+/*   Updated: 2018/03/07 17:36:13 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "LIBFT/libft.h"
 #include "op.h"
 
-void	ft_st(t_ins *ins, t_proc *proc)
+void    ft_print_arena(unsigned char	*arena)
 {
-	if (ins->param[0] == 0)
-		proc->carry = 1;
-	else
-		proc->carry = 0;
-	if ((ins->ocp & 0x20) && (ins->ocp & 0x10))
-		proc->curseur[ins->param[1]] = ins->param[0];
-	else
-		proc->champ.reg[ins->param[1]] = ins->param[0];
+	unsigned int i;
+
+	i = 0;
+	while (i < MEM_SIZE)
+	{
+		ft_printf("%02x ", arena[i]);
+		i++;
+		if ((i % 16) == 0)
+			ft_printf("\n");
+	}
 }

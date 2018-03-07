@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 13:06:45 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/07 14:58:30 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/07 16:44:32 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,7 @@ int main(int argc, char **argv)
 
 	instru = NULL;
 	corewar = ft_init_all(argc, argv);
-	if (argc > 1)
-	{
-		ft_print_code(corewar.tab_champ[0]);
-		instru = ft_get_instru(corewar.tab_champ[0].code);
-	}
+	load_arena(&corewar);
 	ft_loop(corewar);
 	return (0);
 }

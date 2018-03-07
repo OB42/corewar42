@@ -9,6 +9,8 @@ SRC = main.c\
 	  ft_live.c\
 	  ft_ld.c\
 	  ft_st.c\
+	  load_arena.c\
+	  ft_print_arena.c\
 
 
 OBJ = $(SRC:.c=.o)

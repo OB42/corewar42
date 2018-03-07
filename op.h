@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/07 16:25:04 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/07 16:46:07 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ typedef struct	s_champ
 typedef struct	s_corewar
 {
 	char	arena_id[MEM_SIZE + 1];
-	char	arena[MEM_SIZE + 1];
+	unsigned char	arena[MEM_SIZE + 1];
 	int		nb_champ;
 	t_champ	tab_champ[6];
 	int		cycle_to_die_current;
@@ -116,7 +116,7 @@ typedef struct	s_corewar
 typedef struct	s_proc
 {
 	int				pc;
-	char			*curseur;
+	unsigned char	*curseur;
 	int				carry;
 	int				player;
 	int				live;
@@ -136,3 +136,5 @@ void			ft_loop(t_corewar corewar);
 void			ft_live(t_ins *ins, t_proc *proc);
 void			ft_ld(t_ins *ins, t_proc *proc);
 void			ft_st(t_ins	*ins, t_proc *proc);
+void			load_arena(t_corewar *corewar);
+void			ft_print_arena(unsigned char *arena);
