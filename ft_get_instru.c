@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 15:54:36 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/07 14:38:45 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/07 21:50:37 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,23 @@ t_op	*ft_get_op_tab(void)
 {
 	static t_op op_tab[17] =
 	{
-	{"live", 1, {T_DIR}, 10, 0, 4},
-	{"ld", 2, {T_DIR | T_IND, T_REG}, 5, 1, 0},
-	{"st", 2, {T_REG, T_IND | T_REG}, 5, 1, 0},
-	{"add", 3, {T_REG, T_REG, T_REG}, 10, 1, 0},
-	{"sub", 3, {T_REG, T_REG, T_REG}, 10, 1, 0},
-	{"and", 3, {T_REG | T_DIR | T_IND, T_REG | T_IND | T_DIR, T_REG}, 6, 1, 0},
-	{"or", 3, {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}, 6, 1, 0},
-	{"xor", 3, {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}, 6, 1, 0},
-	{"zjmp", 1, {T_DIR}, 20, 0, 2},
-	{"ldi", 3, {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}, 25, 1, 0},
-	{"sti", 3, {T_REG, T_REG | T_DIR | T_IND, T_DIR | T_REG}, 25, 1, 0},
-	{"fork", 1, {T_DIR}, 800, 0, 2},
-	{"lld", 2, {T_DIR | T_IND, T_REG}, 10, 1, 0},
-	{"lldi", 3, {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}, 50, 1, 0},
-	{"lfork", 1, {T_DIR}, 1000, 0, 2},
-	{"aff", 1, {T_REG}, 2, 1, 0},
-	{0, 0, {0}, 0, 0, 0}};
+	{"live", 1, {T_DIR}, 10, 0, 4, ft_live},
+	{"ld", 2, {T_DIR | T_IND, T_REG}, 5, 1, 0, ft_ld},
+	{"st", 2, {T_REG, T_IND | T_REG}, 5, 1, 0, ft_st},
+	{"add", 3, {T_REG, T_REG, T_REG}, 10, 1, 0, ft_add},
+	{"sub", 3, {T_REG, T_REG, T_REG}, 10, 1, 0, ft_sub},
+	{"and", 3, {T_REG | T_DIR | T_IND, T_REG | T_IND | T_DIR, T_REG}, 6, 1, 0, ft_and},
+	{"or", 3, {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}, 6, 1, 0, ft_or},
+	{"xor", 3, {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}, 6, 1, 0, ft_xor},
+	{"zjmp", 1, {T_DIR}, 20, 0, 2, ft_zjmp},
+	{"ldi", 3, {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}, 25, 1, 0, ft_ldi},
+	{"sti", 3, {T_REG, T_REG | T_DIR | T_IND, T_DIR | T_REG}, 25, 1, 0, ft_sti},
+	{"fork", 1, {T_DIR}, 800, 0, 2, ft_fork},
+	{"lld", 2, {T_DIR | T_IND, T_REG}, 10, 1, 0, ft_lld},
+	{"lldi", 3, {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}, 50, 1, 0, ft_lldi},
+	{"lfork", 1, {T_DIR}, 1000, 0, 2, ft_lfork},
+	{"aff", 1, {T_REG}, 2, 1, 0, NULL},
+	{0, 0, {0}, 0, 0, 0, 0}};
 	return (op_tab);
 }
 

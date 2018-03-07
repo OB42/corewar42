@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/07 16:46:07 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/07 21:50:34 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ typedef	struct	s_op
 	int		length;
 	int		ocp;
 	int		size_no_ocp;
+	void	*fun;
 }				t_op;
 
 typedef struct	header_s
@@ -99,7 +100,6 @@ typedef struct	s_champ
 {
 	header_t		header;
 	unsigned char	*code;
-	int				reg[REG_NUMBER];
 	int				placed;
 	int				color;
 }				t_champ;
@@ -121,14 +121,15 @@ typedef struct	s_proc
 	int				player;
 	int				live;
 	t_champ			champ;
+	int				reg[REG_NUMBER];
 	struct s_proc	*nxt;
 }				t_proc;
 
-header_t	ft_get_header(int fd);
-t_champ		ft_get_champ(char *filename);
-void		ft_get_var(t_ins *ins, unsigned char *code_champ);
-t_ins		*ft_get_instru(unsigned char *code_champ);
-int			ft_get_int(unsigned char *code_champ, int size);
+header_t		ft_get_header(int fd);
+t_champ			ft_get_champ(char *filename);
+void			ft_get_var(t_ins *ins, unsigned char *code_champ);
+t_ins			*ft_get_instru(unsigned char *code_champ);
+int				ft_get_int(unsigned char *code_champ, int size);
 unsigned char	*ft_get_ind(t_ins *ins, unsigned char *curseur, int n_param);
 unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param);
 unsigned char	*ft_get_reg(t_ins *ins, unsigned char *curseur, int n_param);
@@ -136,5 +137,18 @@ void			ft_loop(t_corewar corewar);
 void			ft_live(t_ins *ins, t_proc *proc);
 void			ft_ld(t_ins *ins, t_proc *proc);
 void			ft_st(t_ins	*ins, t_proc *proc);
+void			ft_ldi(t_ins *ins, t_proc *proc);
+void			ft_sti(t_ins *ins, t_proc *proc);
+void			ft_fork(t_ins *ins, t_proc *proc);
+void			ft_sub(t_ins *ins, t_proc *proc);
+void			ft_add(t_ins *ins, t_proc *proc);
 void			load_arena(t_corewar *corewar);
 void			ft_print_arena(unsigned char *arena);
+void			ft_fork(t_ins *ins, t_proc *proc);
+void			ft_lfork(t_ins *ins, t_proc *proc);
+void			ft_lldi(t_ins *ins, t_proc *proc);
+void			ft_lld(t_ins *ins, t_proc *proc);
+void			ft_and(t_ins *ins, t_proc *proc);
+void			ft_or(t_ins *ins, t_proc *proc);
+void			ft_xor(t_ins *ins, t_proc *proc);
+void			ft_zjmp(t_ins *ins, t_proc *proc);

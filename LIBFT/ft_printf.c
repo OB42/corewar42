@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 19:51:37 by vburidar          #+#    #+#             */
-/*   Updated: 2018/02/20 11:51:35 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/07 21:46:30 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ static int	ft_flag(const char *format,
 	compteur = 0;
 	while (*format && (ret = tabf->tab[(int)*format]))
 	{
-		ft_add((char)*format, tabf[1].tab);
+		ft_adding((char)*format, tabf[1].tab);
 		tabf[1].tab[(int)tabf[0].tab[(int)*format]] = 1;
 		if (tabf->tab[(int)*format] > 9)
 		{

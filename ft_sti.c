@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_sti.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 13:16:52 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/07 20:39:47 by vburidar         ###   ########.fr       */
+/*   Created: 2018/03/07 19:09:01 by vburidar          #+#    #+#             */
+/*   Updated: 2018/03/07 21:34:46 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "op.h"
 
-void		*ft_memmove(void *dest, void *src, size_t taille)
+void	ft_sti(t_ins *ins, t_proc *proc)
 {
-	int		i;
-	char	*curseur;
-	char	*arrivee;
+	int	val_1;
 
-	curseur = (char*)(src);
-	arrivee = (char*)(dest);
-	if (dest > src)
-	{
-		i = (int)(taille - 1);
-		while (i >= 0)
-		{
-			arrivee[i] = curseur[i];
-			i = i - 1;
-		}
-	}
-	else
-	{
-		i = 0;
-		while (i < (int)(taille))
-		{
-			arrivee[i] = curseur[i];
-			i = i + 1;
-		}
-	}
-	return (dest);
+	val_1 = 0;
+	if ((ins->ocp & 20) && (ins->ocp & 10))
+		val_1 = ins->param[1];
+	else if (ins->ocp & 20)
+		val_1 = ins->param[1];
+	else if (ins->ocp & 10)
+		val_1 = proc->reg[ins->param[1]];
+	proc->curseur[(val_1 + ins->param[2]) % IDX_MOD] = proc->reg[ins->param[0]];
 }

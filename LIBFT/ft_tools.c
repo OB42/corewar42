@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/15 16:37:10 by vburidar          #+#    #+#             */
-/*   Updated: 2018/02/19 13:05:44 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/07 20:26:36 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	ft_replace(char *str, char old, char new, char *tab_flag)
 	}
 }
 
-void	ft_add(char c, char tab[128])
+void	ft_adding(char c, char tab[128])
 {
 	int		i;
 

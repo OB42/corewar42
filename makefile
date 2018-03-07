@@ -11,6 +11,13 @@ SRC = main.c\
 	  ft_st.c\
 	  load_arena.c\
 	  ft_print_arena.c\
+	  ft_ldi.c\
+	  ft_sti.c\
+	  ft_add.c\
+	  ft_sub.c\
+	  ft_fork.c\
+	  ft_andorxor.c\
+	  ft_zjmp.c
 
 
 OBJ = $(SRC:.c=.o)

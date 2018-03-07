@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 10:53:35 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/06 14:56:04 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/07 20:26:22 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char				*ft_strncpy(char *dest, const char *src, size_t n);
 **INITIALISATION OF ARRAYS
 */
 void				ft_filltab(char tab[128]);
-void				ft_add(char c, char tab[128]);
+void				ft_adding(char c, char tab[128]);
 int					ft_fill_buff(const char *adr);
 
 /*

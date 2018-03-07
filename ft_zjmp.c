@@ -1,42 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_zjmp.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 13:16:52 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/07 20:39:47 by vburidar         ###   ########.fr       */
+/*   Created: 2018/03/07 21:40:52 by vburidar          #+#    #+#             */
+/*   Updated: 2018/03/07 21:45:43 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "op.h"
 
-void		*ft_memmove(void *dest, void *src, size_t taille)
+void	ft_zjmp(t_ins *ins, t_proc *proc)
 {
-	int		i;
-	char	*curseur;
-	char	*arrivee;
-
-	curseur = (char*)(src);
-	arrivee = (char*)(dest);
-	if (dest > src)
-	{
-		i = (int)(taille - 1);
-		while (i >= 0)
-		{
-			arrivee[i] = curseur[i];
-			i = i - 1;
-		}
-	}
-	else
-	{
-		i = 0;
-		while (i < (int)(taille))
-		{
-			arrivee[i] = curseur[i];
-			i = i + 1;
-		}
-	}
-	return (dest);
+	if (proc->carry == 1)
+		proc->curseur = proc->curseur + ins->param[0] % MEM_SIZE;
 }
