@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/06 22:02:52 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/07 15:15:43 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@ les tailles sont en octets.
 ** On part du principe qu'un int fait 32 bits. Est-ce vrai chez vous ?
 */
 
-#include <stdint.h>
 
 #define IND_SIZE	2
 #define REG_SIZE	4
@@ -114,6 +113,15 @@ typedef struct	s_corewar
 	int		cycle_to_die_current;
 }				t_corewar;
 
+typedef struct	s_proc
+{
+	int				pc;
+	char			*curseur;
+	int				carry;
+	struct s_proc	*nxt;
+	int				player;
+}				t_proc;
+
 header_t	ft_get_header(int fd);
 t_champ		ft_get_champ(char *filename);
 void		ft_get_var(t_ins *ins, unsigned char *code_champ);
@@ -122,3 +130,4 @@ int			ft_get_int(unsigned char *code_champ, int size);
 unsigned char	*ft_get_ind(t_ins *ins, unsigned char *curseur, int n_param);
 unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param);
 unsigned char	*ft_get_reg(t_ins *ins, unsigned char *curseur, int n_param);
+void			ft_loop(t_corewar corewar);

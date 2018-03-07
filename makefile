@@ -4,7 +4,8 @@ SRC = main.c\
 	  ft_get_champ.c\
 	  ft_get_instru.c\
 	  ft_get_int.c\
-	  ft_get_indireg.c
+	  ft_get_indireg.c\
+	  ft_loop.c
 
 
 OBJ = $(SRC:.c=.o)

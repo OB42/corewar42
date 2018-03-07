@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 13:06:45 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/06 22:02:48 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/07 14:58:30 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ t_corewar	ft_init_all(int argc, char **argv)
 		corewar.tab_champ[i - 1] = ft_get_champ(argv[i]);
 		i++;
 	}
+	corewar.nb_champ = i - 1;
 	return (corewar);
 }
 
@@ -50,7 +51,11 @@ int main(int argc, char **argv)
 
 	instru = NULL;
 	corewar = ft_init_all(argc, argv);
-	ft_print_code(corewar.tab_champ[0]);
-	instru = ft_get_instru(corewar.tab_champ[0].code);
+	if (argc > 1)
+	{
+		ft_print_code(corewar.tab_champ[0]);
+		instru = ft_get_instru(corewar.tab_champ[0].code);
+	}
+	ft_loop(corewar);
 	return (0);
 }
