@@ -6,7 +6,7 @@
 /*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:46:34 by mlegeay           #+#    #+#             */
-/*   Updated: 2018/03/07 16:13:43 by mlegeay          ###   ########.fr       */
+/*   Updated: 2018/03/07 22:21:33 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 static void	place_champ(t_corewar *corewar, int i, int id)
 {
-	size_t	j;
+	unsigned int	j;
 
 	j = 0;
 	while (j < corewar->tab_champ[id].header.prog_size)
 	{
-		corewar->arena_id[i] = id + 48;
+		corewar->arena_id[i] = id + 1;
 		corewar->arena[i] = corewar->tab_champ[id].code[j];
 		i++;
 		j++;
