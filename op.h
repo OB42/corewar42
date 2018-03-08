@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/08 13:47:50 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/08 14:46:21 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ struct	s_ins
 	int		param[3];
 	void	(*fun)(t_ins*, t_proc*);
 	int		size;
+	int		cycle;
 };
 
 typedef	struct	s_op
@@ -117,12 +118,15 @@ typedef struct	s_corewar
 	int		nb_champ;
 	t_champ	tab_champ[6];
 	int		cycle_to_die_current;
+	int		cycle;
 }				t_corewar;
 
 struct	s_proc
 {
 	int				pc;
+	t_ins			*ins;
 	unsigned char	*curseur;
+	int				cycle;
 	unsigned char	*init;
 	int				carry;
 	int				player;

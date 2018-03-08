@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 15:54:36 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/08 13:57:54 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/08 14:20:44 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ t_ins	*ft_get_instru(unsigned char *code_champ)
 		ft_bzero(ins, sizeof(t_ins));
 		ins->name = op_tab[(int)*(code_champ) - 1].name;
 		ins->fun = op_tab[(int)*(code_champ) - 1].fun;
+		ins->cycle = op_tab[(int)*(code_champ) - 1].length;
 		if (op_tab[(int)*(code_champ) - 1].ocp == 1)
 		{
 			ins->ocp = (int) *(code_champ + 1);
