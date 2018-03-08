@@ -60,7 +60,19 @@ t_label		*add_label(char *champion, char *name, int location, int type, int spg)
 			short y;
 			y = sav->spg - ((t_label *)(rep->content))->spg;
 			y = swap16(y);
-			ft_memcpy(champion + ((t_label *)(rep->content))->location - sizeof(short), &y, sizeof(short));
+			ft_printf("%i %i %i %i\n", ((t_label *)(rep->content))->location, ((t_label *)(rep->content))->spg, sav->location, sav->spg);
+			ft_printf("%hx\n", y);
+			if (!*(champion + ((t_label *)(rep->content))->location - sizeof(short))
+				&& !*(champion + ((t_label *)(rep->content))->location - sizeof(short) + 1))
+			{
+				ft_memcpy(champion + ((t_label *)(rep->content))->location - sizeof(short), &y, sizeof(short));
+
+			}
+			else
+			{
+				ft_memcpy(champion + ((t_label *)(rep->content))->location, &y, sizeof(short));
+
+			}
 			rep = rep->next;
 		}
 		return (0);
