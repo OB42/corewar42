@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 19:09:01 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/08 17:03:33 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/08 18:47:45 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ void	ft_sti(t_ins *ins, t_proc *proc)
 		val_1 = proc->reg[ins->param[1]];
 	tmp = ft_oob(proc->init, proc->curseur + val_1 + ins->param[2] % IDX_MOD);
 	*tmp = proc->reg[ins->param[0]];
+	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }
