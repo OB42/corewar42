@@ -43,7 +43,7 @@ typedef struct		s_op
 	int				args_type[3];
 	char			op_code;
 	char			ocp;
-	int				dontknow;//carry?
+	int				print_ocp;//carry?
 	int				d2;
 }					t_op;
 

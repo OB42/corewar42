@@ -139,9 +139,7 @@ void	parse_indirect(header_t *header, t_op *op, char *arg, char *champion, int s
 
 	r = 0;
 	if (arg[0] == LABEL_CHAR)
-	{
 		add_label(champion, arg + 1, header->prog_size, 1, spg);
-	}
 	else
 		r = swap16(ft_atos(arg));
 	save_bytes(header, champion, &r, sizeof(short));
@@ -172,7 +170,7 @@ int		parse_op(char **op_arr, header_t *header, char *champion)
 		print_error(ERR_ARG_LEN);
 	op->ocp = get_ocp(op_arr, o);
 	save_bytes(header, champion, &(op->op_code), 1);
-	if (op->op_code != 1 && op->op_code != 9 && op->op_code != 0x0c && op->op_code != 0x0f)
+	if (op->print_ocp)
 		save_bytes(header, champion, &(op->ocp), 1);
 	while (op_arr[o])
 	{
