@@ -43,12 +43,15 @@ typedef struct		s_op
 	int				args_type[3];
 	char			op_code;
 	char			ocp;
+	int				dontknow;//carry?
+	int				d2;
 }					t_op;
 
 typedef struct		s_label
 {
 	char			*name;
-	int				location;
+	short			location;
+	short			spg;
 }					t_label;
 
 typedef struct		s_labels
@@ -60,8 +63,8 @@ typedef struct		s_labels
 int			endian_swap_u32(int n);
 char		**w_char(char *str, char **words, int save, int w);
 char		**split(char *str);
-t_label		*get_label(char *name, int type);
-t_label		*add_label(char *name, int location, int type);
+t_label		*get_label(char *champion, char *name, int type);
+t_label		*add_label(char *champion, char *name, int location, int type, int spg);
 int			parse_op(char **op_arr, header_t *header, char *champion);
 char		*check_cmd(char *cmd, int fd, char **line, size_t max_length);
 void		parse_cmd(char *cmd, char *dest, int fd, size_t max_length);

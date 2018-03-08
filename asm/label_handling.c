@@ -23,30 +23,50 @@ int valid_label(char *label)
 	return (1);
 }
 
-t_label		*get_label(char *name, int type)
+t_label		*get_label(char *champion, char *name, int type)
 {
-	return (add_label(name, -1, type));
+	return (add_label(champion, name, -1, type,-1));
 }
 
-t_label		*new_label(char *name, int location)
+t_label		*new_label(char *name, int location, int spg)
 {
 	t_label	*temp;
 
 	temp = pr_malloc(sizeof(t_label));
 	temp->location = location;
+	temp->spg = spg;
 	temp->name = pr_malloc(ft_strlen(name) + 1);
 	ft_strcpy(temp->name, name);
 	return (temp);
 }
-t_label		*add_label(char *name, int location, int type)
+
+t_label		*add_label(char *champion, char *name, int location, int type, int spg)
 {
 	static t_labels	labels = {0, 0};
 	t_list			*temp;
 	t_label			*label;
+	t_list			*rep;
+	t_label		*sav;
 
-	if (!valid_label(name))
-		print_error(ERR_INVALID_LABEL);
-	if (location < 0)
+	if (name == -1 && location == -1 && type == -1)
+	{
+		if (!(labels.to_replace))
+			return (0);
+		rep = labels.to_replace;
+		while (rep)
+		{
+			if (!(sav = add_label(champion, ((t_label *)(rep->content))->name, -1, 0, -1)))
+				print_error("label not found\n");
+			short y;
+			y = sav->spg - ((t_label *)(rep->content))->spg;
+			y = swap16(y);
+			ft_memcpy(champion + ((t_label *)(rep->content))->location - sizeof(short), &y, sizeof(short));
+			rep = rep->next;
+		}
+		return (0);
+	}
+	valid_label(name);
+	if (location == -1)
 	{
 		temp = (type ? (labels.to_replace) : (labels.saved));
 		while (temp)
@@ -56,12 +76,11 @@ t_label		*add_label(char *name, int location, int type)
 			temp = temp->next;
 		}
 	}
-	else if (!add_label(name, -1, type))
+	else if (type || !add_label(champion, name, -1, type, -1))
 	{
-		label = new_label(name, location);
-		if (!(temp = ft_lstnew(label, sizeof(t_label))))
-			print_error(ERR_MALLOC);
-		pr_free(label);
+		label = new_label(name, location, spg);
+		temp = pr_malloc(sizeof(t_list));
+		temp->content = label;
 		temp->next = (type ? (labels.to_replace) : (labels.saved));
 		type ? (labels.to_replace = temp) : (labels.saved = temp);
 		return (temp->content);

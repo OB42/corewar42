@@ -29,24 +29,31 @@ t_op	*find_op(t_op op_tab[], char *name)
 
 t_op	*get_op(char *name)
 {
-	static t_op	op_tab[17] = {
-		{"live", 1, {T_DIR}, 1},
-		{"ld", 2, {T_DIR | T_IND, T_REG}, 2},
-		{"st", 2, {T_REG, T_IND | T_REG}, 3},
-		{"add", 3, {T_REG, T_REG, T_REG}, 4},
-		{"sub", 3, {T_REG, T_REG, T_REG}, 5},
-		{"and", 3, {T_REG | T_DIR | T_IND, T_REG | T_IND | T_DIR, T_REG}, 6},
-		{"or", 3, {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}, 7},
-		{"xor", 3, {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}, 8},
-		{"zjmp", 1, {T_DIR}, 9},
-		{"ldi", 3, {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}, 10},
-		{"sti", 3, {T_REG, T_REG | T_DIR | T_IND, T_DIR | T_REG}, 11},
-		{"fork", 1, {T_DIR}, 12},
-		{"lld", 2, {T_DIR | T_IND, T_REG}, 13},
-		{"lldi", 3, {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}, 14},
-		{"lfork", 1, {T_DIR}, 15},
-		{"aff", 1, {T_REG}, 16},
-		{0, 0, {0}}
+	static t_op    op_tab[17] =
+	{
+		{"live", 1, {T_DIR}, 1, -1, 0, 0},
+		{"ld", 2, {T_DIR | T_IND, T_REG}, 2, -1, 1, 0},
+		{"st", 2, {T_REG, T_IND | T_REG}, 3, -1, 1, 0},
+		{"add", 3, {T_REG, T_REG, T_REG}, 4, -1, 1, 0},
+		{"sub", 3, {T_REG, T_REG, T_REG}, 5, -1, 1, 0},
+		{"and", 3, {T_REG | T_DIR | T_IND, T_REG | T_IND | T_DIR, T_REG}, 6, -1,
+		1, 0},
+		{"or", 3, {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}, 7, -1,
+		1, 0},
+		{"xor", 3, {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}, 8, -1,
+		 1, 0},
+		{"zjmp", 1, {T_DIR}, 9, -1, 0, 1},
+		{"ldi", 3, {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}, 10, -1,
+		 1, 1},
+		{"sti", 3, {T_REG, T_REG | T_DIR | T_IND, T_DIR | T_REG}, 11, -1,
+		 1, 1},
+		{"fork", 1, {T_DIR}, 12, -1, 0, 1},
+		{"lld", 2, {T_DIR | T_IND, T_REG}, 13, -1, 1, 0},
+		{"lldi", 3, {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}, 14, -1,
+1, 1},
+		{"lfork", 1, {T_DIR}, 15, -1, 0, 1},
+		{"aff", 1, {T_REG}, 16, -1, 1, 0},
+		{0, 0, {0}, 0, 0, 0, 0}
 	};
 
 	return (find_op(op_tab, name));
@@ -97,36 +104,43 @@ void	parse_register(header_t *header, t_op *op, char *arg, char *champion)
 	save_bytes(header, champion, &r, 1);
 }
 
-void	parse_direct(header_t *header, t_op *op, char *arg, char *champion)
-{
-	int	r;
-
-	r = 0;
-	if (arg[1] == LABEL_CHAR)
-	{
-		add_label(arg + 2, header->prog_size, 1);
-		save_bytes(header, champion, &r, 2);
-	}
-	else
-	{
-		r = endian_swap_u32(ft_atoi(arg + 1));
-		save_bytes(header, champion, &r, sizeof(int));
-	}
-}
-
 short swap16(short n)
 {
 	return (n << 8) | ((n >> 8) & 0xFF);
 }
 
-void	parse_indirect(header_t *header, t_op *op, char *arg, char *champion)
+void	parse_direct(header_t *header, t_op *op, char *arg, char *champion, int spg)
+{
+	short	r;
+	int		n;
+	r = 0;
+	n = 0;
+
+	if (!(op->d2))
+	{
+		n = endian_swap_u32(ft_atoi(arg + 1));
+		save_bytes(header, champion, &n, sizeof(int));
+	}
+	else
+	{
+		r = swap16(ft_atos(arg + 1));
+		save_bytes(header, champion, &r, sizeof(short));
+	}
+	if (arg[1] == LABEL_CHAR)
+	{
+		add_label(champion, arg + 2, header->prog_size, 1, spg);
+	}
+}
+
+
+void	parse_indirect(header_t *header, t_op *op, char *arg, char *champion, int spg)
 {
 	short	r;
 
 	r = 0;
 	if (arg[0] == LABEL_CHAR)
 	{
-		add_label(arg + 1, header->prog_size, 1);
+		add_label(champion, arg + 1, header->prog_size, 1, spg);
 	}
 	else
 		r = swap16(ft_atos(arg));
@@ -139,22 +153,26 @@ int		parse_op(char **op_arr, header_t *header, char *champion)
 	t_op	*op;
 	char 	ocp;
 	int		arv;
-
+	int spg;
 	o = 0;
+	spg = header->prog_size;
 
-	if (op_arr[0] && op_arr[0][ft_strlen(op_arr[0]) - 1] == LABEL_CHAR && !op_arr[1])
+	if (op_arr[0] && op_arr[0][ft_strlen(op_arr[0]) - 1] == LABEL_CHAR)
 	{
 		op_arr[0][ft_strlen(op_arr[0]) - 1] = 0;
-		add_label(op_arr[o++], header->prog_size, 0);
-		pr_free_char_arr(op_arr);
-		return (0);
+		add_label(champion, op_arr[o++], header->prog_size, 0, spg);
+		if (!op_arr[1])
+		{
+			pr_free_char_arr(op_arr);
+			return (0);
+		}
 	}
 	op = get_op(op_arr[o++]);
 	if (ft_arrstrlen(&(op_arr[o])) != op->arg_len)
 		print_error(ERR_ARG_LEN);
 	op->ocp = get_ocp(op_arr, o);
 	save_bytes(header, champion, &(op->op_code), 1);
-	if (op->op_code != 1 && op->op_code != 9)
+	if (op->op_code != 1 && op->op_code != 9 && op->op_code != 0x0c && op->op_code != 0x0f)
 		save_bytes(header, champion, &(op->ocp), 1);
 	while (op_arr[o])
 	{
@@ -166,15 +184,16 @@ int		parse_op(char **op_arr, header_t *header, char *champion)
 		else if (op_arr[o][0] == DIRECT_CHAR)
 		{
 			arv += T_DIR;
-			parse_direct(header, op, op_arr[o], champion);
+			parse_direct(header, op, op_arr[o], champion, spg);
 		}
 		else
 		{
 			arv += T_IND;
-			parse_indirect(header, op, op_arr[o], champion);
+			parse_indirect(header, op, op_arr[o], champion, spg);
 		}
 		o++;
 	}
+	//CHECK PARAMS TYPE
 	pr_free_char_arr(op_arr);
 	return (0);
 }

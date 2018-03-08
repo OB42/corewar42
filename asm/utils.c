@@ -30,8 +30,10 @@ void	skip_empty_lines(char **line, int input_fd, int *g)
 	while (!(*line) || empty_line(*line))
 	{
 		pr_free(*line);
-		if ((*g = get_next_line(input_fd, line)) != 1)
+		if ((*g = get_next_line(input_fd, line)) == -1)
 			print_error(ERR_GNL);
+		else if (!(*g))
+			break;
 	}
 }
 
