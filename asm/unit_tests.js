@@ -71,9 +71,13 @@ exec('rm vm_champs/*.cor;rm mine/*.cor;rm temp_test;make', () => {
 	var fail = (filename) =>
 	{
 		console.log(`\x1b[31mFAILING ${F++ +1}/${arr.length} tests\x1b[0m`, filename);
+		if (P + F == arr.length)
+			exec('rm */*.cor', () => {});
 	}
 	var pass = (filename) =>
 	{
 		console.log(`\x1b[32mPASSING ${P++ +1}/${arr.length} tests\x1b[0m`, filename);
+		if (P + F == arr.length)
+			exec('rm */*.cor', () => {});
 	}
 });
