@@ -48,21 +48,22 @@ exec('rm vm_champs/*.cor;rm mine/*.cor;rm temp_test;make', () => {
 				{
 					exec(`./rcorewar ${b}.cor`, (err, stdout, stderr) => {
 						console.log('_________________________');
-						console.log(stdout + stderr)
 						if ((stderr + stdout).match(/error/i))
 						{
 							console.log("Corewar and my ASM both returned an error.")
+							console.log(stdout + stderr)
 							pass(filename, i);
 						}
 						else {
 							console.log("My ASM returned an error when compiling a valid file.")
 							console.log(ar);
+							console.log(stdout + stderr)
 							fail(filename, i);
 						}
 					})
 				}
 				else {
-					console.log("THIS PROBABLY WONT HAPPEN(too lazy to handle this case)")
+					console.log("THIS PROBABLY SHOULDN'T HAPPEN")
 				}
 			});
 		});
@@ -75,46 +76,4 @@ exec('rm vm_champs/*.cor;rm mine/*.cor;rm temp_test;make', () => {
 	{
 		console.log(`\x1b[32mPASSING ${P++ +1}/${arr.length} tests\x1b[0m`, filename);
 	}
-})
-
-/*	try {
-		exec(`./rasm ${b}.s >> temp_test 2>&1`);
-	} catch (e) {
-		exec(`./rasm ${b}.s >> temp_test 2>&1`);
-	} finally {
-		if ((fs.existsSync(a + '.cor') && fs.existsSync(b + '.cor')))
-		{
-//			exec(`diff ${ax} ${bx}`);
-			console.log(`good`)
-		}
-		else {
-			console.log(`bad`)
-		}
-
-	}*/
-
-/*		if ((fs.existsSync(ax) && fs.existsSync(bx)) || (!fs.existsSync(ax) && !fs.existsSync(bx)))
-			console.log('\x1b[32mPASSING\x1b[0m', filename , `Both files were ${(fs.existsSync(ax) && fs.existsSync(bx)) ? '' : 'NOT '}created`);
-		else
-		{
-			try {
-				console.log("COREWAR", filename)
-				exec(`./rcorewar ${ax}`);
-				console.log('\x1b[31mFAILING\x1b[0m', filename);
-
-			} catch (e) {
-				console.log("error in corewar:", e.stdout.toString());
-				console.log('\x1b[32mPASSING\x1b[0m', filename);
-			}
-		}
-	} catch (e) {
-		exec(`hexdump ${bx} > temp_hex_mine`);
-		exec(`hexdump ${ax} > temp_hex_vm_champs`);
-		try {
-			exec(`diff temp_hex_mine temp_vm_champs`);
-		}
-		catch (e){
-			console.log(e.stdout.toString());
-			console.log('\x1b[31mDIFFER\x1b[0m', filename);
-		}
-	}*/
+});
