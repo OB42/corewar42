@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 15:54:36 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/08 14:20:44 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/08 18:10:35 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,11 @@ void	ft_get_var(t_ins *ins, unsigned char *code_champ)
 	if (ins->ocp < 0)
 		ins->ocp = 256 + ins->ocp;
 	if ((ins->ocp & 0x80) && (ins->ocp & 0x40))
-		code_champ = ft_get_ind(ins, code_champ, 0);
+		code_champ = ft_get_ind(ins, code_champ, 2);
 	else if (ins->ocp & 0x80)
-		code_champ = ft_get_dir(ins, code_champ, 0);
+		code_champ = ft_get_dir(ins, code_champ, 2);
 	else if (ins->ocp & 0x40)
-		code_champ = ft_get_reg(ins, code_champ, 0);
+		code_champ = ft_get_reg(ins, code_champ, 2);
 	if (ins->ocp & 0x20 && ins->ocp & 0x10)
 		code_champ = ft_get_ind(ins, code_champ, 1);
 	else if (ins->ocp & 0x20)
@@ -64,11 +64,11 @@ void	ft_get_var(t_ins *ins, unsigned char *code_champ)
 	else if (ins->ocp & 0x10)
 		code_champ = ft_get_reg(ins, code_champ, 1);
 	if (ins->ocp & 8 && ins->ocp & 4)
-		code_champ = ft_get_ind(ins, code_champ, 2);
+		code_champ = ft_get_ind(ins, code_champ, 0);
 	else if (ins->ocp & 8)
-		code_champ = ft_get_dir(ins, code_champ, 2);
+		code_champ = ft_get_dir(ins, code_champ, 0);
 	else if (ins->ocp & 4)
-		code_champ = ft_get_reg(ins, code_champ, 2);
+		code_champ = ft_get_reg(ins, code_champ, 0);
 }
 
 t_ins	*ft_get_instru(unsigned char *code_champ)
@@ -87,6 +87,7 @@ t_ins	*ft_get_instru(unsigned char *code_champ)
 		ins->cycle = op_tab[(int)*(code_champ) - 1].length;
 		if (op_tab[(int)*(code_champ) - 1].ocp == 1)
 		{
+			ins->size = ins->size + 1;
 			ins->ocp = (int) *(code_champ + 1);
 			ft_get_var(ins, code_champ + 2);
 		}

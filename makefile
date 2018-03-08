@@ -17,7 +17,9 @@ SRC = main.c\
 	  ft_sub.c\
 	  ft_fork.c\
 	  ft_andorxor.c\
-	  ft_zjmp.c
+	  ft_zjmp.c\
+	  ft_oob.c\
+	  ft_print_instru.c
 
 
 OBJ = $(SRC:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 20:54:24 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/08 14:07:15 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/08 18:00:08 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 unsigned char	*ft_get_ind(t_ins *ins, unsigned char *curseur, int n_param)
 {
+	ft_printf("INDEX\n");
 	if (n_param == 1)
 		ins->param[n_param] = 16 * *(curseur) + *(curseur + 1);
 	ins->size = ins->size + 2;
@@ -23,6 +24,7 @@ unsigned char	*ft_get_ind(t_ins *ins, unsigned char *curseur, int n_param)
 
 unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param)
 {
+	ft_printf("DIRECT\n");
 	if(ft_strcmp (ins->name, "ldi") == 0 ||
 		ft_strcmp (ins->name, "sti") == 0 ||
 		ft_strcmp (ins->name, "lldi") == 0 ||
@@ -45,6 +47,7 @@ unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param)
 
 unsigned char	*ft_get_reg(t_ins *ins, unsigned char *curseur, int n_param)
 {
+	ft_printf("REGISTRE\n");
 	ins->param[n_param] = *curseur;
 	ins->size = ins->size + 1;
 	return (curseur + 1);

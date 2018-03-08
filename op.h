@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/08 14:46:21 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/08 17:30:30 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,6 @@ void			ft_sub(t_ins *ins, t_proc *proc);
 void			ft_add(t_ins *ins, t_proc *proc);
 void			load_arena(t_corewar *corewar);
 void			ft_print_arena(unsigned char *arena);
-void			ft_fork(t_ins *ins, t_proc *proc);
 void			ft_lfork(t_ins *ins, t_proc *proc);
 void			ft_lldi(t_ins *ins, t_proc *proc);
 void			ft_lld(t_ins *ins, t_proc *proc);
@@ -163,3 +162,5 @@ void			ft_and(t_ins *ins, t_proc *proc);
 void			ft_or(t_ins *ins, t_proc *proc);
 void			ft_xor(t_ins *ins, t_proc *proc);
 void			ft_zjmp(t_ins *ins, t_proc *proc);
+void			ft_print_instru(t_proc *lst_proc);
+unsigned char	*ft_oob(unsigned char *init, unsigned char *dest);

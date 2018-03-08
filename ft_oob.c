@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_arena.c                                   :+:      :+:    :+:   */
+/*   ft_oob.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/07 14:37:46 by mlegeay           #+#    #+#             */
-/*   Updated: 2018/03/08 17:39:06 by vburidar         ###   ########.fr       */
+/*   Created: 2018/03/08 15:51:26 by vburidar          #+#    #+#             */
+/*   Updated: 2018/03/08 16:52:38 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "LIBFT/libft.h"
 #include "op.h"
 
-void    ft_print_arena(unsigned char	*arena)
+unsigned char	*ft_oob(unsigned char *init, unsigned char *dest)
 {
-	unsigned int i;
-
-	i = 0;
-	while (i < MEM_SIZE)
-	{
-		ft_printf("%02x ", arena[i]);
-		i++;
-		if ((i % 16) == 0)
-			ft_printf("\n");
-	}
+	if (dest - init > MEM_SIZE)
+		return (init + (dest - init) % MEM_SIZE);
+	else
+		return (dest);
 }

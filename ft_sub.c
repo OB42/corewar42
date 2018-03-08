@@ -6,7 +6,7 @@
 /*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 18:55:33 by mlegeay           #+#    #+#             */
-/*   Updated: 2018/03/07 21:35:40 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/08 17:08:14 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ void    ft_sub(t_ins *ins, t_proc *proc)
 		proc->carry = 1;
 	else
 		proc->carry = 0;
+	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }

@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_arena.c                                   :+:      :+:    :+:   */
+/*   ft_print_instru.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/07 14:37:46 by mlegeay           #+#    #+#             */
-/*   Updated: 2018/03/08 17:39:06 by vburidar         ###   ########.fr       */
+/*   Created: 2018/03/08 17:26:58 by vburidar          #+#    #+#             */
+/*   Updated: 2018/03/08 17:51:55 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "LIBFT/libft.h"
 #include "op.h"
 
-void    ft_print_arena(unsigned char	*arena)
+void	ft_print_instru(t_proc *proc)
 {
-	unsigned int i;
+	int		i;
 
 	i = 0;
-	while (i < MEM_SIZE)
+	ft_printf("ADV %d (0x%04x -> 0x%04x)", proc->ins->size + 1, proc->curseur - proc->init, proc->curseur - proc->init + proc->ins->size);
+	while (i <= proc->ins->size + 1)
 	{
-		ft_printf("%02x ", arena[i]);
+		ft_printf("%02x ", *(ft_oob(proc->init, proc->curseur + i)));
 		i++;
-		if ((i % 16) == 0)
-			ft_printf("\n");
 	}
 }
