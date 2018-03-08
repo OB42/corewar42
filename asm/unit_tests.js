@@ -28,7 +28,6 @@ exec(`make`);
 		exec(`./rasm ${b}`);
 	} catch (e) {
 		console.log("error in vm_champs:", e.stdout.toString());
-//		console.log("err in vm_champs asm", filename);
 	}
 	try {
 		if ((fs.existsSync(ax) && fs.existsSync(bx)))
@@ -60,26 +59,4 @@ exec(`make`);
 			console.log('\x1b[31mDIFFER\x1b[0m', filename);
 		}
 	}
-
-
 });
-
-
-/*
-//>> log_file 2>&1
-
-var p = path.resolve(`ch/${filename}`);
-
-try {
-	exec(`./rcorewar ${p}`);
-
-} catch (e) {
-	console.log("err", filename);
-}
-if (fs.existsSync(`./ch/${filename.replace('.s', '.cor')}`))
-{
-	console.log("yeah", filename);
-}
-
-//if (output.slice(0,5) != 'ERROR')
-	//console.log(filename);*/
