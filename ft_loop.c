@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/07 22:25:02 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/08 14:05:53 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	ft_val_proc(t_proc *lst_proc, t_corewar corewar, int i, t_proc *init)
 {
 	lst_proc->curseur = corewar.arena + i * (MEM_SIZE / corewar.nb_champ);
 	ft_print_arena(corewar.arena);
+	lst_proc->init = corewar.arena;
 	lst_proc->pc = 0;
 	lst_proc->carry = 0;
 	lst_proc->nxt = init;

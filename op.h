@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/07 22:20:33 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/08 13:47:50 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ struct	s_ins
 	int		ocp;
 	int		param[3];
 	void	(*fun)(t_ins*, t_proc*);
+	int		size;
 };
 
 typedef	struct	s_op
@@ -122,6 +123,7 @@ struct	s_proc
 {
 	int				pc;
 	unsigned char	*curseur;
+	unsigned char	*init;
 	int				carry;
 	int				player;
 	int				live;

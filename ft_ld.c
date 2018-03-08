@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:57:09 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/07 21:33:20 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/08 14:07:07 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_ld(t_ins *ins, t_proc *proc)
 		proc->carry = 1;
 	else
 		proc->carry = 0;
+	proc->curseur = proc->curseur + ins->size + 1;
 }
 
 void	ft_lld(t_ins *ins, t_proc *proc)

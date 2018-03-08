@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 15:54:36 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/07 22:11:30 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/08 13:57:54 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ t_ins	*ft_get_instru(unsigned char *code_champ)
 
 	ins = NULL;
 	op_tab = ft_get_op_tab();
-	ft_printf("%d\n", (int)*code_champ);
 	if (ft_is_instruc(*code_champ))
 	{
 		ins = malloc(sizeof(t_ins));
