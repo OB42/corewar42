@@ -22,7 +22,7 @@ char	*skip_whitespaces(char *s)
 void	check_line(char *s)
 {
 	s = skip_whitespaces(s);
-	if (*s && *s != COMMENT_CHAR)
+	if (*s && *s != COMMENT_CHAR && *s != COMMENT_CHAR_2)
 		print_error(ERR_SYNTAX);
 }
 

@@ -16,7 +16,7 @@ int		empty_line(char *str)
 {
 	while (str && *str)
 	{
-		if (*str == COMMENT_CHAR)
+		if (*str == COMMENT_CHAR || *str == COMMENT_CHAR_2)
 			break ;
 		if (!ft_strchr(" \t\n\v\f\r", *str))
 			return (0);

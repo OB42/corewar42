@@ -54,6 +54,8 @@ char	*parse_champion(header_t *header, int input_fd)
 		{
 			if (ft_strchr(line, COMMENT_CHAR))
 				*ft_strchr(line, COMMENT_CHAR) = 0;
+			if (ft_strchr(line, COMMENT_CHAR_2))
+				*ft_strchr(line, COMMENT_CHAR_2) = 0;
 			parse_op(split_op(line), header, champion);
 		}
 		pr_free(line);
