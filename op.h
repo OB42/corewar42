@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/08 18:35:33 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/09 17:00:39 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ typedef char	t_arg_type;
 # define COMMENT_LENGTH		(2048)
 # define COREWAR_EXEC_MAGIC	0xea83f3
 
-
 typedef struct s_proc	t_proc;
 
 typedef struct s_ins	t_ins;
@@ -123,6 +122,7 @@ typedef struct	s_corewar
 
 struct	s_proc
 {
+	int				id;
 	int				pc;
 	t_ins			*ins;
 	unsigned char	*curseur;
@@ -164,3 +164,6 @@ void			ft_xor(t_ins *ins, t_proc *proc);
 void			ft_zjmp(t_ins *ins, t_proc *proc);
 void			ft_print_instru(t_proc *lst_proc);
 unsigned char	*ft_oob(unsigned char *init, unsigned char *dest);
+int				ft_addlim(int decal);
+void			ft_print_proc(t_proc *proc);
+int				ft_get_procnb(t_proc *proc);

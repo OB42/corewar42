@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/08 19:27:09 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/09 17:32:45 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 void	ft_val_proc(t_proc *lst_proc, t_corewar corewar, int i, t_proc *init)
 {
 	lst_proc->curseur = corewar.arena + i * (MEM_SIZE / corewar.nb_champ);
-	ft_print_arena(corewar.arena);
 	lst_proc->init = corewar.arena;
 	lst_proc->pc = 0;
 	lst_proc->carry = 0;
@@ -25,6 +24,7 @@ void	ft_val_proc(t_proc *lst_proc, t_corewar corewar, int i, t_proc *init)
 	lst_proc->player = i;
 	lst_proc->live = 0;
 	lst_proc->ins = NULL;
+	lst_proc->id = ft_get_procnb(lst_proc);
 }
 	
 
@@ -54,15 +54,12 @@ t_proc	*ft_init_proc(t_corewar corewar)
 void	ft_loop(t_corewar corewar)
 {
 	t_proc *lst_proc;
-	//char	*line;
 
 	lst_proc = ft_init_proc(corewar);
 	while (lst_proc)
 	{
 		if (lst_proc->cycle != 0 && lst_proc->cycle == lst_proc->ins->cycle)
 		{
-			ft_print_instru(lst_proc);
-			//get_next_line(0, &line);
 			(lst_proc->ins->fun)(lst_proc->ins, lst_proc);
 			lst_proc->cycle = 0;
 		}
@@ -74,5 +71,7 @@ void	ft_loop(t_corewar corewar)
 		if (lst_proc->player == 0)
 			corewar.cycle++;
 		lst_proc = lst_proc->nxt;
+		//if (corewar.cycle == 5000)
+		//	exit(1);
 	}
 }

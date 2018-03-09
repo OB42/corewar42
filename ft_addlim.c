@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_zjmp.c                                          :+:      :+:    :+:   */
+/*   ft_addlim.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/07 21:40:52 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/09 16:43:22 by vburidar         ###   ########.fr       */
+/*   Created: 2018/03/09 14:37:31 by vburidar          #+#    #+#             */
+/*   Updated: 2018/03/09 15:04:56 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "LIBFT/libft.h"
 #include "op.h"
 
-void	ft_zjmp(t_ins *ins, t_proc *proc)
+int	ft_addlim (int decal)
 {
-	ft_print_proc(proc);
-	if (proc->carry == 1)
-	{
-		proc->curseur = ft_oob(proc->init, proc->curseur + ins->param[0] % MEM_SIZE);
-		ft_printf("JUMP OK\n");
-	}
+	if(decal % MEM_SIZE <= IDX_MOD || decal % MEM_SIZE >= MEM_SIZE - IDX_MOD)
+		return(decal);
+	else if(decal > IDX_MOD)
+		return(decal % IDX_MOD);
 	else
-	{
-		ft_print_instru(proc);
-		proc->curseur = ft_oob(proc->init, proc->curseur + 3);
-		ft_printf("JUMP FAILURE\n");
-	}
+		return((MEM_SIZE - decal) % IDX_MOD);
 }

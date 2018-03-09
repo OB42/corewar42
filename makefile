@@ -19,7 +19,9 @@ SRC = main.c\
 	  ft_andorxor.c\
 	  ft_zjmp.c\
 	  ft_oob.c\
-	  ft_print_instru.c
+	  ft_print_instru.c\
+	  ft_addlim.c\
+	  ft_print_proc.c\
 
 
 OBJ = $(SRC:.c=.o)

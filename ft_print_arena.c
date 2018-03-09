@@ -6,7 +6,7 @@
 /*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:46 by mlegeay           #+#    #+#             */
-/*   Updated: 2018/03/08 17:39:06 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/09 17:13:02 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void    ft_print_arena(unsigned char	*arena)
 	{
 		ft_printf("%02x ", arena[i]);
 		i++;
-		if ((i % 16) == 0)
+		if ((i % 64) == 0)
 			ft_printf("\n");
 	}
 }
