@@ -30,13 +30,13 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	make -C LIBFT
-	gcc -Wall -Wextra -Werror -o $(NAME) $(OBJ) -L. LIBFT/libft.a
+	gcc -fsanitize=address -Wall -Wextra -Werror -o $(NAME) $(OBJ) -L. LIBFT/libft.a
 
 $(FT_PRINTF):
 	make all -C LIBFT
 
 %.o : %.c
-	gcc -o $@ -c $< -g -Wall -Wextra -Werror
+	gcc -fsanitize=address -o $@ -c $< -g -Wall -Wextra -Werror
 
 clean :
 	rm -rf *.o

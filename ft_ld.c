@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:57:09 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/09 18:05:14 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/09 19:17:14 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,6 @@ void	ft_ld(t_ins *ins, t_proc *proc)
 		proc->carry = 1;
 	else
 		proc->carry = 0;
-	ft_printf("P%5d | %s", proc->id, proc->ins->name);
-	ft_printf(" %d %d\n", ins->param[0], ins->param[1]);
-	ft_print_instru(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }
 
@@ -41,8 +38,5 @@ void	ft_lld(t_ins *ins, t_proc *proc)
 		proc->carry = 1;
 	else
 		proc->carry = 0;
-	ft_printf("P%5d | %s", proc->id, proc->ins->name);
-	ft_printf(" %d %d\n", ins->param[0], ins->param[1]);
-	ft_print_instru(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }

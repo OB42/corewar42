@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 20:35:25 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/09 16:59:20 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/09 19:18:12 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ void	ft_fork(t_ins *ins, t_proc *proc)
 {
 	t_proc *new;
 
-	ft_print_proc(proc);
-	ft_print_instru(proc);
 	new = malloc(sizeof(t_proc));
 	new = ft_memmove(new, proc, sizeof(t_proc));
 	new->curseur = ft_oob(proc->init, proc->curseur + ins->param[0]);

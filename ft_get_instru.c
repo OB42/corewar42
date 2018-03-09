@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 15:54:36 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/09 16:32:43 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/09 19:49:36 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,6 @@ t_ins	*ft_get_instru(unsigned char *code_champ)
 			ins->size = op_tab[(int)*(code_champ) - 1].size_no_ocp;
 			ins->param[0] = ft_get_int(code_champ + 1, ins->size);
 		}
-		//ft_printf("\nname = %s,ocp = %d, param %d %d %d\n", ins->name, ins->ocp, ins->param[0], ins->param[1], ins->param[2]);
 	}
 	else
 		ft_printf("bad instruction\n");

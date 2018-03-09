@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 19:09:01 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/09 16:36:03 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/09 19:16:12 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,6 @@ void	ft_sti(t_ins *ins, t_proc *proc)
 	else if (ins->ocp & 0x10)
 		val_1 = proc->reg[ins->param[1]];
 	tmp = ft_oob(proc->init, proc->curseur + val_1 + ins->param[2] % IDX_MOD);
-	ft_printf("P%5d | %s", proc->id, proc->ins->name);
-	ft_printf(" r%d %d %d\n", ins->param[0], val_1, ins->param[2]);
-	ft_printf("       | -> store to %d + %d = %d\n", val_1, ins->param[2], tmp - proc->curseur);
-	*tmp = proc->reg[ins->param[0]];
-	ft_print_instru(proc);
+	proc->corewar->arena[tmp - proc->init] = proc->reg[ins->param[0]];
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }
