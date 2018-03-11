@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:22:00 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/09 19:17:21 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/11 15:52:17 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	ft_live(t_ins *ins, t_proc *proc)
 {
 	proc->live = 1;
-	ins->name = NULL;
+	ins->size = ins->size;
 	//ft_printf("joueur %s (%d ou %d) est en vie\n", proc->champ.header.prog_name, ins->param[0], proc->player);
 	proc->curseur = ft_oob(proc->init, proc->curseur + 5);
 }
