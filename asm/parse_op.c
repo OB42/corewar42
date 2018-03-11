@@ -18,6 +18,7 @@ void	check_nbr_parsing(char c)
 	&& c != COMMENT_CHAR && c != COMMENT_CHAR_2))
 		print_error(ERR_NBR_PARSING);
 }
+
 short		pr_atos(const char *str)
 {
 	short i;
@@ -173,9 +174,9 @@ void	parse_direct(header_t *header, t_op *op, char *arg, char *champion, int spg
 {
 	short	r;
 	int		n;
+
 	r = 0;
 	n = 0;
-
 	if (!(op->d2))
 	{
 		if (!ft_isdigit(arg[ft_strlen(arg) - 1]))

@@ -41,7 +41,7 @@ exec('rm vm_champs/*.cor;rm mine/*.cor;rm temp_test;make re', () => {
 					});
 				}
 				else
-					fail(filename, "My corewar compiled an unvalid .s file.", bstdout + bstderr);
+					fail(filename, "My corewar compiled an invalid .s file.", bstdout + bstderr);
 			});
 		});
 	});
