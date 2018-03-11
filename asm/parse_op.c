@@ -151,12 +151,11 @@ int		parse_op(char **op_arr, header_t *header, char *champion)
 	t_op	*op;
 	char 	ocp;
 	int		arv;
-	int		spg;
-	int		a;
+	int spg;
+	int a;
 
 	o = 0;
 	spg = header->prog_size;
-
 	if (op_arr[0] && op_arr[0][ft_strlen(op_arr[0]) - 1] == LABEL_CHAR)
 	{
 		op_arr[0][ft_strlen(op_arr[0]) - 1] = 0;
@@ -174,6 +173,7 @@ int		parse_op(char **op_arr, header_t *header, char *champion)
 	save_bytes(header, champion, &(op->op_code), 1);
 	if (op->print_ocp)
 		save_bytes(header, champion, &(op->ocp), 1);
+	a = 0;
 	while (op_arr[o])
 	{
 		if (op_arr[o][0] == 'r')
@@ -185,16 +185,20 @@ int		parse_op(char **op_arr, header_t *header, char *champion)
 		}
 		else if (op_arr[o][0] == DIRECT_CHAR)
 		{
+			if (!((op->args_type[a] >> 1) % 2))
+				print_error(ERR_ARG_TYPE);
 			arv += T_DIR;
 			parse_direct(header, op, op_arr[o], champion, spg);
 		}
 		else
 		{
+			if (!((op->args_type[a] >> 2) % 2))
+				print_error(ERR_ARG_TYPE);
 			arv += T_IND;
 			parse_indirect(header, op, op_arr[o], champion, spg);
 		}
-		a++;
 		o++;
+		a++;
 	}
 	//CHECK PARAMS TYPE
 	pr_free_char_arr(op_arr);

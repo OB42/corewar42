@@ -56,7 +56,7 @@ t_label		*add_label(char *champion, char *name, int location, int type, int spg)
 		while (rep)
 		{
 			if (!(sav = add_label(champion, ((t_label *)(rep->content))->name, -1, 0, -1)))
-				print_error(ERR_LABEL_NOT_FOUND);
+				print_error("label not found\n");
 			short y;
 			y = sav->spg - ((t_label *)(rep->content))->spg;
 			y = swap16(y);
