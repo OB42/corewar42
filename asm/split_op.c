@@ -52,6 +52,8 @@ char	**while_char(char *str, char **words, int save, int w)
 		words[w - 1][s] = str[s];
 		s++;
 	}
+	if (w == 1 && str[s] == SEPARATOR_CHAR)
+		print_error(ERR_SYNTAX);
 	if (s)
 		words[w - 1][s] = '\0';
 	if (str[s])
@@ -63,7 +65,18 @@ char	**while_char(char *str, char **words, int save, int w)
 char	**split_op(char *str)
 {
 	char		**words;
+	char		**t;
 
+	t = ft_strrchr(str, SEPARATOR_CHAR);
+	while (t && *t)
+	{
+		if (!ft_strchr(" \t\n\v\f\r", *t))
+			break ;
+		t++;
+	}
+	if (t && !(*t))
+		print_error(ERR_SYNTAX);
 	words = 0;
+
 	return (while_blank(str, words, 1, ft_strlen(str)));
 }

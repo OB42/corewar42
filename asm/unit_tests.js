@@ -34,9 +34,11 @@ exec('rm vm_champs/*.cor;rm mine/*.cor;rm temp_test;make re', () => {
 					exec(`./rcorewar ${b}.cor`, (err, stdout, stderr) => {
 						if ((stderr + stdout).match(/error/i))
 							pass(filename, "Corewar and my ASM both returned an error.", stdout + stderr);
-						else
+						else if (!(a.includes('inv')))
 							fail(filename, "My ASM returned an error when compiling a valid file.", ar + stdout + stderr);
-					})
+						else
+							pass(filename, "My ASM return an error that isn't detected by the vm_champs ASM(this is not necessarily a mistake.)", bstdout + bstderr);
+					});
 				}
 				else
 					fail(filename, "My corewar compiled an unvalid .s file.", bstdout + bstderr);

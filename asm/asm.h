@@ -19,7 +19,8 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
-# define ERR_ARG_TYPE "Wrong arg type"
+# define ERR_NBR_PARSING "Invalid character after a number\n"
+# define ERR_ARG_TYPE "Wrong arg type\n"
 # define ERR_LABEL_NOT_FOUND "Label not found\n"
 # define ERR_USAGE "Usage: ./asm <sourcefile.s>\n"
 # define ERR_FILE_READING "Can't read source file\n"

@@ -12,6 +12,66 @@
 
 #include "asm.h"
 
+void	check_nbr_parsing(char c)
+{
+	if (c && (!ft_strchr(" \t\n\v\f\r", c) && c != SEPARATOR_CHAR
+	&& c != COMMENT_CHAR && c != COMMENT_CHAR_2))
+		print_error(ERR_NBR_PARSING);
+}
+short		pr_atos(const char *str)
+{
+	short i;
+	short nb;
+	short nega;
+
+	nega = 1;
+	while (*str == 32 || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-')
+	{
+		nega = -1;
+		str++;
+	}
+	else if (*str == 43)
+		str++;
+	nb = 0;
+	i = 0;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nb = nb * 10 + (str[i] - '0');
+		i++;
+	}
+	check_nbr_parsing(str[i]);
+	return (nb * nega);
+}
+
+int		pr_atoi(const char *str)
+{
+	int i;
+	int nb;
+	int nega;
+
+	nega = 1;
+	while (*str == 32 || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-')
+	{
+		nega = -1;
+		str++;
+	}
+	else if (*str == 43)
+		str++;
+	nb = 0;
+	i = 0;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nb = nb * 10 + (str[i] - '0');
+		i++;
+	}
+	check_nbr_parsing(str[i]);
+	return (nb * nega);
+}
+
 t_op	*find_op(t_op op_tab[], char *name)
 {
 	int i;
@@ -100,7 +160,7 @@ void	parse_register(header_t *header, t_op *op, char *arg, char *champion)
 	if (ft_strlen(arg) > 3 || !(arg[1]) || !ft_isdigit(arg[1])
 	|| (arg[2] && !ft_isdigit(arg[2])))
 		print_error(ERR_SYNTAX);
-	r = ft_atoi(arg + 1);
+	r = pr_atoi(arg + 1);
 	save_bytes(header, champion, &r, 1);
 }
 
@@ -120,7 +180,7 @@ void	parse_direct(header_t *header, t_op *op, char *arg, char *champion, int spg
 	{
 		if (!ft_isdigit(arg[ft_strlen(arg) - 1]))
 			print_error(ERR_SYNTAX);
-		n = endian_swap_u32(ft_atoi(arg + 1));
+		n = endian_swap_u32(pr_atoi(arg + 1));
 		save_bytes(header, champion, &n, sizeof(int));
 	}
 	else if (arg[1] == LABEL_CHAR)
@@ -131,15 +191,10 @@ void	parse_direct(header_t *header, t_op *op, char *arg, char *champion, int spg
 	else
 	{
 		if (!ft_isdigit(arg[ft_strlen(arg) - 1]))
-		{
-			ft_printf("%s\nWTF", arg);
-			print_error("THAT ONE\n");
 			print_error(ERR_SYNTAX);
-		}
-		r = swap16(ft_atos(arg + 1));
+		r = swap16(pr_atos(arg + 1));
 		save_bytes(header, champion, &r, sizeof(short));
 	}
-
 }
 
 
@@ -151,7 +206,7 @@ void	parse_indirect(header_t *header, t_op *op, char *arg, char *champion, int s
 	if (arg[0] == LABEL_CHAR)
 		add_label(champion, arg + 1, header->prog_size, 1, spg);
 	else
-		r = swap16(ft_atos(arg));
+		r = swap16(pr_atos(arg));
 	save_bytes(header, champion, &r, sizeof(short));
 }
 
@@ -210,7 +265,6 @@ int		parse_op(char **op_arr, header_t *header, char *champion)
 		o++;
 		a++;
 	}
-	//CHECK PARAMS TYPE
 	pr_free_char_arr(op_arr);
 	return (0);
 }

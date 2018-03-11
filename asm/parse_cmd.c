@@ -66,5 +66,10 @@ void	parse_cmd(char *cmd, char *dest, int fd, size_t max_length)
 	|| ft_strncmp(cmd, line_arr[0], ft_strlen(cmd)))
 		print_error(ERR_INVALID_COMMAND);
 	pr_free_char_arr(line_arr);
+	if (*(temp + 1) == '"')
+	{
+		pr_free(line);
+		return ;
+	}
 	cmd_buffering(dest, temp + 1, fd, line);
 }
