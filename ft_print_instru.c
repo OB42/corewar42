@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 17:26:58 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/09 18:29:41 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/11 15:28:58 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	ft_print_instru(t_proc *proc)
 	ft_printf("ADV %d (0x%04x -> 0x%04x)", proc->ins->size + 1, proc->curseur - proc->init, proc->curseur - proc->init + proc->ins->size + 1);
 	while (i <= proc->ins->size)
 	{
-		ft_printf("%02x ", *(ft_oob(proc->init, proc->curseur + i)));
+		ft_printf(" %02x", *(ft_oob(proc->init, proc->curseur + i)));
 		i++;
 	}
-	ft_printf("\n");
+	ft_printf(" \n");
 }

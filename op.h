@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/09 19:49:34 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/11 13:58:05 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,3 +169,4 @@ unsigned char	*ft_oob(unsigned char *init, unsigned char *dest);
 int				ft_addlim(int decal);
 void			ft_print_proc(t_proc *proc);
 int				ft_get_procnb(t_proc *proc);
+void			ft_verbose(t_proc *proc);

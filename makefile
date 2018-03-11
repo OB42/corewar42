@@ -22,6 +22,7 @@ SRC = main.c\
 	  ft_print_instru.c\
 	  ft_addlim.c\
 	  ft_print_proc.c\
+	  ft_verbose.c\
 
 
 OBJ = $(SRC:.c=.o)
