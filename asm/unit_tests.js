@@ -17,68 +17,47 @@ exec('rm vm_champs/*.cor;rm mine/*.cor;rm temp_test;make re', () => {
 				{
 						exec(`diff ${a}.cor ${b}.cor`, (err, stdout, stderr) => {
 							if (!(stdout.length))
-							{
-								console.log('_________________________');
-								console.log("Both files were created and are identical.");
-								pass(filename, i);
-							}
+								pass(filename, "Both files were created and are identical.", "");
 							else {
 								exec(`hexdump ${a}.cor > temp_hex_mine; hexdump ${b}.cor > temp_hex_vm_champs; diff temp_hex_mine temp_hex_vm_champs`, (err, stdout, stderr) => {
-									console.log('_________________________');
-									console.log((err + stderr + stdout).slice(0, 2048));
-									fail(filename, i);
+									fail(filename, "Different files", (err + stderr + stdout).slice(0, 2048));
 								});
 							}
 						});
 				}
 				else if (!(ar.match("Writing output")) && !(br.match("Writing output")) && !(ar.match(/fault|bus|free/i)))
-				{
-					console.log('_________________________');
-					console.log("Both ASMs returned an error");
-					console.log("Mine:", ar, "vm_champs:", br);
-					pass(filename, i);
-				}
+					pass(filename, "Both ASMs returned an error", "Mine:", ar, "vm_champs:", br);
 				else if (ar.match(/fault|bus|free/i))
-				{
-					console.log('_________________________');
-					console.log("My ASM probably crashed", ar)
-					fail(filename, i);
-				}
+					fail(filename, "My ASM probably crashed", ar);
 				else if (!(ar.match("Writing output")) && (br.match("Writing output")))
 				{
 					exec(`./rcorewar ${b}.cor`, (err, stdout, stderr) => {
-						console.log('_________________________');
 						if ((stderr + stdout).match(/error/i))
-						{
-							console.log("Corewar and my ASM both returned an error.")
-							console.log(stdout + stderr)
-							pass(filename, i);
-						}
-						else {
-							console.log("My ASM returned an error when compiling a valid file.")
-							console.log(ar);
-							console.log(stdout + stderr)
-							fail(filename, i);
-						}
+							pass(filename, "Corewar and my ASM both returned an error.", stdout + stderr);
+						else
+							fail(filename, "My ASM returned an error when compiling a valid file.", ar + stdout + stderr);
 					})
 				}
-				else {
-					console.log('_________________________');
-					console.log("My corewar compiled an unvalid .s file.")
-					console.log(bstdout + bstderr)
-					fail(filename, i);
-				}
+				else
+					fail(filename, "My corewar compiled an unvalid .s file.", bstdout + bstderr);
 			});
 		});
 	});
-	var fail = (filename) =>
+	var show_msg = (title, text) => {
+		console.log('_________________________');
+		console.log(title);
+		console.log(text);
+	}
+	var fail = (filename, title, text) =>
 	{
+		show_msg(title, text);
 		console.log(`\x1b[31mFAILING ${F++ +1}/${arr.length} tests\x1b[0m`, filename);
 		if (P + F == arr.length)
 			exec('rm */*.cor;rm temp_hex_mine; rm temp_hex_vm_champs', () => {});
 	}
-	var pass = (filename) =>
+	var pass = (filename, title, text) =>
 	{
+		show_msg(title, text);
 		console.log(`\x1b[32mPASSING ${P++ +1}/${arr.length} tests\x1b[0m`, filename);
 		if (P + F == arr.length)
 			exec('rm */*.cor;rm temp_hex_mine; rm temp_hex_vm_champs', () => {});
