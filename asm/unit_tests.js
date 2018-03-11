@@ -1,7 +1,7 @@
 const {exec} = require('child_process');
 
 path = require("path");
-exec('rm vm_champs/*.cor;rm mine/*.cor;rm temp_test;make', () => {
+exec('rm vm_champs/*.cor;rm mine/*.cor;rm temp_test;make re', () => {
 	var P = 0;
 	var F = 0;
 	var arr = (fs = require('fs'))
@@ -25,7 +25,7 @@ exec('rm vm_champs/*.cor;rm mine/*.cor;rm temp_test;make', () => {
 							else {
 								exec(`hexdump ${a}.cor > temp_hex_mine; hexdump ${b}.cor > temp_hex_vm_champs; diff temp_hex_mine temp_hex_vm_champs`, (err, stdout, stderr) => {
 									console.log('_________________________');
-									console.log(err + stderr + stdout)
+									console.log((err + stderr + stdout).slice(0, 2048));
 									fail(filename, i);
 								});
 							}
@@ -63,7 +63,10 @@ exec('rm vm_champs/*.cor;rm mine/*.cor;rm temp_test;make', () => {
 					})
 				}
 				else {
-					console.log("THIS PROBABLY SHOULDN'T HAPPEN")
+					console.log('_________________________');
+					console.log("My corewar compiled an unvalid .s file.")
+					console.log(bstdout + bstderr)
+					fail(filename, i);
 				}
 			});
 		});
@@ -72,12 +75,12 @@ exec('rm vm_champs/*.cor;rm mine/*.cor;rm temp_test;make', () => {
 	{
 		console.log(`\x1b[31mFAILING ${F++ +1}/${arr.length} tests\x1b[0m`, filename);
 		if (P + F == arr.length)
-			exec('rm */*.cor', () => {});
+			exec('rm */*.cor;rm temp_hex_mine; rm temp_hex_vm_champs', () => {});
 	}
 	var pass = (filename) =>
 	{
 		console.log(`\x1b[32mPASSING ${P++ +1}/${arr.length} tests\x1b[0m`, filename);
 		if (P + F == arr.length)
-			exec('rm */*.cor', () => {});
+			exec('rm */*.cor;rm temp_hex_mine; rm temp_hex_vm_champs', () => {});
 	}
 });
