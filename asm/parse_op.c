@@ -118,18 +118,28 @@ void	parse_direct(header_t *header, t_op *op, char *arg, char *champion, int spg
 
 	if (!(op->d2))
 	{
+		if (!ft_isdigit(arg[ft_strlen(arg) - 1]))
+			print_error(ERR_SYNTAX);
 		n = endian_swap_u32(ft_atoi(arg + 1));
 		save_bytes(header, champion, &n, sizeof(int));
 	}
+	else if (arg[1] == LABEL_CHAR)
+	{
+		save_bytes(header, champion, &r, sizeof(short));
+		add_label(champion, arg + 2, header->prog_size, 1, spg);
+	}
 	else
 	{
+		if (!ft_isdigit(arg[ft_strlen(arg) - 1]))
+		{
+			ft_printf("%s\nWTF", arg);
+			print_error("THAT ONE\n");
+			print_error(ERR_SYNTAX);
+		}
 		r = swap16(ft_atos(arg + 1));
 		save_bytes(header, champion, &r, sizeof(short));
 	}
-	if (arg[1] == LABEL_CHAR)
-	{
-		add_label(champion, arg + 2, header->prog_size, 1, spg);
-	}
+
 }
 
 
