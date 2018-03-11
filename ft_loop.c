@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/11 17:14:06 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/11 22:43:30 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ void	ft_val_proc(t_proc *lst_proc, t_corewar *corewar, int i, t_proc *init)
 	lst_proc->cycle = 0;
 	lst_proc->corewar = corewar;
 	lst_proc->nxt = init;
-	lst_proc->player = i;
+	lst_proc->player = i + 1;
+	lst_proc->reg[1] = -1;
 	lst_proc->ins = NULL;
 	lst_proc->id = ft_get_procnb(lst_proc);
+	lst_proc->champ = corewar->tab_champ[0];
 }
 	
 
@@ -67,7 +69,7 @@ void	ft_loop(t_corewar corewar)
 		if (lst_proc->id == max_id)
 		{
 			corewar.cycle++;
-			ft_printf("It is now cycle %d\n", corewar.cycle);
+			//ft_printf("It is now cycle %d\n", corewar.cycle);
 		}
 		if (lst_proc->cycle > 1 && lst_proc->cycle == lst_proc->ins->cycle)
 		{
@@ -80,7 +82,7 @@ void	ft_loop(t_corewar corewar)
 		if (lst_proc->ins == NULL)
 			exit(1);
 		lst_proc = lst_proc->nxt;
-		if (corewar.cycle > 5000)
-			exit(1);
+		//if (corewar.cycle > 5000)
+		//	exit(1);
 	}
 }

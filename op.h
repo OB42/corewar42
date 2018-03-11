@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/11 13:58:05 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/11 22:44:09 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,3 +170,4 @@ int				ft_addlim(int decal);
 void			ft_print_proc(t_proc *proc);
 int				ft_get_procnb(t_proc *proc);
 void			ft_verbose(t_proc *proc);
+void			ft_write_ram(int value, int size, unsigned char *ram);

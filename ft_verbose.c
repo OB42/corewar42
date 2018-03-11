@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 13:47:23 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/11 15:43:47 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/11 22:40:58 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int		ft_valid_instru(char *name)
 		return (1);
 	if (ft_strcmp(name, "live") == 0)
 		return (1);
+	if (ft_strcmp(name, "ldi") == 0)
+		return (1);
 	return (0);
 }
 
@@ -33,6 +35,8 @@ int		ft_conv(int param, t_proc *proc)
 	if (ft_valid_instru(proc->ins->name))
 	{
 		ret = param % MEM_SIZE;
+		if (ft_strcmp(proc->ins->name, "live") == 0)
+			return ((char) ret);
 		if(ft_abs(ret) > IDX_MOD && ft_abs(MEM_SIZE - ret) > IDX_MOD)
 			ret = param % IDX_MOD;
 		if (ft_abs(MEM_SIZE - ret) < IDX_MOD)
@@ -71,6 +75,13 @@ void	ft_print_special(t_proc *proc)
 		ft_printf("\n       | -> store to %d + %d = %d (with pc and mod %d)",
 				tmp1, tmp2, tmp1 + tmp2, proc->curseur - proc->init + tmp1 + tmp2);
 	}
+	if(ft_strcmp(proc->ins->name, "ldi") == 0)
+	{
+		tmp1 = ft_conv(proc->ins->param[0], proc);
+		tmp2 = ft_conv(proc->ins->param[1], proc);
+		ft_printf("\n       | -> load from %d + %d = %d (with pc and mod %d)",
+				tmp1, tmp2, tmp1 + tmp2, proc->curseur - proc->init + tmp1 + tmp2);
+	}
 	if (ft_strcmp(proc->ins->name, "fork") == 0)
 		ft_printf(" (%d)", proc->curseur - proc->init + ft_conv(proc->ins->param[0], proc));
 	if (ft_strcmp(proc->ins->name, "zjmp") == 0)
@@ -83,6 +94,9 @@ void	ft_print_special(t_proc *proc)
 			ft_print_instru(proc);
 		}
 	}
+	if (ft_strcmp(proc->ins->name, "live") == 0 && (char) ft_get_int(proc->curseur + 1, 4) == proc->reg[1])
+		ft_printf("\nPlayer %d (%s) is said to be alive", proc->player, proc->champ.header.prog_name);
+
 }
 
 void	ft_verbose(t_proc *proc)

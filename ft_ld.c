@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:57:09 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/11 15:51:00 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/11 22:44:23 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,18 @@
 
 void	ft_ld(t_ins *ins, t_proc *proc)
 {
+	unsigned char *curs;
+
+	curs = ft_oob(proc->init, proc->curseur + ft_addlim(ins->param[0]));
 	if ((ins->ocp & 80) && (ins->ocp & 40))
-		proc->reg[ins->param[1]] = *(ft_oob(proc->init, proc->curseur
-		+ ft_addlim (ins->param[0])));
+		proc->reg[ins->param[1]] = ft_get_int(curs, REG_SIZE);
 	else
 		proc->reg[ins->param[1]] = ins->param[0];
 	if (ins->param[0] == 0)
 		proc->carry = 1;
 	else
 		proc->carry = 0;
+	//ft_printf("reg[%d] = %d\n", ins->param[1], ins->param[0]);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }
 
