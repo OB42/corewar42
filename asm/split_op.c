@@ -66,10 +66,32 @@ char	**split_op(char *str)
 {
 	char		**words;
 	char		*t;
+	int 		i;
+	char 		*s;
 
+	i = 0;
+	s = 0;
 	t = ft_strrchr(str, SEPARATOR_CHAR);
 	if (t && empty_line(t + 1))
 		print_error(ERR_SYNTAX);
+	while (str[i] && ft_strchr(" \t\n\v\f\r", str[i]))
+		i++;
+	while (str[i] && ft_strchr(LABEL_CHARS, str[i]))
+	{
+		if (str[i + 1] == DIRECT_CHAR)
+		{
+			s = pr_malloc(ft_strlen(str) + 2);
+			s[ft_strlen(str) + 1] = 0;
+			ft_strncpy(s, str, i++ + 1);
+			s[i] = ' ';
+			ft_strncpy(s + i + 1, str + i, ft_strlen(str) - i);
+			str = s;
+			break;
+		}
+		i++;
+	}
 	words = 0;
-	return (while_blank(str, words, 1, ft_strlen(str)));
+	words = while_blank(str, words, 1, ft_strlen(str));
+	pr_free(s);
+	return (words);
 }
