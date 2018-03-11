@@ -18,12 +18,15 @@ int endian_swap_u32(int n)
 	return (n << 16) | ((n >> 16) & 0xFFFF);
 }
 
-void	save_file(char *input_filename, header_t *header, char *champion)
+void	save_file(char *input_filename, header_t *header, char *champion,
+	int input_fd)
 {
 	int			output_fd;
 	char		*output_filename;
 	int			save;
+	char		c;
 
+	c = 0;
 	save = header->prog_size;
 	header->prog_size = endian_swap_u32(header->prog_size);
 	input_filename[ft_strlen(input_filename) - ft_strlen(INPUT_EXTENSION)] = 0;
@@ -33,6 +36,9 @@ void	save_file(char *input_filename, header_t *header, char *champion)
 		S_IRUSR | S_IWUSR)) == -1)
 		print_error(ERR_FILE_CREATION);
 	pr_free(output_filename);
+	lseek(input_fd, -1L, SEEK_END);
+	if (read(input_fd, &c, 1) == -1 || c != '\n')
+		print_error(c != '\n' ? ERR_SYNTAX : ERR_FILE_READING);
 	write(output_fd, header, sizeof(header_t));
 	write(output_fd, champion, save);
 	ft_printf("Writing output program to %s\n", output_filename);
@@ -84,6 +90,6 @@ int		main(int argc, char *argv[])
 	header.magic = endian_swap_u32(COREWAR_EXEC_MAGIC);
 	parse_cmd(NAME_CMD_STRING, header.prog_name, input_fd, PROG_NAME_LENGTH);
 	parse_cmd(COMMENT_CMD_STRING, header.comment, input_fd, COMMENT_LENGTH);
-	save_file(argv[1], &header, parse_champion(&header, input_fd));
+	save_file(argv[1], &header, parse_champion(&header, input_fd), input_fd);
 	return (0);
 }
