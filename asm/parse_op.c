@@ -42,6 +42,8 @@ short		pr_atos(const char *str)
 		nb = nb * 10 + (str[i] - '0');
 		i++;
 	}
+	if (!i)
+		print_error(ERR_NBR_PARSING);
 	check_nbr_parsing(str[i]);
 	return (nb * nega);
 }
@@ -69,6 +71,8 @@ int		pr_atoi(const char *str)
 		nb = nb * 10 + (str[i] - '0');
 		i++;
 	}
+	if (!i)
+		print_error(ERR_NBR_PARSING);
 	check_nbr_parsing(str[i]);
 	return (nb * nega);
 }
@@ -179,9 +183,12 @@ void	parse_direct(header_t *header, t_op *op, char *arg, char *champion, int spg
 	n = 0;
 	if (!(op->d2))
 	{
-		if (!ft_isdigit(arg[ft_strlen(arg) - 1]))
-			print_error(ERR_SYNTAX);
-		n = endian_swap_u32(pr_atoi(arg + 1));
+		if (arg[1] == LABEL_CHAR)
+			add_label(champion, arg + 2, header->prog_size, 1, spg);
+		//if (!ft_isdigit(arg[ft_strlen(arg) - 1]))
+			//print_error(ERR_SYNTAX);
+		if (arg[1] != LABEL_CHAR)
+			n = endian_swap_u32(pr_atoi(arg + 1));
 		save_bytes(header, champion, &n, sizeof(int));
 	}
 	else if (arg[1] == LABEL_CHAR)
@@ -191,13 +198,13 @@ void	parse_direct(header_t *header, t_op *op, char *arg, char *champion, int spg
 	}
 	else
 	{
-		if (!ft_isdigit(arg[ft_strlen(arg) - 1]))
-			print_error(ERR_SYNTAX);
-		r = swap16(pr_atos(arg + 1));
+//		if (!ft_isdigit(arg[ft_strlen(arg) - 1]))
+	//		print_error(ERR_SYNTAX);
+		if (arg[1] != LABEL_CHAR)
+			r = swap16(pr_atos(arg + 1));
 		save_bytes(header, champion, &r, sizeof(short));
 	}
 }
-
 
 void	parse_indirect(header_t *header, t_op *op, char *arg, char *champion, int spg)
 {
