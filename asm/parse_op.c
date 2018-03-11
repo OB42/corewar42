@@ -151,7 +151,9 @@ int		parse_op(char **op_arr, header_t *header, char *champion)
 	t_op	*op;
 	char 	ocp;
 	int		arv;
-	int spg;
+	int		spg;
+	int		a;
+
 	o = 0;
 	spg = header->prog_size;
 
@@ -176,6 +178,8 @@ int		parse_op(char **op_arr, header_t *header, char *champion)
 	{
 		if (op_arr[o][0] == 'r')
 		{
+			if (!(op->args_type[a] % 2))
+				print_error(ERR_ARG_TYPE);
 			parse_register(header, op, op_arr[o], champion);
 			arv += T_REG;
 		}
@@ -189,6 +193,7 @@ int		parse_op(char **op_arr, header_t *header, char *champion)
 			arv += T_IND;
 			parse_indirect(header, op, op_arr[o], champion, spg);
 		}
+		a++;
 		o++;
 	}
 	//CHECK PARAMS TYPE
