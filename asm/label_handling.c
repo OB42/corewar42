@@ -25,22 +25,23 @@ int valid_label(char *label)
 
 t_label		*get_label(char *champion, char *name, int type)
 {
-	return (add_label(champion, name, -1, type,-1));
+	return (add_label(champion, name, -1, type,-1, -1));
 }
 
-t_label		*new_label(char *name, int location, int spg)
+t_label		*new_label(char *name, int location, int spg, int d2)
 {
 	t_label	*temp;
 
 	temp = pr_malloc(sizeof(t_label));
 	temp->location = location;
 	temp->spg = spg;
+	temp->d2 = d2;
 	temp->name = pr_malloc(ft_strlen(name) + 1);
 	ft_strcpy(temp->name, name);
 	return (temp);
 }
 
-t_label		*add_label(char *champion, char *name, int location, int type, int spg)
+t_label		*add_label(char *champion, char *name, int location, int type, int spg, int d2)
 {
 	static t_labels	labels = {0, 0};
 	t_list			*temp;
@@ -55,17 +56,21 @@ t_label		*add_label(char *champion, char *name, int location, int type, int spg)
 		rep = labels.to_replace;
 		while (rep)
 		{
-			if (!(sav = add_label(champion, ((t_label *)(rep->content))->name, -1, 0, -1)))
+			if (!(sav = add_label(champion, ((t_label *)(rep->content))->name, -1, 0, -1, -1)))
 				print_error("label not found\n");
-			short y;
-			y = sav->spg - ((t_label *)(rep->content))->spg;
-			y = endian_swap_16(y);
-			if (!*(champion + ((t_label *)(rep->content))->location - sizeof(short))
-				&& !*(champion + ((t_label *)(rep->content))->location - sizeof(short) + 1))
-				ft_memcpy(champion + ((t_label *)(rep->content))->location - sizeof(short), &y, sizeof(short));
+			if (((t_label *)(rep->content))->d2)
+			{
+				short y;
+				y = sav->spg - ((t_label *)(rep->content))->spg;
+				y = endian_swap_16(y);
+				ft_memcpy(champion + ((t_label *)(rep->content))->location, &y, sizeof(short));
+			}
 			else
 			{
-				ft_memcpy(champion + ((t_label *)(rep->content))->location, &y, sizeof(short));
+				int z;
+				z = sav->spg - ((t_label *)(rep->content))->spg;
+				z = endian_swap_32(z);
+				ft_memcpy(champion + ((t_label *)(rep->content))->location, &z, sizeof(int));
 			}
 			rep = rep->next;
 		}
@@ -82,9 +87,9 @@ t_label		*add_label(char *champion, char *name, int location, int type, int spg)
 			temp = temp->next;
 		}
 	}
-	else if (type || !add_label(champion, name, -1, type, -1))
+	else if (type || !add_label(champion, name, -1, type, -1, -1))
 	{
-		label = new_label(name, location, spg);
+		label = new_label(name, location, spg, d2);
 		temp = pr_malloc(sizeof(t_list));
 		temp->content = label;
 		temp->next = (type ? (labels.to_replace) : (labels.saved));

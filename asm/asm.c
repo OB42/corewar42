@@ -64,7 +64,8 @@ char	*parse_champion(header_t *header, int input_fd)
 	}
 	if (!(header->prog_size))
 		print_error("EMPTY PROGRAM\n");
-	add_label(champion, -1,-1,-1, -1);
+	add_label(champion, -1,-1,-1, -1, -1);
+	ft_printf("///%hhx %hhx %i\n", champion[20], champion[21], header->prog_size);
 	return (champion);
 }
 

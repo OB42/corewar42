@@ -55,6 +55,7 @@ typedef struct		s_label
 	char			*name;
 	short			location;
 	short			spg;
+	int				d2;
 }					t_label;
 
 typedef struct		s_labels
@@ -77,7 +78,7 @@ int			endian_swap_32(int n);
 char		**w_char(char *str, char **words, int save, int w);
 char		**split(char *str);
 t_label		*get_label(char *champion, char *name, int type);
-t_label		*add_label(char *champion, char *name, int location, int type, int spg);
+t_label		*add_label(char *champion, char *name, int location, int type, int spg, int d2);
 int			parse_op(char **op_arr, header_t *header, char *champion);
 char		*check_cmd(char *cmd, int fd, char **line, size_t max_length);
 void		parse_cmd(char *cmd, char *dest, int fd, size_t max_length);

@@ -35,7 +35,7 @@ int		parse_op(char **op_arr, header_t *header, char *champion)
 	if (op_arr[0] && op_arr[0][ft_strlen(op_arr[0]) - 1] == LABEL_CHAR)
 	{
 		op_arr[0][ft_strlen(op_arr[0]) - 1] = 0;
-		add_label(champion, op_arr[o++], header->prog_size, 0, spg);
+		add_label(champion, op_arr[o++], header->prog_size, 0, spg, -1);
 		if (!op_arr[1])
 		{
 			pr_free_char_arr(op_arr);

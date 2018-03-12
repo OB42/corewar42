@@ -33,26 +33,22 @@ void	parse_direct(header_t *header, t_op *op, char *arg, char *champion, int spg
 	if (!(op->d2))
 	{
 		if (arg[1] == LABEL_CHAR)
-			add_label(champion, arg + 2, header->prog_size, 1, spg);
-		//if (!ft_isdigit(arg[ft_strlen(arg) - 1]))
-			//print_error(ERR_SYNTAX);
+			add_label(champion, arg + 2, header->prog_size, 1, spg, op->d2);
 		if (arg[1] != LABEL_CHAR)
 			n = endian_swap_32(pr_atoi(arg + 1));
 		save_bytes(header, champion, &n, sizeof(int));
 	}
 	else if (arg[1] == LABEL_CHAR)
 	{
+		add_label(champion, arg + 2, header->prog_size, 1, spg, op->d2);
 		save_bytes(header, champion, &r, sizeof(short));
-		add_label(champion, arg + 2, header->prog_size, 1, spg);
 	}
 	else
 	{
-//		if (!ft_isdigit(arg[ft_strlen(arg) - 1]))
-	//		print_error(ERR_SYNTAX);
-		if (arg[1] != LABEL_CHAR)
-			r = endian_swap_16(pr_atos(arg + 1));
+		r = endian_swap_16(pr_atos(arg + 1));
 		save_bytes(header, champion, &r, sizeof(short));
 	}
+
 }
 
 void	parse_indirect(header_t *header, t_op *op, char *arg, char *champion, int spg)
@@ -61,7 +57,7 @@ void	parse_indirect(header_t *header, t_op *op, char *arg, char *champion, int s
 
 	r = 0;
 	if (arg[0] == LABEL_CHAR)
-		add_label(champion, arg + 1, header->prog_size, 1, spg);
+		add_label(champion, arg + 1, header->prog_size, 1, spg, 1);
 	else
 		r = endian_swap_16(pr_atos(arg));
 	save_bytes(header, champion, &r, sizeof(short));
