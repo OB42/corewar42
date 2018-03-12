@@ -59,7 +59,7 @@ t_label		*add_label(char *champion, char *name, int location, int type, int spg)
 				print_error("label not found\n");
 			short y;
 			y = sav->spg - ((t_label *)(rep->content))->spg;
-			y = swap16(y);
+			y = endian_swap_16(y);
 			if (!*(champion + ((t_label *)(rep->content))->location - sizeof(short))
 				&& !*(champion + ((t_label *)(rep->content))->location - sizeof(short) + 1))
 				ft_memcpy(champion + ((t_label *)(rep->content))->location - sizeof(short), &y, sizeof(short));

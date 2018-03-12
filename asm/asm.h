@@ -63,7 +63,17 @@ typedef struct		s_labels
 	t_list			*saved;
 }					t_labels;
 
-int			endian_swap_u32(int n);
+t_op		*get_op(char *name);
+void		save_bytes(header_t *header, char *champion, void *temp, int i);
+void		parse_register(header_t *header, t_op *op, char *arg, char *champion);
+void		parse_direct(header_t *header, t_op *op, char *arg, char *champion, int spg);
+void		parse_indirect(header_t *header, t_op *op, char *arg, char *champion, int spg);
+char		get_ocp(char **op_arr, int o);
+int			pr_atoi(const char *str);
+short		pr_atos(const char *str);
+void		check_nbr_parsing(char c);
+short		endian_swap_16(short n);
+int			endian_swap_32(int n);
 char		**w_char(char *str, char **words, int save, int w);
 char		**split(char *str);
 t_label		*get_label(char *champion, char *name, int type);

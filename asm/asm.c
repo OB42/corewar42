@@ -12,12 +12,6 @@
 
 #include "asm.h"
 
-int endian_swap_u32(int n)
-{
-	n = ((n << 8) & 0xFF00FF00) | ((n >> 8) & 0xFF00FF );
-	return (n << 16) | ((n >> 16) & 0xFFFF);
-}
-
 void	save_file(char *input_filename, header_t *header, char *champion,
 	int input_fd)
 {
@@ -28,7 +22,7 @@ void	save_file(char *input_filename, header_t *header, char *champion,
 
 	c = 0;
 	save = header->prog_size;
-	header->prog_size = endian_swap_u32(header->prog_size);
+	header->prog_size = endian_swap_32(header->prog_size);
 	input_filename[ft_strlen(input_filename) - ft_strlen(INPUT_EXTENSION)] = 0;
 	if (!(output_filename = ft_strjoin(input_filename, OUTPUT_EXTENSION)))
 		print_error(ERR_MALLOC);
@@ -87,7 +81,7 @@ int		main(int argc, char *argv[])
 	if ((input_fd = open(argv[1], O_RDONLY, S_IRUSR)) == -1)
 		print_error(ERR_FILE_READING);
 	ft_bzero(&header, sizeof(header_t));
-	header.magic = endian_swap_u32(COREWAR_EXEC_MAGIC);
+	header.magic = endian_swap_32(COREWAR_EXEC_MAGIC);
 	parse_cmd(NAME_CMD_STRING, header.prog_name, input_fd, PROG_NAME_LENGTH);
 	parse_cmd(COMMENT_CMD_STRING, header.comment, input_fd, COMMENT_LENGTH);
 	save_file(argv[1], &header, parse_champion(&header, input_fd), input_fd);

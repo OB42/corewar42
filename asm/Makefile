@@ -15,7 +15,7 @@
 CC = gcc# -Wall -Wextra -Werror
 NAME = asm
 LFT_PATH = ./ft_printf/
-SRC_NAME = split.c label_handling.c parse_op.c parse_cmd.c get_next_line/get_next_line.c asm.c pr_malloc.c print_error.c	split_op.c utils.c
+SRC_NAME = get_op.c get_ocp.c parse_params.c endian_swap.c nbr_parsing.c split.c label_handling.c parse_op.c parse_cmd.c get_next_line/get_next_line.c asm.c pr_malloc.c print_error.c	split_op.c utils.c
 OBJ = $(SRC_NAME:.c=.o)
 
 all: $(NAME)
