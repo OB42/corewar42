@@ -23,6 +23,7 @@ SRC = main.c\
 	  ft_addlim.c\
 	  ft_print_proc.c\
 	  ft_verbose.c\
+	  ft_del.c\
 
 
 OBJ = $(SRC:.c=.o)

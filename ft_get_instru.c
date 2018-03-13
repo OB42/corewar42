@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 15:54:36 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/09 19:49:36 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/13 15:25:12 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,5 @@ t_ins	*ft_get_instru(unsigned char *code_champ)
 			ins->param[0] = ft_get_int(code_champ + 1, ins->size);
 		}
 	}
-	else
-		ft_printf("bad instruction\n");
 	return (ins);
 }

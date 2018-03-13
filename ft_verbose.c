@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 13:47:23 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/11 22:40:58 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/13 16:13:21 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,10 @@ void ft_print_ocp(t_proc *proc)
 		ft_printf(" r%d", proc->ins->param[1]);
 	if (proc->ins->ocp & 0x8)
 		ft_printf(" %d", ft_conv(proc->ins->param[2], proc));
-	else if (proc->ins->ocp & 0x4)
+	else if (proc->ins->ocp & 0x4 && ft_strcmp(proc->ins->name, "sti"))
 		ft_printf(" r%d", proc->ins->param[2]);
+	else if (ft_strcmp(proc->ins->name, "sti") == 0 && (proc->ins->ocp & 4))
+		ft_printf(" %d", proc->reg[proc->ins->param[2]]);
 }
 
 void	ft_print_special(t_proc *proc)
@@ -72,6 +74,8 @@ void	ft_print_special(t_proc *proc)
 	{
 		tmp1 = ft_conv(proc->ins->param[1], proc);
 		tmp2 = proc->ins->param[2];
+		if (proc->ins->ocp & 4)
+			tmp2 = proc->reg[proc->ins->param[2]];
 		ft_printf("\n       | -> store to %d + %d = %d (with pc and mod %d)",
 				tmp1, tmp2, tmp1 + tmp2, proc->curseur - proc->init + tmp1 + tmp2);
 	}

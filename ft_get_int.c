@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 16:34:04 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/11 22:21:42 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/13 14:56:50 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,16 @@ int	ft_get_int(unsigned char *code_champ, int size)
 void	ft_write_ram(int value, int size, unsigned char *ram)
 {
 	int i;
-	long max;
+	unsigned long max;
 
 	i = 0;
 	max = ft_pow(size * 2, 16);
+	//ft_printf("max %d\n", max);
 	if (value < 0)
 		max = max + value;
 	else
 		max = value;
+	//ft_printf("size = %d\n", size);
 	//ft_printf("value = %d\n", max);
 	while (i < size)
 	{

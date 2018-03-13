@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/11 22:43:30 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/13 16:13:01 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,11 @@ void	ft_loop(t_corewar corewar)
 		if (lst_proc->id == max_id)
 		{
 			corewar.cycle++;
-			//ft_printf("It is now cycle %d\n", corewar.cycle);
+			ft_printf("It is now cycle %d\n", corewar.cycle);
 		}
 		if (lst_proc->cycle > 1 && lst_proc->cycle == lst_proc->ins->cycle)
 		{
+			ft_print_arena(corewar.arena);
 			ft_verbose(lst_proc);
 			(lst_proc->ins->fun)(lst_proc->ins, lst_proc);
 			lst_proc->cycle = 0;
@@ -80,9 +81,10 @@ void	ft_loop(t_corewar corewar)
 		if (lst_proc->cycle <= 1)
 			lst_proc->ins = ft_get_instru(lst_proc->curseur);
 		if (lst_proc->ins == NULL)
+			lst_proc = ft_del(lst_proc);
+		else
+			lst_proc = lst_proc->nxt;
+		if (corewar.cycle > 4000)
 			exit(1);
-		lst_proc = lst_proc->nxt;
-		//if (corewar.cycle > 5000)
-		//	exit(1);
 	}
 }
