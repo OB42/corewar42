@@ -19,7 +19,7 @@ void	check_nbr_parsing(char c)
 		print_error(ERR_NBR_PARSING);
 }
 
-short		pr_atos(const char *str)
+short	pr_atos(const char *str)
 {
 	short i;
 	short nb;

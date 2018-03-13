@@ -26,12 +26,12 @@ void	check_line(char *s)
 		print_error(ERR_SYNTAX);
 }
 
-void	cmd_buffering(char *dest, int fd, char *line, int type, char *temp)
+void	cmd_buffering(char *dest, int fd, char *line, int type)
 {
 	int		g;
-//	char	*temp;
+	char	*temp;
 
-	//temp = ft_strlen(line) + line + 1;
+	temp = ft_strlen(line) + line + 1;
 	while (1)
 	{
 		if (ft_strchr(temp, '"'))
@@ -42,7 +42,8 @@ void	cmd_buffering(char *dest, int fd, char *line, int type, char *temp)
 			pr_free(line);
 			break ;
 		}
-		if (ft_strlen(temp) + ft_strlen(dest) > (type ? COMMENT_LENGTH : PROG_NAME_LENGTH))
+		if (ft_strlen(temp) + ft_strlen(dest) >
+		(type ? COMMENT_LENGTH : PROG_NAME_LENGTH))
 			print_error(ERR_INVALID_COMMAND);
 		ft_strcpy(dest + ft_strlen(dest), temp);
 		ft_memcpy(dest + ft_strlen(dest), "\n", 2);
@@ -73,6 +74,6 @@ void	parse_cmd(header_t *header, char *cmd, int fd, size_t max_length)
 		print_error(ERR_INVALID_COMMAND);
 	cmd_buffering(line_arr[0][1] == COMMENT_CMD_STRING[1] ?
 		header->comment : header->prog_name, fd, line,
-		line_arr[0][1] == COMMENT_CMD_STRING[1], temp + 1);
+		line_arr[0][1] == COMMENT_CMD_STRING[1]);
 	pr_free_char_arr(line_arr);
 }

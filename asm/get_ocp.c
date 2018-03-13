@@ -12,11 +12,11 @@
 
 #include "asm.h"
 
-char 	get_ocp(char **op_arr, int o)
+char	get_ocp(char **op_arr, int o)
 {
-	char ocp;
-	int a;
-	char t;
+	char	ocp;
+	int		a;
+	char	t;
 
 	a = 0;
 	ocp = 0;
