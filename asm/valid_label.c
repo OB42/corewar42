@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_op.c                                         :+:      :+:    :+:   */
+/*   valid_label.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obenazzo <obenazzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,32 +12,13 @@
 
 #include "asm.h"
 
-void	save_bytes(header_t *header, char *champion, void *temp, int i)
+int			valid_label(char *label)
 {
-	if (header->prog_size + i <= CHAMP_MAX_SIZE)
-		ft_memcpy(champion + header->prog_size, temp, i);
-	else
-		print_error(ERR_CHAMPION_SIZE);
-	header->prog_size += i;
-}
-
-int		parse_op(char **op_arr, header_t *header, char *champion)
-{
-	int		o;
-
-	o = 0;
-	if (op_arr[0] && op_arr[0][ft_strlen(op_arr[0]) - 1] == LABEL_CHAR)
+	while (*label && label[1])
 	{
-		op_arr[0][ft_strlen(op_arr[0]) - 1] = 0;
-		add_label(champion, op_arr[o++], (int[3]){header->prog_size, 0,
-			header->prog_size}, -1);
-		if (!op_arr[1])
-		{
-			pr_free_char_arr(op_arr);
-			return (0);
-		}
+		if (!ft_strchr(LABEL_CHARS, *label))
+			print_error(ERR_INVALID_LABEL);
+		label++;
 	}
-	parse_params(op_arr, header, o, champion);
-	pr_free_char_arr(op_arr);
-	return (0);
+	return (1);
 }

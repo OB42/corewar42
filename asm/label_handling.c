@@ -12,20 +12,9 @@
 
 #include "asm.h"
 
-int valid_label(char *label)
-{
-	while (*label && label[1])
-	{
-		if (!ft_strchr(LABEL_CHARS, *label))
-			print_error(ERR_INVALID_LABEL);
-		label++;
-	}
-	return (1);
-}
-
 t_label		*get_label(char *champion, char *name, int type)
 {
-	return (add_label(champion, name, -1, type,-1, -1));
+	return (add_label(champion, name, (int[3]){-1, type, -1}, -1));
 }
 
 t_label		*new_label(char *name, int location, int spg, int d2)
@@ -41,59 +30,69 @@ t_label		*new_label(char *name, int location, int spg, int d2)
 	return (temp);
 }
 
-t_label		*add_label(char *champion, char *name, int location, int type, int spg, int d2)
+int			replace_labels(t_labels *labels, char *code)
+{
+	t_list			*rep;
+	t_label			*sav;
+	int				z;
+	short			y;
+
+	if (!(rep = labels->to_replace))
+		return (0);
+	while (rep)
+	{
+		if (!(sav = add_label(code, ((t_label *)(rep->content))->name,
+		(int[3]){-1, 0, -1}, -1)))
+			print_error("label not found\n");
+		if (((t_label *)(rep->content))->d2)
+		{
+			y = endian_swap_16(sav->spg - ((t_label *)(rep->content))->spg);
+			ft_memcpy(code + ((t_label *)(rep->DATA))->location, &y, SZ(short));
+		}
+		else
+		{
+			z = endian_swap_32(sav->spg - ((t_label *)(rep->content))->spg);
+			ft_memcpy(code + ((t_label *)(rep->DATA))->location, &z, SZ(int));
+		}
+		rep = rep->next;
+	}
+	return (0);
+}
+
+t_label		*find_label(char *name, t_labels *labels, int loc_type_st[3])
+{
+	t_list	*temp;
+
+	temp = (loc_type_st[1] ? (labels->to_replace) : (labels->saved));
+	while (temp)
+	{
+		if (!ft_strcmp(name, ((t_label *)(temp->content))->name))
+			return (temp->content);
+		temp = temp->next;
+	}
+	return (0);
+}
+
+t_label		*add_label(char *champion, char *name, int loc_type_st[3], int d2)
 {
 	static t_labels	labels = {0, 0};
 	t_list			*temp;
 	t_label			*label;
-	t_list			*rep;
-	t_label		*sav;
 
-	if (name == -1 && location == -1 && type == -1)
-	{
-		if (!(labels.to_replace))
-			return (0);
-		rep = labels.to_replace;
-		while (rep)
-		{
-			if (!(sav = add_label(champion, ((t_label *)(rep->content))->name, -1, 0, -1, -1)))
-				print_error("label not found\n");
-			if (((t_label *)(rep->content))->d2)
-			{
-				short y;
-				y = sav->spg - ((t_label *)(rep->content))->spg;
-				y = endian_swap_16(y);
-				ft_memcpy(champion + ((t_label *)(rep->content))->location, &y, sizeof(short));
-			}
-			else
-			{
-				int z;
-				z = sav->spg - ((t_label *)(rep->content))->spg;
-				z = endian_swap_32(z);
-				ft_memcpy(champion + ((t_label *)(rep->content))->location, &z, sizeof(int));
-			}
-			rep = rep->next;
-		}
-		return (0);
-	}
+	if (name == -1 && loc_type_st[0] == -1 && loc_type_st[1] == -1)
+		return (replace_labels(&labels, champion));
 	valid_label(name);
-	if (location == -1)
+	if (loc_type_st[0] == -1)
+		return (find_label(name, &labels, loc_type_st));
+	else if (loc_type_st[1] || !add_label(champion, name,
+		(int[3]){-1, loc_type_st[1], -1}, -1))
 	{
-		temp = (type ? (labels.to_replace) : (labels.saved));
-		while (temp)
-		{
-			if (!ft_strcmp(name, ((t_label *)(temp->content))->name))
-				return (temp->content);
-			temp = temp->next;
-		}
-	}
-	else if (type || !add_label(champion, name, -1, type, -1, -1))
-	{
-		label = new_label(name, location, spg, d2);
+		label = new_label(name, loc_type_st[0], loc_type_st[2], d2);
 		temp = pr_malloc(sizeof(t_list));
 		temp->content = label;
-		temp->next = (type ? (labels.to_replace) : (labels.saved));
-		type ? (labels.to_replace = temp) : (labels.saved = temp);
+		temp->next = (loc_type_st[1] ? (labels.to_replace) : (labels.saved));
+		loc_type_st[1] ? (labels.to_replace = temp)
+		: (labels.saved = temp);
 		return (temp->content);
 	}
 	return (0);

@@ -34,16 +34,16 @@ void	parse_direct(header_t *header, t_op *op, char **arg_champ, int spg)
 	if (!(op->d2))
 	{
 		if (arg_champ[0][1] == LABEL_CHAR)
-			add_label(arg_champ[1], arg_champ[0] + 2, header->prog_size, 1, spg,
-				op->d2);
+			add_label(arg_champ[1], arg_champ[0] + 2,
+				(int[3]){header->prog_size, 1, spg}, op->d2);
 		if (arg_champ[0][1] != LABEL_CHAR)
 			n = endian_swap_32(pr_atoi(arg_champ[0] + 1));
 		save_bytes(header, arg_champ[1], &n, sizeof(int));
 	}
 	else if (arg_champ[0][1] == LABEL_CHAR)
 	{
-		add_label(arg_champ[1], arg_champ[0] + 2, header->prog_size, 1, spg,
-			op->d2);
+		add_label(arg_champ[1], arg_champ[0] + 2, (int[3]){header->prog_size, 1
+			, spg}, op->d2);
 		save_bytes(header, arg_champ[1], &r, sizeof(short));
 	}
 	else
@@ -59,7 +59,8 @@ void	parse_indirect(header_t *header, t_op *op, char **arg_champ, int spg)
 
 	r = 0;
 	if (arg_champ[0][0] == LABEL_CHAR)
-		add_label(arg_champ[1], arg_champ[0] + 1, header->prog_size, 1, spg, 1);
+		add_label(arg_champ[1], arg_champ[0] + 1, (int[3]){header->prog_size,
+			1, spg}, 1);
 	else
 		r = endian_swap_16(pr_atos(arg_champ[0]));
 	save_bytes(header, arg_champ[1], &r, sizeof(short));

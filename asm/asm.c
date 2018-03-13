@@ -63,7 +63,7 @@ char	*parse_champion(header_t *header, int input_fd)
 			print_error(ERR_GNL);
 	}
 	(!(header->prog_size)) ? print_error("EMPTY PROGRAM\n")
-	: add_label(champion, -1, -1, -1, -1, -1);
+	: add_label(champion, -1, (int[3]){-1, -1, -1}, -1);
 	return (champion);
 }
 

@@ -62,6 +62,8 @@ typedef char	t_arg_type;
 #define T_R						T_REG
 #define T_D						T_DIR
 #define T_I						T_IND
+#define	DATA					content
+#define SZ						sizeof
 /*
 **
 */
