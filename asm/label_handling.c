@@ -30,7 +30,7 @@ t_label		*new_label(char *name, int location, int spg, int d2)
 	return (temp);
 }
 
-int			replace_labels(t_labels *labels, char *code)
+t_label		*replace_labels(t_labels *labels, char *code)
 {
 	t_list			*rep;
 	t_label			*sav;
@@ -79,7 +79,7 @@ t_label		*add_label(char *champion, char *name, int loc_type_st[3], int d2)
 	t_list			*temp;
 	t_label			*label;
 
-	if (name == -1 && loc_type_st[0] == -1 && loc_type_st[1] == -1)
+	if (name == (char *)-1 && loc_type_st[0] == -1 && loc_type_st[1] == -1)
 		return (replace_labels(&labels, champion));
 	valid_label(name);
 	if (loc_type_st[0] == -1)
