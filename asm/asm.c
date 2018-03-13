@@ -12,7 +12,7 @@
 
 #include "asm.h"
 
-void	save_file(char *input_filename, header_t *header, char *champion,
+void	save_file(char *input_filename, t_header *header, char *champion,
 	int input_fd)
 {
 	int			output_fd;
@@ -32,13 +32,13 @@ void	save_file(char *input_filename, header_t *header, char *champion,
 	lseek(input_fd, -1L, SEEK_END);
 	if (read(input_fd, &c, 1) == -1 || c != '\n')
 		print_error(c != '\n' ? ERR_SYNTAX : ERR_FILE_READING);
-	write(output_fd, header, sizeof(header_t));
+	write(output_fd, header, sizeof(t_header));
 	write(output_fd, champion, save);
 	ft_printf("Writing output program to %s\n", output_filename);
 	pr_free(output_filename);
 }
 
-char	*parse_champion(header_t *header, int input_fd)
+char	*parse_champion(t_header *header, int input_fd)
 {
 	static char	champion[CHAMP_MAX_SIZE + 1];
 	char		*line;
@@ -69,7 +69,7 @@ char	*parse_champion(header_t *header, int input_fd)
 
 int		main(int argc, char *argv[])
 {
-	header_t	header;
+	t_header	header;
 	int			input_fd;
 
 	if (argc < 2)
@@ -79,7 +79,7 @@ int		main(int argc, char *argv[])
 		print_error(ERR_WRONG_EXTENSION);
 	if ((input_fd = open(argv[1], O_RDONLY, S_IRUSR)) == -1)
 		print_error(ERR_FILE_READING);
-	ft_bzero(&header, sizeof(header_t));
+	ft_bzero(&header, sizeof(t_header));
 	header.magic = endian_swap_32(COREWAR_EXEC_MAGIC);
 	parse_cmd(&header, NAME_CMD_STRING, input_fd, PROG_NAME_LENGTH);
 	parse_cmd(&header, COMMENT_CMD_STRING, input_fd, COMMENT_LENGTH);

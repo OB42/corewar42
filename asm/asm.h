@@ -65,13 +65,13 @@
 # define COMMENT_LENGTH			(2048)
 # define COREWAR_EXEC_MAGIC		0xea83f3
 
-typedef struct		header_s
+typedef struct		s_header
 {
-  unsigned int		magic;
-  char				prog_name[PROG_NAME_LENGTH + 1];
-  unsigned int		prog_size;
-  char				comment[COMMENT_LENGTH + 1];
-}					header_t;
+	unsigned int		magic;
+	char				prog_name[PROG_NAME_LENGTH + 1];
+	unsigned int		prog_size;
+	char				comment[COMMENT_LENGTH + 1];
+}					t_header;
 
 typedef struct		s_op
 {
@@ -98,31 +98,35 @@ typedef struct		s_labels
 	t_list			*saved;
 }					t_labels;
 
-char		*check_cmd(char *cmd, int fd, char **line, size_t max_length);
-void		parse_cmd(header_t *header, char *cmd, int fd, size_t max_length);
-int			parse_op(char **op_arr, header_t *header, char *champion);
-void		parse_params(char **op_arr, header_t *header, int o,
-	char *champion);
-t_op		*get_op(char *name);
-char		get_ocp(char **op_arr, int o);
-void		save_bytes(header_t *header, char *champion, void *temp, int i);
-int			valid_label(char *label);
-t_label		*get_label(char *champion, char *name, int type);
-t_label		*add_label(char *champion, char *name, int loc_type_st[3], int d2);
-void		skip_empty_lines(char **line, int input_fd, int *g);
-int			empty_line(char *str);
-void		*pr_malloc(size_t n);
-void		pr_free(void *p);
-void		print_error(char *err);
-char		**split_op(char *str);
-char		**while_char(char *str, char **words, int save, int w);
-char		**w_char(char *str, char **words, int save, int w);
-char		**split(char *str);
-void		pr_free_char_arr(char **to_free);
-int			ft_arrstrlen(char **arr);
-int			pr_atoi(const char *str);
-short		pr_atos(const char *str);
-void		check_nbr_parsing(char c);
-short		endian_swap_16(short n);
-int			endian_swap_32(int n);
+char				*check_cmd(char *cmd, int fd, char **line,
+						size_t max_length);
+void				parse_cmd(t_header *header, char *cmd, int fd,
+						size_t max_length);
+int					parse_op(char **op_arr, t_header *header, char *champion);
+void				parse_params(char **op_arr, t_header *header, int o,
+						char *champion);
+t_op				*get_op(char *name);
+char				get_ocp(char **op_arr, int o);
+void				save_bytes(t_header *header, char *champion, void *temp,
+						int i);
+int					valid_label(char *label);
+t_label				*get_label(char *champion, char *name, int type);
+t_label				*add_label(char *champion, char *name, int loc_type_st[3],
+						int d2);
+void				skip_empty_lines(char **line, int input_fd, int *g);
+int					empty_line(char *str);
+void				*pr_malloc(size_t n);
+void				pr_free(void *p);
+void				print_error(char *err);
+char				**split_op(char *str);
+char				**while_char(char *str, char **words, int save, int w);
+char				**w_char(char *str, char **words, int save, int w);
+char				**split(char *str);
+void				pr_free_char_arr(char **to_free);
+int					ft_arrstrlen(char **arr);
+int					pr_atoi(const char *str);
+short				pr_atos(const char *str);
+void				check_nbr_parsing(char c);
+short				endian_swap_16(short n);
+int					endian_swap_32(int n);
 #endif

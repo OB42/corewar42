@@ -12,7 +12,7 @@
 
 #include "asm.h"
 
-void	save_bytes(header_t *header, char *champion, void *temp, int i)
+void	save_bytes(t_header *header, char *champion, void *temp, int i)
 {
 	if (header->prog_size + i <= CHAMP_MAX_SIZE)
 		ft_memcpy(champion + header->prog_size, temp, i);
@@ -21,7 +21,7 @@ void	save_bytes(header_t *header, char *champion, void *temp, int i)
 	header->prog_size += i;
 }
 
-int		parse_op(char **op_arr, header_t *header, char *champion)
+int		parse_op(char **op_arr, t_header *header, char *champion)
 {
 	int		o;
 
