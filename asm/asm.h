@@ -64,12 +64,11 @@ typedef struct		s_labels
 	t_list			*saved;
 }					t_labels;
 
+void		parse_params(char **op_arr, header_t *header, int o,
+	char *champion);
 void		parse_cmd(header_t *header, char *cmd, int fd, size_t max_length);
 t_op		*get_op(char *name);
 void		save_bytes(header_t *header, char *champion, void *temp, int i);
-void		parse_register(header_t *header, t_op *op, char *arg, char *champion);
-void		parse_direct(header_t *header, t_op *op, char *arg, char *champion, int spg);
-void		parse_indirect(header_t *header, t_op *op, char *arg, char *champion, int spg);
 char		get_ocp(char **op_arr, int o);
 int			pr_atoi(const char *str);
 short		pr_atos(const char *str);
