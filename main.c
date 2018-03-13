@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 13:06:45 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/09 18:46:22 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/13 17:43:14 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ t_corewar	ft_init_all(int argc, char **argv)
 		i++;
 	}
 	corewar.nb_champ = i - 1;
+	corewar.ctd_obj = CYCLE_TO_DIE;
 	return (corewar);
 }
 

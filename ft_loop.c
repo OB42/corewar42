@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/13 16:13:01 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/13 18:49:04 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	ft_val_proc(t_proc *lst_proc, t_corewar *corewar, int i, t_proc *init)
 {
 	ft_bzero(lst_proc, sizeof(t_proc));
 	lst_proc->curseur = corewar->arena + i * (MEM_SIZE / corewar->nb_champ);
+	lst_proc->live = 1;
 	lst_proc->init = corewar->arena;
-	lst_proc->cycle = 0;
 	lst_proc->corewar = corewar;
 	lst_proc->nxt = init;
 	lst_proc->player = i + 1;
@@ -28,7 +28,6 @@ void	ft_val_proc(t_proc *lst_proc, t_corewar *corewar, int i, t_proc *init)
 	lst_proc->id = ft_get_procnb(lst_proc);
 	lst_proc->champ = corewar->tab_champ[0];
 }
-	
 
 t_proc	*ft_init_proc(t_corewar *corewar)
 {
@@ -54,26 +53,37 @@ t_proc	*ft_init_proc(t_corewar *corewar)
 	return (lst_proc);
 }
 
+t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
+{
+	static int	max_id = 1;
+
+	proc->cycle++;
+	if (proc->id > max_id)
+		max_id = proc->id;
+	if (proc->id == max_id)
+	{
+		corewar->cycle++;
+		corewar->ctd_cur++;
+		ft_printf("It is now cycle %d\n", corewar->cycle);
+	}
+	if (corewar->ctd_cur == corewar->ctd_obj)
+		proc = ft_cycle_to_die(corewar, proc);
+	return (proc);
+}
+
 void	ft_loop(t_corewar corewar)
 {
 	t_proc *lst_proc;
-	int		max_id;
 
-	max_id = 1;
 	lst_proc = ft_init_proc(&corewar);
 	while (lst_proc)
 	{
-		lst_proc->cycle++;
-		if (lst_proc->id > max_id)
-			max_id = lst_proc->id;
-		if (lst_proc->id == max_id)
-		{
-			corewar.cycle++;
-			ft_printf("It is now cycle %d\n", corewar.cycle);
-		}
+		lst_proc = ft_cycle(lst_proc, &corewar);
+		if (lst_proc == NULL)
+			exit(1);
 		if (lst_proc->cycle > 1 && lst_proc->cycle == lst_proc->ins->cycle)
 		{
-			ft_print_arena(corewar.arena);
+			//ft_print_arena(corewar.arena);
 			ft_verbose(lst_proc);
 			(lst_proc->ins->fun)(lst_proc->ins, lst_proc);
 			lst_proc->cycle = 0;
@@ -84,7 +94,7 @@ void	ft_loop(t_corewar corewar)
 			lst_proc = ft_del(lst_proc);
 		else
 			lst_proc = lst_proc->nxt;
-		if (corewar.cycle > 4000)
+		if (corewar.cycle > 5000)
 			exit(1);
 	}
 }

@@ -24,6 +24,7 @@ SRC = main.c\
 	  ft_print_proc.c\
 	  ft_verbose.c\
 	  ft_del.c\
+	  ft_cycle_to_die.c
 
 
 OBJ = $(SRC:.c=.o)
