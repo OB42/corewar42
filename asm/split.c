@@ -36,10 +36,8 @@ char	**w_char(char *str, char **words, int save, int w)
 		s++;
 	if (save)
 	{
-		if (str[s])
-			return (w_blank(str + s, words, save + 1, w));
-		words = (char**)pr_malloc(sizeof(char *) * (save + 1) + 1);
-		return (w_blank(str + s - w, words, 0, 0));
+		return (str[s] ? w_blank(str + s, words, save + 1, w) :
+		w_blank(str + s - w, pr_malloc(sizeof(char *) * (save + 1) + 1), 0, 0));
 	}
 	if (s)
 		words[w++] = (char*)pr_malloc(sizeof(char) * s + 1);

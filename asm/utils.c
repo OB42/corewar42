@@ -33,7 +33,7 @@ void	skip_empty_lines(char **line, int input_fd, int *g)
 		if ((*g = get_next_line(input_fd, line)) == -1)
 			print_error(ERR_GNL);
 		else if (!(*g))
-			break;
+			break ;
 	}
 }
 

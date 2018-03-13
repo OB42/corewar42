@@ -68,7 +68,8 @@ void	parse_cmd(header_t *header, char *cmd, int fd, size_t max_length)
 	*temp = 0;
 	if (ft_arrstrlen(line_arr = split(line)) != 1 || !(line_arr[0][0]))
 		print_error(ERR_INVALID_COMMAND);
-	if (ft_strncmp(line_arr[0], line_arr[0][1] == COMMENT_CMD_STRING[1] ? COMMENT_CMD_STRING : NAME_CMD_STRING, ft_strlen(cmd)))
+	if (ft_strncmp(line_arr[0], line_arr[0][1] == COMMENT_CMD_STRING[1] ?
+		COMMENT_CMD_STRING : NAME_CMD_STRING, ft_strlen(cmd)))
 		print_error(ERR_INVALID_COMMAND);
 	cmd_buffering(line_arr[0][1] == COMMENT_CMD_STRING[1] ?
 		header->comment : header->prog_name, fd, line,

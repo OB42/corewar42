@@ -17,8 +17,7 @@ char	**while_blank(char *str, char **words, int save, int w)
 	int s;
 
 	s = 0;
-	while (str[s] && (str[s] == ' ' || str[s] == '\n' || str[s] == '\t'
-	|| str[s] == SEPARATOR_CHAR))
+	while (str[s] && (ft_strchr(" \t\n", str[s]) || str[s] == SEPARATOR_CHAR))
 		s++;
 	if (save)
 		return (while_char(str + s, words, save, w));
@@ -33,29 +32,24 @@ char	**while_char(char *str, char **words, int save, int w)
 	int		s;
 
 	s = 0;
-	while (str[s] && str[s] != ' ' && str[s] != '\n' && str[s] != '\t'
-	&& str[s] != SEPARATOR_CHAR)
+	while (str[s] && !ft_strchr(" \t\n", str[s]) && str[s] != SEPARATOR_CHAR)
 		s++;
 	if (save)
 	{
-		if (str[s])
-			return (while_blank(str + s, words, save + 1, w));
-		words = (char**)pr_malloc(sizeof(char *) * (save + 1) + 1);
-		return (while_blank(str + s - w, words, 0, 0));
+		return (str[s] ? while_blank(str + s, words, save + 1, w) : while_blank(
+			str + s - w, pr_malloc(sizeof(char *) * (save + 1) + 1), 0, 0));
 	}
 	if (s)
 		words[w++] = (char*)pr_malloc(sizeof(char) * s + 1);
 	s = 0;
-	while (str[s] && str[s] != ' ' && str[s] != '\n' && str[s] != SEPARATOR_CHAR
-			&& str[s] != '\t')
+	while (str[s] && !ft_strchr(" \t\n", str[s]) && str[s] != SEPARATOR_CHAR)
 	{
 		words[w - 1][s] = str[s];
 		s++;
 	}
 	if (str[s] == SEPARATOR_CHAR && (w == 1 || empty_line(str + s)))
 		print_error(ERR_SYNTAX);
-	if (s)
-		words[w - 1][s] = '\0';
+	words[w - 1][s] = (s ? '\0' : words[w - 1][s]);
 	if (str[s])
 		return (while_blank(str + s, words, save, w));
 	words[w] = 0;
@@ -64,10 +58,10 @@ char	**while_char(char *str, char **words, int save, int w)
 
 char	**split_op(char *str)
 {
-	char		**words;
-	char		*t;
-	int 		i;
-	char 		*s;
+	char	**words;
+	char	*t;
+	int		i;
+	char	*s;
 
 	i = 0;
 	s = 0;
@@ -86,12 +80,11 @@ char	**split_op(char *str)
 			s[i] = ' ';
 			ft_strncpy(s + i + 1, str + i, ft_strlen(str) - i);
 			str = s;
-			break;
+			break ;
 		}
 		i++;
 	}
-	words = 0;
-	words = while_blank(str, words, 1, ft_strlen(str));
+	words = while_blank(str, 0, 1, ft_strlen(str));
 	pr_free(s);
 	return (words);
 }
