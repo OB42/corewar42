@@ -13,31 +13,65 @@
 #ifndef ASM_H
 # define ASM_H
 
-# include "op.h"
 # include "ft_printf/ft_printf.h"
 # include "get_next_line/get_next_line.h"
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
-# define ERR_NBR_PARSING "Invalid character after a number\n"
-# define ERR_ARG_TYPE "Wrong arg type\n"
-# define ERR_LABEL_NOT_FOUND "Label not found\n"
-# define ERR_USAGE "Usage: ./asm <sourcefile.s>\n"
-# define ERR_FILE_READING "Can't read source file\n"
-# define ERR_FILE_CREATION "Can't create champion\n"
-# define ERR_MALLOC "malloc returned 0\n"
-# define ERR_PARSING "Parsing error\n"
-# define ERR_GNL "GNL returned 0 or -1\n"
-# define ERR_SYNTAX "Syntax error\n"
-# define ERR_COMMAND_LENGTH "A command is too long\n"
-# define ERR_INVALID_COMMAND "A command is invalid\n"
-# define ERR_WRONG_EXTENSION "The filename extension must be .s\n"
-# define ERR_UNKNOWN_OPERATION "Unknown operation\n"
-# define ERR_ARG_LEN "Wrong number of arguments\n"
-# define ERR_INVALID_LABEL "Invalid label\n"
-# define ERR_CHAMPION_SIZE "The champion is too large\n"
-# define INPUT_EXTENSION ".s"
-# define OUTPUT_EXTENSION ".cor"
+# define ERR_NBR_PARSING		"Invalid character after a number\n"
+# define ERR_ARG_TYPE			"Wrong arg type\n"
+# define ERR_LABEL_NOT_FOUND	"Label not found\n"
+# define ERR_USAGE				"Usage: ./asm <sourcefile.s>\n"
+# define ERR_FILE_READING 		"Can't read source file\n"
+# define ERR_FILE_CREATION		"Can't create champion\n"
+# define ERR_MALLOC				"malloc returned 0\n"
+# define ERR_PARSING			"Parsing error\n"
+# define ERR_GNL				"GNL returned 0 or -1\n"
+# define ERR_SYNTAX				"Syntax error\n"
+# define ERR_COMMAND_LENGTH		"A command is too long\n"
+# define ERR_INVALID_COMMAND	"A command is invalid\n"
+# define ERR_WRONG_EXTENSION	"The filename extension must be .s\n"
+# define ERR_UNKNOWN_OPERATION	"Unknown operation\n"
+# define ERR_ARG_LEN			"Wrong number of arguments\n"
+# define ERR_INVALID_LABEL		"Invalid label\n"
+# define ERR_CHAMPION_SIZE		"The champion is too large\n"
+# define INPUT_EXTENSION		".s"
+# define OUTPUT_EXTENSION 		".cor"
+# define IND_SIZE				2
+# define REG_SIZE				4
+# define DIR_SIZE				REG_SIZE
+# define REG_CODE				1
+# define DIR_CODE				2
+# define IND_CODE				3
+# define MEM_SIZE				(4*1024)
+# define CHAMP_MAX_SIZE			(MEM_SIZE / 6) * 256
+# define COMMENT_CHAR			'#'
+# define COMMENT_CHAR_2			';'
+# define LABEL_CHAR				':'
+# define DIRECT_CHAR			'%'
+# define SEPARATOR_CHAR			','
+# define LABEL_CHARS			"abcdefghijklmnopqrstuvwxyz_0123456789"
+# define NAME_CMD_STRING		".name"
+# define COMMENT_CMD_STRING		".comment"
+# define T_REG					1
+# define T_DIR					2
+# define T_IND					4
+# define T_R					T_REG
+# define T_D					T_DIR
+# define T_I					T_IND
+# define DATA				content
+# define SZ						sizeof
+# define PROG_NAME_LENGTH		(128)
+# define COMMENT_LENGTH			(2048)
+# define COREWAR_EXEC_MAGIC		0xea83f3
+
+typedef struct		header_s
+{
+  unsigned int		magic;
+  char				prog_name[PROG_NAME_LENGTH + 1];
+  unsigned int		prog_size;
+  char				comment[COMMENT_LENGTH + 1];
+}					header_t;
 
 typedef struct		s_op
 {
@@ -46,7 +80,7 @@ typedef struct		s_op
 	int				args_type[3];
 	char			op_code;
 	char			ocp;
-	int				print_ocp;//carry?
+	int				print_ocp;
 	int				d2;
 }					t_op;
 
