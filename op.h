@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/13 18:45:33 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/13 21:47:33 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,3 +175,4 @@ void			ft_verbose(t_proc *proc);
 void			ft_write_ram(int value, int size, unsigned char *ram);
 t_proc			*ft_del(t_proc *proc);
 t_proc			*ft_cycle_to_die(t_corewar *corewar, t_proc *proc);
+int				ft_val_ocp(int ocp, int param);

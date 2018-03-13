@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/13 18:49:04 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/13 23:14:22 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
 {
 	static int	max_id = 1;
 
-	proc->cycle++;
 	if (proc->id > max_id)
 		max_id = proc->id;
 	if (proc->id == max_id)
@@ -67,34 +66,44 @@ t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
 		ft_printf("It is now cycle %d\n", corewar->cycle);
 	}
 	if (corewar->ctd_cur == corewar->ctd_obj)
+	{
 		proc = ft_cycle_to_die(corewar, proc);
+		max_id = ft_get_procnb(proc) - 1;
+	}
+	proc->cycle++;
 	return (proc);
 }
 
 void	ft_loop(t_corewar corewar)
 {
 	t_proc *lst_proc;
+	int		test;
 
 	lst_proc = ft_init_proc(&corewar);
 	while (lst_proc)
 	{
+		test = 0;
 		lst_proc = ft_cycle(lst_proc, &corewar);
 		if (lst_proc == NULL)
 			exit(1);
 		if (lst_proc->cycle > 1 && lst_proc->cycle == lst_proc->ins->cycle)
 		{
+			//system("clear");
 			//ft_print_arena(corewar.arena);
 			ft_verbose(lst_proc);
 			(lst_proc->ins->fun)(lst_proc->ins, lst_proc);
 			lst_proc->cycle = 0;
+			test = 1;
 		}
 		if (lst_proc->cycle <= 1)
 			lst_proc->ins = ft_get_instru(lst_proc->curseur);
-		if (lst_proc->ins == NULL)
-			lst_proc = ft_del(lst_proc);
-		else
-			lst_proc = lst_proc->nxt;
-		if (corewar.cycle > 5000)
+		if (lst_proc->ins == NULL && test == 0)
+		{
+			lst_proc->curseur += 1;
+			lst_proc->cycle = 0;
+		}
+		lst_proc = lst_proc->nxt;
+		if (lst_proc == NULL || corewar.cycle > 4800)
 			exit(1);
 	}
 }

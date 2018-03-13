@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 13:47:23 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/13 18:11:25 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/13 23:14:20 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,18 @@ void	ft_print_special(t_proc *proc)
 
 	if(ft_strcmp(proc->ins->name, "sti") == 0)
 	{
-		tmp1 = ft_conv(proc->ins->param[1], proc);
-		tmp2 = proc->ins->param[2];
-		if (proc->ins->ocp & 4)
-			tmp2 = proc->reg[proc->ins->param[2]];
-		ft_printf("\n       | -> store to %d + %d = %d (with pc and mod %d)",
-				tmp1, tmp2, tmp1 + tmp2, proc->curseur - proc->init + tmp1 + tmp2);
+		if (ft_val_ocp(proc->ins->ocp, 0) == 1)
+		{
+			tmp1 = ft_conv(proc->ins->param[1], proc);
+			tmp2 = proc->ins->param[2];
+			if (proc->ins->ocp & 4)
+				tmp2 = proc->reg[proc->ins->param[2]];
+			ft_printf("P%5d | %s", proc->id, proc->ins->name);
+			ft_print_ocp(proc);
+			ft_printf("\n       | -> store to %d + %d = %d (with pc and mod %d)\n",
+					tmp1, tmp2, tmp1 + tmp2, proc->curseur - proc->init + tmp1 + tmp2);
+		}
+		ft_print_instru(proc);
 	}
 	if(ft_strcmp(proc->ins->name, "ldi") == 0)
 	{
@@ -98,19 +104,25 @@ void	ft_print_special(t_proc *proc)
 			ft_print_instru(proc);
 		}
 	}
-	if (ft_strcmp(proc->ins->name, "live") == 0 && (char) ft_get_int(proc->curseur + 1, 4) == proc->reg[1])
-		ft_printf("\nPlayer %d (%s) is said to be alive", proc->player, proc->champ.header.prog_name);
-
+	if (ft_strcmp(proc->ins->name, "live") == 0)
+	{
+		ft_printf(" %d", proc->ins->param[0]);	
+		if ((char) ft_get_int(proc->curseur + 1, 4) == proc->reg[1])
+			ft_printf("\nPlayer %d (%s) is said to be alive", proc->player, proc->champ.header.prog_name);
+	}
 }
 
 void	ft_verbose(t_proc *proc)
 {
-	ft_printf("P%5d | %s", proc->id, proc->ins->name);
-	ft_print_ocp(proc);
-	if (proc->ins->ocp == 0)
+	if (!(ft_strcmp(proc->ins->name, "sti") == 0))
+	{
+		ft_printf("P%5d | %s", proc->id, proc->ins->name);
+		ft_print_ocp(proc);
+	}
+	if (proc->ins->ocp == 0 && ft_strcmp("live", proc->ins->name) != 0)
 		ft_printf(" %d", ft_conv(proc->ins->param[0], proc));
 	ft_print_special(proc);
-	if (ft_strcmp(proc->ins->name, "zjmp") != 0)
+	if (ft_strcmp(proc->ins->name, "zjmp") != 0 && ft_strcmp(proc->ins->name, "sti") != 0)
 	{
 		ft_printf("\n");
 		ft_print_instru(proc);
