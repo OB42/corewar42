@@ -29,13 +29,13 @@ void	save_file(char *input_filename, header_t *header, char *champion,
 	if ((output_fd = open(output_filename, O_WRONLY | O_CREAT | O_TRUNC,
 		S_IRUSR | S_IWUSR)) == -1)
 		print_error(ERR_FILE_CREATION);
-	pr_free(output_filename);
 	lseek(input_fd, -1L, SEEK_END);
 	if (read(input_fd, &c, 1) == -1 || c != '\n')
 		print_error(c != '\n' ? ERR_SYNTAX : ERR_FILE_READING);
 	write(output_fd, header, sizeof(header_t));
 	write(output_fd, champion, save);
 	ft_printf("Writing output program to %s\n", output_filename);
+	pr_free(output_filename);
 }
 
 char	*parse_champion(header_t *header, int input_fd)

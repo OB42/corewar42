@@ -74,9 +74,4 @@ void	parse_cmd(header_t *header, char *cmd, int fd, size_t max_length)
 		header->comment : header->prog_name, fd, line,
 		line_arr[0][1] == COMMENT_CMD_STRING[1], temp + 1);
 	pr_free_char_arr(line_arr);
-	if (*(temp + 1) == '"')
-	{
-		pr_free(line);
-		return ;
-	}
 }

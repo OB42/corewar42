@@ -17,9 +17,7 @@ char 	get_ocp(char **op_arr, int o)
 	char ocp;
 	int a;
 	char t;
-	int n;
 
-	n = ft_arrstrlen(op_arr - o);
 	a = 0;
 	ocp = 0;
 	while (op_arr[o])
