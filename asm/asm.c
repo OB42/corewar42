@@ -65,7 +65,6 @@ char	*parse_champion(header_t *header, int input_fd)
 	if (!(header->prog_size))
 		print_error("EMPTY PROGRAM\n");
 	add_label(champion, -1,-1,-1, -1, -1);
-	ft_printf("///%hhx %hhx %i\n", champion[20], champion[21], header->prog_size);
 	return (champion);
 }
 
@@ -83,8 +82,8 @@ int		main(int argc, char *argv[])
 		print_error(ERR_FILE_READING);
 	ft_bzero(&header, sizeof(header_t));
 	header.magic = endian_swap_32(COREWAR_EXEC_MAGIC);
-	parse_cmd(NAME_CMD_STRING, header.prog_name, input_fd, PROG_NAME_LENGTH);
-	parse_cmd(COMMENT_CMD_STRING, header.comment, input_fd, COMMENT_LENGTH);
+	parse_cmd(&header, NAME_CMD_STRING, input_fd, PROG_NAME_LENGTH);
+	parse_cmd(&header, COMMENT_CMD_STRING, input_fd, COMMENT_LENGTH);
 	save_file(argv[1], &header, parse_champion(&header, input_fd), input_fd);
 	return (0);
 }

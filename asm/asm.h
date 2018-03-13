@@ -64,6 +64,7 @@ typedef struct		s_labels
 	t_list			*saved;
 }					t_labels;
 
+void		parse_cmd(header_t *header, char *cmd, int fd, size_t max_length);
 t_op		*get_op(char *name);
 void		save_bytes(header_t *header, char *champion, void *temp, int i);
 void		parse_register(header_t *header, t_op *op, char *arg, char *champion);
@@ -81,7 +82,6 @@ t_label		*get_label(char *champion, char *name, int type);
 t_label		*add_label(char *champion, char *name, int location, int type, int spg, int d2);
 int			parse_op(char **op_arr, header_t *header, char *champion);
 char		*check_cmd(char *cmd, int fd, char **line, size_t max_length);
-void		parse_cmd(char *cmd, char *dest, int fd, size_t max_length);
 void		skip_empty_lines(char **line, int input_fd, int *g);
 void		pr_free_char_arr(char **to_free);
 int			ft_arrstrlen(char **arr);

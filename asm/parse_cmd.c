@@ -49,7 +49,7 @@ void	cmd_buffering(char *dest, char *temp, int fd, char *line)
 	}
 }
 
-void	parse_cmd(char *cmd, char *dest, int fd, size_t max_length)
+void	parse_cmd(header_t *header, char *cmd, int fd, size_t max_length)
 {
 	char	*line;
 	char	*temp;
@@ -62,14 +62,15 @@ void	parse_cmd(char *cmd, char *dest, int fd, size_t max_length)
 	if (!(temp = ft_strchr(line, '"')))
 		print_error(ERR_INVALID_COMMAND);
 	*temp = 0;
-	if (ft_arrstrlen(line_arr = split(line)) != 1
-	|| ft_strncmp(cmd, line_arr[0], ft_strlen(cmd)))
+	if (ft_arrstrlen(line_arr = split(line)) != 1 || !(line_arr[0][0]))
 		print_error(ERR_INVALID_COMMAND);
+	if (ft_strncmp(line_arr[0], line_arr[0][1] == COMMENT_CMD_STRING[1] ? COMMENT_CMD_STRING : NAME_CMD_STRING, ft_strlen(cmd)))
+		print_error(ERR_INVALID_COMMAND);
+	cmd_buffering(line_arr[0][1] == COMMENT_CMD_STRING[1] ? header->comment : header->prog_name, temp + 1, fd, line);
 	pr_free_char_arr(line_arr);
 	if (*(temp + 1) == '"')
 	{
 		pr_free(line);
 		return ;
 	}
-	cmd_buffering(dest, temp + 1, fd, line);
 }
