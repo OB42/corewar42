@@ -100,8 +100,7 @@ typedef struct		s_labels
 
 char				*check_cmd(char *cmd, int fd, char **line,
 						size_t max_length);
-void				parse_cmd(t_header *header, char *cmd, int fd,
-						size_t max_length);
+void				parse_cmd(t_header *header, char *cmd, int fd);
 int					parse_op(char **op_arr, t_header *header, char *champion);
 void				parse_params(char **op_arr, t_header *header, int o,
 						char *champion);

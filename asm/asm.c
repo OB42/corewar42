@@ -81,8 +81,8 @@ int		main(int argc, char *argv[])
 		print_error(ERR_FILE_READING);
 	ft_bzero(&header, sizeof(t_header));
 	header.magic = endian_swap_32(COREWAR_EXEC_MAGIC);
-	parse_cmd(&header, NAME_CMD_STRING, input_fd, PROG_NAME_LENGTH);
-	parse_cmd(&header, COMMENT_CMD_STRING, input_fd, COMMENT_LENGTH);
+	parse_cmd(&header, NAME_CMD_STRING, input_fd);
+	parse_cmd(&header, COMMENT_CMD_STRING, input_fd);
 	save_file(argv[1], &header, parse_champion(&header, input_fd), input_fd);
 	return (0);
 }

@@ -54,7 +54,7 @@ void	cmd_buffering(char *dest, int fd, char *line, int type)
 	}
 }
 
-void	parse_cmd(t_header *header, char *cmd, int fd, size_t max_length)
+void	parse_cmd(t_header *header, char *cmd, int fd)
 {
 	char	*line;
 	char	*temp;

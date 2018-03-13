@@ -12,7 +12,7 @@
 
 .PHONY: all, asm, clean, fclean, re
 
-CC = gcc# -Wall -Wextra -Werror
+CC = gcc -Wall -Wextra -Werror
 NAME = asm
 LFT_PATH = ./ft_printf/
 SRC_NAME = valid_label.c get_op.c get_ocp.c parse_params.c endian_swap.c nbr_parsing.c split.c label_handling.c parse_op.c parse_cmd.c get_next_line/get_next_line.c asm.c pr_malloc.c print_error.c	split_op.c utils.c

@@ -12,7 +12,7 @@
 
 #include "asm.h"
 
-void	parse_register(t_header *header, t_op *op, char **arg_champ)
+void	parse_register(t_header *header, char **arg_champ)
 {
 	char	r;
 
@@ -53,7 +53,7 @@ void	parse_direct(t_header *header, t_op *op, char **arg_champ, int spg)
 	}
 }
 
-void	parse_indirect(t_header *header, t_op *op, char **arg_champ, int spg)
+void	parse_indirect(t_header *header, char **arg_champ, int spg)
 {
 	short	r;
 
@@ -83,13 +83,13 @@ void	parse_params(char **op_arr, t_header *header, int o, char *champion)
 	{
 		if (op_arr[o][0] == 'r')
 			!(op->args_type[a] % 2) ? print_error(ERR_ARG_TYPE)
-			: parse_register(header, op, (char *[2]){op_arr[o], champion});
+			: parse_register(header, (char *[2]){op_arr[o], champion});
 		else if (op_arr[o][0] == DIRECT_CHAR)
 			!((op->args_type[a] >> 1) % 2) ? print_error(ERR_ARG_TYPE)
 			: parse_direct(header, op, (char *[2]){op_arr[o], champion}, spg);
 		else
 			!((op->args_type[a] >> 2) % 2) ? print_error(ERR_ARG_TYPE)
-			: parse_indirect(header, op, (char *[2]){op_arr[o], champion}, spg);
+			: parse_indirect(header, (char *[2]){op_arr[o], champion}, spg);
 		o++;
 		a++;
 	}
