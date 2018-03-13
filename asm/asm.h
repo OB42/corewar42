@@ -98,31 +98,31 @@ typedef struct		s_labels
 	t_list			*saved;
 }					t_labels;
 
-int			valid_label(char *label);
+char		*check_cmd(char *cmd, int fd, char **line, size_t max_length);
+void		parse_cmd(header_t *header, char *cmd, int fd, size_t max_length);
+int			parse_op(char **op_arr, header_t *header, char *champion);
 void		parse_params(char **op_arr, header_t *header, int o,
 	char *champion);
-void		parse_cmd(header_t *header, char *cmd, int fd, size_t max_length);
 t_op		*get_op(char *name);
-void		save_bytes(header_t *header, char *champion, void *temp, int i);
 char		get_ocp(char **op_arr, int o);
-int			pr_atoi(const char *str);
-short		pr_atos(const char *str);
-void		check_nbr_parsing(char c);
-short		endian_swap_16(short n);
-int			endian_swap_32(int n);
-char		**w_char(char *str, char **words, int save, int w);
-char		**split(char *str);
+void		save_bytes(header_t *header, char *champion, void *temp, int i);
+int			valid_label(char *label);
 t_label		*get_label(char *champion, char *name, int type);
 t_label		*add_label(char *champion, char *name, int loc_type_st[3], int d2);
-int			parse_op(char **op_arr, header_t *header, char *champion);
-char		*check_cmd(char *cmd, int fd, char **line, size_t max_length);
 void		skip_empty_lines(char **line, int input_fd, int *g);
-void		pr_free_char_arr(char **to_free);
-int			ft_arrstrlen(char **arr);
 int			empty_line(char *str);
 void		*pr_malloc(size_t n);
 void		pr_free(void *p);
 void		print_error(char *err);
 char		**split_op(char *str);
 char		**while_char(char *str, char **words, int save, int w);
+char		**w_char(char *str, char **words, int save, int w);
+char		**split(char *str);
+void		pr_free_char_arr(char **to_free);
+int			ft_arrstrlen(char **arr);
+int			pr_atoi(const char *str);
+short		pr_atos(const char *str);
+void		check_nbr_parsing(char c);
+short		endian_swap_16(short n);
+int			endian_swap_32(int n);
 #endif
