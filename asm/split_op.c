@@ -56,6 +56,13 @@ char	**while_char(char *str, char **words, int save, int w)
 	return (words);
 }
 
+char	*replace_direct_char(char *str, char *s, int i)
+{
+	s[i] = ' ';
+	ft_strncpy(s + i + 1, str + i, ft_strlen(str) - i);
+	return (s);
+}
+
 char	**split_op(char *str)
 {
 	char	**words;
@@ -65,24 +72,20 @@ char	**split_op(char *str)
 
 	i = 0;
 	s = 0;
-	t = ft_strrchr(str, SEPARATOR_CHAR);
-	if (t && empty_line(t + 1))
+	if ((t = ft_strrchr(str, SEPARATOR_CHAR)) && empty_line(t + 1))
 		print_error(ERR_SYNTAX);
 	while (str[i] && ft_strchr(" \t\n\v\f\r", str[i]))
 		i++;
 	while (str[i] && ft_strchr(LABEL_CHARS, str[i]))
 	{
-		if (str[i + 1] == DIRECT_CHAR)
+		if (str[i++ + 1] == DIRECT_CHAR)
 		{
 			s = pr_malloc(ft_strlen(str) + 2);
 			s[ft_strlen(str) + 1] = 0;
-			ft_strncpy(s, str, i++ + 1);
-			s[i] = ' ';
-			ft_strncpy(s + i + 1, str + i, ft_strlen(str) - i);
-			str = s;
+			ft_strncpy(s, str, i++);
+			str = replace_direct_char(str, s, i - 1);
 			break ;
 		}
-		i++;
 	}
 	words = while_blank(str, 0, 1, ft_strlen(str));
 	pr_free(s);
