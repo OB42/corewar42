@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_live.c                                          :+:      :+:    :+:   */
+/*   ft_update_ins.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/07 15:22:00 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/14 21:49:27 by vburidar         ###   ########.fr       */
+/*   Created: 2018/03/14 18:15:43 by vburidar          #+#    #+#             */
+/*   Updated: 2018/03/14 19:13:12 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "op.h"
 #include "LIBFT/libft.h"
+#include "op.h"
 
-void	ft_live(t_ins *ins, t_proc *proc)
+void	ft_update_ins(unsigned char *code_champ, unsigned char *init,  t_proc *proc)
 {
-	proc->corewar->nb_live += 1;
-	proc->live = 1;
-	proc->last_live = 1;
-	ins->size = ins->size;
-	ins->param[0] = ft_get_int(proc->curseur + 1, 4);
-	proc->curseur = ft_oob(proc->init, proc->curseur + 5);
+	if (proc->ins->ocp == 0)
+		proc->ins->param[0] = ft_get_int(code_champ + 1, proc->ins->size);
+	else
+	{
+		proc->ins->ocp = *(code_champ + 1);
+		ft_get_var(proc->ins, code_champ + 2, init);
+	}
 }

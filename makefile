@@ -26,6 +26,9 @@ SRC = main.c\
 	  ft_del.c\
 	  ft_cycle_to_die.c\
 	  ft_val_ocp.c\
+	  ft_print_nxt.c\
+	  ft_update_ins.c\
+	  ft_output_arena.c
 
 
 OBJ = $(SRC:.c=.o)

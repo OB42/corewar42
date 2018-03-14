@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 19:51:37 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/14 20:58:42 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/14 21:14:37 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <unistd.h>
 #include "libft.h"
 
-static int	affiche_str(char *str, char *tab_flag, char conv)
+static int	affiche_str(char *str, char *tab_flag, char conv, int fd)
 {
 	static int	test;
 	int			len;
@@ -29,13 +29,13 @@ static int	affiche_str(char *str, char *tab_flag, char conv)
 		*ft_strchr(str, 'a') = '\0';
 	if (str != NULL)
 		tab_flag = str;
-	write(1, str, ft_strlen(str));
+	write(fd, str, ft_strlen(str));
 	len = ft_strlen(str);
 	if (test == 1)
 	{
 		ft_putchar('\0');
 		str = str + len + 1;
-		write(1, str, ft_strlen(str));
+		write(fd, str, ft_strlen(str));
 		len = len + 1 + ft_strlen(str);
 	}
 	free(tab_flag);
@@ -77,7 +77,7 @@ static int	ft_notvalidstr(char *tab_flag, t_len *len, int ret, char *format)
 		tmp2[1] = '\0';
 		if (*tab_flag == '\0')
 			len->len_flag = len->len_flag - 1;
-		ret = affiche_str(tmp2, tab_flag, 's');
+		ret = affiche_str(tmp2, tab_flag, 's', len->fd);
 		return (ret);
 	}
 	return (1);
@@ -102,7 +102,7 @@ static int	ft_flag(const char *format,
 		{
 			tmp = tabf->tab[(int)*format] - 10;
 			ret = affiche_str((tabf[tmp].pt_affiche)(pt_ap, tab_flag),
-					tab_flag, tabf[1].tab[compteur + 25]);
+					tab_flag, tabf[1].tab[compteur + 25], len->fd);
 			return (ret);
 		}
 		len->len_flag = len->len_flag + 1;
@@ -112,7 +112,7 @@ static int	ft_flag(const char *format,
 	return (ft_notvalidstr(tab_flag, len, ret, (char*)format));
 }
 
-int			ft_printf(const char *format, ...)
+int			ft_printfd(int fd, const char *format, ...)
 {
 	va_list		ap;
 	const char	*init;
@@ -121,12 +121,13 @@ int			ft_printf(const char *format, ...)
 
 	va_start(ap, format);
 	init = format;
+	len.fd = fd;
 	len.len_str = 0;
 	ft_init_tabf(tabf);
 	while (*format)
 	{
 		if (*format != '%')
-			format = format + ft_fill_buff(format, 1);
+			format = format + ft_fill_buff(format, len.fd);
 		else if (*format == '%')
 		{
 			len.len_flag = 2;

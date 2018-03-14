@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 13:47:23 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/14 15:26:05 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/14 19:31:33 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	ft_print_special(t_proc *proc)
 	if (ft_strcmp(proc->ins->name, "live") == 0)
 	{
 		ft_printf(" %d", proc->ins->param[0]);	
-		if ((char) ft_get_int(proc->curseur + 1, 4) == proc->reg[1])
+		if (proc->ins->param[0] == proc->reg[1])
 			ft_printf("\nPlayer %d (%s) is said to be alive", proc->player, proc->champ.header.prog_name);
 	}
 }
@@ -96,6 +96,8 @@ int		ft_invalid_print(char *name)
 	if (ft_strcmp(name, "ldi") == 0)
 		return (1);
 	if (ft_strcmp(name, "lldi") == 0)
+		return (1);
+	if (ft_strcmp(name, "ld") == 0)
 		return (1);
 	return (0);
 }

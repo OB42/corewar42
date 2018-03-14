@@ -12,6 +12,7 @@ SRC		= ft_atoi.c\
 		  ft_plus_space.c\
 		  ft_precision.c\
 		  ft_printf.c\
+		  ft_printfd.c\
 		  ft_putchar.c\
 		  ft_secure_strsub.c\
 		  ft_signed_nb_pt.c\

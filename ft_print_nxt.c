@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_live.c                                          :+:      :+:    :+:   */
+/*   ft_print_nxt.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/07 15:22:00 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/14 21:49:27 by vburidar         ###   ########.fr       */
+/*   Created: 2018/03/14 17:45:21 by vburidar          #+#    #+#             */
+/*   Updated: 2018/03/14 17:50:04 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "op.h"
 #include "LIBFT/libft.h"
+#include "op.h"
 
-void	ft_live(t_ins *ins, t_proc *proc)
+void	ft_print_nxt(unsigned char *init, unsigned char *curseur, int size)
 {
-	proc->corewar->nb_live += 1;
-	proc->live = 1;
-	proc->last_live = 1;
-	ins->size = ins->size;
-	ins->param[0] = ft_get_int(proc->curseur + 1, 4);
-	proc->curseur = ft_oob(proc->init, proc->curseur + 5);
+	int i;
+
+	i = 0;
+	while (i < size)
+	{
+		ft_printf("%02x ", *ft_oob(init, curseur + i));
+		i++;
+	}
+	ft_printf("\n");
 }
+

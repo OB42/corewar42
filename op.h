@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/14 15:56:57 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/14 21:01:07 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,7 @@ struct	s_proc
 	int				carry;
 	int				player;
 	int				live;
+	int				last_live;
 	t_corewar		*corewar;
 	t_champ			champ;
 	int				reg[REG_NUMBER];
@@ -178,3 +179,6 @@ t_proc			*ft_cycle_to_die(t_corewar *corewar, t_proc *proc);
 int				ft_val_ocp(int ocp, int param);
 void			ft_print_ocp(t_proc *proc);
 int				ft_conv(int value, t_proc *proc);
+void			ft_print_nxt(unsigned char *init, unsigned char *curseur, int size);
+void			ft_update_ins(unsigned char *code_champ, unsigned char *init, t_proc *proc);
+void			ft_output_arena(t_corewar corewar);

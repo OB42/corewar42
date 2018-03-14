@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_live.c                                          :+:      :+:    :+:   */
+/*   ft_output_arena.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/07 15:22:00 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/14 21:49:27 by vburidar         ###   ########.fr       */
+/*   Created: 2018/03/14 20:37:59 by vburidar          #+#    #+#             */
+/*   Updated: 2018/03/14 21:19:12 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "op.h"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include "LIBFT/libft.h"
+#include "op.h"
 
-void	ft_live(t_ins *ins, t_proc *proc)
+void	ft_output_arena(t_corewar corewar)
 {
-	proc->corewar->nb_live += 1;
-	proc->live = 1;
-	proc->last_live = 1;
-	ins->size = ins->size;
-	ins->param[0] = ft_get_int(proc->curseur + 1, 4);
-	proc->curseur = ft_oob(proc->init, proc->curseur + 5);
+	int i;
+	int fd;
+
+	fd = open("dumpv", O_WRONLY);
+	i = 0;
+	while (i < MEM_SIZE)
+	{
+		if (i % 64 == 0)
+			ft_printfd(fd, "\n0x%04x : ", i);
+		ft_printfd(fd, "%02x ", corewar.arena[i]);
+		i++;
+	}
 }

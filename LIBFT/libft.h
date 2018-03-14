@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 10:53:35 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/07 22:01:42 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/14 21:04:20 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@
 **FT_PRINTF
 */
 int					ft_printf(const char *format, ...);
+
+
+/*
+**FT_PRINTFD
+*/
+
+int					ft_printfd(int fd, const char *format, ...);
 
 /*
 **CONVERSION
@@ -95,7 +102,7 @@ char				*ft_strncpy(char *dest, const char *src, size_t n);
 */
 void				ft_filltab(char tab[128]);
 void				ft_adding(char c, char tab[128]);
-int					ft_fill_buff(const char *adr);
+int					ft_fill_buff(const char *adr, int fd);
 
 /*
 **STRUCTURES
@@ -110,6 +117,7 @@ typedef struct		s_len
 {
 	int				len_str;
 	int				len_flag;
+	int				fd;
 }					t_len;
 
 #endif
