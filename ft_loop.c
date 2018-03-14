@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/14 21:45:50 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/14 23:33:44 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_val_proc(t_proc *lst_proc, t_corewar *corewar, int i, t_proc *init)
 	lst_proc->reg[1] = -lst_proc->player;
 	lst_proc->ins = NULL;
 	lst_proc->id = ft_get_procnb(lst_proc);
+	ft_printf("id = %d\n", lst_proc->id);
 	lst_proc->champ = corewar->tab_champ[0];
 }
 
@@ -68,6 +69,8 @@ t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
 	if (corewar->ctd_cur == corewar->ctd_obj)
 	{
 		proc = ft_cycle_to_die(corewar, proc);
+		if (proc == NULL)
+			return (NULL);
 		max_id = ft_get_procnb(proc) - 1;
 	}
 	proc->cycle++;
@@ -96,17 +99,17 @@ void	ft_loop(t_corewar corewar)
 			(lst_proc->ins->fun)(lst_proc->ins, lst_proc);
 			lst_proc->cycle = 0;
 			test = 1;
-			//ft_print_nxt(lst_proc->init, lst_proc->curseur, 4);
+			//ft_print_nxt(lst_proc->init, lst_proc->curseur, 200);
 		}
 		if (lst_proc->cycle <= 1)
 			lst_proc->ins = ft_get_instru(lst_proc->curseur, lst_proc->init);
 		if (lst_proc->ins == NULL && test == 0)
 		{
-			lst_proc->curseur += 1;
+			lst_proc->curseur = ft_oob(lst_proc->init, lst_proc->curseur + 1);
 			lst_proc->cycle = 0;
 		}
 		lst_proc = lst_proc->nxt;
-		if (lst_proc == NULL || corewar.cycle > 9000)
+		if (lst_proc == NULL || corewar.cycle > 7000)
 		{
 			ft_output_arena(corewar);
 			exit(1);

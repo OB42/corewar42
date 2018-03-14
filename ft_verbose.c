@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 13:47:23 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/14 19:31:33 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/14 23:10:03 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,9 @@ void ft_print_ocp(t_proc *proc)
 
 void	ft_print_special(t_proc *proc)
 {
+	t_proc	*init;
+	int		param;
+
 	if (ft_strcmp(proc->ins->name, "fork") == 0)
 		ft_printf(" (%d)", proc->curseur - proc->init + ft_conv(proc->ins->param[0], proc));
 	if (ft_strcmp(proc->ins->name, "zjmp") == 0)
@@ -82,8 +85,18 @@ void	ft_print_special(t_proc *proc)
 	if (ft_strcmp(proc->ins->name, "live") == 0)
 	{
 		ft_printf(" %d", proc->ins->param[0]);	
-		if (proc->ins->param[0] == proc->reg[1])
-			ft_printf("\nPlayer %d (%s) is said to be alive", proc->player, proc->champ.header.prog_name);
+		init = proc;
+		param = proc->ins->param[0];
+		while (proc->nxt != init && param != 100)
+		{
+			if (param == proc->reg[1])
+			{
+				ft_printf("\nPlayer %d (%s) is said to be alive", proc->player, proc->champ.header.prog_name);
+				param = 100;
+			}
+			else
+				proc = proc->nxt;
+		}
 	}
 }
 

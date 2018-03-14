@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 18:49:00 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/14 16:45:11 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/14 22:09:38 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ void	ft_ldi(t_ins *ins, t_proc *proc)
 	val_1 = ft_addlim(proc->ins->param[0]);
 	val_2 = ft_addlim(proc->ins->param[1]);
 	tmp = ft_oob(proc->init, proc->curseur + ft_addlim(val_1) + ft_addlim(val_2));
-	//ft_printf("%02x %02x %02x %02x ram[%d]\n", tmp[0], tmp[1], tmp[2], tmp[3], tmp - proc->init);
-	proc->reg[ins->param[2]] = ft_get_int(ft_oob(proc->init, proc->curseur + val_1 + val_2), REG_SIZE);
+	if (proc->ins->param[2] < REG_NUMBER && proc->ins->ocp > 115)
+	{
+		proc->reg[ins->param[2]] = ft_get_int(ft_oob(proc->init, proc->curseur + val_1 + val_2), REG_SIZE);
+	}
 	ft_print_ldi(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }

@@ -6,7 +6,7 @@
 /*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:46 by mlegeay           #+#    #+#             */
-/*   Updated: 2018/03/13 20:40:09 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/14 22:52:13 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void    ft_print_arena(unsigned char	*arena)
 	i = 0;
 	while (i < MEM_SIZE)
 	{
-		ft_printf("%02x ", arena[i]);
-		if (i % 32 == 0)
+		if (i % 32 == 0 && i != 0)
 			ft_printf("\n");
+		ft_printf("%02x ", arena[i]);
 		i++;
 	}
 }

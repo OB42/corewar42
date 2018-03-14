@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/14 21:01:07 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/14 23:14:12 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,7 @@ typedef struct	s_corewar
 	int		ctd_cur;
 	int		nb_live;
 	int		cycle;
+	int		check;
 }				t_corewar;
 
 struct	s_proc
@@ -138,6 +139,7 @@ struct	s_proc
 	t_corewar		*corewar;
 	t_champ			champ;
 	int				reg[REG_NUMBER];
+	int				success;
 	struct s_proc	*nxt;
 };
 

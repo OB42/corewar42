@@ -7064,20 +7064,20 @@ P   13 | live -15990715
 ADV 5 (0x00c4 -> 0x00c9) 01 ff 0c 00 45 
 P   11 | live -15990715
 ADV 5 (0x00c4 -> 0x00c9) 01 ff 0c 00 45 
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3912)
-ADV 6 (0x0ffe -> 0x1004) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3900)
-ADV 6 (0x0ffe -> 0x1004) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3904)
-ADV 6 (0x0ffe -> 0x1004) 0b 64 0f 00 00 0e 
+P   10 | sti r15 512 0
+       | -> store to 512 + 0 = 512 (with pc and mod 4606)
+ADV 6 (0x0ffe -> 0x1004) 0b 64 0f 02 00 0e 
+P    9 | sti r15 512 0
+       | -> store to 512 + 0 = 512 (with pc and mod 4606)
+ADV 6 (0x0ffe -> 0x1004) 0b 64 0f 02 00 0e 
+P    7 | sti r15 512 0
+       | -> store to 512 + 0 = 512 (with pc and mod 4606)
+ADV 6 (0x0ffe -> 0x1004) 0b 64 0f 02 00 0e 
 P    4 | live -15990715
 ADV 5 (0x00c4 -> 0x00c9) 01 ff 0c 00 45 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3908)
-ADV 6 (0x0ffe -> 0x1004) 0b 64 0f 00 00 0e 
+P    2 | sti r15 512 0
+       | -> store to 512 + 0 = 512 (with pc and mod 4606)
+ADV 6 (0x0ffe -> 0x1004) 0b 64 0f 02 00 0e 
 It is now cycle 4896
 It is now cycle 4897
 It is now cycle 4898
@@ -7136,18 +7136,14 @@ It is now cycle 4922
 It is now cycle 4923
 It is now cycle 4924
 It is now cycle 4925
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f3c -> 0x0f41) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f3c -> 0x0f41) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f3c -> 0x0f41) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f3c -> 0x0f41) 01 ff ff ff ff 
+P   10 | live -16777216
+ADV 5 (0x0f3c -> 0x0f41) 01 ff 00 00 00 
+P    9 | live -16777216
+ADV 5 (0x0f3c -> 0x0f41) 01 ff 00 00 00 
+P    7 | live -16777216
+ADV 5 (0x0f3c -> 0x0f41) 01 ff 00 00 00 
+P    2 | live -16777216
+ADV 5 (0x0f3c -> 0x0f41) 01 ff 00 00 00 
 It is now cycle 4926
 It is now cycle 4927
 It is now cycle 4928
@@ -7213,18 +7209,6 @@ It is now cycle 4947
 It is now cycle 4948
 It is now cycle 4949
 It is now cycle 4950
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3723)
-ADV 6 (0x0f41 -> 0x0f47) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3711)
-ADV 6 (0x0f41 -> 0x0f47) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3715)
-ADV 6 (0x0f41 -> 0x0f47) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3719)
-ADV 6 (0x0f41 -> 0x0f47) 0b 64 0f 00 00 0e 
 It is now cycle 4951
 It is now cycle 4952
 It is now cycle 4953
@@ -7267,12 +7251,8 @@ P   13 | live -16384000
 ADV 5 (0x0007 -> 0x000c) 01 ff 06 00 00 
 P   11 | live -16384000
 ADV 5 (0x0007 -> 0x000c) 01 ff 06 00 00 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
 P    4 | live -16384000
 ADV 5 (0x0007 -> 0x000c) 01 ff 06 00 00 
-P    2 | zjmp -200 OK
 It is now cycle 4971
 It is now cycle 4972
 It is now cycle 4973
@@ -7285,20 +7265,20 @@ P    1 | zjmp -200 OK
 It is now cycle 4976
 It is now cycle 4977
 It is now cycle 4978
-It is now cycle 4979
-It is now cycle 4980
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e7f -> 0x0e84) 01 ff ff ff ff 
+ADV 5 (0x0f6c -> 0x0f71) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e7f -> 0x0e84) 01 ff ff ff ff 
+ADV 5 (0x0f6c -> 0x0f71) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e7f -> 0x0e84) 01 ff ff ff ff 
+ADV 5 (0x0f6c -> 0x0f71) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e7f -> 0x0e84) 01 ff ff ff ff 
+ADV 5 (0x0f6c -> 0x0f71) 01 ff ff ff ff 
+It is now cycle 4979
+It is now cycle 4980
 It is now cycle 4981
 P   14 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
@@ -7346,20 +7326,20 @@ It is now cycle 5000
 It is now cycle 5001
 It is now cycle 5002
 It is now cycle 5003
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 3771)
+ADV 6 (0x0f71 -> 0x0f77) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 3759)
+ADV 6 (0x0f71 -> 0x0f77) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 3763)
+ADV 6 (0x0f71 -> 0x0f77) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3767)
+ADV 6 (0x0f71 -> 0x0f77) 0b 64 0f 00 00 0e 
 It is now cycle 5004
 It is now cycle 5005
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3534)
-ADV 6 (0x0e84 -> 0x0e8a) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3522)
-ADV 6 (0x0e84 -> 0x0e8a) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3526)
-ADV 6 (0x0e84 -> 0x0e8a) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3530)
-ADV 6 (0x0e84 -> 0x0e8a) 0b 64 0f 00 00 0e 
 It is now cycle 5006
 P   14 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod -168)
@@ -7402,12 +7382,12 @@ It is now cycle 5020
 It is now cycle 5021
 It is now cycle 5022
 It is now cycle 5023
-It is now cycle 5024
-It is now cycle 5025
 P   10 | zjmp -200 OK
 P    9 | zjmp -200 OK
 P    7 | zjmp -200 OK
 P    2 | zjmp -200 OK
+It is now cycle 5024
+It is now cycle 5025
 It is now cycle 5026
 P   14 | zjmp -200 OK
 P   13 | zjmp -200 OK
@@ -7424,20 +7404,20 @@ P    1 | zjmp -200 OK
 It is now cycle 5031
 It is now cycle 5032
 It is now cycle 5033
-It is now cycle 5034
-It is now cycle 5035
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0dc2 -> 0x0dc7) 01 ff ff ff ff 
+ADV 5 (0x0eaf -> 0x0eb4) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0dc2 -> 0x0dc7) 01 ff ff ff ff 
+ADV 5 (0x0eaf -> 0x0eb4) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0dc2 -> 0x0dc7) 01 ff ff ff ff 
+ADV 5 (0x0eaf -> 0x0eb4) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0dc2 -> 0x0dc7) 01 ff ff ff ff 
+ADV 5 (0x0eaf -> 0x0eb4) 01 ff ff ff ff 
+It is now cycle 5034
+It is now cycle 5035
 It is now cycle 5036
 It is now cycle 5037
 It is now cycle 5038
@@ -7473,20 +7453,20 @@ It is now cycle 5055
 It is now cycle 5056
 It is now cycle 5057
 It is now cycle 5058
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 3582)
+ADV 6 (0x0eb4 -> 0x0eba) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 3570)
+ADV 6 (0x0eb4 -> 0x0eba) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 3574)
+ADV 6 (0x0eb4 -> 0x0eba) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3578)
+ADV 6 (0x0eb4 -> 0x0eba) 0b 64 0f 00 00 0e 
 It is now cycle 5059
 It is now cycle 5060
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3345)
-ADV 6 (0x0dc7 -> 0x0dcd) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3333)
-ADV 6 (0x0dc7 -> 0x0dcd) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3337)
-ADV 6 (0x0dc7 -> 0x0dcd) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3341)
-ADV 6 (0x0dc7 -> 0x0dcd) 0b 64 0f 00 00 0e 
 It is now cycle 5061
 It is now cycle 5062
 It is now cycle 5063
@@ -7517,12 +7497,12 @@ It is now cycle 5075
 It is now cycle 5076
 It is now cycle 5077
 It is now cycle 5078
-It is now cycle 5079
-It is now cycle 5080
 P   10 | zjmp -200 OK
 P    9 | zjmp -200 OK
 P    7 | zjmp -200 OK
 P    2 | zjmp -200 OK
+It is now cycle 5079
+It is now cycle 5080
 It is now cycle 5081
 It is now cycle 5082
 It is now cycle 5083
@@ -7539,20 +7519,20 @@ ADV 4 (0x0f5a -> 0x0f5e) 0e 09 00 00
 ADV 4 (0x0f5a -> 0x0f5e) 0e 09 00 00 
 It is now cycle 5087
 It is now cycle 5088
-It is now cycle 5089
-It is now cycle 5090
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d05 -> 0x0d0a) 01 ff ff ff ff 
+ADV 5 (0x0df2 -> 0x0df7) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d05 -> 0x0d0a) 01 ff ff ff ff 
+ADV 5 (0x0df2 -> 0x0df7) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d05 -> 0x0d0a) 01 ff ff ff ff 
+ADV 5 (0x0df2 -> 0x0df7) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d05 -> 0x0d0a) 01 ff ff ff ff 
+ADV 5 (0x0df2 -> 0x0df7) 01 ff ff ff ff 
+It is now cycle 5089
+It is now cycle 5090
 It is now cycle 5091
 It is now cycle 5092
 It is now cycle 5093
@@ -7600,20 +7580,20 @@ ADV 5 (0x0f6c -> 0x0f71) 01 ff ff ff ff
 It is now cycle 5111
 It is now cycle 5112
 It is now cycle 5113
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 3393)
+ADV 6 (0x0df7 -> 0x0dfd) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 3381)
+ADV 6 (0x0df7 -> 0x0dfd) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 3385)
+ADV 6 (0x0df7 -> 0x0dfd) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3389)
+ADV 6 (0x0df7 -> 0x0dfd) 0b 64 0f 00 00 0e 
 It is now cycle 5114
 It is now cycle 5115
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3156)
-ADV 6 (0x0d0a -> 0x0d10) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3144)
-ADV 6 (0x0d0a -> 0x0d10) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3148)
-ADV 6 (0x0d0a -> 0x0d10) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3152)
-ADV 6 (0x0d0a -> 0x0d10) 0b 64 0f 00 00 0e 
 It is now cycle 5116
 It is now cycle 5117
 It is now cycle 5118
@@ -7644,6 +7624,10 @@ It is now cycle 5130
 It is now cycle 5131
 It is now cycle 5132
 It is now cycle 5133
+P   10 | zjmp -200 OK
+P    9 | zjmp -200 OK
+P    7 | zjmp -200 OK
+P    2 | zjmp -200 OK
 It is now cycle 5134
 It is now cycle 5135
 P   14 | sti r15 0 -186
@@ -7655,13 +7639,9 @@ ADV 6 (0x0f71 -> 0x0f77) 0b 64 0f 00 00 0e
 P   11 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 3767)
 ADV 6 (0x0f71 -> 0x0f77) 0b 64 0f 00 00 0e 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
 P    4 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 3767)
 ADV 6 (0x0f71 -> 0x0f77) 0b 64 0f 00 00 0e 
-P    2 | zjmp -200 OK
 It is now cycle 5136
 It is now cycle 5137
 It is now cycle 5138
@@ -7674,20 +7654,20 @@ P    1 | zjmp -200 OK
 It is now cycle 5141
 It is now cycle 5142
 It is now cycle 5143
-It is now cycle 5144
-It is now cycle 5145
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c48 -> 0x0c4d) 01 ff ff ff ff 
+ADV 5 (0x0d35 -> 0x0d3a) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c48 -> 0x0c4d) 01 ff ff ff ff 
+ADV 5 (0x0d35 -> 0x0d3a) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c48 -> 0x0c4d) 01 ff ff ff ff 
+ADV 5 (0x0d35 -> 0x0d3a) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c48 -> 0x0c4d) 01 ff ff ff ff 
+ADV 5 (0x0d35 -> 0x0d3a) 01 ff ff ff ff 
+It is now cycle 5144
+It is now cycle 5145
 It is now cycle 5146
 It is now cycle 5147
 It is now cycle 5148
@@ -7739,20 +7719,20 @@ ADV 5 (0x0eaf -> 0x0eb4) 01 ff ff ff ff
 It is now cycle 5166
 It is now cycle 5167
 It is now cycle 5168
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 3204)
+ADV 6 (0x0d3a -> 0x0d40) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 3192)
+ADV 6 (0x0d3a -> 0x0d40) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 3196)
+ADV 6 (0x0d3a -> 0x0d40) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3200)
+ADV 6 (0x0d3a -> 0x0d40) 0b 64 0f 00 00 0e 
 It is now cycle 5169
 It is now cycle 5170
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2967)
-ADV 6 (0x0c4d -> 0x0c53) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2955)
-ADV 6 (0x0c4d -> 0x0c53) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2959)
-ADV 6 (0x0c4d -> 0x0c53) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2963)
-ADV 6 (0x0c4d -> 0x0c53) 0b 64 0f 00 00 0e 
 It is now cycle 5171
 It is now cycle 5172
 It is now cycle 5173
@@ -7783,6 +7763,10 @@ It is now cycle 5185
 It is now cycle 5186
 It is now cycle 5187
 It is now cycle 5188
+P   10 | zjmp -200 OK
+P    9 | zjmp -200 OK
+P    7 | zjmp -200 OK
+P    2 | zjmp -200 OK
 It is now cycle 5189
 It is now cycle 5190
 P   14 | sti r15 0 -186
@@ -7794,13 +7778,9 @@ ADV 6 (0x0eb4 -> 0x0eba) 0b 64 0f 00 00 0e
 P   11 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 3578)
 ADV 6 (0x0eb4 -> 0x0eba) 0b 64 0f 00 00 0e 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
 P    4 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 3578)
 ADV 6 (0x0eb4 -> 0x0eba) 0b 64 0f 00 00 0e 
-P    2 | zjmp -200 OK
 It is now cycle 5191
 It is now cycle 5192
 It is now cycle 5193
@@ -7813,20 +7793,20 @@ P    1 | zjmp -200 OK
 It is now cycle 5196
 It is now cycle 5197
 It is now cycle 5198
-It is now cycle 5199
-It is now cycle 5200
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b8b -> 0x0b90) 01 ff ff ff ff 
+ADV 5 (0x0c78 -> 0x0c7d) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b8b -> 0x0b90) 01 ff ff ff ff 
+ADV 5 (0x0c78 -> 0x0c7d) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b8b -> 0x0b90) 01 ff ff ff ff 
+ADV 5 (0x0c78 -> 0x0c7d) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b8b -> 0x0b90) 01 ff ff ff ff 
+ADV 5 (0x0c78 -> 0x0c7d) 01 ff ff ff ff 
+It is now cycle 5199
+It is now cycle 5200
 It is now cycle 5201
 It is now cycle 5202
 It is now cycle 5203
@@ -7878,20 +7858,20 @@ ADV 5 (0x0df2 -> 0x0df7) 01 ff ff ff ff
 It is now cycle 5221
 It is now cycle 5222
 It is now cycle 5223
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 3015)
+ADV 6 (0x0c7d -> 0x0c83) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 3003)
+ADV 6 (0x0c7d -> 0x0c83) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 3007)
+ADV 6 (0x0c7d -> 0x0c83) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3011)
+ADV 6 (0x0c7d -> 0x0c83) 0b 64 0f 00 00 0e 
 It is now cycle 5224
 It is now cycle 5225
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2778)
-ADV 6 (0x0b90 -> 0x0b96) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2766)
-ADV 6 (0x0b90 -> 0x0b96) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2770)
-ADV 6 (0x0b90 -> 0x0b96) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2774)
-ADV 6 (0x0b90 -> 0x0b96) 0b 64 0f 00 00 0e 
 It is now cycle 5226
 It is now cycle 5227
 It is now cycle 5228
@@ -7922,6 +7902,10 @@ It is now cycle 5240
 It is now cycle 5241
 It is now cycle 5242
 It is now cycle 5243
+P   10 | zjmp -200 OK
+P    9 | zjmp -200 OK
+P    7 | zjmp -200 OK
+P    2 | zjmp -200 OK
 It is now cycle 5244
 It is now cycle 5245
 P   14 | sti r15 0 -186
@@ -7933,13 +7917,9 @@ ADV 6 (0x0df7 -> 0x0dfd) 0b 64 0f 00 00 0e
 P   11 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 3389)
 ADV 6 (0x0df7 -> 0x0dfd) 0b 64 0f 00 00 0e 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
 P    4 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 3389)
 ADV 6 (0x0df7 -> 0x0dfd) 0b 64 0f 00 00 0e 
-P    2 | zjmp -200 OK
 It is now cycle 5246
 It is now cycle 5247
 It is now cycle 5248
@@ -7952,20 +7932,20 @@ P    1 | zjmp -200 OK
 It is now cycle 5251
 It is now cycle 5252
 It is now cycle 5253
-It is now cycle 5254
-It is now cycle 5255
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ace -> 0x0ad3) 01 ff ff ff ff 
+ADV 5 (0x0bbb -> 0x0bc0) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ace -> 0x0ad3) 01 ff ff ff ff 
+ADV 5 (0x0bbb -> 0x0bc0) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ace -> 0x0ad3) 01 ff ff ff ff 
+ADV 5 (0x0bbb -> 0x0bc0) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ace -> 0x0ad3) 01 ff ff ff ff 
+ADV 5 (0x0bbb -> 0x0bc0) 01 ff ff ff ff 
+It is now cycle 5254
+It is now cycle 5255
 It is now cycle 5256
 It is now cycle 5257
 It is now cycle 5258
@@ -8017,20 +7997,20 @@ ADV 5 (0x0d35 -> 0x0d3a) 01 ff ff ff ff
 It is now cycle 5276
 It is now cycle 5277
 It is now cycle 5278
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 2826)
+ADV 6 (0x0bc0 -> 0x0bc6) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 2814)
+ADV 6 (0x0bc0 -> 0x0bc6) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 2818)
+ADV 6 (0x0bc0 -> 0x0bc6) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2822)
+ADV 6 (0x0bc0 -> 0x0bc6) 0b 64 0f 00 00 0e 
 It is now cycle 5279
 It is now cycle 5280
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2589)
-ADV 6 (0x0ad3 -> 0x0ad9) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2577)
-ADV 6 (0x0ad3 -> 0x0ad9) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2581)
-ADV 6 (0x0ad3 -> 0x0ad9) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2585)
-ADV 6 (0x0ad3 -> 0x0ad9) 0b 64 0f 00 00 0e 
 It is now cycle 5281
 It is now cycle 5282
 It is now cycle 5283
@@ -8061,6 +8041,10 @@ It is now cycle 5295
 It is now cycle 5296
 It is now cycle 5297
 It is now cycle 5298
+P   10 | zjmp -200 OK
+P    9 | zjmp -200 OK
+P    7 | zjmp -200 OK
+P    2 | zjmp -200 OK
 It is now cycle 5299
 It is now cycle 5300
 P   14 | sti r15 0 -186
@@ -8072,13 +8056,9 @@ ADV 6 (0x0d3a -> 0x0d40) 0b 64 0f 00 00 0e
 P   11 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 3200)
 ADV 6 (0x0d3a -> 0x0d40) 0b 64 0f 00 00 0e 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
 P    4 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 3200)
 ADV 6 (0x0d3a -> 0x0d40) 0b 64 0f 00 00 0e 
-P    2 | zjmp -200 OK
 It is now cycle 5301
 It is now cycle 5302
 It is now cycle 5303
@@ -8091,20 +8071,20 @@ P    1 | zjmp -200 OK
 It is now cycle 5306
 It is now cycle 5307
 It is now cycle 5308
-It is now cycle 5309
-It is now cycle 5310
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a11 -> 0x0a16) 01 ff ff ff ff 
+ADV 5 (0x0afe -> 0x0b03) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a11 -> 0x0a16) 01 ff ff ff ff 
+ADV 5 (0x0afe -> 0x0b03) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a11 -> 0x0a16) 01 ff ff ff ff 
+ADV 5 (0x0afe -> 0x0b03) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a11 -> 0x0a16) 01 ff ff ff ff 
+ADV 5 (0x0afe -> 0x0b03) 01 ff ff ff ff 
+It is now cycle 5309
+It is now cycle 5310
 It is now cycle 5311
 It is now cycle 5312
 It is now cycle 5313
@@ -8166,20 +8146,20 @@ ADV 5 (0x0c78 -> 0x0c7d) 01 ff ff ff ff
 It is now cycle 5331
 It is now cycle 5332
 It is now cycle 5333
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 2637)
+ADV 6 (0x0b03 -> 0x0b09) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 2625)
+ADV 6 (0x0b03 -> 0x0b09) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 2629)
+ADV 6 (0x0b03 -> 0x0b09) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2633)
+ADV 6 (0x0b03 -> 0x0b09) 0b 64 0f 00 00 0e 
 It is now cycle 5334
 It is now cycle 5335
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2400)
-ADV 6 (0x0a16 -> 0x0a1c) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2388)
-ADV 6 (0x0a16 -> 0x0a1c) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2392)
-ADV 6 (0x0a16 -> 0x0a1c) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2396)
-ADV 6 (0x0a16 -> 0x0a1c) 0b 64 0f 00 00 0e 
 It is now cycle 5336
 It is now cycle 5337
 It is now cycle 5338
@@ -8222,6 +8202,10 @@ ADV 7 (0x00ce -> 0x00d5) 0a a4 00 08 ff 3f 0f
 It is now cycle 5351
 It is now cycle 5352
 It is now cycle 5353
+P   10 | zjmp -200 OK
+P    9 | zjmp -200 OK
+P    7 | zjmp -200 OK
+P    2 | zjmp -200 OK
 It is now cycle 5354
 It is now cycle 5355
 P   18 | ld -182 r14
@@ -8237,15 +8221,11 @@ ADV 6 (0x0c7d -> 0x0c83) 0b 64 0f 00 00 0e
 P   11 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 3011)
 ADV 6 (0x0c7d -> 0x0c83) 0b 64 0f 00 00 0e 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
 P    8 | ld -186 r14
 ADV 7 (0x00d5 -> 0x00dc) 02 90 ff ff ff 46 0e 
-P    7 | zjmp -200 OK
 P    4 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 3011)
 ADV 6 (0x0c7d -> 0x0c83) 0b 64 0f 00 00 0e 
-P    2 | zjmp -200 OK
 It is now cycle 5356
 It is now cycle 5357
 It is now cycle 5358
@@ -8264,22 +8244,22 @@ P    1 | zjmp -200 OK
 It is now cycle 5361
 It is now cycle 5362
 It is now cycle 5363
+P   10 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0a41 -> 0x0a46) 01 ff ff ff ff 
+P    9 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0a41 -> 0x0a46) 01 ff ff ff ff 
+P    7 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0a41 -> 0x0a46) 01 ff ff ff ff 
+P    2 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0a41 -> 0x0a46) 01 ff ff ff ff 
 It is now cycle 5364
 P   17 | zjmp -200 FAILED
 ADV 3 (0x0132 -> 0x0135) 09 ff 38 
 It is now cycle 5365
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0954 -> 0x0959) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0954 -> 0x0959) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0954 -> 0x0959) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0954 -> 0x0959) 01 ff ff ff ff 
 It is now cycle 5366
 It is now cycle 5367
 It is now cycle 5368
@@ -8338,24 +8318,24 @@ ADV 5 (0x0bbb -> 0x0bc0) 01 ff ff ff ff
 It is now cycle 5386
 It is now cycle 5387
 It is now cycle 5388
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 2448)
+ADV 6 (0x0a46 -> 0x0a4c) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 2436)
+ADV 6 (0x0a46 -> 0x0a4c) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 2440)
+ADV 6 (0x0a46 -> 0x0a4c) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2444)
+ADV 6 (0x0a46 -> 0x0a4c) 0b 64 0f 00 00 0e 
 It is now cycle 5389
 It is now cycle 5390
 P   15 | live -16384000
 ADV 5 (0x0007 -> 0x000c) 01 ff 06 00 00 
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2211)
-ADV 6 (0x0959 -> 0x095f) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2199)
-ADV 6 (0x0959 -> 0x095f) 0b 64 0f 00 00 0e 
 P    8 | live -16384000
 ADV 5 (0x0007 -> 0x000c) 01 ff 06 00 00 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2203)
-ADV 6 (0x0959 -> 0x095f) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2207)
-ADV 6 (0x0959 -> 0x095f) 0b 64 0f 00 00 0e 
 It is now cycle 5391
 It is now cycle 5392
 It is now cycle 5393
@@ -8400,6 +8380,10 @@ P   19 | ldi 8 -193 r15
        | -> load from 8 + -193 = -185 (with pc and mod 21)
 ADV 7 (0x00ce -> 0x00d5) 0a a4 00 08 ff 3f 0f 
 It is now cycle 5408
+P   10 | zjmp -200 OK
+P    9 | zjmp -200 OK
+P    7 | zjmp -200 OK
+P    2 | zjmp -200 OK
 It is now cycle 5409
 It is now cycle 5410
 P   14 | sti r15 0 -186
@@ -8413,13 +8397,9 @@ ADV 5 (0x00c4 -> 0x00c9) 01 ff 0c 00 45
 P   11 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 2822)
 ADV 6 (0x0bc0 -> 0x0bc6) 0b 64 0f 00 00 0e 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
 P    4 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 2822)
 ADV 6 (0x0bc0 -> 0x0bc6) 0b 64 0f 00 00 0e 
-P    2 | zjmp -200 OK
 It is now cycle 5411
 It is now cycle 5412
 P   19 | ld -186 r14
@@ -8436,22 +8416,22 @@ It is now cycle 5417
 P   19 | ld 0 r2
 ADV 7 (0x00dc -> 0x00e3) 02 90 00 00 00 00 02 
 It is now cycle 5418
+P   10 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0984 -> 0x0989) 01 ff ff ff ff 
+P    9 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0984 -> 0x0989) 01 ff ff ff ff 
+P    7 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0984 -> 0x0989) 01 ff ff ff ff 
+P    2 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0984 -> 0x0989) 01 ff ff ff ff 
 It is now cycle 5419
 It is now cycle 5420
 P   12 | live 42
 ADV 5 (0x00c9 -> 0x00ce) 01 00 00 00 2a 
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0897 -> 0x089c) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0897 -> 0x089c) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0897 -> 0x089c) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0897 -> 0x089c) 01 ff ff ff ff 
 It is now cycle 5421
 It is now cycle 5422
 It is now cycle 5423
@@ -8516,23 +8496,23 @@ It is now cycle 5441
 It is now cycle 5442
 It is now cycle 5443
 P   18 | zjmp -200 OK
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 2259)
+ADV 6 (0x0989 -> 0x098f) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 2247)
+ADV 6 (0x0989 -> 0x098f) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 2251)
+ADV 6 (0x0989 -> 0x098f) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2255)
+ADV 6 (0x0989 -> 0x098f) 0b 64 0f 00 00 0e 
 It is now cycle 5444
 It is now cycle 5445
 P   12 | ldi 8 -193 r15
        | -> load from 8 + -193 = -185 (with pc and mod 21)
 ADV 7 (0x00ce -> 0x00d5) 0a a4 00 08 ff 3f 0f 
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2022)
-ADV 6 (0x089c -> 0x08a2) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2010)
-ADV 6 (0x089c -> 0x08a2) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2014)
-ADV 6 (0x089c -> 0x08a2) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2018)
-ADV 6 (0x089c -> 0x08a2) 0b 64 0f 00 00 0e 
 It is now cycle 5446
 P   15 | zjmp -200 OK
 P    8 | zjmp -200 OK
@@ -8577,6 +8557,10 @@ It is now cycle 5460
 It is now cycle 5461
 It is now cycle 5462
 It is now cycle 5463
+P   10 | zjmp -200 OK
+P    9 | zjmp -200 OK
+P    7 | zjmp -200 OK
+P    2 | zjmp -200 OK
 It is now cycle 5464
 It is now cycle 5465
 P   14 | sti r15 0 -186
@@ -8588,13 +8572,9 @@ ADV 6 (0x0b03 -> 0x0b09) 0b 64 0f 00 00 0e
 P   11 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 2633)
 ADV 6 (0x0b03 -> 0x0b09) 0b 64 0f 00 00 0e 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
 P    4 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 2633)
 ADV 6 (0x0b03 -> 0x0b09) 0b 64 0f 00 00 0e 
-P    2 | zjmp -200 OK
 It is now cycle 5466
 It is now cycle 5467
 It is now cycle 5468
@@ -8607,21 +8587,21 @@ P    1 | zjmp -200 OK
 It is now cycle 5471
 It is now cycle 5472
 It is now cycle 5473
+P   10 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x08c7 -> 0x08cc) 01 ff ff ff ff 
+P    9 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x08c7 -> 0x08cc) 01 ff ff ff ff 
+P    7 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x08c7 -> 0x08cc) 01 ff ff ff ff 
+P    2 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x08c7 -> 0x08cc) 01 ff ff ff ff 
 It is now cycle 5474
 It is now cycle 5475
 P   12 | zjmp -220 OK
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x07da -> 0x07df) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x07da -> 0x07df) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x07da -> 0x07df) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x07da -> 0x07df) 01 ff ff ff ff 
 It is now cycle 5476
 P   15 | sti r15 0 -190
        | -> store to 0 + -190 = -190 (with pc and mod 3735)
@@ -8702,20 +8682,20 @@ P    8 | zjmp 0 OK
 It is now cycle 5497
 It is now cycle 5498
 P   18 | zjmp -200 OK
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 2070)
+ADV 6 (0x08cc -> 0x08d2) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 2058)
+ADV 6 (0x08cc -> 0x08d2) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 2062)
+ADV 6 (0x08cc -> 0x08d2) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2066)
+ADV 6 (0x08cc -> 0x08d2) 0b 64 0f 00 00 0e 
 It is now cycle 5499
 It is now cycle 5500
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1833)
-ADV 6 (0x07df -> 0x07e5) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1821)
-ADV 6 (0x07df -> 0x07e5) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1825)
-ADV 6 (0x07df -> 0x07e5) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1829)
-ADV 6 (0x07df -> 0x07e5) 0b 64 0f 00 00 0e 
 It is now cycle 5501
 It is now cycle 5502
 It is now cycle 5503
@@ -8761,6 +8741,10 @@ ADV 7 (0x0110 -> 0x0117) 0a a4 00 0c fe fd 0f
 P   16 | ldi 8 -193 r15
        | -> load from 8 + -193 = -185 (with pc and mod 21)
 ADV 7 (0x00ce -> 0x00d5) 0a a4 00 08 ff 3f 0f 
+P   10 | zjmp -200 OK
+P    9 | zjmp -200 OK
+P    7 | zjmp -200 OK
+P    2 | zjmp -200 OK
 It is now cycle 5519
 It is now cycle 5520
 P   14 | sti r15 0 -186
@@ -8772,13 +8756,9 @@ ADV 6 (0x0a46 -> 0x0a4c) 0b 64 0f 00 00 0e
 P   11 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 2444)
 ADV 6 (0x0a46 -> 0x0a4c) 0b 64 0f 00 00 0e 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
 P    4 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 2444)
 ADV 6 (0x0a46 -> 0x0a4c) 0b 64 0f 00 00 0e 
-P    2 | zjmp -200 OK
 It is now cycle 5521
 P   12 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod -168)
@@ -8804,20 +8784,20 @@ P   20 | ld 0 r2
 ADV 7 (0x011e -> 0x0125) 02 90 00 00 00 00 02 
 P   16 | ld 0 r2
 ADV 7 (0x00dc -> 0x00e3) 02 90 00 00 00 00 02 
-It is now cycle 5529
-It is now cycle 5530
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x071d -> 0x0722) 01 ff ff ff ff 
+ADV 5 (0x080a -> 0x080f) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x071d -> 0x0722) 01 ff ff ff ff 
+ADV 5 (0x080a -> 0x080f) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x071d -> 0x0722) 01 ff ff ff ff 
+ADV 5 (0x080a -> 0x080f) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x071d -> 0x0722) 01 ff ff ff ff 
+ADV 5 (0x080a -> 0x080f) 01 ff ff ff ff 
+It is now cycle 5529
+It is now cycle 5530
 It is now cycle 5531
 It is now cycle 5532
 It is now cycle 5533
@@ -8885,20 +8865,20 @@ It is now cycle 5552
 It is now cycle 5553
 P   19 | zjmp 0 OK
 P   18 | zjmp -200 OK
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 1881)
+ADV 6 (0x080f -> 0x0815) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 1869)
+ADV 6 (0x080f -> 0x0815) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 1873)
+ADV 6 (0x080f -> 0x0815) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 1877)
+ADV 6 (0x080f -> 0x0815) 0b 64 0f 00 00 0e 
 It is now cycle 5554
 It is now cycle 5555
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1644)
-ADV 6 (0x0722 -> 0x0728) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1632)
-ADV 6 (0x0722 -> 0x0728) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1636)
-ADV 6 (0x0722 -> 0x0728) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1640)
-ADV 6 (0x0722 -> 0x0728) 0b 64 0f 00 00 0e 
 It is now cycle 5556
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
@@ -8949,6 +8929,10 @@ ADV 6 (0x0f55 -> 0x0f5b) 0b 64 0f 00 00 0e
 It is now cycle 5572
 It is now cycle 5573
 P   19 | zjmp 0 OK
+P   10 | zjmp -200 OK
+P    9 | zjmp -200 OK
+P    7 | zjmp -200 OK
+P    2 | zjmp -200 OK
 It is now cycle 5574
 It is now cycle 5575
 P   14 | sti r15 0 -186
@@ -8960,13 +8944,9 @@ ADV 6 (0x0989 -> 0x098f) 0b 64 0f 00 00 0e
 P   11 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 2255)
 ADV 6 (0x0989 -> 0x098f) 0b 64 0f 00 00 0e 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
 P    4 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 2255)
 ADV 6 (0x0989 -> 0x098f) 0b 64 0f 00 00 0e 
-P    2 | zjmp -200 OK
 It is now cycle 5576
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
@@ -8983,20 +8963,20 @@ P    1 | zjmp -200 OK
 It is now cycle 5581
 It is now cycle 5582
 It is now cycle 5583
-It is now cycle 5584
-It is now cycle 5585
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0660 -> 0x0665) 01 ff ff ff ff 
+ADV 5 (0x074d -> 0x0752) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0660 -> 0x0665) 01 ff ff ff ff 
+ADV 5 (0x074d -> 0x0752) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0660 -> 0x0665) 01 ff ff ff ff 
+ADV 5 (0x074d -> 0x0752) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0660 -> 0x0665) 01 ff ff ff ff 
+ADV 5 (0x074d -> 0x0752) 01 ff ff ff ff 
+It is now cycle 5584
+It is now cycle 5585
 It is now cycle 5586
 It is now cycle 5587
 It is now cycle 5588
@@ -9064,20 +9044,20 @@ It is now cycle 5606
 It is now cycle 5607
 It is now cycle 5608
 P   18 | zjmp -200 OK
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 1692)
+ADV 6 (0x0752 -> 0x0758) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 1680)
+ADV 6 (0x0752 -> 0x0758) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 1684)
+ADV 6 (0x0752 -> 0x0758) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 1688)
+ADV 6 (0x0752 -> 0x0758) 0b 64 0f 00 00 0e 
 It is now cycle 5609
 It is now cycle 5610
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1455)
-ADV 6 (0x0665 -> 0x066b) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1443)
-ADV 6 (0x0665 -> 0x066b) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1447)
-ADV 6 (0x0665 -> 0x066b) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1451)
-ADV 6 (0x0665 -> 0x066b) 0b 64 0f 00 00 0e 
 It is now cycle 5611
 P   20 | zjmp -200 OK
 P   12 | zjmp 0 OK
@@ -9120,6 +9100,10 @@ It is now cycle 5625
 It is now cycle 5626
 It is now cycle 5627
 It is now cycle 5628
+P   10 | zjmp -200 OK
+P    9 | zjmp -200 OK
+P    7 | zjmp -200 OK
+P    2 | zjmp -200 OK
 It is now cycle 5629
 It is now cycle 5630
 P   14 | sti r15 0 -186
@@ -9131,13 +9115,9 @@ ADV 6 (0x08cc -> 0x08d2) 0b 64 0f 00 00 0e
 P   11 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 2066)
 ADV 6 (0x08cc -> 0x08d2) 0b 64 0f 00 00 0e 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
 P    4 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 2066)
 ADV 6 (0x08cc -> 0x08d2) 0b 64 0f 00 00 0e 
-P    2 | zjmp -200 OK
 It is now cycle 5631
 P   12 | zjmp 0 OK
 It is now cycle 5632
@@ -9154,20 +9134,20 @@ P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 5637
 It is now cycle 5638
-It is now cycle 5639
-It is now cycle 5640
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05a3 -> 0x05a8) 01 ff ff ff ff 
+ADV 5 (0x0690 -> 0x0695) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05a3 -> 0x05a8) 01 ff ff ff ff 
+ADV 5 (0x0690 -> 0x0695) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05a3 -> 0x05a8) 01 ff ff ff ff 
+ADV 5 (0x0690 -> 0x0695) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05a3 -> 0x05a8) 01 ff ff ff ff 
+ADV 5 (0x0690 -> 0x0695) 01 ff ff ff ff 
+It is now cycle 5639
+It is now cycle 5640
 It is now cycle 5641
 It is now cycle 5642
 It is now cycle 5643
@@ -9233,21 +9213,21 @@ It is now cycle 5661
 It is now cycle 5662
 It is now cycle 5663
 P   18 | zjmp -200 OK
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 1503)
+ADV 6 (0x0695 -> 0x069b) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 1491)
+ADV 6 (0x0695 -> 0x069b) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 1495)
+ADV 6 (0x0695 -> 0x069b) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 1499)
+ADV 6 (0x0695 -> 0x069b) 0b 64 0f 00 00 0e 
 It is now cycle 5664
 P   16 | zjmp 0 OK
 It is now cycle 5665
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1266)
-ADV 6 (0x05a8 -> 0x05ae) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1254)
-ADV 6 (0x05a8 -> 0x05ae) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1258)
-ADV 6 (0x05a8 -> 0x05ae) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1262)
-ADV 6 (0x05a8 -> 0x05ae) 0b 64 0f 00 00 0e 
 It is now cycle 5666
 P   20 | zjmp -200 OK
 It is now cycle 5667
@@ -9289,6 +9269,10 @@ It is now cycle 5680
 It is now cycle 5681
 It is now cycle 5682
 It is now cycle 5683
+P   10 | zjmp -200 OK
+P    9 | zjmp -200 OK
+P    7 | zjmp -200 OK
+P    2 | zjmp -200 OK
 It is now cycle 5684
 P   16 | zjmp 0 OK
 It is now cycle 5685
@@ -9301,13 +9285,9 @@ ADV 6 (0x080f -> 0x0815) 0b 64 0f 00 00 0e
 P   11 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 1877)
 ADV 6 (0x080f -> 0x0815) 0b 64 0f 00 00 0e 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
 P    4 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 1877)
 ADV 6 (0x080f -> 0x0815) 0b 64 0f 00 00 0e 
-P    2 | zjmp -200 OK
 It is now cycle 5686
 It is now cycle 5687
 It is now cycle 5688
@@ -9325,20 +9305,20 @@ Player 1 (Celebration Funebre v0.99pl42) is said to be alive
 ADV 5 (0x01e4 -> 0x01e9) 01 ff ff ff ff 
 It is now cycle 5693
 P   19 | zjmp 0 OK
-It is now cycle 5694
-It is now cycle 5695
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04e6 -> 0x04eb) 01 ff ff ff ff 
+ADV 5 (0x05d3 -> 0x05d8) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04e6 -> 0x04eb) 01 ff ff ff ff 
+ADV 5 (0x05d3 -> 0x05d8) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04e6 -> 0x04eb) 01 ff ff ff ff 
+ADV 5 (0x05d3 -> 0x05d8) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04e6 -> 0x04eb) 01 ff ff ff ff 
+ADV 5 (0x05d3 -> 0x05d8) 01 ff ff ff ff 
+It is now cycle 5694
+It is now cycle 5695
 It is now cycle 5696
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
@@ -9407,20 +9387,20 @@ P   17 | sti r15 0 0
 ADV 6 (0x01e9 -> 0x01ef) 00 00 00 00 00 0e 
 It is now cycle 5718
 P   18 | zjmp -200 OK
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 1314)
+ADV 6 (0x05d8 -> 0x05de) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 1302)
+ADV 6 (0x05d8 -> 0x05de) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 1306)
+ADV 6 (0x05d8 -> 0x05de) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 1310)
+ADV 6 (0x05d8 -> 0x05de) 0b 64 0f 00 00 0e 
 It is now cycle 5719
 It is now cycle 5720
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1077)
-ADV 6 (0x04eb -> 0x04f1) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1065)
-ADV 6 (0x04eb -> 0x04f1) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1069)
-ADV 6 (0x04eb -> 0x04f1) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1073)
-ADV 6 (0x04eb -> 0x04f1) 0b 64 0f 00 00 0e 
 It is now cycle 5721
 P   20 | zjmp -200 OK
 It is now cycle 5722
@@ -9465,6 +9445,10 @@ It is now cycle 5737
 P   17 | zjmp -200 FAILED
 ADV 3 (0x01ef -> 0x01f2) 09 ff 38 
 It is now cycle 5738
+P   10 | zjmp -200 OK
+P    9 | zjmp -200 OK
+P    7 | zjmp -200 OK
+P    2 | zjmp -200 OK
 It is now cycle 5739
 It is now cycle 5740
 P   14 | sti r15 0 -186
@@ -9476,13 +9460,9 @@ ADV 6 (0x0752 -> 0x0758) 0b 64 0f 00 00 0e
 P   11 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 1688)
 ADV 6 (0x0752 -> 0x0758) 0b 64 0f 00 00 0e 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
 P    4 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 1688)
 ADV 6 (0x0752 -> 0x0758) 0b 64 0f 00 00 0e 
-P    2 | zjmp -200 OK
 It is now cycle 5741
 It is now cycle 5742
 It is now cycle 5743
@@ -9498,20 +9478,20 @@ It is now cycle 5747
 P   17 | live -16777216
 ADV 5 (0x01f2 -> 0x01f7) 01 ff 00 00 00 
 It is now cycle 5748
-It is now cycle 5749
-It is now cycle 5750
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0429 -> 0x042e) 01 ff ff ff ff 
+ADV 5 (0x0516 -> 0x051b) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0429 -> 0x042e) 01 ff ff ff ff 
+ADV 5 (0x0516 -> 0x051b) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0429 -> 0x042e) 01 ff ff ff ff 
+ADV 5 (0x0516 -> 0x051b) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0429 -> 0x042e) 01 ff ff ff ff 
+ADV 5 (0x0516 -> 0x051b) 01 ff ff ff ff 
+It is now cycle 5749
+It is now cycle 5750
 It is now cycle 5751
 P   12 | zjmp 0 OK
 It is now cycle 5752
@@ -9577,20 +9557,20 @@ It is now cycle 5772
 It is now cycle 5773
 P   19 | zjmp 0 OK
 P   18 | zjmp -200 OK
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 1125)
+ADV 6 (0x051b -> 0x0521) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 1113)
+ADV 6 (0x051b -> 0x0521) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 1117)
+ADV 6 (0x051b -> 0x0521) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 1121)
+ADV 6 (0x051b -> 0x0521) 0b 64 0f 00 00 0e 
 It is now cycle 5774
 It is now cycle 5775
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 888)
-ADV 6 (0x042e -> 0x0434) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 876)
-ADV 6 (0x042e -> 0x0434) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 880)
-ADV 6 (0x042e -> 0x0434) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 884)
-ADV 6 (0x042e -> 0x0434) 0b 64 0f 00 00 0e 
 It is now cycle 5776
 P   20 | zjmp -200 OK
 P   15 | zjmp 0 OK
@@ -9633,6 +9613,10 @@ P   12 | zjmp 0 OK
 It is now cycle 5792
 It is now cycle 5793
 P   19 | zjmp 0 OK
+P   10 | zjmp -200 OK
+P    9 | zjmp -200 OK
+P    7 | zjmp -200 OK
+P    2 | zjmp -200 OK
 It is now cycle 5794
 It is now cycle 5795
 P   14 | sti r15 0 -186
@@ -9644,13 +9628,9 @@ ADV 6 (0x0695 -> 0x069b) 0b 64 0f 00 00 0e
 P   11 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 1499)
 ADV 6 (0x0695 -> 0x069b) 0b 64 0f 00 00 0e 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
 P    4 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 1499)
 ADV 6 (0x0695 -> 0x069b) 0b 64 0f 00 00 0e 
-P    2 | zjmp -200 OK
 It is now cycle 5796
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
@@ -9658,9 +9638,6 @@ It is now cycle 5797
 It is now cycle 5798
 It is now cycle 5799
 It is now cycle 5800
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0222 -> 0x0227) 01 ff ff ff ff 
 P    6 | zjmp -200 OK
 P    5 | zjmp -200 OK
 P    3 | zjmp -200 OK
@@ -9668,22 +9645,23 @@ P    1 | zjmp -200 OK
 It is now cycle 5801
 It is now cycle 5802
 It is now cycle 5803
+P   10 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0459 -> 0x045e) 01 ff ff ff ff 
+P    9 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0459 -> 0x045e) 01 ff ff ff ff 
+P    7 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0459 -> 0x045e) 01 ff ff ff ff 
+P    2 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0459 -> 0x045e) 01 ff ff ff ff 
 It is now cycle 5804
 P   16 | zjmp 0 OK
 It is now cycle 5805
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x036c -> 0x0371) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x036c -> 0x0371) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x036c -> 0x0371) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x036c -> 0x0371) 01 ff ff ff ff 
 It is now cycle 5806
+ADV 4 (0x0200 -> 0x0204) 0e 09 00 00 
 It is now cycle 5807
 It is now cycle 5808
 P   18 | sti r15 0 -182
@@ -9730,9 +9708,6 @@ It is now cycle 5823
 It is now cycle 5824
 P   16 | zjmp 0 OK
 It is now cycle 5825
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 551)
-ADV 6 (0x0227 -> 0x022d) 00 00 00 00 00 0e 
 P   14 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
 ADV 5 (0x05d3 -> 0x05d8) 01 ff ff ff ff 
@@ -9749,20 +9724,20 @@ It is now cycle 5826
 It is now cycle 5827
 It is now cycle 5828
 P   18 | zjmp -200 OK
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 936)
+ADV 6 (0x045e -> 0x0464) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 924)
+ADV 6 (0x045e -> 0x0464) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 928)
+ADV 6 (0x045e -> 0x0464) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 932)
+ADV 6 (0x045e -> 0x0464) 0b 64 0f 00 00 0e 
 It is now cycle 5829
 It is now cycle 5830
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 699)
-ADV 6 (0x0371 -> 0x0377) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 687)
-ADV 6 (0x0371 -> 0x0377) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 691)
-ADV 6 (0x0371 -> 0x0377) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 695)
-ADV 6 (0x0371 -> 0x0377) 0b 64 0f 00 00 0e 
 It is now cycle 5831
 P   20 | zjmp -200 OK
 P   12 | zjmp 0 OK
@@ -9802,11 +9777,16 @@ It is now cycle 5843
 It is now cycle 5844
 P   16 | zjmp 0 OK
 It is now cycle 5845
-P   17 | zjmp -200 FAILED
-ADV 3 (0x022d -> 0x0230) 09 ff 38 
 It is now cycle 5846
+P   17 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0222 -> 0x0227) 01 ff ff ff ff 
 It is now cycle 5847
 It is now cycle 5848
+P   10 | zjmp -200 OK
+P    9 | zjmp -200 OK
+P    7 | zjmp -200 OK
+P    2 | zjmp -200 OK
 It is now cycle 5849
 It is now cycle 5850
 P   14 | sti r15 0 -186
@@ -9818,13 +9798,9 @@ ADV 6 (0x05d8 -> 0x05de) 0b 64 0f 00 00 0e
 P   11 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 1310)
 ADV 6 (0x05d8 -> 0x05de) 0b 64 0f 00 00 0e 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
 P    4 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 1310)
 ADV 6 (0x05d8 -> 0x05de) 0b 64 0f 00 00 0e 
-P    2 | zjmp -200 OK
 It is now cycle 5851
 P   12 | zjmp 0 OK
 It is now cycle 5852
@@ -9832,9 +9808,6 @@ It is now cycle 5853
 P   19 | zjmp 0 OK
 It is now cycle 5854
 It is now cycle 5855
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0230 -> 0x0235) 01 ff ff ff ff 
 P    6 | zjmp -200 OK
 P    5 | zjmp -200 OK
 P    3 | zjmp -200 OK
@@ -9844,20 +9817,20 @@ P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 5857
 It is now cycle 5858
-It is now cycle 5859
-It is now cycle 5860
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02af -> 0x02b4) 01 ff ff ff ff 
+ADV 5 (0x039c -> 0x03a1) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02af -> 0x02b4) 01 ff ff ff ff 
+ADV 5 (0x039c -> 0x03a1) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02af -> 0x02b4) 01 ff ff ff ff 
+ADV 5 (0x039c -> 0x03a1) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02af -> 0x02b4) 01 ff ff ff ff 
+ADV 5 (0x039c -> 0x03a1) 01 ff ff ff ff 
+It is now cycle 5859
+It is now cycle 5860
 It is now cycle 5861
 It is now cycle 5862
 It is now cycle 5863
@@ -9892,6 +9865,9 @@ P   13 | zjmp -200 OK
 P   11 | zjmp -200 OK
 P    4 | zjmp -200 OK
 It is now cycle 5871
+P   17 | sti r15 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 551)
+ADV 6 (0x0227 -> 0x022d) 00 00 00 00 00 0e 
 P   12 | zjmp 0 OK
 It is now cycle 5872
 It is now cycle 5873
@@ -9905,9 +9881,6 @@ It is now cycle 5877
 It is now cycle 5878
 It is now cycle 5879
 It is now cycle 5880
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 565)
-ADV 6 (0x0235 -> 0x023b) 00 00 00 00 00 0e 
 P   14 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
 ADV 5 (0x0516 -> 0x051b) 01 ff ff ff ff 
@@ -9924,21 +9897,21 @@ It is now cycle 5881
 It is now cycle 5882
 It is now cycle 5883
 P   18 | zjmp -200 OK
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 747)
+ADV 6 (0x03a1 -> 0x03a7) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 735)
+ADV 6 (0x03a1 -> 0x03a7) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 739)
+ADV 6 (0x03a1 -> 0x03a7) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 743)
+ADV 6 (0x03a1 -> 0x03a7) 0b 64 0f 00 00 0e 
 It is now cycle 5884
 P   16 | zjmp 0 OK
 It is now cycle 5885
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 510)
-ADV 6 (0x02b4 -> 0x02ba) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 498)
-ADV 6 (0x02b4 -> 0x02ba) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 502)
-ADV 6 (0x02b4 -> 0x02ba) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 506)
-ADV 6 (0x02b4 -> 0x02ba) 0b 64 0f 00 00 0e 
 It is now cycle 5886
 P   20 | zjmp -200 OK
 It is now cycle 5887
@@ -9958,6 +9931,8 @@ P    1 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 1564)
 ADV 6 (0x06d6 -> 0x06dc) 0b 64 0f 00 00 0e 
 It is now cycle 5891
+P   17 | zjmp -200 FAILED
+ADV 3 (0x022d -> 0x0230) 09 ff 38 
 P   12 | zjmp 0 OK
 It is now cycle 5892
 It is now cycle 5893
@@ -9977,11 +9952,16 @@ It is now cycle 5897
 It is now cycle 5898
 It is now cycle 5899
 It is now cycle 5900
-P   17 | zjmp -200 FAILED
-ADV 3 (0x023b -> 0x023e) 09 ff 38 
 It is now cycle 5901
+P   17 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0230 -> 0x0235) 01 ff ff ff ff 
 It is now cycle 5902
 It is now cycle 5903
+P   10 | zjmp -200 OK
+P    9 | zjmp -200 OK
+P    7 | zjmp -200 OK
+P    2 | zjmp -200 OK
 It is now cycle 5904
 P   16 | zjmp 0 OK
 It is now cycle 5905
@@ -9994,20 +9974,14 @@ ADV 6 (0x051b -> 0x0521) 0b 64 0f 00 00 0e
 P   11 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 1121)
 ADV 6 (0x051b -> 0x0521) 0b 64 0f 00 00 0e 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
 P    4 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 1121)
 ADV 6 (0x051b -> 0x0521) 0b 64 0f 00 00 0e 
-P    2 | zjmp -200 OK
 It is now cycle 5906
 It is now cycle 5907
 It is now cycle 5908
 It is now cycle 5909
 It is now cycle 5910
-P   17 | live -16777216
-ADV 5 (0x023e -> 0x0243) 01 ff 00 00 00 
 P    6 | zjmp -200 OK
 P    5 | zjmp -200 OK
 P    3 | zjmp -200 OK
@@ -10017,20 +9991,20 @@ P   12 | zjmp 0 OK
 It is now cycle 5912
 It is now cycle 5913
 P   19 | zjmp 0 OK
-It is now cycle 5914
-It is now cycle 5915
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01f2 -> 0x01f7) 01 ff ff ff ff 
+ADV 5 (0x02df -> 0x02e4) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01f2 -> 0x01f7) 01 ff ff ff ff 
+ADV 5 (0x02df -> 0x02e4) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01f2 -> 0x01f7) 01 ff ff ff ff 
+ADV 5 (0x02df -> 0x02e4) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01f2 -> 0x01f7) 01 ff ff ff ff 
+ADV 5 (0x02df -> 0x02e4) 01 ff ff ff ff 
+It is now cycle 5914
+It is now cycle 5915
 It is now cycle 5916
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
@@ -10067,6 +10041,9 @@ P   13 | zjmp -200 OK
 P   11 | zjmp -200 OK
 P    4 | zjmp -200 OK
 It is now cycle 5926
+P   17 | sti r15 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 565)
+ADV 6 (0x0235 -> 0x023b) 00 00 00 00 00 0e 
 It is now cycle 5927
 It is now cycle 5928
 It is now cycle 5929
@@ -10096,20 +10073,20 @@ P    8 | zjmp 0 OK
 It is now cycle 5937
 It is now cycle 5938
 P   18 | zjmp -200 OK
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 558)
+ADV 6 (0x02e4 -> 0x02ea) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 546)
+ADV 6 (0x02e4 -> 0x02ea) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 550)
+ADV 6 (0x02e4 -> 0x02ea) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 554)
+ADV 6 (0x02e4 -> 0x02ea) 0b 64 0f 00 00 0e 
 It is now cycle 5939
 It is now cycle 5940
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 321)
-ADV 6 (0x01f7 -> 0x01fd) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 309)
-ADV 6 (0x01f7 -> 0x01fd) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 313)
-ADV 6 (0x01f7 -> 0x01fd) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 317)
-ADV 6 (0x01f7 -> 0x01fd) 0b 64 0f 00 00 0e 
 It is now cycle 5941
 P   20 | zjmp -200 OK
 It is now cycle 5942
@@ -10130,6 +10107,8 @@ P    1 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 1375)
 ADV 6 (0x0619 -> 0x061f) 0b 64 0f 00 00 0e 
 It is now cycle 5946
+P   17 | zjmp -200 FAILED
+ADV 3 (0x023b -> 0x023e) 09 ff 38 
 It is now cycle 5947
 It is now cycle 5948
 P   18 | live -1
@@ -10148,10 +10127,16 @@ P   19 | zjmp 0 OK
 It is now cycle 5954
 It is now cycle 5955
 It is now cycle 5956
+P   17 | live -16777216
+ADV 5 (0x023e -> 0x0243) 01 ff 00 00 00 
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 5957
 It is now cycle 5958
+P   10 | zjmp -200 OK
+P    9 | zjmp -200 OK
+P    7 | zjmp -200 OK
+P    2 | zjmp -200 OK
 It is now cycle 5959
 It is now cycle 5960
 P   14 | sti r15 0 -186
@@ -10163,13 +10148,9 @@ ADV 6 (0x045e -> 0x0464) 0b 64 0f 00 00 0e
 P   11 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 932)
 ADV 6 (0x045e -> 0x0464) 0b 64 0f 00 00 0e 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
 P    4 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 932)
 ADV 6 (0x045e -> 0x0464) 0b 64 0f 00 00 0e 
-P    2 | zjmp -200 OK
 It is now cycle 5961
 It is now cycle 5962
 It is now cycle 5963
@@ -10183,20 +10164,20 @@ P    1 | zjmp -200 OK
 It is now cycle 5966
 It is now cycle 5967
 It is now cycle 5968
-It is now cycle 5969
-It is now cycle 5970
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0135 -> 0x013a) 01 ff ff ff ff 
+ADV 5 (0x0222 -> 0x0227) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0135 -> 0x013a) 01 ff ff ff ff 
+ADV 5 (0x0222 -> 0x0227) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0135 -> 0x013a) 01 ff ff ff ff 
+ADV 5 (0x0222 -> 0x0227) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0135 -> 0x013a) 01 ff ff ff ff 
+ADV 5 (0x0222 -> 0x0227) 01 ff ff ff ff 
+It is now cycle 5969
+It is now cycle 5970
 It is now cycle 5971
 P   12 | zjmp 0 OK
 It is now cycle 5972
@@ -10262,21 +10243,21 @@ It is now cycle 5992
 It is now cycle 5993
 P   19 | zjmp 0 OK
 P   18 | zjmp -200 OK
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 369)
+ADV 6 (0x0227 -> 0x022d) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 357)
+ADV 6 (0x0227 -> 0x022d) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 361)
+ADV 6 (0x0227 -> 0x022d) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 365)
+ADV 6 (0x0227 -> 0x022d) 0b 64 0f 00 00 0e 
 It is now cycle 5994
 Cycle to die is now 1386
 It is now cycle 5995
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 132)
-ADV 6 (0x013a -> 0x0140) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 120)
-ADV 6 (0x013a -> 0x0140) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 124)
-ADV 6 (0x013a -> 0x0140) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 128)
-ADV 6 (0x013a -> 0x0140) 0b 64 0f 00 00 0e 
 It is now cycle 5996
 P   20 | zjmp -200 OK
 P   15 | zjmp 0 OK
@@ -10319,10 +10300,11 @@ P   12 | zjmp 0 OK
 It is now cycle 6012
 It is now cycle 6013
 P   19 | zjmp 0 OK
+P   10 | zjmp -200 OK
+P    9 | zjmp -200 OK
+P    7 | zjmp -200 OK
+P    2 | zjmp -200 OK
 It is now cycle 6014
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02a1 -> 0x02a6) 01 ff ff ff ff 
 It is now cycle 6015
 P   14 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 743)
@@ -10333,13 +10315,9 @@ ADV 6 (0x03a1 -> 0x03a7) 0b 64 0f 00 00 0e
 P   11 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 743)
 ADV 6 (0x03a1 -> 0x03a7) 0b 64 0f 00 00 0e 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
 P    4 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 743)
 ADV 6 (0x03a1 -> 0x03a7) 0b 64 0f 00 00 0e 
-P    2 | zjmp -200 OK
 It is now cycle 6016
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
@@ -10354,21 +10332,21 @@ P    1 | zjmp -200 OK
 It is now cycle 6021
 It is now cycle 6022
 It is now cycle 6023
+P   10 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0165 -> 0x016a) 01 ff ff ff ff 
+P    9 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0165 -> 0x016a) 01 ff ff ff ff 
+P    7 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0165 -> 0x016a) 01 ff ff ff ff 
+P    2 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0165 -> 0x016a) 01 ff ff ff ff 
 It is now cycle 6024
 P   16 | zjmp 0 OK
 It is now cycle 6025
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0078 -> 0x007d) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0078 -> 0x007d) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0078 -> 0x007d) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0078 -> 0x007d) 01 ff ff ff ff 
 It is now cycle 6026
 It is now cycle 6027
 It is now cycle 6028
@@ -10409,9 +10387,6 @@ P    8 | zjmp 0 OK
 It is now cycle 6037
 It is now cycle 6038
 It is now cycle 6039
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 678)
-ADV 6 (0x02a6 -> 0x02ac) 00 00 00 00 00 0e 
 It is now cycle 6040
 It is now cycle 6041
 It is now cycle 6042
@@ -10435,20 +10410,20 @@ It is now cycle 6046
 It is now cycle 6047
 It is now cycle 6048
 P   18 | zjmp -200 OK
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 180)
+ADV 6 (0x016a -> 0x0170) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 168)
+ADV 6 (0x016a -> 0x0170) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 172)
+ADV 6 (0x016a -> 0x0170) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 176)
+ADV 6 (0x016a -> 0x0170) 0b 64 0f 00 00 0e 
 It is now cycle 6049
 It is now cycle 6050
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod -57)
-ADV 6 (0x007d -> 0x0083) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod -69)
-ADV 6 (0x007d -> 0x0083) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod -65)
-ADV 6 (0x007d -> 0x0083) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod -61)
-ADV 6 (0x007d -> 0x0083) 0b 64 0f 00 00 0e 
 It is now cycle 6051
 P   20 | zjmp -200 OK
 P   12 | zjmp 0 OK
@@ -10478,9 +10453,10 @@ P   18 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
 ADV 5 (0x0652 -> 0x0657) 01 ff ff ff ff 
 It is now cycle 6059
-P   17 | zjmp -200 FAILED
-ADV 3 (0x02ac -> 0x02af) 09 ff 38 
 It is now cycle 6060
+P   17 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x02a1 -> 0x02a6) 01 ff ff ff ff 
 It is now cycle 6061
 P   20 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
@@ -10493,10 +10469,11 @@ It is now cycle 6065
 It is now cycle 6066
 It is now cycle 6067
 It is now cycle 6068
+P   10 | zjmp -200 OK
+P    9 | zjmp -200 OK
+P    7 | zjmp -200 OK
+P    2 | zjmp -200 OK
 It is now cycle 6069
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02af -> 0x02b4) 01 ff ff ff ff 
 It is now cycle 6070
 P   14 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 554)
@@ -10507,13 +10484,9 @@ ADV 6 (0x02e4 -> 0x02ea) 0b 64 0f 00 00 0e
 P   11 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 554)
 ADV 6 (0x02e4 -> 0x02ea) 0b 64 0f 00 00 0e 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
 P    4 | sti r15 0 -186
        | -> store to 0 + -186 = -186 (with pc and mod 554)
 ADV 6 (0x02e4 -> 0x02ea) 0b 64 0f 00 00 0e 
-P    2 | zjmp -200 OK
 It is now cycle 6071
 P   12 | zjmp 0 OK
 It is now cycle 6072
@@ -10530,20 +10503,20 @@ P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6077
 It is now cycle 6078
-It is now cycle 6079
-It is now cycle 6080
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fbb -> 0x0fc0) 01 ff ff ff ff 
+ADV 5 (0x00a8 -> 0x00ad) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fbb -> 0x0fc0) 01 ff ff ff ff 
+ADV 5 (0x00a8 -> 0x00ad) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fbb -> 0x0fc0) 01 ff ff ff ff 
+ADV 5 (0x00a8 -> 0x00ad) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fbb -> 0x0fc0) 01 ff ff ff ff 
+ADV 5 (0x00a8 -> 0x00ad) 01 ff ff ff ff 
+It is now cycle 6079
+It is now cycle 6080
 It is now cycle 6081
 It is now cycle 6082
 It is now cycle 6083
@@ -10553,6 +10526,9 @@ ADV 6 (0x0657 -> 0x065d) 0b 64 0f 00 00 0e
 It is now cycle 6084
 P   16 | zjmp 0 OK
 It is now cycle 6085
+P   17 | sti r15 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 678)
+ADV 6 (0x02a6 -> 0x02ac) 00 00 00 00 00 0e 
 P    6 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
 ADV 5 (0x03dd -> 0x03e2) 01 ff ff ff ff 
@@ -10583,9 +10559,6 @@ It is now cycle 6092
 It is now cycle 6093
 P   19 | zjmp 0 OK
 It is now cycle 6094
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 692)
-ADV 6 (0x02b4 -> 0x02ba) 00 00 00 00 00 0e 
 It is now cycle 6095
 It is now cycle 6096
 P   15 | zjmp 0 OK
@@ -10610,21 +10583,23 @@ It is now cycle 6101
 It is now cycle 6102
 It is now cycle 6103
 P   18 | zjmp -200 OK
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod -9)
+ADV 6 (0x00ad -> 0x00b3) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod -21)
+ADV 6 (0x00ad -> 0x00b3) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod -17)
+ADV 6 (0x00ad -> 0x00b3) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod -13)
+ADV 6 (0x00ad -> 0x00b3) 0b 64 0f 00 00 0e 
 It is now cycle 6104
 P   16 | zjmp 0 OK
 It is now cycle 6105
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3850)
-ADV 6 (0x0fc0 -> 0x0fc6) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3838)
-ADV 6 (0x0fc0 -> 0x0fc6) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3842)
-ADV 6 (0x0fc0 -> 0x0fc6) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3846)
-ADV 6 (0x0fc0 -> 0x0fc6) 0b 64 0f 00 00 0e 
+P   17 | zjmp -200 FAILED
+ADV 3 (0x02ac -> 0x02af) 09 ff 38 
 It is now cycle 6106
 P   20 | zjmp -200 OK
 It is now cycle 6107
@@ -10652,9 +10627,9 @@ P   18 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
 ADV 5 (0x0595 -> 0x059a) 01 ff ff ff ff 
 It is now cycle 6114
-P   17 | zjmp -200 FAILED
-ADV 3 (0x02ba -> 0x02bd) 09 ff 38 
 It is now cycle 6115
+P   17 | live -16777216
+ADV 5 (0x02af -> 0x02b4) 01 ff 00 00 00 
 It is now cycle 6116
 P   20 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
@@ -10668,15 +10643,25 @@ It is now cycle 6120
 It is now cycle 6121
 It is now cycle 6122
 It is now cycle 6123
-It is now cycle 6124
-P   17 | live -16777216
-ADV 5 (0x02bd -> 0x02c2) 01 ff 00 00 00 
-P   16 | zjmp 0 OK
-It is now cycle 6125
 P   10 | zjmp -200 OK
 P    9 | zjmp -200 OK
 P    7 | zjmp -200 OK
 P    2 | zjmp -200 OK
+It is now cycle 6124
+P   16 | zjmp 0 OK
+It is now cycle 6125
+P   14 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 365)
+ADV 6 (0x0227 -> 0x022d) 0b 64 0f 00 00 0e 
+P   13 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 365)
+ADV 6 (0x0227 -> 0x022d) 0b 64 0f 00 00 0e 
+P   11 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 365)
+ADV 6 (0x0227 -> 0x022d) 0b 64 0f 00 00 0e 
+P    4 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 365)
+ADV 6 (0x0227 -> 0x022d) 0b 64 0f 00 00 0e 
 It is now cycle 6126
 It is now cycle 6127
 It is now cycle 6128
@@ -10691,20 +10676,20 @@ P   12 | zjmp 0 OK
 It is now cycle 6132
 It is now cycle 6133
 P   19 | zjmp 0 OK
-It is now cycle 6134
-It is now cycle 6135
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0efe -> 0x0f03) 01 ff ff ff ff 
+ADV 5 (0x0feb -> 0x0ff0) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0efe -> 0x0f03) 01 ff ff ff ff 
+ADV 5 (0x0feb -> 0x0ff0) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0efe -> 0x0f03) 01 ff ff ff ff 
+ADV 5 (0x0feb -> 0x0ff0) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0efe -> 0x0f03) 01 ff ff ff ff 
+ADV 5 (0x0feb -> 0x0ff0) 01 ff ff ff ff 
+It is now cycle 6134
+It is now cycle 6135
 It is now cycle 6136
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
@@ -10736,6 +10721,10 @@ It is now cycle 6143
 It is now cycle 6144
 P   16 | zjmp 0 OK
 It is now cycle 6145
+P   14 | zjmp -200 OK
+P   13 | zjmp -200 OK
+P   11 | zjmp -200 OK
+P    4 | zjmp -200 OK
 It is now cycle 6146
 It is now cycle 6147
 It is now cycle 6148
@@ -10748,58 +10737,51 @@ It is now cycle 6153
 P   19 | zjmp 0 OK
 It is now cycle 6154
 It is now cycle 6155
-ADV 4 (0x022c -> 0x0230) 0e 09 ff 38 
-ADV 4 (0x022c -> 0x0230) 0e 09 ff 38 
-ADV 4 (0x022c -> 0x0230) 0e 09 ff 38 
-ADV 4 (0x022c -> 0x0230) 0e 09 ff 38 
+P   14 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0165 -> 0x016a) 01 ff ff ff ff 
+P   13 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0165 -> 0x016a) 01 ff ff ff ff 
+P   11 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0165 -> 0x016a) 01 ff ff ff ff 
+P    4 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0165 -> 0x016a) 01 ff ff ff ff 
 It is now cycle 6156
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6157
 It is now cycle 6158
 P   18 | zjmp -200 OK
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 3898)
+ADV 6 (0x0ff0 -> 0x0ff6) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 3886)
+ADV 6 (0x0ff0 -> 0x0ff6) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 3890)
+ADV 6 (0x0ff0 -> 0x0ff6) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3894)
+ADV 6 (0x0ff0 -> 0x0ff6) 0b 64 0f 00 00 0e 
 It is now cycle 6159
 It is now cycle 6160
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3661)
-ADV 6 (0x0f03 -> 0x0f09) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3649)
-ADV 6 (0x0f03 -> 0x0f09) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3653)
-ADV 6 (0x0f03 -> 0x0f09) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3657)
-ADV 6 (0x0f03 -> 0x0f09) 0b 64 0f 00 00 0e 
 It is now cycle 6161
 P   20 | zjmp -200 OK
 It is now cycle 6162
 It is now cycle 6163
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02df -> 0x02e4) 01 ff ff ff ff 
 It is now cycle 6164
 P   16 | zjmp 0 OK
 It is now cycle 6165
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0230 -> 0x0235) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0230 -> 0x0235) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0230 -> 0x0235) 01 ff ff ff ff 
 P    6 | sti r15 0 -182
        | -> store to 0 + -182 = -182 (with pc and mod 623)
 ADV 6 (0x0325 -> 0x032b) 0b 64 0f 00 00 0e 
 P    5 | sti r15 0 -194
        | -> store to 0 + -194 = -194 (with pc and mod 611)
 ADV 6 (0x0325 -> 0x032b) 0b 64 0f 00 00 0e 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0230 -> 0x0235) 01 ff ff ff ff 
 P    3 | sti r15 0 -190
        | -> store to 0 + -190 = -190 (with pc and mod 615)
 ADV 6 (0x0325 -> 0x032b) 0b 64 0f 00 00 0e 
@@ -10812,6 +10794,9 @@ It is now cycle 6168
 P   18 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
 ADV 5 (0x04d8 -> 0x04dd) 01 ff ff ff ff 
+P   17 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x02df -> 0x02e4) 01 ff ff ff ff 
 It is now cycle 6169
 It is now cycle 6170
 It is now cycle 6171
@@ -10829,12 +10814,24 @@ P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6177
 It is now cycle 6178
-It is now cycle 6179
-It is now cycle 6180
 P   10 | zjmp -200 OK
 P    9 | zjmp -200 OK
 P    7 | zjmp -200 OK
 P    2 | zjmp -200 OK
+It is now cycle 6179
+It is now cycle 6180
+P   14 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 176)
+ADV 6 (0x016a -> 0x0170) 0b 64 0f 00 00 0e 
+P   13 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 176)
+ADV 6 (0x016a -> 0x0170) 0b 64 0f 00 00 0e 
+P   11 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 176)
+ADV 6 (0x016a -> 0x0170) 0b 64 0f 00 00 0e 
+P    4 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 176)
+ADV 6 (0x016a -> 0x0170) 0b 64 0f 00 00 0e 
 It is now cycle 6181
 It is now cycle 6182
 It is now cycle 6183
@@ -10848,23 +10845,20 @@ P    1 | zjmp -200 OK
 It is now cycle 6186
 It is now cycle 6187
 It is now cycle 6188
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 740)
-ADV 6 (0x02e4 -> 0x02ea) 00 00 00 00 00 0e 
-It is now cycle 6189
-It is now cycle 6190
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e41 -> 0x0e46) 01 ff ff ff ff 
+ADV 5 (0x0f2e -> 0x0f33) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e41 -> 0x0e46) 01 ff ff ff ff 
+ADV 5 (0x0f2e -> 0x0f33) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e41 -> 0x0e46) 01 ff ff ff ff 
+ADV 5 (0x0f2e -> 0x0f33) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e41 -> 0x0e46) 01 ff ff ff ff 
+ADV 5 (0x0f2e -> 0x0f33) 01 ff ff ff ff 
+It is now cycle 6189
+It is now cycle 6190
 It is now cycle 6191
 P   12 | zjmp 0 OK
 It is now cycle 6192
@@ -10873,6 +10867,9 @@ P   19 | zjmp 0 OK
 P   18 | sti r15 0 -182
        | -> store to 0 + -182 = -182 (with pc and mod 1063)
 ADV 6 (0x04dd -> 0x04e3) 0b 64 0f 00 00 0e 
+P   17 | sti r15 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 740)
+ADV 6 (0x02e4 -> 0x02ea) 00 00 00 00 00 0e 
 It is now cycle 6194
 It is now cycle 6195
 P    6 | live -1
@@ -10897,6 +10894,10 @@ It is now cycle 6197
 It is now cycle 6198
 It is now cycle 6199
 It is now cycle 6200
+P   14 | zjmp -200 OK
+P   13 | zjmp -200 OK
+P   11 | zjmp -200 OK
+P    4 | zjmp -200 OK
 It is now cycle 6201
 It is now cycle 6202
 It is now cycle 6203
@@ -10906,51 +10907,56 @@ It is now cycle 6205
 It is now cycle 6206
 It is now cycle 6207
 It is now cycle 6208
-P   17 | zjmp -200 FAILED
-ADV 3 (0x02ea -> 0x02ed) 09 ff 38 
 It is now cycle 6209
 It is now cycle 6210
+P   14 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x00a8 -> 0x00ad) 01 ff ff ff ff 
+P   13 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x00a8 -> 0x00ad) 01 ff ff ff ff 
+P   11 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x00a8 -> 0x00ad) 01 ff ff ff ff 
+P    4 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x00a8 -> 0x00ad) 01 ff ff ff ff 
 It is now cycle 6211
 P   12 | zjmp 0 OK
 It is now cycle 6212
 It is now cycle 6213
 P   19 | zjmp 0 OK
 P   18 | zjmp -200 OK
+P   17 | zjmp -200 FAILED
+ADV 3 (0x02ea -> 0x02ed) 09 ff 38 
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 3709)
+ADV 6 (0x0f33 -> 0x0f39) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 3697)
+ADV 6 (0x0f33 -> 0x0f39) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 3701)
+ADV 6 (0x0f33 -> 0x0f39) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3705)
+ADV 6 (0x0f33 -> 0x0f39) 0b 64 0f 00 00 0e 
 It is now cycle 6214
 It is now cycle 6215
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3472)
-ADV 6 (0x0e46 -> 0x0e4c) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3460)
-ADV 6 (0x0e46 -> 0x0e4c) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3464)
-ADV 6 (0x0e46 -> 0x0e4c) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3468)
-ADV 6 (0x0e46 -> 0x0e4c) 0b 64 0f 00 00 0e 
 It is now cycle 6216
 P   20 | zjmp -200 OK
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6217
 It is now cycle 6218
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02ed -> 0x02f2) 01 ff ff ff ff 
 It is now cycle 6219
 It is now cycle 6220
-ADV 4 (0x023a -> 0x023e) 0e 09 ff 38 
-ADV 4 (0x023a -> 0x023e) 0e 09 ff 38 
-ADV 4 (0x023a -> 0x023e) 0e 09 ff 38 
 P    6 | sti r15 0 -182
        | -> store to 0 + -182 = -182 (with pc and mod 434)
 ADV 6 (0x0268 -> 0x026e) 0b 64 0f 00 00 0e 
 P    5 | sti r15 0 -194
        | -> store to 0 + -194 = -194 (with pc and mod 422)
 ADV 6 (0x0268 -> 0x026e) 0b 64 0f 00 00 0e 
-ADV 4 (0x023a -> 0x023e) 0e 09 ff 38 
 P    3 | sti r15 0 -190
        | -> store to 0 + -190 = -190 (with pc and mod 426)
 ADV 6 (0x0268 -> 0x026e) 0b 64 0f 00 00 0e 
@@ -10963,6 +10969,9 @@ It is now cycle 6223
 P   18 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
 ADV 5 (0x041b -> 0x0420) 01 ff ff ff ff 
+P   17 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x02ed -> 0x02f2) 01 ff ff ff ff 
 It is now cycle 6224
 P   16 | zjmp 0 OK
 It is now cycle 6225
@@ -10974,25 +10983,29 @@ It is now cycle 6227
 It is now cycle 6228
 It is now cycle 6229
 It is now cycle 6230
-P   14 | live -16777216
-ADV 5 (0x023e -> 0x0243) 01 ff 00 00 00 
-P   13 | live -16777216
-ADV 5 (0x023e -> 0x0243) 01 ff 00 00 00 
-P   11 | live -16777216
-ADV 5 (0x023e -> 0x0243) 01 ff 00 00 00 
-P    4 | live -16777216
-ADV 5 (0x023e -> 0x0243) 01 ff 00 00 00 
 It is now cycle 6231
 P   12 | zjmp 0 OK
 It is now cycle 6232
 It is now cycle 6233
 P   19 | zjmp 0 OK
-It is now cycle 6234
-It is now cycle 6235
 P   10 | zjmp -200 OK
 P    9 | zjmp -200 OK
 P    7 | zjmp -200 OK
 P    2 | zjmp -200 OK
+It is now cycle 6234
+It is now cycle 6235
+P   14 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod -13)
+ADV 6 (0x00ad -> 0x00b3) 0b 64 0f 00 00 0e 
+P   13 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod -13)
+ADV 6 (0x00ad -> 0x00b3) 0b 64 0f 00 00 0e 
+P   11 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod -13)
+ADV 6 (0x00ad -> 0x00b3) 0b 64 0f 00 00 0e 
+P    4 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod -13)
+ADV 6 (0x00ad -> 0x00b3) 0b 64 0f 00 00 0e 
 It is now cycle 6236
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
@@ -11007,30 +11020,30 @@ P    1 | zjmp -200 OK
 It is now cycle 6241
 It is now cycle 6242
 It is now cycle 6243
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 754)
-ADV 6 (0x02f2 -> 0x02f8) 00 00 00 00 00 0e 
+P   10 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0e71 -> 0x0e76) 01 ff ff ff ff 
+P    9 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0e71 -> 0x0e76) 01 ff ff ff ff 
+P    7 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0e71 -> 0x0e76) 01 ff ff ff ff 
+P    2 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0e71 -> 0x0e76) 01 ff ff ff ff 
 It is now cycle 6244
 P   16 | zjmp 0 OK
 It is now cycle 6245
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d84 -> 0x0d89) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d84 -> 0x0d89) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d84 -> 0x0d89) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d84 -> 0x0d89) 01 ff ff ff ff 
 It is now cycle 6246
 It is now cycle 6247
 It is now cycle 6248
 P   18 | sti r15 0 -182
        | -> store to 0 + -182 = -182 (with pc and mod 874)
 ADV 6 (0x0420 -> 0x0426) 0b 64 0f 00 00 0e 
+P   17 | sti r15 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 754)
+ADV 6 (0x02f2 -> 0x02f8) 00 00 00 00 00 0e 
 It is now cycle 6249
 It is now cycle 6250
 P    6 | live -1
@@ -11055,6 +11068,10 @@ It is now cycle 6253
 P   19 | zjmp 0 OK
 It is now cycle 6254
 It is now cycle 6255
+P   14 | zjmp -200 OK
+P   13 | zjmp -200 OK
+P   11 | zjmp -200 OK
+P    4 | zjmp -200 OK
 It is now cycle 6256
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
@@ -11065,49 +11082,47 @@ It is now cycle 6260
 It is now cycle 6261
 It is now cycle 6262
 It is now cycle 6263
-P   17 | zjmp -200 FAILED
-ADV 3 (0x02f8 -> 0x02fb) 09 ff 38 
 It is now cycle 6264
 P   16 | zjmp 0 OK
 It is now cycle 6265
+P   14 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0feb -> 0x0ff0) 01 ff ff ff ff 
+P   13 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0feb -> 0x0ff0) 01 ff ff ff ff 
+P   11 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0feb -> 0x0ff0) 01 ff ff ff ff 
+P    4 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0feb -> 0x0ff0) 01 ff ff ff ff 
 It is now cycle 6266
 It is now cycle 6267
 It is now cycle 6268
 P   18 | zjmp -200 OK
+P   17 | zjmp -200 FAILED
+ADV 3 (0x02f8 -> 0x02fb) 09 ff 38 
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 3520)
+ADV 6 (0x0e76 -> 0x0e7c) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 3508)
+ADV 6 (0x0e76 -> 0x0e7c) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 3512)
+ADV 6 (0x0e76 -> 0x0e7c) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3516)
+ADV 6 (0x0e76 -> 0x0e7c) 0b 64 0f 00 00 0e 
 It is now cycle 6269
 It is now cycle 6270
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3283)
-ADV 6 (0x0d89 -> 0x0d8f) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3271)
-ADV 6 (0x0d89 -> 0x0d8f) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3275)
-ADV 6 (0x0d89 -> 0x0d8f) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3279)
-ADV 6 (0x0d89 -> 0x0d8f) 0b 64 0f 00 00 0e 
 It is now cycle 6271
 P   20 | zjmp -200 OK
 P   12 | zjmp 0 OK
 It is now cycle 6272
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0263 -> 0x0268) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0263 -> 0x0268) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0263 -> 0x0268) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0263 -> 0x0268) 01 ff ff ff ff 
 It is now cycle 6273
 P   19 | zjmp 0 OK
-P   17 | live -16777216
-ADV 5 (0x02fb -> 0x0300) 01 ff 00 00 00 
 It is now cycle 6274
 It is now cycle 6275
 P    6 | sti r15 0 -182
@@ -11130,6 +11145,8 @@ It is now cycle 6278
 P   18 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
 ADV 5 (0x035e -> 0x0363) 01 ff ff ff ff 
+P   17 | live -16777216
+ADV 5 (0x02fb -> 0x0300) 01 ff 00 00 00 
 It is now cycle 6279
 It is now cycle 6280
 It is now cycle 6281
@@ -11144,12 +11161,24 @@ It is now cycle 6285
 It is now cycle 6286
 It is now cycle 6287
 It is now cycle 6288
-It is now cycle 6289
-It is now cycle 6290
 P   10 | zjmp -200 OK
 P    9 | zjmp -200 OK
 P    7 | zjmp -200 OK
 P    2 | zjmp -200 OK
+It is now cycle 6289
+It is now cycle 6290
+P   14 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3894)
+ADV 6 (0x0ff0 -> 0x0ff6) 0b 64 0f 00 00 0e 
+P   13 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3894)
+ADV 6 (0x0ff0 -> 0x0ff6) 0b 64 0f 00 00 0e 
+P   11 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3894)
+ADV 6 (0x0ff0 -> 0x0ff6) 0b 64 0f 00 00 0e 
+P    4 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3894)
+ADV 6 (0x0ff0 -> 0x0ff6) 0b 64 0f 00 00 0e 
 It is now cycle 6291
 P   12 | zjmp 0 OK
 It is now cycle 6292
@@ -11165,33 +11194,21 @@ It is now cycle 6296
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6297
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 430)
-ADV 6 (0x0268 -> 0x026e) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 430)
-ADV 6 (0x0268 -> 0x026e) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 430)
-ADV 6 (0x0268 -> 0x026e) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 430)
-ADV 6 (0x0268 -> 0x026e) 0b 64 0f 00 00 0e 
 It is now cycle 6298
-It is now cycle 6299
-It is now cycle 6300
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0cc7 -> 0x0ccc) 01 ff ff ff ff 
+ADV 5 (0x0db4 -> 0x0db9) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0cc7 -> 0x0ccc) 01 ff ff ff ff 
+ADV 5 (0x0db4 -> 0x0db9) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0cc7 -> 0x0ccc) 01 ff ff ff ff 
+ADV 5 (0x0db4 -> 0x0db9) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0cc7 -> 0x0ccc) 01 ff ff ff ff 
+ADV 5 (0x0db4 -> 0x0db9) 01 ff ff ff ff 
+It is now cycle 6299
+It is now cycle 6300
 It is now cycle 6301
 It is now cycle 6302
 It is now cycle 6303
@@ -11221,6 +11238,10 @@ It is now cycle 6307
 It is now cycle 6308
 It is now cycle 6309
 It is now cycle 6310
+P   14 | zjmp -200 OK
+P   13 | zjmp -200 OK
+P   11 | zjmp -200 OK
+P    4 | zjmp -200 OK
 It is now cycle 6311
 P   12 | zjmp 0 OK
 It is now cycle 6312
@@ -11228,54 +11249,50 @@ It is now cycle 6313
 P   19 | zjmp 0 OK
 It is now cycle 6314
 It is now cycle 6315
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0320 -> 0x0325) 01 ff ff ff ff 
 It is now cycle 6316
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6317
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
 It is now cycle 6318
 It is now cycle 6319
 It is now cycle 6320
+P   17 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0320 -> 0x0325) 01 ff ff ff ff 
+P   14 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0f2e -> 0x0f33) 01 ff ff ff ff 
+P   13 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0f2e -> 0x0f33) 01 ff ff ff ff 
+P   11 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0f2e -> 0x0f33) 01 ff ff ff ff 
+P    4 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0f2e -> 0x0f33) 01 ff ff ff ff 
 It is now cycle 6321
 It is now cycle 6322
 It is now cycle 6323
 P   18 | zjmp -200 OK
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 3331)
+ADV 6 (0x0db9 -> 0x0dbf) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 3319)
+ADV 6 (0x0db9 -> 0x0dbf) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 3323)
+ADV 6 (0x0db9 -> 0x0dbf) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3327)
+ADV 6 (0x0db9 -> 0x0dbf) 0b 64 0f 00 00 0e 
 It is now cycle 6324
 P   16 | zjmp 0 OK
 It is now cycle 6325
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3094)
-ADV 6 (0x0ccc -> 0x0cd2) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3082)
-ADV 6 (0x0ccc -> 0x0cd2) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3086)
-ADV 6 (0x0ccc -> 0x0cd2) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3090)
-ADV 6 (0x0ccc -> 0x0cd2) 0b 64 0f 00 00 0e 
 It is now cycle 6326
 P   20 | zjmp -200 OK
 It is now cycle 6327
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01a6 -> 0x01ab) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01a6 -> 0x01ab) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01a6 -> 0x01ab) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01a6 -> 0x01ab) 01 ff ff ff ff 
 It is now cycle 6328
 It is now cycle 6329
 It is now cycle 6330
@@ -11311,19 +11328,31 @@ It is now cycle 6337
 It is now cycle 6338
 It is now cycle 6339
 It is now cycle 6340
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 805)
-ADV 6 (0x0325 -> 0x032b) 00 00 00 00 00 0e 
 It is now cycle 6341
 It is now cycle 6342
 It is now cycle 6343
-It is now cycle 6344
-P   16 | zjmp 0 OK
-It is now cycle 6345
 P   10 | zjmp -200 OK
 P    9 | zjmp -200 OK
 P    7 | zjmp -200 OK
 P    2 | zjmp -200 OK
+It is now cycle 6344
+P   16 | zjmp 0 OK
+It is now cycle 6345
+P   17 | sti r15 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 805)
+ADV 6 (0x0325 -> 0x032b) 00 00 00 00 00 0e 
+P   14 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3705)
+ADV 6 (0x0f33 -> 0x0f39) 0b 64 0f 00 00 0e 
+P   13 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3705)
+ADV 6 (0x0f33 -> 0x0f39) 0b 64 0f 00 00 0e 
+P   11 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3705)
+ADV 6 (0x0f33 -> 0x0f39) 0b 64 0f 00 00 0e 
+P    4 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3705)
+ADV 6 (0x0f33 -> 0x0f39) 0b 64 0f 00 00 0e 
 It is now cycle 6346
 It is now cycle 6347
 It is now cycle 6348
@@ -11336,34 +11365,22 @@ P    1 | zjmp -200 OK
 It is now cycle 6351
 P   12 | zjmp 0 OK
 It is now cycle 6352
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 241)
-ADV 6 (0x01ab -> 0x01b1) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 241)
-ADV 6 (0x01ab -> 0x01b1) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 241)
-ADV 6 (0x01ab -> 0x01b1) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 241)
-ADV 6 (0x01ab -> 0x01b1) 0b 64 0f 00 00 0e 
 It is now cycle 6353
 P   19 | zjmp 0 OK
-It is now cycle 6354
-It is now cycle 6355
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c0a -> 0x0c0f) 01 ff ff ff ff 
+ADV 5 (0x0cf7 -> 0x0cfc) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c0a -> 0x0c0f) 01 ff ff ff ff 
+ADV 5 (0x0cf7 -> 0x0cfc) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c0a -> 0x0c0f) 01 ff ff ff ff 
+ADV 5 (0x0cf7 -> 0x0cfc) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c0a -> 0x0c0f) 01 ff ff ff ff 
+ADV 5 (0x0cf7 -> 0x0cfc) 01 ff ff ff ff 
+It is now cycle 6354
+It is now cycle 6355
 It is now cycle 6356
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
@@ -11371,8 +11388,6 @@ It is now cycle 6357
 It is now cycle 6358
 It is now cycle 6359
 It is now cycle 6360
-P   17 | zjmp -200 FAILED
-ADV 3 (0x032b -> 0x032e) 09 ff 38 
 P    6 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
 ADV 5 (0x002c -> 0x0031) 01 ff ff ff ff 
@@ -11394,58 +11409,60 @@ It is now cycle 6363
 It is now cycle 6364
 P   16 | zjmp 0 OK
 It is now cycle 6365
+P   17 | zjmp -200 FAILED
+ADV 3 (0x032b -> 0x032e) 09 ff 38 
+P   14 | zjmp -200 OK
+P   13 | zjmp -200 OK
+P   11 | zjmp -200 OK
+P    4 | zjmp -200 OK
 It is now cycle 6366
 It is now cycle 6367
 It is now cycle 6368
 It is now cycle 6369
 It is now cycle 6370
-P   17 | live -16777216
-ADV 5 (0x032e -> 0x0333) 01 ff 00 00 00 
 It is now cycle 6371
 P   12 | zjmp 0 OK
 It is now cycle 6372
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
 It is now cycle 6373
 P   19 | zjmp 0 OK
 It is now cycle 6374
 It is now cycle 6375
+P   17 | live -16777216
+ADV 5 (0x032e -> 0x0333) 01 ff 00 00 00 
+P   14 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0e71 -> 0x0e76) 01 ff ff ff ff 
+P   13 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0e71 -> 0x0e76) 01 ff ff ff ff 
+P   11 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0e71 -> 0x0e76) 01 ff ff ff ff 
+P    4 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0e71 -> 0x0e76) 01 ff ff ff ff 
 It is now cycle 6376
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6377
 It is now cycle 6378
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 3142)
+ADV 6 (0x0cfc -> 0x0d02) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 3130)
+ADV 6 (0x0cfc -> 0x0d02) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 3134)
+ADV 6 (0x0cfc -> 0x0d02) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3138)
+ADV 6 (0x0cfc -> 0x0d02) 0b 64 0f 00 00 0e 
 It is now cycle 6379
 It is now cycle 6380
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2905)
-ADV 6 (0x0c0f -> 0x0c15) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2893)
-ADV 6 (0x0c0f -> 0x0c15) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2897)
-ADV 6 (0x0c0f -> 0x0c15) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2901)
-ADV 6 (0x0c0f -> 0x0c15) 0b 64 0f 00 00 0e 
 It is now cycle 6381
 P   20 | zjmp -200 OK
 It is now cycle 6382
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00e9 -> 0x00ee) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00e9 -> 0x00ee) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00e9 -> 0x00ee) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00e9 -> 0x00ee) 01 ff ff ff ff 
 It is now cycle 6383
 It is now cycle 6384
 P   16 | zjmp 0 OK
@@ -11483,15 +11500,26 @@ P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6397
 It is now cycle 6398
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02af -> 0x02b4) 01 ff ff ff ff 
-It is now cycle 6399
-It is now cycle 6400
+P   18 | live -16777216
+ADV 5 (0x02af -> 0x02b4) 01 ff 00 00 00 
 P   10 | zjmp -200 OK
 P    9 | zjmp -200 OK
 P    7 | zjmp -200 OK
 P    2 | zjmp -200 OK
+It is now cycle 6399
+It is now cycle 6400
+P   14 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3516)
+ADV 6 (0x0e76 -> 0x0e7c) 0b 64 0f 00 00 0e 
+P   13 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3516)
+ADV 6 (0x0e76 -> 0x0e7c) 0b 64 0f 00 00 0e 
+P   11 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3516)
+ADV 6 (0x0e76 -> 0x0e7c) 0b 64 0f 00 00 0e 
+P    4 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3516)
+ADV 6 (0x0e76 -> 0x0e7c) 0b 64 0f 00 00 0e 
 It is now cycle 6401
 It is now cycle 6402
 It is now cycle 6403
@@ -11504,33 +11532,21 @@ P    3 | zjmp -200 OK
 P    1 | zjmp -200 OK
 It is now cycle 6406
 It is now cycle 6407
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 52)
-ADV 6 (0x00ee -> 0x00f4) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 52)
-ADV 6 (0x00ee -> 0x00f4) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 52)
-ADV 6 (0x00ee -> 0x00f4) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 52)
-ADV 6 (0x00ee -> 0x00f4) 0b 64 0f 00 00 0e 
 It is now cycle 6408
-It is now cycle 6409
-It is now cycle 6410
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b4d -> 0x0b52) 01 ff ff ff ff 
+ADV 5 (0x0c3a -> 0x0c3f) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b4d -> 0x0b52) 01 ff ff ff ff 
+ADV 5 (0x0c3a -> 0x0c3f) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b4d -> 0x0b52) 01 ff ff ff ff 
+ADV 5 (0x0c3a -> 0x0c3f) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b4d -> 0x0b52) 01 ff ff ff ff 
+ADV 5 (0x0c3a -> 0x0c3f) 01 ff ff ff ff 
+It is now cycle 6409
+It is now cycle 6410
 It is now cycle 6411
 P   12 | zjmp 0 OK
 It is now cycle 6412
@@ -11560,60 +11576,60 @@ It is now cycle 6417
 It is now cycle 6418
 It is now cycle 6419
 It is now cycle 6420
+P   14 | zjmp -200 OK
+P   13 | zjmp -200 OK
+P   11 | zjmp -200 OK
+P    4 | zjmp -200 OK
 It is now cycle 6421
 It is now cycle 6422
 It is now cycle 6423
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x035e -> 0x0363) 01 ff ff ff ff 
 It is now cycle 6424
 P   16 | zjmp 0 OK
 It is now cycle 6425
 It is now cycle 6426
 It is now cycle 6427
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
 It is now cycle 6428
+P   17 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x035e -> 0x0363) 01 ff ff ff ff 
 It is now cycle 6429
 It is now cycle 6430
+P   14 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0db4 -> 0x0db9) 01 ff ff ff ff 
+P   13 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0db4 -> 0x0db9) 01 ff ff ff ff 
+P   11 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0db4 -> 0x0db9) 01 ff ff ff ff 
+P    4 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0db4 -> 0x0db9) 01 ff ff ff ff 
 It is now cycle 6431
 P   12 | zjmp 0 OK
 It is now cycle 6432
 It is now cycle 6433
 P   19 | zjmp 0 OK
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 2953)
+ADV 6 (0x0c3f -> 0x0c45) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 2941)
+ADV 6 (0x0c3f -> 0x0c45) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 2945)
+ADV 6 (0x0c3f -> 0x0c45) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2949)
+ADV 6 (0x0c3f -> 0x0c45) 0b 64 0f 00 00 0e 
 It is now cycle 6434
 It is now cycle 6435
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2716)
-ADV 6 (0x0b52 -> 0x0b58) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2704)
-ADV 6 (0x0b52 -> 0x0b58) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2708)
-ADV 6 (0x0b52 -> 0x0b58) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2712)
-ADV 6 (0x0b52 -> 0x0b58) 0b 64 0f 00 00 0e 
 It is now cycle 6436
 P   20 | zjmp -200 OK
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6437
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x002c -> 0x0031) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x002c -> 0x0031) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x002c -> 0x0031) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x002c -> 0x0031) 01 ff ff ff ff 
 It is now cycle 6438
 It is now cycle 6439
 It is now cycle 6440
@@ -11641,23 +11657,37 @@ Player 1 (Celebration Funebre v0.99pl42) is said to be alive
 ADV 5 (0x035e -> 0x0363) 01 ff ff ff ff 
 It is now cycle 6447
 It is now cycle 6448
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 867)
-ADV 6 (0x0363 -> 0x0369) 00 00 00 00 00 0e 
 It is now cycle 6449
 It is now cycle 6450
 It is now cycle 6451
+P   18 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x02df -> 0x02e4) 01 ff ff ff ff 
 P   12 | zjmp 0 OK
 It is now cycle 6452
 It is now cycle 6453
 P   19 | zjmp 0 OK
-ADV 4 (0x02b9 -> 0x02bd) 0e 09 ff 38 
-It is now cycle 6454
-It is now cycle 6455
+P   17 | sti r15 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 867)
+ADV 6 (0x0363 -> 0x0369) 00 00 00 00 00 0e 
 P   10 | zjmp -200 OK
 P    9 | zjmp -200 OK
 P    7 | zjmp -200 OK
 P    2 | zjmp -200 OK
+It is now cycle 6454
+It is now cycle 6455
+P   14 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3327)
+ADV 6 (0x0db9 -> 0x0dbf) 0b 64 0f 00 00 0e 
+P   13 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3327)
+ADV 6 (0x0db9 -> 0x0dbf) 0b 64 0f 00 00 0e 
+P   11 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3327)
+ADV 6 (0x0db9 -> 0x0dbf) 0b 64 0f 00 00 0e 
+P    4 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3327)
+ADV 6 (0x0db9 -> 0x0dbf) 0b 64 0f 00 00 0e 
 It is now cycle 6456
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
@@ -11671,41 +11701,25 @@ P    3 | zjmp -200 OK
 P    1 | zjmp -200 OK
 It is now cycle 6461
 It is now cycle 6462
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod -137)
-ADV 6 (0x0031 -> 0x0037) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod -137)
-ADV 6 (0x0031 -> 0x0037) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod -137)
-ADV 6 (0x0031 -> 0x0037) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod -137)
-ADV 6 (0x0031 -> 0x0037) 0b 64 0f 00 00 0e 
 It is now cycle 6463
-P   18 | live -16777216
-ADV 5 (0x02bd -> 0x02c2) 01 ff 00 00 00 
+P   10 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0b7d -> 0x0b82) 01 ff ff ff ff 
+P    9 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0b7d -> 0x0b82) 01 ff ff ff ff 
+P    7 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0b7d -> 0x0b82) 01 ff ff ff ff 
+P    2 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0b7d -> 0x0b82) 01 ff ff ff ff 
 It is now cycle 6464
 P   16 | zjmp 0 OK
 It is now cycle 6465
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a90 -> 0x0a95) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a90 -> 0x0a95) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a90 -> 0x0a95) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a90 -> 0x0a95) 01 ff ff ff ff 
 It is now cycle 6466
 It is now cycle 6467
 It is now cycle 6468
-P   17 | zjmp -200 FAILED
-ADV 3 (0x0369 -> 0x036c) 09 ff 38 
 It is now cycle 6469
 It is now cycle 6470
 P    6 | live -1
@@ -11726,60 +11740,61 @@ P   12 | zjmp 0 OK
 It is now cycle 6472
 It is now cycle 6473
 P   19 | zjmp 0 OK
+P   17 | zjmp -200 FAILED
+ADV 3 (0x0369 -> 0x036c) 09 ff 38 
 It is now cycle 6474
 It is now cycle 6475
+P   14 | zjmp -200 OK
+P   13 | zjmp -200 OK
+P   11 | zjmp -200 OK
+P    4 | zjmp -200 OK
 It is now cycle 6476
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6477
 It is now cycle 6478
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x036c -> 0x0371) 01 ff ff ff ff 
 It is now cycle 6479
 It is now cycle 6480
 It is now cycle 6481
 It is now cycle 6482
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
 It is now cycle 6483
+P   17 | live -16777216
+ADV 5 (0x036c -> 0x0371) 01 ff 00 00 00 
 It is now cycle 6484
 P   16 | zjmp 0 OK
 It is now cycle 6485
+P   14 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0cf7 -> 0x0cfc) 01 ff ff ff ff 
+P   13 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0cf7 -> 0x0cfc) 01 ff ff ff ff 
+P   11 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0cf7 -> 0x0cfc) 01 ff ff ff ff 
+P    4 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0cf7 -> 0x0cfc) 01 ff ff ff ff 
 It is now cycle 6486
 It is now cycle 6487
 It is now cycle 6488
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 2764)
+ADV 6 (0x0b82 -> 0x0b88) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 2752)
+ADV 6 (0x0b82 -> 0x0b88) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 2756)
+ADV 6 (0x0b82 -> 0x0b88) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2760)
+ADV 6 (0x0b82 -> 0x0b88) 0b 64 0f 00 00 0e 
 It is now cycle 6489
 It is now cycle 6490
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2527)
-ADV 6 (0x0a95 -> 0x0a9b) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2515)
-ADV 6 (0x0a95 -> 0x0a9b) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2519)
-ADV 6 (0x0a95 -> 0x0a9b) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2523)
-ADV 6 (0x0a95 -> 0x0a9b) 0b 64 0f 00 00 0e 
 It is now cycle 6491
 P   12 | zjmp 0 OK
 It is now cycle 6492
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f6f -> 0x0f74) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f6f -> 0x0f74) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f6f -> 0x0f74) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f6f -> 0x0f74) 01 ff ff ff ff 
 It is now cycle 6493
 P   19 | zjmp 0 OK
 It is now cycle 6494
@@ -11805,25 +11820,32 @@ It is now cycle 6499
 It is now cycle 6500
 It is now cycle 6501
 It is now cycle 6502
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02df -> 0x02e4) 01 ff ff ff ff 
 It is now cycle 6503
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 881)
-ADV 6 (0x0371 -> 0x0377) 00 00 00 00 00 0e 
 It is now cycle 6504
 P   16 | zjmp 0 OK
 It is now cycle 6505
 It is now cycle 6506
+ADV 4 (0x02e9 -> 0x02ed) 0e 09 ff 38 
 It is now cycle 6507
 It is now cycle 6508
-It is now cycle 6509
-It is now cycle 6510
 P   10 | zjmp -200 OK
 P    9 | zjmp -200 OK
 P    7 | zjmp -200 OK
 P    2 | zjmp -200 OK
+It is now cycle 6509
+It is now cycle 6510
+P   14 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3138)
+ADV 6 (0x0cfc -> 0x0d02) 0b 64 0f 00 00 0e 
+P   13 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3138)
+ADV 6 (0x0cfc -> 0x0d02) 0b 64 0f 00 00 0e 
+P   11 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3138)
+ADV 6 (0x0cfc -> 0x0d02) 0b 64 0f 00 00 0e 
+P    4 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 3138)
+ADV 6 (0x0cfc -> 0x0d02) 0b 64 0f 00 00 0e 
 It is now cycle 6511
 P   12 | zjmp 0 OK
 It is now cycle 6512
@@ -11836,41 +11858,30 @@ P    5 | zjmp -200 OK
 P    3 | zjmp -200 OK
 P    1 | zjmp -200 OK
 It is now cycle 6516
+P   18 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x02ed -> 0x02f2) 01 ff ff ff ff 
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6517
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3770)
-ADV 6 (0x0f74 -> 0x0f7a) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3770)
-ADV 6 (0x0f74 -> 0x0f7a) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3770)
-ADV 6 (0x0f74 -> 0x0f7a) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3770)
-ADV 6 (0x0f74 -> 0x0f7a) 0b 64 0f 00 00 0e 
 It is now cycle 6518
-It is now cycle 6519
-It is now cycle 6520
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x09d3 -> 0x09d8) 01 ff ff ff ff 
+ADV 5 (0x0ac0 -> 0x0ac5) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x09d3 -> 0x09d8) 01 ff ff ff ff 
+ADV 5 (0x0ac0 -> 0x0ac5) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x09d3 -> 0x09d8) 01 ff ff ff ff 
+ADV 5 (0x0ac0 -> 0x0ac5) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x09d3 -> 0x09d8) 01 ff ff ff ff 
+ADV 5 (0x0ac0 -> 0x0ac5) 01 ff ff ff ff 
+It is now cycle 6519
+It is now cycle 6520
 It is now cycle 6521
 It is now cycle 6522
 It is now cycle 6523
-P   17 | zjmp -200 FAILED
-ADV 3 (0x0377 -> 0x037a) 09 ff 38 
 It is now cycle 6524
 ADV 4 (0x0368 -> 0x036c) 0e 09 ff 38 
 P   16 | zjmp 0 OK
@@ -11892,61 +11903,61 @@ It is now cycle 6527
 It is now cycle 6528
 It is now cycle 6529
 It is now cycle 6530
+P   14 | zjmp -200 OK
+P   13 | zjmp -200 OK
+P   11 | zjmp -200 OK
+P    4 | zjmp -200 OK
 It is now cycle 6531
 P   12 | zjmp 0 OK
 It is now cycle 6532
 It is now cycle 6533
 P   19 | zjmp 0 OK
-P   17 | live -16777216
-ADV 5 (0x037a -> 0x037f) 01 ff 00 00 00 
 It is now cycle 6534
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x036c -> 0x0371) 01 ff ff ff ff 
+P   20 | live -16777216
+ADV 5 (0x036c -> 0x0371) 01 ff 00 00 00 
 It is now cycle 6535
 It is now cycle 6536
+P   17 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x039c -> 0x03a1) 01 ff ff ff ff 
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6537
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
 It is now cycle 6538
 It is now cycle 6539
 It is now cycle 6540
+P   14 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0c3a -> 0x0c3f) 01 ff ff ff ff 
+P   13 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0c3a -> 0x0c3f) 01 ff ff ff ff 
+P   11 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0c3a -> 0x0c3f) 01 ff ff ff ff 
+P    4 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0c3a -> 0x0c3f) 01 ff ff ff ff 
 It is now cycle 6541
 It is now cycle 6542
 It is now cycle 6543
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 2575)
+ADV 6 (0x0ac5 -> 0x0acb) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 2563)
+ADV 6 (0x0ac5 -> 0x0acb) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 2567)
+ADV 6 (0x0ac5 -> 0x0acb) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2571)
+ADV 6 (0x0ac5 -> 0x0acb) 0b 64 0f 00 00 0e 
 It is now cycle 6544
 P   16 | zjmp 0 OK
 It is now cycle 6545
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2338)
-ADV 6 (0x09d8 -> 0x09de) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2326)
-ADV 6 (0x09d8 -> 0x09de) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2330)
-ADV 6 (0x09d8 -> 0x09de) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2334)
-ADV 6 (0x09d8 -> 0x09de) 0b 64 0f 00 00 0e 
 It is now cycle 6546
 It is now cycle 6547
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0eb2 -> 0x0eb7) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0eb2 -> 0x0eb7) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0eb2 -> 0x0eb7) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0eb2 -> 0x0eb7) 01 ff ff ff ff 
 It is now cycle 6548
 It is now cycle 6549
 It is now cycle 6550
@@ -11973,25 +11984,36 @@ It is now cycle 6556
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6557
-ADV 4 (0x02e9 -> 0x02ed) 0e 09 ff 38 
 It is now cycle 6558
 It is now cycle 6559
 It is now cycle 6560
 It is now cycle 6561
+P   17 | sti r15 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 929)
+ADV 6 (0x03a1 -> 0x03a7) 00 00 00 00 00 0e 
 It is now cycle 6562
 It is now cycle 6563
-It is now cycle 6564
-P   16 | zjmp 0 OK
-It is now cycle 6565
 P   10 | zjmp -200 OK
 P    9 | zjmp -200 OK
 P    7 | zjmp -200 OK
 P    2 | zjmp -200 OK
+It is now cycle 6564
+P   16 | zjmp 0 OK
+It is now cycle 6565
+P   14 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2949)
+ADV 6 (0x0c3f -> 0x0c45) 0b 64 0f 00 00 0e 
+P   13 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2949)
+ADV 6 (0x0c3f -> 0x0c45) 0b 64 0f 00 00 0e 
+P   11 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2949)
+ADV 6 (0x0c3f -> 0x0c45) 0b 64 0f 00 00 0e 
+P    4 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2949)
+ADV 6 (0x0c3f -> 0x0c45) 0b 64 0f 00 00 0e 
 It is now cycle 6566
 It is now cycle 6567
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02ed -> 0x02f2) 01 ff ff ff ff 
 It is now cycle 6568
 It is now cycle 6569
 It is now cycle 6570
@@ -12000,39 +12022,25 @@ P    5 | zjmp -200 OK
 P    3 | zjmp -200 OK
 P    1 | zjmp -200 OK
 It is now cycle 6571
+ADV 4 (0x02f7 -> 0x02fb) 0e 09 ff 38 
 P   12 | zjmp 0 OK
 It is now cycle 6572
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x039c -> 0x03a1) 01 ff ff ff ff 
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3581)
-ADV 6 (0x0eb7 -> 0x0ebd) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3581)
-ADV 6 (0x0eb7 -> 0x0ebd) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3581)
-ADV 6 (0x0eb7 -> 0x0ebd) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3581)
-ADV 6 (0x0eb7 -> 0x0ebd) 0b 64 0f 00 00 0e 
 It is now cycle 6573
 P   19 | zjmp 0 OK
-It is now cycle 6574
-It is now cycle 6575
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0916 -> 0x091b) 01 ff ff ff ff 
+ADV 5 (0x0a03 -> 0x0a08) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0916 -> 0x091b) 01 ff ff ff ff 
+ADV 5 (0x0a03 -> 0x0a08) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0916 -> 0x091b) 01 ff ff ff ff 
+ADV 5 (0x0a03 -> 0x0a08) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0916 -> 0x091b) 01 ff ff ff ff 
+ADV 5 (0x0a03 -> 0x0a08) 01 ff ff ff ff 
+It is now cycle 6574
+It is now cycle 6575
 It is now cycle 6576
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
@@ -12053,66 +12061,70 @@ P    1 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
 ADV 5 (0x0d38 -> 0x0d3d) 01 ff ff ff ff 
 It is now cycle 6581
+P   18 | live -16777216
+ADV 5 (0x02fb -> 0x0300) 01 ff 00 00 00 
+P   17 | zjmp -200 FAILED
+ADV 3 (0x03a7 -> 0x03aa) 09 ff 38 
 It is now cycle 6582
 It is now cycle 6583
 It is now cycle 6584
 P   16 | zjmp 0 OK
 It is now cycle 6585
-It is now cycle 6586
-It is now cycle 6587
-It is now cycle 6588
-It is now cycle 6589
-ADV 4 (0x0376 -> 0x037a) 0e 09 ff 38 
-It is now cycle 6590
-It is now cycle 6591
-P   12 | zjmp 0 OK
-It is now cycle 6592
 P   14 | zjmp -200 OK
 P   13 | zjmp -200 OK
 P   11 | zjmp -200 OK
 P    4 | zjmp -200 OK
+It is now cycle 6586
+It is now cycle 6587
+P   20 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x039c -> 0x03a1) 01 ff ff ff ff 
+It is now cycle 6588
+It is now cycle 6589
+It is now cycle 6590
+It is now cycle 6591
+P   17 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x03aa -> 0x03af) 01 ff ff ff ff 
+P   12 | zjmp 0 OK
+It is now cycle 6592
 It is now cycle 6593
 P   19 | zjmp 0 OK
 It is now cycle 6594
 It is now cycle 6595
+P   14 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0b7d -> 0x0b82) 01 ff ff ff ff 
+P   13 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0b7d -> 0x0b82) 01 ff ff ff ff 
+P   11 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0b7d -> 0x0b82) 01 ff ff ff ff 
+P    4 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0b7d -> 0x0b82) 01 ff ff ff ff 
 It is now cycle 6596
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6597
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 929)
-ADV 6 (0x03a1 -> 0x03a7) 00 00 00 00 00 0e 
 It is now cycle 6598
-It is now cycle 6599
-P   20 | live -16777216
-ADV 5 (0x037a -> 0x037f) 01 ff 00 00 00 
-It is now cycle 6600
 P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2149)
-ADV 6 (0x091b -> 0x0921) 0b 64 0f 00 00 0e 
+       | -> store to 0 + -182 = -182 (with pc and mod 2386)
+ADV 6 (0x0a08 -> 0x0a0e) 0b 64 0f 00 00 0e 
 P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2137)
-ADV 6 (0x091b -> 0x0921) 0b 64 0f 00 00 0e 
+       | -> store to 0 + -194 = -194 (with pc and mod 2374)
+ADV 6 (0x0a08 -> 0x0a0e) 0b 64 0f 00 00 0e 
 P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2141)
-ADV 6 (0x091b -> 0x0921) 0b 64 0f 00 00 0e 
+       | -> store to 0 + -190 = -190 (with pc and mod 2378)
+ADV 6 (0x0a08 -> 0x0a0e) 0b 64 0f 00 00 0e 
 P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2145)
-ADV 6 (0x091b -> 0x0921) 0b 64 0f 00 00 0e 
+       | -> store to 0 + -186 = -186 (with pc and mod 2382)
+ADV 6 (0x0a08 -> 0x0a0e) 0b 64 0f 00 00 0e 
+It is now cycle 6599
+It is now cycle 6600
 It is now cycle 6601
 It is now cycle 6602
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0df5 -> 0x0dfa) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0df5 -> 0x0dfa) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0df5 -> 0x0dfa) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0df5 -> 0x0dfa) 01 ff ff ff ff 
 It is now cycle 6603
 It is now cycle 6604
 P   16 | zjmp 0 OK
@@ -12142,22 +12154,37 @@ P   19 | zjmp 0 OK
 It is now cycle 6614
 It is now cycle 6615
 It is now cycle 6616
+P   17 | sti r15 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 943)
+ADV 6 (0x03af -> 0x03b5) 00 00 00 00 00 0e 
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6617
-P   17 | zjmp -200 FAILED
-ADV 3 (0x03a7 -> 0x03aa) 09 ff 38 
 It is now cycle 6618
-It is now cycle 6619
-It is now cycle 6620
 P   10 | zjmp -200 OK
 P    9 | zjmp -200 OK
 P    7 | zjmp -200 OK
 P    2 | zjmp -200 OK
+It is now cycle 6619
+It is now cycle 6620
+P   14 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2760)
+ADV 6 (0x0b82 -> 0x0b88) 0b 64 0f 00 00 0e 
+P   13 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2760)
+ADV 6 (0x0b82 -> 0x0b88) 0b 64 0f 00 00 0e 
+P   11 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2760)
+ADV 6 (0x0b82 -> 0x0b88) 0b 64 0f 00 00 0e 
+P    4 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2760)
+ADV 6 (0x0b82 -> 0x0b88) 0b 64 0f 00 00 0e 
 It is now cycle 6621
 It is now cycle 6622
-ADV 4 (0x02f7 -> 0x02fb) 0e 09 ff 38 
 It is now cycle 6623
+P   18 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0320 -> 0x0325) 01 ff ff ff ff 
 It is now cycle 6624
 P   16 | zjmp 0 OK
 It is now cycle 6625
@@ -12167,41 +12194,24 @@ P    3 | zjmp -200 OK
 P    1 | zjmp -200 OK
 It is now cycle 6626
 It is now cycle 6627
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x03aa -> 0x03af) 01 ff ff ff ff 
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3392)
-ADV 6 (0x0dfa -> 0x0e00) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3392)
-ADV 6 (0x0dfa -> 0x0e00) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3392)
-ADV 6 (0x0dfa -> 0x0e00) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3392)
-ADV 6 (0x0dfa -> 0x0e00) 0b 64 0f 00 00 0e 
 It is now cycle 6628
-It is now cycle 6629
-It is now cycle 6630
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0859 -> 0x085e) 01 ff ff ff ff 
+ADV 5 (0x0946 -> 0x094b) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0859 -> 0x085e) 01 ff ff ff ff 
+ADV 5 (0x0946 -> 0x094b) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0859 -> 0x085e) 01 ff ff ff ff 
+ADV 5 (0x0946 -> 0x094b) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0859 -> 0x085e) 01 ff ff ff ff 
+ADV 5 (0x0946 -> 0x094b) 01 ff ff ff ff 
+It is now cycle 6629
+It is now cycle 6630
 It is now cycle 6631
 P   12 | zjmp 0 OK
 It is now cycle 6632
-P   18 | live -16777216
-ADV 5 (0x02fb -> 0x0300) 01 ff 00 00 00 
 It is now cycle 6633
 P   19 | zjmp 0 OK
 It is now cycle 6634
@@ -12219,68 +12229,70 @@ P    1 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
 ADV 5 (0x0c7b -> 0x0c80) 01 ff ff ff ff 
 It is now cycle 6636
+P   17 | zjmp -200 FAILED
+ADV 3 (0x03b5 -> 0x03b8) 09 ff 38 
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6637
 It is now cycle 6638
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x039c -> 0x03a1) 01 ff ff ff ff 
 It is now cycle 6639
 It is now cycle 6640
+P   14 | zjmp -200 OK
+P   13 | zjmp -200 OK
+P   11 | zjmp -200 OK
+P    4 | zjmp -200 OK
 It is now cycle 6641
 It is now cycle 6642
+ADV 4 (0x03a6 -> 0x03aa) 0e 09 ff 38 
 It is now cycle 6643
 It is now cycle 6644
 P   16 | zjmp 0 OK
 It is now cycle 6645
 It is now cycle 6646
+P   17 | live -16777216
+ADV 5 (0x03b8 -> 0x03bd) 01 ff 00 00 00 
 It is now cycle 6647
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
 It is now cycle 6648
 It is now cycle 6649
 It is now cycle 6650
+P   14 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0ac0 -> 0x0ac5) 01 ff ff ff ff 
+P   13 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0ac0 -> 0x0ac5) 01 ff ff ff ff 
+P   11 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0ac0 -> 0x0ac5) 01 ff ff ff ff 
+P    4 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0ac0 -> 0x0ac5) 01 ff ff ff ff 
 It is now cycle 6651
 P   12 | zjmp 0 OK
 It is now cycle 6652
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 943)
-ADV 6 (0x03af -> 0x03b5) 00 00 00 00 00 0e 
+P   20 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x03aa -> 0x03af) 01 ff ff ff ff 
 It is now cycle 6653
 P   19 | zjmp 0 OK
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 2197)
+ADV 6 (0x094b -> 0x0951) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 2185)
+ADV 6 (0x094b -> 0x0951) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 2189)
+ADV 6 (0x094b -> 0x0951) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2193)
+ADV 6 (0x094b -> 0x0951) 0b 64 0f 00 00 0e 
 It is now cycle 6654
 It is now cycle 6655
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1960)
-ADV 6 (0x085e -> 0x0864) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1948)
-ADV 6 (0x085e -> 0x0864) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1952)
-ADV 6 (0x085e -> 0x0864) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1956)
-ADV 6 (0x085e -> 0x0864) 0b 64 0f 00 00 0e 
 It is now cycle 6656
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6657
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d38 -> 0x0d3d) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d38 -> 0x0d3d) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d38 -> 0x0d3d) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d38 -> 0x0d3d) 01 ff ff ff ff 
 It is now cycle 6658
 It is now cycle 6659
 It is now cycle 6660
@@ -12310,24 +12322,32 @@ It is now cycle 6670
 It is now cycle 6671
 P   12 | zjmp 0 OK
 It is now cycle 6672
-P   17 | zjmp -200 FAILED
-ADV 3 (0x03b5 -> 0x03b8) 09 ff 38 
 It is now cycle 6673
 P   19 | zjmp 0 OK
-It is now cycle 6674
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0320 -> 0x0325) 01 ff ff ff ff 
-It is now cycle 6675
 P   10 | zjmp -200 OK
 P    9 | zjmp -200 OK
 P    7 | zjmp -200 OK
 P    2 | zjmp -200 OK
+It is now cycle 6674
+It is now cycle 6675
+P   14 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2571)
+ADV 6 (0x0ac5 -> 0x0acb) 0b 64 0f 00 00 0e 
+P   13 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2571)
+ADV 6 (0x0ac5 -> 0x0acb) 0b 64 0f 00 00 0e 
+P   11 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2571)
+ADV 6 (0x0ac5 -> 0x0acb) 0b 64 0f 00 00 0e 
+P    4 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2571)
+ADV 6 (0x0ac5 -> 0x0acb) 0b 64 0f 00 00 0e 
 It is now cycle 6676
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6677
 It is now cycle 6678
+ADV 4 (0x032a -> 0x032e) 0e 09 ff 38 
 It is now cycle 6679
 It is now cycle 6680
 P    6 | zjmp -200 OK
@@ -12336,39 +12356,30 @@ P    3 | zjmp -200 OK
 P    1 | zjmp -200 OK
 It is now cycle 6681
 It is now cycle 6682
-P   17 | live -16777216
-ADV 5 (0x03b8 -> 0x03bd) 01 ff 00 00 00 
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3203)
-ADV 6 (0x0d3d -> 0x0d43) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3203)
-ADV 6 (0x0d3d -> 0x0d43) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3203)
-ADV 6 (0x0d3d -> 0x0d43) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3203)
-ADV 6 (0x0d3d -> 0x0d43) 0b 64 0f 00 00 0e 
 It is now cycle 6683
+P   10 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0889 -> 0x088e) 01 ff ff ff ff 
+P    9 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0889 -> 0x088e) 01 ff ff ff ff 
+P    7 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0889 -> 0x088e) 01 ff ff ff ff 
+P    2 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0889 -> 0x088e) 01 ff ff ff ff 
 It is now cycle 6684
 P   16 | zjmp 0 OK
 It is now cycle 6685
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x079c -> 0x07a1) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x079c -> 0x07a1) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x079c -> 0x07a1) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x079c -> 0x07a1) 01 ff ff ff ff 
 It is now cycle 6686
 It is now cycle 6687
 It is now cycle 6688
+P   18 | live -16777216
+ADV 5 (0x032e -> 0x0333) 01 ff 00 00 00 
+P   17 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x03dd -> 0x03e2) 01 ff ff ff ff 
 It is now cycle 6689
 It is now cycle 6690
 P    6 | live -1
@@ -12387,10 +12398,13 @@ It is now cycle 6691
 P   12 | zjmp 0 OK
 It is now cycle 6692
 It is now cycle 6693
-ADV 4 (0x03a6 -> 0x03aa) 0e 09 ff 38 
 P   19 | zjmp 0 OK
 It is now cycle 6694
 It is now cycle 6695
+P   14 | zjmp -200 OK
+P   13 | zjmp -200 OK
+P   11 | zjmp -200 OK
+P    4 | zjmp -200 OK
 It is now cycle 6696
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
@@ -12400,51 +12414,48 @@ It is now cycle 6699
 It is now cycle 6700
 It is now cycle 6701
 It is now cycle 6702
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
 It is now cycle 6703
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x03aa -> 0x03af) 01 ff ff ff ff 
 It is now cycle 6704
 P   16 | zjmp 0 OK
 It is now cycle 6705
+P   14 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0a03 -> 0x0a08) 01 ff ff ff ff 
+P   13 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0a03 -> 0x0a08) 01 ff ff ff ff 
+P   11 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0a03 -> 0x0a08) 01 ff ff ff ff 
+P    4 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0a03 -> 0x0a08) 01 ff ff ff ff 
 It is now cycle 6706
 It is now cycle 6707
+ADV 4 (0x03b4 -> 0x03b8) 0e 09 ff 38 
 It is now cycle 6708
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 2008)
+ADV 6 (0x088e -> 0x0894) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 1996)
+ADV 6 (0x088e -> 0x0894) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 2000)
+ADV 6 (0x088e -> 0x0894) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2004)
+ADV 6 (0x088e -> 0x0894) 0b 64 0f 00 00 0e 
 It is now cycle 6709
 It is now cycle 6710
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1771)
-ADV 6 (0x07a1 -> 0x07a7) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1759)
-ADV 6 (0x07a1 -> 0x07a7) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1763)
-ADV 6 (0x07a1 -> 0x07a7) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1767)
-ADV 6 (0x07a1 -> 0x07a7) 0b 64 0f 00 00 0e 
 It is now cycle 6711
 P   12 | zjmp 0 OK
 It is now cycle 6712
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c7b -> 0x0c80) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c7b -> 0x0c80) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c7b -> 0x0c80) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c7b -> 0x0c80) 01 ff ff ff ff 
 It is now cycle 6713
 P   19 | zjmp 0 OK
+P   17 | sti r15 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 994)
+ADV 6 (0x03e2 -> 0x03e8) 00 00 00 00 00 0e 
 It is now cycle 6714
 It is now cycle 6715
 P    6 | sti r15 0 -182
@@ -12463,6 +12474,8 @@ It is now cycle 6716
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6717
+P   20 | live -16777216
+ADV 5 (0x03b8 -> 0x03bd) 01 ff 00 00 00 
 It is now cycle 6718
 It is now cycle 6719
 It is now cycle 6720
@@ -12470,26 +12483,36 @@ It is now cycle 6721
 It is now cycle 6722
 It is now cycle 6723
 It is now cycle 6724
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x03dd -> 0x03e2) 01 ff ff ff ff 
 P   16 | zjmp 0 OK
 It is now cycle 6725
 It is now cycle 6726
 It is now cycle 6727
 It is now cycle 6728
-It is now cycle 6729
-ADV 4 (0x032a -> 0x032e) 0e 09 ff 38 
-It is now cycle 6730
 P   10 | zjmp -200 OK
 P    9 | zjmp -200 OK
 P    7 | zjmp -200 OK
 P    2 | zjmp -200 OK
+It is now cycle 6729
+It is now cycle 6730
+P   14 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2382)
+ADV 6 (0x0a08 -> 0x0a0e) 0b 64 0f 00 00 0e 
+P   13 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2382)
+ADV 6 (0x0a08 -> 0x0a0e) 0b 64 0f 00 00 0e 
+P   11 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2382)
+ADV 6 (0x0a08 -> 0x0a0e) 0b 64 0f 00 00 0e 
+P    4 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2382)
+ADV 6 (0x0a08 -> 0x0a0e) 0b 64 0f 00 00 0e 
 It is now cycle 6731
 P   12 | zjmp 0 OK
 It is now cycle 6732
 It is now cycle 6733
 P   19 | zjmp 0 OK
+P   17 | zjmp -200 FAILED
+ADV 3 (0x03e8 -> 0x03eb) 09 ff 38 
 It is now cycle 6734
 It is now cycle 6735
 P    6 | zjmp -200 OK
@@ -12500,38 +12523,29 @@ It is now cycle 6736
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6737
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3014)
-ADV 6 (0x0c80 -> 0x0c86) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3014)
-ADV 6 (0x0c80 -> 0x0c86) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3014)
-ADV 6 (0x0c80 -> 0x0c86) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3014)
-ADV 6 (0x0c80 -> 0x0c86) 0b 64 0f 00 00 0e 
 It is now cycle 6738
-It is now cycle 6739
-P   18 | live -16777216
-ADV 5 (0x032e -> 0x0333) 01 ff 00 00 00 
-It is now cycle 6740
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x06df -> 0x06e4) 01 ff ff ff ff 
+ADV 5 (0x07cc -> 0x07d1) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x06df -> 0x06e4) 01 ff ff ff ff 
+ADV 5 (0x07cc -> 0x07d1) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x06df -> 0x06e4) 01 ff ff ff ff 
+ADV 5 (0x07cc -> 0x07d1) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x06df -> 0x06e4) 01 ff ff ff ff 
+ADV 5 (0x07cc -> 0x07d1) 01 ff ff ff ff 
+It is now cycle 6739
+It is now cycle 6740
 It is now cycle 6741
+P   18 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x035e -> 0x0363) 01 ff ff ff ff 
 It is now cycle 6742
 It is now cycle 6743
+P   17 | live -16777216
+ADV 5 (0x03eb -> 0x03f0) 01 ff 00 00 00 
 It is now cycle 6744
 P   16 | zjmp 0 OK
 It is now cycle 6745
@@ -12551,10 +12565,11 @@ It is now cycle 6746
 It is now cycle 6747
 It is now cycle 6748
 It is now cycle 6749
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 994)
-ADV 6 (0x03e2 -> 0x03e8) 00 00 00 00 00 0e 
 It is now cycle 6750
+P   14 | zjmp -200 OK
+P   13 | zjmp -200 OK
+P   11 | zjmp -200 OK
+P    4 | zjmp -200 OK
 It is now cycle 6751
 P   12 | zjmp 0 OK
 It is now cycle 6752
@@ -12566,52 +12581,46 @@ It is now cycle 6756
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6757
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
 It is now cycle 6758
-ADV 4 (0x03b4 -> 0x03b8) 0e 09 ff 38 
 It is now cycle 6759
+P   20 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x03dd -> 0x03e2) 01 ff ff ff ff 
 It is now cycle 6760
+P   14 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0946 -> 0x094b) 01 ff ff ff ff 
+P   13 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0946 -> 0x094b) 01 ff ff ff ff 
+P   11 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0946 -> 0x094b) 01 ff ff ff ff 
+P    4 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0946 -> 0x094b) 01 ff ff ff ff 
 It is now cycle 6761
 It is now cycle 6762
 It is now cycle 6763
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 1819)
+ADV 6 (0x07d1 -> 0x07d7) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 1807)
+ADV 6 (0x07d1 -> 0x07d7) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 1811)
+ADV 6 (0x07d1 -> 0x07d7) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 1815)
+ADV 6 (0x07d1 -> 0x07d7) 0b 64 0f 00 00 0e 
 It is now cycle 6764
 P   16 | zjmp 0 OK
 It is now cycle 6765
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1582)
-ADV 6 (0x06e4 -> 0x06ea) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1570)
-ADV 6 (0x06e4 -> 0x06ea) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1574)
-ADV 6 (0x06e4 -> 0x06ea) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1578)
-ADV 6 (0x06e4 -> 0x06ea) 0b 64 0f 00 00 0e 
 It is now cycle 6766
 It is now cycle 6767
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0bbe -> 0x0bc3) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0bbe -> 0x0bc3) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0bbe -> 0x0bc3) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0bbe -> 0x0bc3) 01 ff ff ff ff 
 It is now cycle 6768
-P   20 | live -16777216
-ADV 5 (0x03b8 -> 0x03bd) 01 ff 00 00 00 
 It is now cycle 6769
-P   17 | zjmp -200 FAILED
-ADV 3 (0x03e8 -> 0x03eb) 09 ff 38 
 It is now cycle 6770
 P    6 | sti r15 0 -182
        | -> store to 0 + -182 = -182 (with pc and mod 2640)
@@ -12638,19 +12647,29 @@ P    8 | zjmp 0 OK
 It is now cycle 6777
 It is now cycle 6778
 It is now cycle 6779
-P   17 | live -16777216
-ADV 5 (0x03eb -> 0x03f0) 01 ff 00 00 00 
 It is now cycle 6780
 It is now cycle 6781
 It is now cycle 6782
 It is now cycle 6783
-It is now cycle 6784
-P   16 | zjmp 0 OK
-It is now cycle 6785
 P   10 | zjmp -200 OK
 P    9 | zjmp -200 OK
 P    7 | zjmp -200 OK
 P    2 | zjmp -200 OK
+It is now cycle 6784
+P   16 | zjmp 0 OK
+It is now cycle 6785
+P   14 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2193)
+ADV 6 (0x094b -> 0x0951) 0b 64 0f 00 00 0e 
+P   13 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2193)
+ADV 6 (0x094b -> 0x0951) 0b 64 0f 00 00 0e 
+P   11 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2193)
+ADV 6 (0x094b -> 0x0951) 0b 64 0f 00 00 0e 
+P    4 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2193)
+ADV 6 (0x094b -> 0x0951) 0b 64 0f 00 00 0e 
 It is now cycle 6786
 It is now cycle 6787
 It is now cycle 6788
@@ -12663,38 +12682,27 @@ P    1 | zjmp -200 OK
 It is now cycle 6791
 P   12 | zjmp 0 OK
 It is now cycle 6792
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x035e -> 0x0363) 01 ff ff ff ff 
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2825)
-ADV 6 (0x0bc3 -> 0x0bc9) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2825)
-ADV 6 (0x0bc3 -> 0x0bc9) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2825)
-ADV 6 (0x0bc3 -> 0x0bc9) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2825)
-ADV 6 (0x0bc3 -> 0x0bc9) 0b 64 0f 00 00 0e 
 It is now cycle 6793
 P   19 | zjmp 0 OK
-It is now cycle 6794
-It is now cycle 6795
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0622 -> 0x0627) 01 ff ff ff ff 
+ADV 5 (0x070f -> 0x0714) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0622 -> 0x0627) 01 ff ff ff ff 
+ADV 5 (0x070f -> 0x0714) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0622 -> 0x0627) 01 ff ff ff ff 
+ADV 5 (0x070f -> 0x0714) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0622 -> 0x0627) 01 ff ff ff ff 
+ADV 5 (0x070f -> 0x0714) 01 ff ff ff ff 
+It is now cycle 6794
+It is now cycle 6795
 It is now cycle 6796
+ADV 4 (0x0368 -> 0x036c) 0e 09 ff 38 
+P   17 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x041b -> 0x0420) 01 ff ff ff ff 
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6797
@@ -12719,60 +12727,65 @@ It is now cycle 6803
 It is now cycle 6804
 P   16 | zjmp 0 OK
 It is now cycle 6805
-It is now cycle 6806
-It is now cycle 6807
-It is now cycle 6808
-It is now cycle 6809
-It is now cycle 6810
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x03dd -> 0x03e2) 01 ff ff ff ff 
-It is now cycle 6811
-P   12 | zjmp 0 OK
-It is now cycle 6812
 P   14 | zjmp -200 OK
 P   13 | zjmp -200 OK
 P   11 | zjmp -200 OK
 P    4 | zjmp -200 OK
+It is now cycle 6806
+P   18 | live -16777216
+ADV 5 (0x036c -> 0x0371) 01 ff 00 00 00 
+It is now cycle 6807
+It is now cycle 6808
+It is now cycle 6809
+It is now cycle 6810
+It is now cycle 6811
+P   12 | zjmp 0 OK
+It is now cycle 6812
 It is now cycle 6813
 P   19 | zjmp 0 OK
 It is now cycle 6814
+ADV 4 (0x03e7 -> 0x03eb) 0e 09 ff 38 
 It is now cycle 6815
+P   14 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0889 -> 0x088e) 01 ff ff ff ff 
+P   13 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0889 -> 0x088e) 01 ff ff ff ff 
+P   11 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0889 -> 0x088e) 01 ff ff ff ff 
+P    4 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0889 -> 0x088e) 01 ff ff ff ff 
 It is now cycle 6816
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6817
 It is now cycle 6818
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 1630)
+ADV 6 (0x0714 -> 0x071a) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 1618)
+ADV 6 (0x0714 -> 0x071a) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 1622)
+ADV 6 (0x0714 -> 0x071a) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 1626)
+ADV 6 (0x0714 -> 0x071a) 0b 64 0f 00 00 0e 
 It is now cycle 6819
 It is now cycle 6820
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1393)
-ADV 6 (0x0627 -> 0x062d) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1381)
-ADV 6 (0x0627 -> 0x062d) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1385)
-ADV 6 (0x0627 -> 0x062d) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1389)
-ADV 6 (0x0627 -> 0x062d) 0b 64 0f 00 00 0e 
 It is now cycle 6821
+P   17 | sti r15 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 1056)
+ADV 6 (0x0420 -> 0x0426) 00 00 00 00 00 0e 
 It is now cycle 6822
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b01 -> 0x0b06) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b01 -> 0x0b06) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b01 -> 0x0b06) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b01 -> 0x0b06) 01 ff ff ff ff 
 It is now cycle 6823
 It is now cycle 6824
+P   20 | live -16777216
+ADV 5 (0x03eb -> 0x03f0) 01 ff 00 00 00 
 P   16 | zjmp 0 OK
 It is now cycle 6825
 P    6 | sti r15 0 -182
@@ -12795,9 +12808,6 @@ It is now cycle 6830
 It is now cycle 6831
 P   12 | zjmp 0 OK
 It is now cycle 6832
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x041b -> 0x0420) 01 ff ff ff ff 
 It is now cycle 6833
 P   19 | zjmp 0 OK
 It is now cycle 6834
@@ -12807,13 +12817,27 @@ P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6837
 It is now cycle 6838
-It is now cycle 6839
-It is now cycle 6840
 P   10 | zjmp -200 OK
 P    9 | zjmp -200 OK
 P    7 | zjmp -200 OK
 P    2 | zjmp -200 OK
+It is now cycle 6839
+It is now cycle 6840
+P   14 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2004)
+ADV 6 (0x088e -> 0x0894) 0b 64 0f 00 00 0e 
+P   13 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2004)
+ADV 6 (0x088e -> 0x0894) 0b 64 0f 00 00 0e 
+P   11 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2004)
+ADV 6 (0x088e -> 0x0894) 0b 64 0f 00 00 0e 
+P    4 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 2004)
+ADV 6 (0x088e -> 0x0894) 0b 64 0f 00 00 0e 
 It is now cycle 6841
+P   17 | zjmp -200 FAILED
+ADV 3 (0x0426 -> 0x0429) 09 ff 38 
 It is now cycle 6842
 It is now cycle 6843
 It is now cycle 6844
@@ -12825,35 +12849,24 @@ P    3 | zjmp -200 OK
 P    1 | zjmp -200 OK
 It is now cycle 6846
 It is now cycle 6847
-ADV 4 (0x0368 -> 0x036c) 0e 09 ff 38 
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2636)
-ADV 6 (0x0b06 -> 0x0b0c) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2636)
-ADV 6 (0x0b06 -> 0x0b0c) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2636)
-ADV 6 (0x0b06 -> 0x0b0c) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2636)
-ADV 6 (0x0b06 -> 0x0b0c) 0b 64 0f 00 00 0e 
 It is now cycle 6848
-It is now cycle 6849
-It is now cycle 6850
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0565 -> 0x056a) 01 ff ff ff ff 
+ADV 5 (0x0652 -> 0x0657) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0565 -> 0x056a) 01 ff ff ff ff 
+ADV 5 (0x0652 -> 0x0657) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0565 -> 0x056a) 01 ff ff ff ff 
+ADV 5 (0x0652 -> 0x0657) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0565 -> 0x056a) 01 ff ff ff ff 
+ADV 5 (0x0652 -> 0x0657) 01 ff ff ff ff 
+It is now cycle 6849
+It is now cycle 6850
 It is now cycle 6851
+P   17 | live -16777216
+ADV 5 (0x0429 -> 0x042e) 01 ff 00 00 00 
 P   12 | zjmp 0 OK
 It is now cycle 6852
 It is now cycle 6853
@@ -12876,70 +12889,65 @@ It is now cycle 6856
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6857
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x036c -> 0x0371) 01 ff ff ff ff 
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1056)
-ADV 6 (0x0420 -> 0x0426) 00 00 00 00 00 0e 
 It is now cycle 6858
 It is now cycle 6859
+P   18 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x039c -> 0x03a1) 01 ff ff ff ff 
 It is now cycle 6860
+P   14 | zjmp -200 OK
+P   13 | zjmp -200 OK
+P   11 | zjmp -200 OK
+P    4 | zjmp -200 OK
 It is now cycle 6861
 It is now cycle 6862
 It is now cycle 6863
 It is now cycle 6864
 P   16 | zjmp 0 OK
 It is now cycle 6865
-ADV 4 (0x03e7 -> 0x03eb) 0e 09 ff 38 
 It is now cycle 6866
 It is now cycle 6867
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
 It is now cycle 6868
 It is now cycle 6869
 It is now cycle 6870
+P   14 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x07cc -> 0x07d1) 01 ff ff ff ff 
+P   13 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x07cc -> 0x07d1) 01 ff ff ff ff 
+P   11 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x07cc -> 0x07d1) 01 ff ff ff ff 
+P    4 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x07cc -> 0x07d1) 01 ff ff ff ff 
 It is now cycle 6871
 P   12 | zjmp 0 OK
 It is now cycle 6872
 It is now cycle 6873
 P   19 | zjmp 0 OK
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 1441)
+ADV 6 (0x0657 -> 0x065d) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 1429)
+ADV 6 (0x0657 -> 0x065d) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 1433)
+ADV 6 (0x0657 -> 0x065d) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 1437)
+ADV 6 (0x0657 -> 0x065d) 0b 64 0f 00 00 0e 
 It is now cycle 6874
 It is now cycle 6875
-P   20 | live -16777216
-ADV 5 (0x03eb -> 0x03f0) 01 ff 00 00 00 
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1204)
-ADV 6 (0x056a -> 0x0570) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1192)
-ADV 6 (0x056a -> 0x0570) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1196)
-ADV 6 (0x056a -> 0x0570) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1200)
-ADV 6 (0x056a -> 0x0570) 0b 64 0f 00 00 0e 
 It is now cycle 6876
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6877
-P   17 | zjmp -200 FAILED
-ADV 3 (0x0426 -> 0x0429) 09 ff 38 
-P   14 | live -1
+P   20 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a44 -> 0x0a49) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a44 -> 0x0a49) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a44 -> 0x0a49) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a44 -> 0x0a49) 01 ff ff ff ff 
+ADV 5 (0x041b -> 0x0420) 01 ff ff ff ff 
 It is now cycle 6878
 It is now cycle 6879
 It is now cycle 6880
@@ -12963,9 +12971,6 @@ P   16 | zjmp 0 OK
 It is now cycle 6885
 It is now cycle 6886
 It is now cycle 6887
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0429 -> 0x042e) 01 ff ff ff ff 
 It is now cycle 6888
 It is now cycle 6889
 It is now cycle 6890
@@ -12974,12 +12979,24 @@ P   12 | zjmp 0 OK
 It is now cycle 6892
 It is now cycle 6893
 P   19 | zjmp 0 OK
-It is now cycle 6894
-It is now cycle 6895
 P   10 | zjmp -200 OK
 P    9 | zjmp -200 OK
 P    7 | zjmp -200 OK
 P    2 | zjmp -200 OK
+It is now cycle 6894
+It is now cycle 6895
+P   14 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 1815)
+ADV 6 (0x07d1 -> 0x07d7) 0b 64 0f 00 00 0e 
+P   13 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 1815)
+ADV 6 (0x07d1 -> 0x07d7) 0b 64 0f 00 00 0e 
+P   11 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 1815)
+ADV 6 (0x07d1 -> 0x07d7) 0b 64 0f 00 00 0e 
+P    4 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 1815)
+ADV 6 (0x07d1 -> 0x07d7) 0b 64 0f 00 00 0e 
 It is now cycle 6896
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
@@ -12993,34 +13010,25 @@ P    3 | zjmp -200 OK
 P    1 | zjmp -200 OK
 It is now cycle 6901
 It is now cycle 6902
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2447)
-ADV 6 (0x0a49 -> 0x0a4f) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2447)
-ADV 6 (0x0a49 -> 0x0a4f) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2447)
-ADV 6 (0x0a49 -> 0x0a4f) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2447)
-ADV 6 (0x0a49 -> 0x0a4f) 0b 64 0f 00 00 0e 
 It is now cycle 6903
-It is now cycle 6904
-P   16 | zjmp 0 OK
-It is now cycle 6905
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04a8 -> 0x04ad) 01 ff ff ff ff 
+ADV 5 (0x0595 -> 0x059a) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04a8 -> 0x04ad) 01 ff ff ff ff 
+ADV 5 (0x0595 -> 0x059a) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04a8 -> 0x04ad) 01 ff ff ff ff 
+ADV 5 (0x0595 -> 0x059a) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04a8 -> 0x04ad) 01 ff ff ff ff 
+ADV 5 (0x0595 -> 0x059a) 01 ff ff ff ff 
+It is now cycle 6904
+P   17 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0459 -> 0x045e) 01 ff ff ff ff 
+P   16 | zjmp 0 OK
+It is now cycle 6905
 It is now cycle 6906
 It is now cycle 6907
 It is now cycle 6908
@@ -13041,14 +13049,15 @@ ADV 5 (0x08ca -> 0x08cf) 01 ff ff ff ff
 It is now cycle 6911
 P   12 | zjmp 0 OK
 It is now cycle 6912
-ADV 4 (0x0376 -> 0x037a) 0e 09 ff 38 
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1070)
-ADV 6 (0x042e -> 0x0434) 00 00 00 00 00 0e 
 It is now cycle 6913
 P   19 | zjmp 0 OK
 It is now cycle 6914
+ADV 4 (0x03a6 -> 0x03aa) 0e 09 ff 38 
 It is now cycle 6915
+P   14 | zjmp -200 OK
+P   13 | zjmp -200 OK
+P   11 | zjmp -200 OK
+P    4 | zjmp -200 OK
 It is now cycle 6916
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
@@ -13058,53 +13067,49 @@ It is now cycle 6919
 It is now cycle 6920
 It is now cycle 6921
 It is now cycle 6922
-P   18 | live -16777216
-ADV 5 (0x037a -> 0x037f) 01 ff 00 00 00 
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
 It is now cycle 6923
 It is now cycle 6924
+P   18 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x03aa -> 0x03af) 01 ff ff ff ff 
 P   16 | zjmp 0 OK
 It is now cycle 6925
+P   14 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x070f -> 0x0714) 01 ff ff ff ff 
+P   13 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x070f -> 0x0714) 01 ff ff ff ff 
+P   11 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x070f -> 0x0714) 01 ff ff ff ff 
+P    4 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x070f -> 0x0714) 01 ff ff ff ff 
 It is now cycle 6926
 It is now cycle 6927
 It is now cycle 6928
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x041b -> 0x0420) 01 ff ff ff ff 
-It is now cycle 6929
-It is now cycle 6930
 P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1015)
-ADV 6 (0x04ad -> 0x04b3) 0b 64 0f 00 00 0e 
+       | -> store to 0 + -182 = -182 (with pc and mod 1252)
+ADV 6 (0x059a -> 0x05a0) 0b 64 0f 00 00 0e 
 P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1003)
-ADV 6 (0x04ad -> 0x04b3) 0b 64 0f 00 00 0e 
+       | -> store to 0 + -194 = -194 (with pc and mod 1240)
+ADV 6 (0x059a -> 0x05a0) 0b 64 0f 00 00 0e 
 P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1007)
-ADV 6 (0x04ad -> 0x04b3) 0b 64 0f 00 00 0e 
+       | -> store to 0 + -190 = -190 (with pc and mod 1244)
+ADV 6 (0x059a -> 0x05a0) 0b 64 0f 00 00 0e 
 P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1011)
-ADV 6 (0x04ad -> 0x04b3) 0b 64 0f 00 00 0e 
+       | -> store to 0 + -186 = -186 (with pc and mod 1248)
+ADV 6 (0x059a -> 0x05a0) 0b 64 0f 00 00 0e 
+It is now cycle 6929
+P   17 | sti r15 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 1118)
+ADV 6 (0x045e -> 0x0464) 00 00 00 00 00 0e 
+It is now cycle 6930
 It is now cycle 6931
 P   12 | zjmp 0 OK
 It is now cycle 6932
-P   17 | zjmp -200 FAILED
-ADV 3 (0x0434 -> 0x0437) 09 ff 38 
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0987 -> 0x098c) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0987 -> 0x098c) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0987 -> 0x098c) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0987 -> 0x098c) 01 ff ff ff ff 
+ADV 4 (0x0425 -> 0x0429) 0e 09 ff 38 
 It is now cycle 6933
 P   19 | zjmp 0 OK
 It is now cycle 6934
@@ -13130,8 +13135,8 @@ It is now cycle 6939
 It is now cycle 6940
 It is now cycle 6941
 It is now cycle 6942
-P   17 | live -16777216
-ADV 5 (0x0437 -> 0x043c) 01 ff 00 00 00 
+P   20 | live -16777216
+ADV 5 (0x0429 -> 0x042e) 01 ff 00 00 00 
 It is now cycle 6943
 It is now cycle 6944
 P   16 | zjmp 0 OK
@@ -13139,12 +13144,26 @@ It is now cycle 6945
 It is now cycle 6946
 It is now cycle 6947
 It is now cycle 6948
-It is now cycle 6949
-It is now cycle 6950
 P   10 | zjmp -200 OK
 P    9 | zjmp -200 OK
 P    7 | zjmp -200 OK
 P    2 | zjmp -200 OK
+It is now cycle 6949
+P   17 | zjmp -200 FAILED
+ADV 3 (0x0464 -> 0x0467) 09 ff 38 
+It is now cycle 6950
+P   14 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 1626)
+ADV 6 (0x0714 -> 0x071a) 0b 64 0f 00 00 0e 
+P   13 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 1626)
+ADV 6 (0x0714 -> 0x071a) 0b 64 0f 00 00 0e 
+P   11 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 1626)
+ADV 6 (0x0714 -> 0x071a) 0b 64 0f 00 00 0e 
+P    4 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 1626)
+ADV 6 (0x0714 -> 0x071a) 0b 64 0f 00 00 0e 
 It is now cycle 6951
 P   12 | zjmp 0 OK
 It is now cycle 6952
@@ -13160,37 +13179,25 @@ It is now cycle 6956
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6957
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2258)
-ADV 6 (0x098c -> 0x0992) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2258)
-ADV 6 (0x098c -> 0x0992) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2258)
-ADV 6 (0x098c -> 0x0992) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2258)
-ADV 6 (0x098c -> 0x0992) 0b 64 0f 00 00 0e 
 It is now cycle 6958
-It is now cycle 6959
-It is now cycle 6960
 P   10 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x03eb -> 0x03f0) 01 ff ff ff ff 
+ADV 5 (0x04d8 -> 0x04dd) 01 ff ff ff ff 
 P    9 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x03eb -> 0x03f0) 01 ff ff ff ff 
+ADV 5 (0x04d8 -> 0x04dd) 01 ff ff ff ff 
 P    7 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x03eb -> 0x03f0) 01 ff ff ff ff 
+ADV 5 (0x04d8 -> 0x04dd) 01 ff ff ff ff 
 P    2 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x03eb -> 0x03f0) 01 ff ff ff ff 
-It is now cycle 6961
-P   18 | live -1
+ADV 5 (0x04d8 -> 0x04dd) 01 ff ff ff ff 
+It is now cycle 6959
+P   17 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x039c -> 0x03a1) 01 ff ff ff ff 
+ADV 5 (0x0467 -> 0x046c) 01 ff ff ff ff 
+It is now cycle 6960
+It is now cycle 6961
 It is now cycle 6962
 It is now cycle 6963
 It is now cycle 6964
@@ -13213,6 +13220,10 @@ It is now cycle 6967
 It is now cycle 6968
 It is now cycle 6969
 It is now cycle 6970
+P   14 | zjmp -200 OK
+P   13 | zjmp -200 OK
+P   11 | zjmp -200 OK
+P    4 | zjmp -200 OK
 It is now cycle 6971
 P   12 | zjmp 0 OK
 It is now cycle 6972
@@ -13224,51 +13235,49 @@ It is now cycle 6976
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
 It is now cycle 6977
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
 It is now cycle 6978
 It is now cycle 6979
+ADV 4 (0x03b4 -> 0x03b8) 0e 09 ff 38 
 It is now cycle 6980
-It is now cycle 6981
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0459 -> 0x045e) 01 ff ff ff ff 
-It is now cycle 6982
-It is now cycle 6983
-ADV 4 (0x0425 -> 0x0429) 0e 09 ff 38 
-It is now cycle 6984
-P   16 | zjmp 0 OK
-It is now cycle 6985
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 826)
-ADV 6 (0x03f0 -> 0x03f6) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 814)
-ADV 6 (0x03f0 -> 0x03f6) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 818)
-ADV 6 (0x03f0 -> 0x03f6) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 822)
-ADV 6 (0x03f0 -> 0x03f6) 0b 64 0f 00 00 0e 
-It is now cycle 6986
-It is now cycle 6987
 P   14 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x08ca -> 0x08cf) 01 ff ff ff ff 
+ADV 5 (0x0652 -> 0x0657) 01 ff ff ff ff 
 P   13 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x08ca -> 0x08cf) 01 ff ff ff ff 
+ADV 5 (0x0652 -> 0x0657) 01 ff ff ff ff 
 P   11 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x08ca -> 0x08cf) 01 ff ff ff ff 
+ADV 5 (0x0652 -> 0x0657) 01 ff ff ff ff 
 P    4 | live -1
 Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x08ca -> 0x08cf) 01 ff ff ff ff 
+ADV 5 (0x0652 -> 0x0657) 01 ff ff ff ff 
+It is now cycle 6981
+It is now cycle 6982
+It is now cycle 6983
+P   10 | sti r15 0 -182
+       | -> store to 0 + -182 = -182 (with pc and mod 1063)
+ADV 6 (0x04dd -> 0x04e3) 0b 64 0f 00 00 0e 
+P    9 | sti r15 0 -194
+       | -> store to 0 + -194 = -194 (with pc and mod 1051)
+ADV 6 (0x04dd -> 0x04e3) 0b 64 0f 00 00 0e 
+P    7 | sti r15 0 -190
+       | -> store to 0 + -190 = -190 (with pc and mod 1055)
+ADV 6 (0x04dd -> 0x04e3) 0b 64 0f 00 00 0e 
+P    2 | sti r15 0 -186
+       | -> store to 0 + -186 = -186 (with pc and mod 1059)
+ADV 6 (0x04dd -> 0x04e3) 0b 64 0f 00 00 0e 
+It is now cycle 6984
+P   17 | sti r15 0 0
+       | -> store to 0 + 0 = 0 (with pc and mod 1132)
+ADV 6 (0x046c -> 0x0472) 00 00 00 00 00 0e 
+P   16 | zjmp 0 OK
+It is now cycle 6985
+It is now cycle 6986
+It is now cycle 6987
 It is now cycle 6988
 It is now cycle 6989
+P   18 | live -16777216
+ADV 5 (0x03b8 -> 0x03bd) 01 ff 00 00 00 
 It is now cycle 6990
 P    6 | sti r15 0 -182
        | -> store to 0 + -182 = -182 (with pc and mod 1884)
@@ -13286,12 +13295,12 @@ It is now cycle 6991
 P   12 | zjmp 0 OK
 It is now cycle 6992
 It is now cycle 6993
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0429 -> 0x042e) 01 ff ff ff ff 
 P   19 | zjmp 0 OK
 It is now cycle 6994
 It is now cycle 6995
+P   20 | live -1
+Player 1 (Celebration Funebre v0.99pl42) is said to be alive
+ADV 5 (0x0459 -> 0x045e) 01 ff ff ff ff 
 It is now cycle 6996
 P   15 | zjmp 0 OK
 P    8 | zjmp 0 OK
@@ -13300,5779 +13309,3 @@ It is now cycle 6998
 It is now cycle 6999
 It is now cycle 7000
 It is now cycle 7001
-It is now cycle 7002
-It is now cycle 7003
-It is now cycle 7004
-P   16 | zjmp 0 OK
-It is now cycle 7005
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 7006
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1118)
-ADV 6 (0x045e -> 0x0464) 00 00 00 00 00 0e 
-It is now cycle 7007
-It is now cycle 7008
-It is now cycle 7009
-It is now cycle 7010
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 7011
-P   12 | zjmp 0 OK
-It is now cycle 7012
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2069)
-ADV 6 (0x08cf -> 0x08d5) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2069)
-ADV 6 (0x08cf -> 0x08d5) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2069)
-ADV 6 (0x08cf -> 0x08d5) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2069)
-ADV 6 (0x08cf -> 0x08d5) 0b 64 0f 00 00 0e 
-It is now cycle 7013
-P   19 | zjmp 0 OK
-It is now cycle 7014
-It is now cycle 7015
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x032e -> 0x0333) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x032e -> 0x0333) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x032e -> 0x0333) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x032e -> 0x0333) 01 ff ff ff ff 
-It is now cycle 7016
-ADV 4 (0x03a6 -> 0x03aa) 0e 09 ff 38 
-P   15 | zjmp 0 OK
-P    8 | zjmp 0 OK
-It is now cycle 7017
-It is now cycle 7018
-It is now cycle 7019
-It is now cycle 7020
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0750 -> 0x0755) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0750 -> 0x0755) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0750 -> 0x0755) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0750 -> 0x0755) 01 ff ff ff ff 
-It is now cycle 7021
-It is now cycle 7022
-It is now cycle 7023
-It is now cycle 7024
-P   16 | zjmp 0 OK
-It is now cycle 7025
-It is now cycle 7026
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x03aa -> 0x03af) 01 ff ff ff ff 
-P   17 | zjmp -200 FAILED
-ADV 3 (0x0464 -> 0x0467) 09 ff 38 
-It is now cycle 7027
-It is now cycle 7028
-It is now cycle 7029
-It is now cycle 7030
-It is now cycle 7031
-P   12 | zjmp 0 OK
-It is now cycle 7032
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 7033
-P   19 | zjmp 0 OK
-It is now cycle 7034
-It is now cycle 7035
-It is now cycle 7036
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0467 -> 0x046c) 01 ff ff ff ff 
-P   15 | zjmp 0 OK
-P    8 | zjmp 0 OK
-It is now cycle 7037
-It is now cycle 7038
-It is now cycle 7039
-It is now cycle 7040
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 637)
-ADV 6 (0x0333 -> 0x0339) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 625)
-ADV 6 (0x0333 -> 0x0339) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 629)
-ADV 6 (0x0333 -> 0x0339) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 633)
-ADV 6 (0x0333 -> 0x0339) 0b 64 0f 00 00 0e 
-It is now cycle 7041
-It is now cycle 7042
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x080d -> 0x0812) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x080d -> 0x0812) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x080d -> 0x0812) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x080d -> 0x0812) 01 ff ff ff ff 
-It is now cycle 7043
-It is now cycle 7044
-P   16 | zjmp 0 OK
-It is now cycle 7045
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1695)
-ADV 6 (0x0755 -> 0x075b) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1683)
-ADV 6 (0x0755 -> 0x075b) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1687)
-ADV 6 (0x0755 -> 0x075b) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1691)
-ADV 6 (0x0755 -> 0x075b) 0b 64 0f 00 00 0e 
-It is now cycle 7046
-It is now cycle 7047
-It is now cycle 7048
-ADV 4 (0x0433 -> 0x0437) 0e 09 ff 38 
-It is now cycle 7049
-It is now cycle 7050
-It is now cycle 7051
-P   12 | zjmp 0 OK
-It is now cycle 7052
-It is now cycle 7053
-P   19 | zjmp 0 OK
-It is now cycle 7054
-It is now cycle 7055
-It is now cycle 7056
-P   15 | zjmp 0 OK
-P    8 | zjmp 0 OK
-It is now cycle 7057
-It is now cycle 7058
-P   20 | live -16777216
-ADV 5 (0x0437 -> 0x043c) 01 ff 00 00 00 
-It is now cycle 7059
-It is now cycle 7060
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 7061
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1132)
-ADV 6 (0x046c -> 0x0472) 00 00 00 00 00 0e 
-It is now cycle 7062
-It is now cycle 7063
-It is now cycle 7064
-P   16 | zjmp 0 OK
-It is now cycle 7065
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 7066
-It is now cycle 7067
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1880)
-ADV 6 (0x0812 -> 0x0818) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1880)
-ADV 6 (0x0812 -> 0x0818) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1880)
-ADV 6 (0x0812 -> 0x0818) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1880)
-ADV 6 (0x0812 -> 0x0818) 0b 64 0f 00 00 0e 
-It is now cycle 7068
-It is now cycle 7069
-It is now cycle 7070
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0271 -> 0x0276) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0271 -> 0x0276) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0271 -> 0x0276) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0271 -> 0x0276) 01 ff ff ff ff 
-It is now cycle 7071
-P   12 | zjmp 0 OK
-It is now cycle 7072
-It is now cycle 7073
-P   19 | zjmp 0 OK
-It is now cycle 7074
-It is now cycle 7075
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0693 -> 0x0698) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0693 -> 0x0698) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0693 -> 0x0698) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0693 -> 0x0698) 01 ff ff ff ff 
-It is now cycle 7076
-P   15 | zjmp 0 OK
-P    8 | zjmp 0 OK
-It is now cycle 7077
-It is now cycle 7078
-It is now cycle 7079
-It is now cycle 7080
-It is now cycle 7081
-ADV 4 (0x03b4 -> 0x03b8) 0e 09 ff 38 
-P   17 | zjmp -200 FAILED
-ADV 3 (0x0472 -> 0x0475) 09 ff 38 
-It is now cycle 7082
-It is now cycle 7083
-It is now cycle 7084
-P   16 | zjmp 0 OK
-It is now cycle 7085
-It is now cycle 7086
-It is now cycle 7087
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 7088
-It is now cycle 7089
-It is now cycle 7090
-It is now cycle 7091
-P   18 | live -16777216
-ADV 5 (0x03b8 -> 0x03bd) 01 ff 00 00 00 
-P   17 | live -16777216
-ADV 5 (0x0475 -> 0x047a) 01 ff 00 00 00 
-P   12 | zjmp 0 OK
-It is now cycle 7092
-It is now cycle 7093
-P   19 | zjmp 0 OK
-It is now cycle 7094
-It is now cycle 7095
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 448)
-ADV 6 (0x0276 -> 0x027c) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 436)
-ADV 6 (0x0276 -> 0x027c) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 440)
-ADV 6 (0x0276 -> 0x027c) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 444)
-ADV 6 (0x0276 -> 0x027c) 0b 64 0f 00 00 0e 
-It is now cycle 7096
-P   15 | zjmp 0 OK
-P    8 | zjmp 0 OK
-It is now cycle 7097
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0459 -> 0x045e) 01 ff ff ff ff 
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0750 -> 0x0755) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0750 -> 0x0755) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0750 -> 0x0755) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0750 -> 0x0755) 01 ff ff ff ff 
-It is now cycle 7098
-It is now cycle 7099
-It is now cycle 7100
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1506)
-ADV 6 (0x0698 -> 0x069e) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1494)
-ADV 6 (0x0698 -> 0x069e) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1498)
-ADV 6 (0x0698 -> 0x069e) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1502)
-ADV 6 (0x0698 -> 0x069e) 0b 64 0f 00 00 0e 
-It is now cycle 7101
-It is now cycle 7102
-It is now cycle 7103
-It is now cycle 7104
-P   16 | zjmp 0 OK
-It is now cycle 7105
-It is now cycle 7106
-It is now cycle 7107
-It is now cycle 7108
-It is now cycle 7109
-It is now cycle 7110
-It is now cycle 7111
-P   12 | zjmp 0 OK
-It is now cycle 7112
-It is now cycle 7113
-P   19 | zjmp 0 OK
-It is now cycle 7114
-It is now cycle 7115
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 7116
-P   15 | zjmp 0 OK
-P    8 | zjmp 0 OK
-It is now cycle 7117
-It is now cycle 7118
-It is now cycle 7119
-It is now cycle 7120
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 7121
-It is now cycle 7122
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1691)
-ADV 6 (0x0755 -> 0x075b) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1691)
-ADV 6 (0x0755 -> 0x075b) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1691)
-ADV 6 (0x0755 -> 0x075b) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1691)
-ADV 6 (0x0755 -> 0x075b) 0b 64 0f 00 00 0e 
-It is now cycle 7123
-It is now cycle 7124
-P   16 | zjmp 0 OK
-It is now cycle 7125
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01b4 -> 0x01b9) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01b4 -> 0x01b9) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01b4 -> 0x01b9) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01b4 -> 0x01b9) 01 ff ff ff ff 
-It is now cycle 7126
-It is now cycle 7127
-It is now cycle 7128
-It is now cycle 7129
-It is now cycle 7130
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05d6 -> 0x05db) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05d6 -> 0x05db) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05d6 -> 0x05db) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05d6 -> 0x05db) 01 ff ff ff ff 
-It is now cycle 7131
-P   12 | zjmp 0 OK
-It is now cycle 7132
-It is now cycle 7133
-P   19 | zjmp 0 OK
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x03dd -> 0x03e2) 01 ff ff ff ff 
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x049a -> 0x049f) 01 ff ff ff ff 
-It is now cycle 7134
-It is now cycle 7135
-It is now cycle 7136
-P   15 | zjmp 0 OK
-P    8 | zjmp 0 OK
-It is now cycle 7137
-It is now cycle 7138
-It is now cycle 7139
-It is now cycle 7140
-It is now cycle 7141
-It is now cycle 7142
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 7143
-It is now cycle 7144
-P   16 | zjmp 0 OK
-It is now cycle 7145
-It is now cycle 7146
-It is now cycle 7147
-It is now cycle 7148
-It is now cycle 7149
-It is now cycle 7150
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 259)
-ADV 6 (0x01b9 -> 0x01bf) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 247)
-ADV 6 (0x01b9 -> 0x01bf) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 251)
-ADV 6 (0x01b9 -> 0x01bf) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 255)
-ADV 6 (0x01b9 -> 0x01bf) 0b 64 0f 00 00 0e 
-It is now cycle 7151
-P   12 | zjmp 0 OK
-It is now cycle 7152
-ADV 4 (0x0463 -> 0x0467) 0e 09 ff 38 
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0693 -> 0x0698) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0693 -> 0x0698) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0693 -> 0x0698) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0693 -> 0x0698) 01 ff ff ff ff 
-It is now cycle 7153
-P   19 | zjmp 0 OK
-It is now cycle 7154
-It is now cycle 7155
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1317)
-ADV 6 (0x05db -> 0x05e1) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1305)
-ADV 6 (0x05db -> 0x05e1) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1309)
-ADV 6 (0x05db -> 0x05e1) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1313)
-ADV 6 (0x05db -> 0x05e1) 0b 64 0f 00 00 0e 
-It is now cycle 7156
-P   15 | zjmp 0 OK
-P    8 | zjmp 0 OK
-It is now cycle 7157
-It is now cycle 7158
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1183)
-ADV 6 (0x049f -> 0x04a5) 00 00 00 00 00 0e 
-It is now cycle 7159
-It is now cycle 7160
-It is now cycle 7161
-It is now cycle 7162
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0467 -> 0x046c) 01 ff ff ff ff 
-It is now cycle 7163
-It is now cycle 7164
-P   16 | zjmp 0 OK
-It is now cycle 7165
-It is now cycle 7166
-It is now cycle 7167
-It is now cycle 7168
-It is now cycle 7169
-It is now cycle 7170
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 7171
-P   12 | zjmp 0 OK
-It is now cycle 7172
-It is now cycle 7173
-P   19 | zjmp 0 OK
-It is now cycle 7174
-It is now cycle 7175
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 7176
-P   15 | zjmp 0 OK
-P    8 | zjmp 0 OK
-It is now cycle 7177
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1502)
-ADV 6 (0x0698 -> 0x069e) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1502)
-ADV 6 (0x0698 -> 0x069e) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1502)
-ADV 6 (0x0698 -> 0x069e) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1502)
-ADV 6 (0x0698 -> 0x069e) 0b 64 0f 00 00 0e 
-It is now cycle 7178
-P   17 | zjmp -200 FAILED
-ADV 3 (0x04a5 -> 0x04a8) 09 ff 38 
-It is now cycle 7179
-It is now cycle 7180
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00f7 -> 0x00fc) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00f7 -> 0x00fc) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00f7 -> 0x00fc) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00f7 -> 0x00fc) 01 ff ff ff ff 
-It is now cycle 7181
-It is now cycle 7182
-It is now cycle 7183
-It is now cycle 7184
-P   16 | zjmp 0 OK
-It is now cycle 7185
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0519 -> 0x051e) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0519 -> 0x051e) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0519 -> 0x051e) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0519 -> 0x051e) 01 ff ff ff ff 
-It is now cycle 7186
-It is now cycle 7187
-It is now cycle 7188
-ADV 4 (0x03e7 -> 0x03eb) 0e 09 ff 38 
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04a8 -> 0x04ad) 01 ff ff ff ff 
-It is now cycle 7189
-It is now cycle 7190
-It is now cycle 7191
-P   12 | zjmp 0 OK
-It is now cycle 7192
-It is now cycle 7193
-P   19 | zjmp 0 OK
-It is now cycle 7194
-It is now cycle 7195
-It is now cycle 7196
-P   15 | zjmp 0 OK
-P    8 | zjmp 0 OK
-It is now cycle 7197
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 7198
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x03eb -> 0x03f0) 01 ff ff ff ff 
-It is now cycle 7199
-It is now cycle 7200
-It is now cycle 7201
-It is now cycle 7202
-It is now cycle 7203
-It is now cycle 7204
-P   16 | zjmp 0 OK
-It is now cycle 7205
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 70)
-ADV 6 (0x00fc -> 0x0102) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 58)
-ADV 6 (0x00fc -> 0x0102) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 62)
-ADV 6 (0x00fc -> 0x0102) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 66)
-ADV 6 (0x00fc -> 0x0102) 0b 64 0f 00 00 0e 
-It is now cycle 7206
-It is now cycle 7207
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05d6 -> 0x05db) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05d6 -> 0x05db) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05d6 -> 0x05db) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05d6 -> 0x05db) 01 ff ff ff ff 
-It is now cycle 7208
-It is now cycle 7209
-It is now cycle 7210
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1128)
-ADV 6 (0x051e -> 0x0524) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1116)
-ADV 6 (0x051e -> 0x0524) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1120)
-ADV 6 (0x051e -> 0x0524) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1124)
-ADV 6 (0x051e -> 0x0524) 0b 64 0f 00 00 0e 
-It is now cycle 7211
-P   12 | zjmp 0 OK
-It is now cycle 7212
-It is now cycle 7213
-P   19 | zjmp 0 OK
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1197)
-ADV 6 (0x04ad -> 0x04b3) 00 00 00 00 00 0e 
-It is now cycle 7214
-It is now cycle 7215
-It is now cycle 7216
-P   15 | zjmp 0 OK
-P    8 | zjmp 0 OK
-It is now cycle 7217
-ADV 4 (0x0471 -> 0x0475) 0e 09 ff 38 
-It is now cycle 7218
-It is now cycle 7219
-It is now cycle 7220
-It is now cycle 7221
-It is now cycle 7222
-It is now cycle 7223
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 826)
-ADV 6 (0x03f0 -> 0x03f6) 0b 64 0f 00 00 0e 
-It is now cycle 7224
-P   16 | zjmp 0 OK
-It is now cycle 7225
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 7226
-It is now cycle 7227
-P   20 | live -16777216
-ADV 5 (0x0475 -> 0x047a) 01 ff 00 00 00 
-It is now cycle 7228
-It is now cycle 7229
-It is now cycle 7230
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 7231
-P   12 | zjmp 0 OK
-It is now cycle 7232
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1313)
-ADV 6 (0x05db -> 0x05e1) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1313)
-ADV 6 (0x05db -> 0x05e1) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1313)
-ADV 6 (0x05db -> 0x05e1) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1313)
-ADV 6 (0x05db -> 0x05e1) 0b 64 0f 00 00 0e 
-It is now cycle 7233
-P   19 | zjmp 0 OK
-P   17 | zjmp -200 FAILED
-ADV 3 (0x04b3 -> 0x04b6) 09 ff 38 
-It is now cycle 7234
-It is now cycle 7235
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x003a -> 0x003f) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x003a -> 0x003f) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x003a -> 0x003f) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x003a -> 0x003f) 01 ff ff ff ff 
-It is now cycle 7236
-P   15 | zjmp 0 OK
-P    8 | zjmp 0 OK
-It is now cycle 7237
-It is now cycle 7238
-It is now cycle 7239
-It is now cycle 7240
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x045c -> 0x0461) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x045c -> 0x0461) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x045c -> 0x0461) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x045c -> 0x0461) 01 ff ff ff ff 
-It is now cycle 7241
-It is now cycle 7242
-It is now cycle 7243
-P   18 | zjmp -200 OK
-P   17 | live -16777216
-ADV 5 (0x04b6 -> 0x04bb) 01 ff 00 00 00 
-It is now cycle 7244
-P   16 | zjmp 0 OK
-It is now cycle 7245
-It is now cycle 7246
-It is now cycle 7247
-It is now cycle 7248
-It is now cycle 7249
-It is now cycle 7250
-It is now cycle 7251
-P   12 | zjmp 0 OK
-It is now cycle 7252
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 7253
-P   19 | zjmp 0 OK
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x032e -> 0x0333) 01 ff ff ff ff 
-It is now cycle 7254
-It is now cycle 7255
-It is now cycle 7256
-P   15 | zjmp 0 OK
-P    8 | zjmp 0 OK
-It is now cycle 7257
-It is now cycle 7258
-It is now cycle 7259
-It is now cycle 7260
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod -119)
-ADV 6 (0x003f -> 0x0045) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod -131)
-ADV 6 (0x003f -> 0x0045) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod -127)
-ADV 6 (0x003f -> 0x0045) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod -123)
-ADV 6 (0x003f -> 0x0045) 0b 64 0f 00 00 0e 
-It is now cycle 7261
-It is now cycle 7262
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0519 -> 0x051e) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0519 -> 0x051e) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0519 -> 0x051e) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0519 -> 0x051e) 01 ff ff ff ff 
-It is now cycle 7263
-It is now cycle 7264
-P   16 | zjmp 0 OK
-It is now cycle 7265
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 939)
-ADV 6 (0x0461 -> 0x0467) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 927)
-ADV 6 (0x0461 -> 0x0467) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 931)
-ADV 6 (0x0461 -> 0x0467) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 935)
-ADV 6 (0x0461 -> 0x0467) 0b 64 0f 00 00 0e 
-It is now cycle 7266
-It is now cycle 7267
-It is now cycle 7268
-It is now cycle 7269
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x049a -> 0x049f) 01 ff ff ff ff 
-It is now cycle 7270
-It is now cycle 7271
-P   12 | zjmp 0 OK
-It is now cycle 7272
-It is now cycle 7273
-P   19 | zjmp 0 OK
-It is now cycle 7274
-It is now cycle 7275
-It is now cycle 7276
-P   15 | zjmp 0 OK
-P    8 | zjmp 0 OK
-It is now cycle 7277
-It is now cycle 7278
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 637)
-ADV 6 (0x0333 -> 0x0339) 0b 64 0f 00 00 0e 
-It is now cycle 7279
-It is now cycle 7280
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 7281
-It is now cycle 7282
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04d8 -> 0x04dd) 01 ff ff ff ff 
-It is now cycle 7283
-It is now cycle 7284
-P   16 | zjmp 0 OK
-It is now cycle 7285
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 7286
-It is now cycle 7287
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1124)
-ADV 6 (0x051e -> 0x0524) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1124)
-ADV 6 (0x051e -> 0x0524) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1124)
-ADV 6 (0x051e -> 0x0524) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1124)
-ADV 6 (0x051e -> 0x0524) 0b 64 0f 00 00 0e 
-It is now cycle 7288
-It is now cycle 7289
-It is now cycle 7290
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f7d -> 0x0f82) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f7d -> 0x0f82) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f7d -> 0x0f82) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f7d -> 0x0f82) 01 ff ff ff ff 
-It is now cycle 7291
-P   12 | zjmp 0 OK
-It is now cycle 7292
-It is now cycle 7293
-P   19 | zjmp 0 OK
-It is now cycle 7294
-It is now cycle 7295
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x039f -> 0x03a4) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x039f -> 0x03a4) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x039f -> 0x03a4) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x039f -> 0x03a4) 01 ff ff ff ff 
-It is now cycle 7296
-P   15 | zjmp 0 OK
-P    8 | zjmp 0 OK
-It is now cycle 7297
-It is now cycle 7298
-P   18 | zjmp -200 OK
-It is now cycle 7299
-It is now cycle 7300
-It is now cycle 7301
-It is now cycle 7302
-It is now cycle 7303
-It is now cycle 7304
-P   16 | zjmp 0 OK
-It is now cycle 7305
-It is now cycle 7306
-It is now cycle 7307
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1245)
-ADV 6 (0x04dd -> 0x04e3) 00 00 00 00 00 0e 
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 7308
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0271 -> 0x0276) 01 ff ff ff ff 
-It is now cycle 7309
-It is now cycle 7310
-It is now cycle 7311
-P   12 | zjmp 0 OK
-It is now cycle 7312
-It is now cycle 7313
-P   19 | zjmp 0 OK
-It is now cycle 7314
-It is now cycle 7315
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3788)
-ADV 6 (0x0f82 -> 0x0f88) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3776)
-ADV 6 (0x0f82 -> 0x0f88) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3780)
-ADV 6 (0x0f82 -> 0x0f88) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3784)
-ADV 6 (0x0f82 -> 0x0f88) 0b 64 0f 00 00 0e 
-It is now cycle 7316
-P   15 | zjmp 0 OK
-P    8 | zjmp 0 OK
-It is now cycle 7317
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x045c -> 0x0461) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x045c -> 0x0461) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x045c -> 0x0461) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x045c -> 0x0461) 01 ff ff ff ff 
-It is now cycle 7318
-It is now cycle 7319
-It is now cycle 7320
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 750)
-ADV 6 (0x03a4 -> 0x03aa) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 738)
-ADV 6 (0x03a4 -> 0x03aa) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 742)
-ADV 6 (0x03a4 -> 0x03aa) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 746)
-ADV 6 (0x03a4 -> 0x03aa) 0b 64 0f 00 00 0e 
-It is now cycle 7321
-It is now cycle 7322
-It is now cycle 7323
-It is now cycle 7324
-ADV 4 (0x04a4 -> 0x04a8) 0e 09 ff 38 
-P   16 | zjmp 0 OK
-It is now cycle 7325
-It is now cycle 7326
-It is now cycle 7327
-P   17 | zjmp -200 FAILED
-ADV 3 (0x04e3 -> 0x04e6) 09 ff 38 
-It is now cycle 7328
-It is now cycle 7329
-It is now cycle 7330
-It is now cycle 7331
-P   12 | zjmp 0 OK
-It is now cycle 7332
-It is now cycle 7333
-P   19 | zjmp 0 OK
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 448)
-ADV 6 (0x0276 -> 0x027c) 0b 64 0f 00 00 0e 
-It is now cycle 7334
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04a8 -> 0x04ad) 01 ff ff ff ff 
-It is now cycle 7335
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 7336
-P   15 | zjmp 0 OK
-P    8 | zjmp 0 OK
-It is now cycle 7337
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04e6 -> 0x04eb) 01 ff ff ff ff 
-It is now cycle 7338
-It is now cycle 7339
-It is now cycle 7340
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 7341
-It is now cycle 7342
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 935)
-ADV 6 (0x0461 -> 0x0467) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 935)
-ADV 6 (0x0461 -> 0x0467) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 935)
-ADV 6 (0x0461 -> 0x0467) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 935)
-ADV 6 (0x0461 -> 0x0467) 0b 64 0f 00 00 0e 
-It is now cycle 7343
-It is now cycle 7344
-P   16 | zjmp 0 OK
-It is now cycle 7345
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ec0 -> 0x0ec5) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ec0 -> 0x0ec5) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ec0 -> 0x0ec5) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ec0 -> 0x0ec5) 01 ff ff ff ff 
-It is now cycle 7346
-It is now cycle 7347
-It is now cycle 7348
-It is now cycle 7349
-It is now cycle 7350
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02e2 -> 0x02e7) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02e2 -> 0x02e7) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02e2 -> 0x02e7) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02e2 -> 0x02e7) 01 ff ff ff ff 
-It is now cycle 7351
-P   12 | zjmp 0 OK
-It is now cycle 7352
-It is now cycle 7353
-P   19 | zjmp 0 OK
-P   18 | zjmp -200 OK
-It is now cycle 7354
-It is now cycle 7355
-It is now cycle 7356
-P   15 | zjmp 0 OK
-P    8 | zjmp 0 OK
-It is now cycle 7357
-It is now cycle 7358
-It is now cycle 7359
-It is now cycle 7360
-It is now cycle 7361
-It is now cycle 7362
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1259)
-ADV 6 (0x04eb -> 0x04f1) 00 00 00 00 00 0e 
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 7363
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01b4 -> 0x01b9) 01 ff ff ff ff 
-It is now cycle 7364
-P   16 | zjmp 0 OK
-It is now cycle 7365
-It is now cycle 7366
-It is now cycle 7367
-It is now cycle 7368
-It is now cycle 7369
-It is now cycle 7370
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3599)
-ADV 6 (0x0ec5 -> 0x0ecb) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3587)
-ADV 6 (0x0ec5 -> 0x0ecb) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3591)
-ADV 6 (0x0ec5 -> 0x0ecb) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3595)
-ADV 6 (0x0ec5 -> 0x0ecb) 0b 64 0f 00 00 0e 
-It is now cycle 7371
-P   12 | zjmp 0 OK
-It is now cycle 7372
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x039f -> 0x03a4) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x039f -> 0x03a4) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x039f -> 0x03a4) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x039f -> 0x03a4) 01 ff ff ff ff 
-It is now cycle 7373
-P   19 | zjmp 0 OK
-It is now cycle 7374
-It is now cycle 7375
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 561)
-ADV 6 (0x02e7 -> 0x02ed) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 549)
-ADV 6 (0x02e7 -> 0x02ed) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 553)
-ADV 6 (0x02e7 -> 0x02ed) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 557)
-ADV 6 (0x02e7 -> 0x02ed) 0b 64 0f 00 00 0e 
-It is now cycle 7376
-P   15 | zjmp 0 OK
-P    8 | zjmp 0 OK
-It is now cycle 7377
-It is now cycle 7378
-It is now cycle 7379
-It is now cycle 7380
-Process 19 hasn't lived for 1922 cycles (CTD 1386)
-Process 16 hasn't lived for 1811 cycles (CTD 1386)
-Process 15 hasn't lived for 1979 cycles (CTD 1386)
-Process 12 hasn't lived for 1884 cycles (CTD 1386)
-Process 8 hasn't lived for 1979 cycles (CTD 1386)
-Cycle to die is now 1336
-It is now cycle 7381
-It is now cycle 7382
-P   17 | zjmp -200 FAILED
-ADV 3 (0x04f1 -> 0x04f4) 09 ff 38 
-It is now cycle 7383
-It is now cycle 7384
-It is now cycle 7385
-It is now cycle 7386
-It is now cycle 7387
-It is now cycle 7388
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 259)
-ADV 6 (0x01b9 -> 0x01bf) 0b 64 0f 00 00 0e 
-It is now cycle 7389
-ADV 4 (0x04b2 -> 0x04b6) 0e 09 ff 38 
-It is now cycle 7390
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 7391
-It is now cycle 7392
-P   17 | live -16777216
-ADV 5 (0x04f4 -> 0x04f9) 01 ff 00 00 00 
-It is now cycle 7393
-It is now cycle 7394
-It is now cycle 7395
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 7396
-It is now cycle 7397
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 746)
-ADV 6 (0x03a4 -> 0x03aa) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 746)
-ADV 6 (0x03a4 -> 0x03aa) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 746)
-ADV 6 (0x03a4 -> 0x03aa) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 746)
-ADV 6 (0x03a4 -> 0x03aa) 0b 64 0f 00 00 0e 
-It is now cycle 7398
-It is now cycle 7399
-P   20 | live -16777216
-ADV 5 (0x04b6 -> 0x04bb) 01 ff 00 00 00 
-It is now cycle 7400
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e03 -> 0x0e08) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e03 -> 0x0e08) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e03 -> 0x0e08) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e03 -> 0x0e08) 01 ff ff ff ff 
-It is now cycle 7401
-It is now cycle 7402
-It is now cycle 7403
-It is now cycle 7404
-It is now cycle 7405
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0225 -> 0x022a) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0225 -> 0x022a) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0225 -> 0x022a) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0225 -> 0x022a) 01 ff ff ff ff 
-It is now cycle 7406
-It is now cycle 7407
-It is now cycle 7408
-P   18 | zjmp -200 OK
-It is now cycle 7409
-It is now cycle 7410
-It is now cycle 7411
-It is now cycle 7412
-It is now cycle 7413
-It is now cycle 7414
-It is now cycle 7415
-It is now cycle 7416
-It is now cycle 7417
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 7418
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00f7 -> 0x00fc) 01 ff ff ff ff 
-It is now cycle 7419
-It is now cycle 7420
-It is now cycle 7421
-It is now cycle 7422
-It is now cycle 7423
-It is now cycle 7424
-It is now cycle 7425
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3410)
-ADV 6 (0x0e08 -> 0x0e0e) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3398)
-ADV 6 (0x0e08 -> 0x0e0e) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3402)
-ADV 6 (0x0e08 -> 0x0e0e) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3406)
-ADV 6 (0x0e08 -> 0x0e0e) 0b 64 0f 00 00 0e 
-It is now cycle 7426
-It is now cycle 7427
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02e2 -> 0x02e7) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02e2 -> 0x02e7) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02e2 -> 0x02e7) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02e2 -> 0x02e7) 01 ff ff ff ff 
-It is now cycle 7428
-It is now cycle 7429
-It is now cycle 7430
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 372)
-ADV 6 (0x022a -> 0x0230) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 360)
-ADV 6 (0x022a -> 0x0230) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 364)
-ADV 6 (0x022a -> 0x0230) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 368)
-ADV 6 (0x022a -> 0x0230) 0b 64 0f 00 00 0e 
-It is now cycle 7431
-P   17 | live -65025
-ADV 5 (0x0516 -> 0x051b) 01 ff ff 01 ff 
-It is now cycle 7432
-It is now cycle 7433
-It is now cycle 7434
-It is now cycle 7435
-It is now cycle 7436
-It is now cycle 7437
-It is now cycle 7438
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04d8 -> 0x04dd) 01 ff ff ff ff 
-It is now cycle 7439
-It is now cycle 7440
-It is now cycle 7441
-It is now cycle 7442
-It is now cycle 7443
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 70)
-ADV 6 (0x00fc -> 0x0102) 0b 64 0f 00 00 0e 
-It is now cycle 7444
-It is now cycle 7445
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 7446
-It is now cycle 7447
-It is now cycle 7448
-It is now cycle 7449
-It is now cycle 7450
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 7451
-It is now cycle 7452
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 557)
-ADV 6 (0x02e7 -> 0x02ed) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 557)
-ADV 6 (0x02e7 -> 0x02ed) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 557)
-ADV 6 (0x02e7 -> 0x02ed) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 557)
-ADV 6 (0x02e7 -> 0x02ed) 0b 64 0f 00 00 0e 
-It is now cycle 7453
-It is now cycle 7454
-It is now cycle 7455
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d46 -> 0x0d4b) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d46 -> 0x0d4b) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d46 -> 0x0d4b) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d46 -> 0x0d4b) 01 ff ff ff ff 
-It is now cycle 7456
-It is now cycle 7457
-It is now cycle 7458
-It is now cycle 7459
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1310)
-ADV 6 (0x051e -> 0x0524) 00 00 00 00 00 0e 
-It is now cycle 7460
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0168 -> 0x016d) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0168 -> 0x016d) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0168 -> 0x016d) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0168 -> 0x016d) 01 ff ff ff ff 
-It is now cycle 7461
-It is now cycle 7462
-It is now cycle 7463
-P   18 | zjmp -200 OK
-It is now cycle 7464
-It is now cycle 7465
-It is now cycle 7466
-It is now cycle 7467
-It is now cycle 7468
-It is now cycle 7469
-It is now cycle 7470
-It is now cycle 7471
-It is now cycle 7472
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 7473
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x003a -> 0x003f) 01 ff ff ff ff 
-It is now cycle 7474
-It is now cycle 7475
-It is now cycle 7476
-It is now cycle 7477
-It is now cycle 7478
-It is now cycle 7479
-P   17 | zjmp -200 FAILED
-ADV 3 (0x0524 -> 0x0527) 09 ff 38 
-It is now cycle 7480
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3221)
-ADV 6 (0x0d4b -> 0x0d51) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3209)
-ADV 6 (0x0d4b -> 0x0d51) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3213)
-ADV 6 (0x0d4b -> 0x0d51) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3217)
-ADV 6 (0x0d4b -> 0x0d51) 0b 64 0f 00 00 0e 
-It is now cycle 7481
-It is now cycle 7482
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0225 -> 0x022a) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0225 -> 0x022a) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0225 -> 0x022a) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0225 -> 0x022a) 01 ff ff ff ff 
-It is now cycle 7483
-It is now cycle 7484
-It is now cycle 7485
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 183)
-ADV 6 (0x016d -> 0x0173) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 171)
-ADV 6 (0x016d -> 0x0173) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 175)
-ADV 6 (0x016d -> 0x0173) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 179)
-ADV 6 (0x016d -> 0x0173) 0b 64 0f 00 00 0e 
-It is now cycle 7486
-It is now cycle 7487
-It is now cycle 7488
-It is now cycle 7489
-P   17 | live -16030705
-ADV 5 (0x0527 -> 0x052c) 01 ff 0b 64 0f 
-It is now cycle 7490
-It is now cycle 7491
-It is now cycle 7492
-It is now cycle 7493
-ADV 4 (0x04e2 -> 0x04e6) 0e 09 ff 38 
-It is now cycle 7494
-It is now cycle 7495
-It is now cycle 7496
-It is now cycle 7497
-It is now cycle 7498
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod -119)
-ADV 6 (0x003f -> 0x0045) 0b 64 0f 00 00 0e 
-It is now cycle 7499
-It is now cycle 7500
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 7501
-It is now cycle 7502
-It is now cycle 7503
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04e6 -> 0x04eb) 01 ff ff ff ff 
-It is now cycle 7504
-It is now cycle 7505
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 7506
-It is now cycle 7507
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 368)
-ADV 6 (0x022a -> 0x0230) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 368)
-ADV 6 (0x022a -> 0x0230) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 368)
-ADV 6 (0x022a -> 0x0230) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 368)
-ADV 6 (0x022a -> 0x0230) 0b 64 0f 00 00 0e 
-It is now cycle 7508
-It is now cycle 7509
-It is now cycle 7510
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c89 -> 0x0c8e) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c89 -> 0x0c8e) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c89 -> 0x0c8e) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c89 -> 0x0c8e) 01 ff ff ff ff 
-It is now cycle 7511
-It is now cycle 7512
-It is now cycle 7513
-It is now cycle 7514
-It is now cycle 7515
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00ab -> 0x00b0) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00ab -> 0x00b0) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00ab -> 0x00b0) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00ab -> 0x00b0) 01 ff ff ff ff 
-It is now cycle 7516
-It is now cycle 7517
-It is now cycle 7518
-P   18 | zjmp -200 OK
-It is now cycle 7519
-It is now cycle 7520
-It is now cycle 7521
-It is now cycle 7522
-It is now cycle 7523
-It is now cycle 7524
-It is now cycle 7525
-It is now cycle 7526
-It is now cycle 7527
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 7528
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f7d -> 0x0f82) 01 ff ff ff ff 
-It is now cycle 7529
-It is now cycle 7530
-It is now cycle 7531
-It is now cycle 7532
-It is now cycle 7533
-It is now cycle 7534
-It is now cycle 7535
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3032)
-ADV 6 (0x0c8e -> 0x0c94) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3020)
-ADV 6 (0x0c8e -> 0x0c94) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3024)
-ADV 6 (0x0c8e -> 0x0c94) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3028)
-ADV 6 (0x0c8e -> 0x0c94) 0b 64 0f 00 00 0e 
-It is now cycle 7536
-It is now cycle 7537
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0168 -> 0x016d) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0168 -> 0x016d) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0168 -> 0x016d) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0168 -> 0x016d) 01 ff ff ff ff 
-It is now cycle 7538
-It is now cycle 7539
-It is now cycle 7540
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod -6)
-ADV 6 (0x00b0 -> 0x00b6) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod -18)
-ADV 6 (0x00b0 -> 0x00b6) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod -14)
-ADV 6 (0x00b0 -> 0x00b6) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod -10)
-ADV 6 (0x00b0 -> 0x00b6) 0b 64 0f 00 00 0e 
-It is now cycle 7541
-ADV 4 (0x052e -> 0x0532) 0e 09 ff 38 
-It is now cycle 7542
-It is now cycle 7543
-It is now cycle 7544
-It is now cycle 7545
-It is now cycle 7546
-It is now cycle 7547
-It is now cycle 7548
-It is now cycle 7549
-It is now cycle 7550
-It is now cycle 7551
-P   17 | live -16777216
-ADV 5 (0x0532 -> 0x0537) 01 ff 00 00 00 
-It is now cycle 7552
-It is now cycle 7553
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3788)
-ADV 6 (0x0f82 -> 0x0f88) 0b 64 0f 00 00 0e 
-It is now cycle 7554
-It is now cycle 7555
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 7556
-It is now cycle 7557
-It is now cycle 7558
-ADV 4 (0x04f0 -> 0x04f4) 0e 09 ff 38 
-It is now cycle 7559
-It is now cycle 7560
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 7561
-It is now cycle 7562
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 179)
-ADV 6 (0x016d -> 0x0173) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 179)
-ADV 6 (0x016d -> 0x0173) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 179)
-ADV 6 (0x016d -> 0x0173) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 179)
-ADV 6 (0x016d -> 0x0173) 0b 64 0f 00 00 0e 
-It is now cycle 7563
-It is now cycle 7564
-It is now cycle 7565
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0bcc -> 0x0bd1) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0bcc -> 0x0bd1) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0bcc -> 0x0bd1) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0bcc -> 0x0bd1) 01 ff ff ff ff 
-It is now cycle 7566
-It is now cycle 7567
-It is now cycle 7568
-P   20 | live -16777216
-ADV 5 (0x04f4 -> 0x04f9) 01 ff 00 00 00 
-It is now cycle 7569
-It is now cycle 7570
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fee -> 0x0ff3) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fee -> 0x0ff3) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fee -> 0x0ff3) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fee -> 0x0ff3) 01 ff ff ff ff 
-It is now cycle 7571
-It is now cycle 7572
-It is now cycle 7573
-P   18 | zjmp -200 OK
-It is now cycle 7574
-It is now cycle 7575
-It is now cycle 7576
-It is now cycle 7577
-It is now cycle 7578
-It is now cycle 7579
-It is now cycle 7580
-It is now cycle 7581
-It is now cycle 7582
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 7583
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ec0 -> 0x0ec5) 01 ff ff ff ff 
-It is now cycle 7584
-It is now cycle 7585
-It is now cycle 7586
-It is now cycle 7587
-It is now cycle 7588
-It is now cycle 7589
-It is now cycle 7590
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2843)
-ADV 6 (0x0bd1 -> 0x0bd7) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2831)
-ADV 6 (0x0bd1 -> 0x0bd7) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2835)
-ADV 6 (0x0bd1 -> 0x0bd7) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2839)
-ADV 6 (0x0bd1 -> 0x0bd7) 0b 64 0f 00 00 0e 
-It is now cycle 7591
-It is now cycle 7592
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00ab -> 0x00b0) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00ab -> 0x00b0) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00ab -> 0x00b0) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00ab -> 0x00b0) 01 ff ff ff ff 
-It is now cycle 7593
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0557 -> 0x055c) 01 ff ff ff ff 
-It is now cycle 7594
-It is now cycle 7595
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3901)
-ADV 6 (0x0ff3 -> 0x0ff9) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3889)
-ADV 6 (0x0ff3 -> 0x0ff9) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3893)
-ADV 6 (0x0ff3 -> 0x0ff9) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3897)
-ADV 6 (0x0ff3 -> 0x0ff9) 0b 64 0f 00 00 0e 
-It is now cycle 7596
-It is now cycle 7597
-It is now cycle 7598
-It is now cycle 7599
-It is now cycle 7600
-It is now cycle 7601
-It is now cycle 7602
-It is now cycle 7603
-It is now cycle 7604
-It is now cycle 7605
-It is now cycle 7606
-It is now cycle 7607
-P   20 | live -65025
-ADV 5 (0x0516 -> 0x051b) 01 ff ff 01 ff 
-It is now cycle 7608
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3599)
-ADV 6 (0x0ec5 -> 0x0ecb) 0b 64 0f 00 00 0e 
-It is now cycle 7609
-It is now cycle 7610
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 7611
-It is now cycle 7612
-It is now cycle 7613
-It is now cycle 7614
-It is now cycle 7615
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 7616
-It is now cycle 7617
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod -10)
-ADV 6 (0x00b0 -> 0x00b6) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod -10)
-ADV 6 (0x00b0 -> 0x00b6) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod -10)
-ADV 6 (0x00b0 -> 0x00b6) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod -10)
-ADV 6 (0x00b0 -> 0x00b6) 0b 64 0f 00 00 0e 
-It is now cycle 7618
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1372)
-ADV 6 (0x055c -> 0x0562) 00 00 00 00 00 0e 
-It is now cycle 7619
-It is now cycle 7620
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b0f -> 0x0b14) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b0f -> 0x0b14) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b0f -> 0x0b14) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b0f -> 0x0b14) 01 ff ff ff ff 
-It is now cycle 7621
-It is now cycle 7622
-It is now cycle 7623
-It is now cycle 7624
-It is now cycle 7625
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f31 -> 0x0f36) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f31 -> 0x0f36) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f31 -> 0x0f36) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f31 -> 0x0f36) 01 ff ff ff ff 
-It is now cycle 7626
-It is now cycle 7627
-It is now cycle 7628
-P   18 | zjmp -200 OK
-It is now cycle 7629
-It is now cycle 7630
-It is now cycle 7631
-It is now cycle 7632
-It is now cycle 7633
-It is now cycle 7634
-It is now cycle 7635
-It is now cycle 7636
-It is now cycle 7637
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 7638
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e03 -> 0x0e08) 01 ff ff ff ff 
-P   17 | zjmp -200 FAILED
-ADV 3 (0x0562 -> 0x0565) 09 ff 38 
-It is now cycle 7639
-It is now cycle 7640
-It is now cycle 7641
-It is now cycle 7642
-It is now cycle 7643
-It is now cycle 7644
-It is now cycle 7645
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2654)
-ADV 6 (0x0b14 -> 0x0b1a) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2642)
-ADV 6 (0x0b14 -> 0x0b1a) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2646)
-ADV 6 (0x0b14 -> 0x0b1a) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2650)
-ADV 6 (0x0b14 -> 0x0b1a) 0b 64 0f 00 00 0e 
-It is now cycle 7646
-It is now cycle 7647
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fee -> 0x0ff3) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fee -> 0x0ff3) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fee -> 0x0ff3) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fee -> 0x0ff3) 01 ff ff ff ff 
-It is now cycle 7648
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0565 -> 0x056a) 01 ff ff ff ff 
-It is now cycle 7649
-It is now cycle 7650
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3712)
-ADV 6 (0x0f36 -> 0x0f3c) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3700)
-ADV 6 (0x0f36 -> 0x0f3c) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3704)
-ADV 6 (0x0f36 -> 0x0f3c) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3708)
-ADV 6 (0x0f36 -> 0x0f3c) 0b 64 0f 00 00 0e 
-It is now cycle 7651
-It is now cycle 7652
-It is now cycle 7653
-It is now cycle 7654
-It is now cycle 7655
-It is now cycle 7656
-It is now cycle 7657
-It is now cycle 7658
-It is now cycle 7659
-It is now cycle 7660
-It is now cycle 7661
-It is now cycle 7662
-It is now cycle 7663
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3410)
-ADV 6 (0x0e08 -> 0x0e0e) 0b 64 0f 00 00 0e 
-It is now cycle 7664
-It is now cycle 7665
-ADV 4 (0x0523 -> 0x0527) 0e 09 ff 38 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 7666
-It is now cycle 7667
-It is now cycle 7668
-It is now cycle 7669
-It is now cycle 7670
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 7671
-It is now cycle 7672
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3897)
-ADV 6 (0x0ff3 -> 0x0ff9) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3897)
-ADV 6 (0x0ff3 -> 0x0ff9) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3897)
-ADV 6 (0x0ff3 -> 0x0ff9) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3897)
-ADV 6 (0x0ff3 -> 0x0ff9) 0b 64 0f 00 00 0e 
-It is now cycle 7673
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1386)
-ADV 6 (0x056a -> 0x0570) 00 00 00 00 00 0e 
-It is now cycle 7674
-It is now cycle 7675
-P   20 | live -16030705
-ADV 5 (0x0527 -> 0x052c) 01 ff 0b 64 0f 
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a52 -> 0x0a57) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a52 -> 0x0a57) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a52 -> 0x0a57) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a52 -> 0x0a57) 01 ff ff ff ff 
-It is now cycle 7676
-It is now cycle 7677
-It is now cycle 7678
-It is now cycle 7679
-It is now cycle 7680
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e74 -> 0x0e79) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e74 -> 0x0e79) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e74 -> 0x0e79) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e74 -> 0x0e79) 01 ff ff ff ff 
-It is now cycle 7681
-It is now cycle 7682
-It is now cycle 7683
-P   18 | zjmp -200 OK
-It is now cycle 7684
-It is now cycle 7685
-It is now cycle 7686
-It is now cycle 7687
-It is now cycle 7688
-It is now cycle 7689
-It is now cycle 7690
-It is now cycle 7691
-It is now cycle 7692
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 7693
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d46 -> 0x0d4b) 01 ff ff ff ff 
-P   17 | zjmp -200 FAILED
-ADV 3 (0x0570 -> 0x0573) 09 ff 38 
-It is now cycle 7694
-It is now cycle 7695
-It is now cycle 7696
-It is now cycle 7697
-It is now cycle 7698
-It is now cycle 7699
-It is now cycle 7700
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2465)
-ADV 6 (0x0a57 -> 0x0a5d) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2453)
-ADV 6 (0x0a57 -> 0x0a5d) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2457)
-ADV 6 (0x0a57 -> 0x0a5d) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2461)
-ADV 6 (0x0a57 -> 0x0a5d) 0b 64 0f 00 00 0e 
-It is now cycle 7701
-It is now cycle 7702
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f31 -> 0x0f36) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f31 -> 0x0f36) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f31 -> 0x0f36) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f31 -> 0x0f36) 01 ff ff ff ff 
-It is now cycle 7703
-P   17 | live -16777216
-ADV 5 (0x0573 -> 0x0578) 01 ff 00 00 00 
-It is now cycle 7704
-It is now cycle 7705
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3523)
-ADV 6 (0x0e79 -> 0x0e7f) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3511)
-ADV 6 (0x0e79 -> 0x0e7f) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3515)
-ADV 6 (0x0e79 -> 0x0e7f) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3519)
-ADV 6 (0x0e79 -> 0x0e7f) 0b 64 0f 00 00 0e 
-It is now cycle 7706
-It is now cycle 7707
-It is now cycle 7708
-It is now cycle 7709
-It is now cycle 7710
-It is now cycle 7711
-It is now cycle 7712
-It is now cycle 7713
-It is now cycle 7714
-It is now cycle 7715
-It is now cycle 7716
-It is now cycle 7717
-It is now cycle 7718
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3221)
-ADV 6 (0x0d4b -> 0x0d51) 0b 64 0f 00 00 0e 
-It is now cycle 7719
-It is now cycle 7720
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 7721
-It is now cycle 7722
-It is now cycle 7723
-It is now cycle 7724
-It is now cycle 7725
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 7726
-It is now cycle 7727
-ADV 4 (0x052e -> 0x0532) 0e 09 ff 38 
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3708)
-ADV 6 (0x0f36 -> 0x0f3c) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3708)
-ADV 6 (0x0f36 -> 0x0f3c) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3708)
-ADV 6 (0x0f36 -> 0x0f3c) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3708)
-ADV 6 (0x0f36 -> 0x0f3c) 0b 64 0f 00 00 0e 
-It is now cycle 7728
-It is now cycle 7729
-It is now cycle 7730
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0995 -> 0x099a) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0995 -> 0x099a) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0995 -> 0x099a) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0995 -> 0x099a) 01 ff ff ff ff 
-It is now cycle 7731
-It is now cycle 7732
-It is now cycle 7733
-It is now cycle 7734
-It is now cycle 7735
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0db7 -> 0x0dbc) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0db7 -> 0x0dbc) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0db7 -> 0x0dbc) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0db7 -> 0x0dbc) 01 ff ff ff ff 
-It is now cycle 7736
-It is now cycle 7737
-P   20 | live -16777216
-ADV 5 (0x0532 -> 0x0537) 01 ff 00 00 00 
-It is now cycle 7738
-P   18 | zjmp -200 OK
-It is now cycle 7739
-It is now cycle 7740
-It is now cycle 7741
-It is now cycle 7742
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0595 -> 0x059a) 01 ff ff ff ff 
-It is now cycle 7743
-It is now cycle 7744
-It is now cycle 7745
-It is now cycle 7746
-It is now cycle 7747
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 7748
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c89 -> 0x0c8e) 01 ff ff ff ff 
-It is now cycle 7749
-It is now cycle 7750
-It is now cycle 7751
-It is now cycle 7752
-It is now cycle 7753
-It is now cycle 7754
-It is now cycle 7755
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2276)
-ADV 6 (0x099a -> 0x09a0) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2264)
-ADV 6 (0x099a -> 0x09a0) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2268)
-ADV 6 (0x099a -> 0x09a0) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2272)
-ADV 6 (0x099a -> 0x09a0) 0b 64 0f 00 00 0e 
-It is now cycle 7756
-It is now cycle 7757
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e74 -> 0x0e79) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e74 -> 0x0e79) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e74 -> 0x0e79) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e74 -> 0x0e79) 01 ff ff ff ff 
-It is now cycle 7758
-It is now cycle 7759
-It is now cycle 7760
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3334)
-ADV 6 (0x0dbc -> 0x0dc2) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3322)
-ADV 6 (0x0dbc -> 0x0dc2) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3326)
-ADV 6 (0x0dbc -> 0x0dc2) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3330)
-ADV 6 (0x0dbc -> 0x0dc2) 0b 64 0f 00 00 0e 
-It is now cycle 7761
-It is now cycle 7762
-It is now cycle 7763
-It is now cycle 7764
-It is now cycle 7765
-It is now cycle 7766
-It is now cycle 7767
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1434)
-ADV 6 (0x059a -> 0x05a0) 00 00 00 00 00 0e 
-It is now cycle 7768
-It is now cycle 7769
-It is now cycle 7770
-It is now cycle 7771
-It is now cycle 7772
-It is now cycle 7773
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3032)
-ADV 6 (0x0c8e -> 0x0c94) 0b 64 0f 00 00 0e 
-It is now cycle 7774
-It is now cycle 7775
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 7776
-It is now cycle 7777
-It is now cycle 7778
-It is now cycle 7779
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0557 -> 0x055c) 01 ff ff ff ff 
-It is now cycle 7780
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 7781
-It is now cycle 7782
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3519)
-ADV 6 (0x0e79 -> 0x0e7f) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3519)
-ADV 6 (0x0e79 -> 0x0e7f) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3519)
-ADV 6 (0x0e79 -> 0x0e7f) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3519)
-ADV 6 (0x0e79 -> 0x0e7f) 0b 64 0f 00 00 0e 
-It is now cycle 7783
-It is now cycle 7784
-It is now cycle 7785
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x08d8 -> 0x08dd) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x08d8 -> 0x08dd) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x08d8 -> 0x08dd) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x08d8 -> 0x08dd) 01 ff ff ff ff 
-It is now cycle 7786
-It is now cycle 7787
-P   17 | zjmp -200 FAILED
-ADV 3 (0x05a0 -> 0x05a3) 09 ff 38 
-It is now cycle 7788
-It is now cycle 7789
-It is now cycle 7790
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0cfa -> 0x0cff) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0cfa -> 0x0cff) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0cfa -> 0x0cff) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0cfa -> 0x0cff) 01 ff ff ff ff 
-It is now cycle 7791
-It is now cycle 7792
-It is now cycle 7793
-P   18 | zjmp -200 OK
-It is now cycle 7794
-It is now cycle 7795
-It is now cycle 7796
-It is now cycle 7797
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05a3 -> 0x05a8) 01 ff ff ff ff 
-It is now cycle 7798
-It is now cycle 7799
-It is now cycle 7800
-It is now cycle 7801
-It is now cycle 7802
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 7803
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0bcc -> 0x0bd1) 01 ff ff ff ff 
-It is now cycle 7804
-It is now cycle 7805
-It is now cycle 7806
-It is now cycle 7807
-It is now cycle 7808
-It is now cycle 7809
-It is now cycle 7810
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2087)
-ADV 6 (0x08dd -> 0x08e3) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2075)
-ADV 6 (0x08dd -> 0x08e3) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2079)
-ADV 6 (0x08dd -> 0x08e3) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2083)
-ADV 6 (0x08dd -> 0x08e3) 0b 64 0f 00 00 0e 
-It is now cycle 7811
-It is now cycle 7812
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0db7 -> 0x0dbc) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0db7 -> 0x0dbc) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0db7 -> 0x0dbc) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0db7 -> 0x0dbc) 01 ff ff ff ff 
-It is now cycle 7813
-It is now cycle 7814
-It is now cycle 7815
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3145)
-ADV 6 (0x0cff -> 0x0d05) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3133)
-ADV 6 (0x0cff -> 0x0d05) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3137)
-ADV 6 (0x0cff -> 0x0d05) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3141)
-ADV 6 (0x0cff -> 0x0d05) 0b 64 0f 00 00 0e 
-It is now cycle 7816
-It is now cycle 7817
-It is now cycle 7818
-It is now cycle 7819
-It is now cycle 7820
-It is now cycle 7821
-It is now cycle 7822
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1448)
-ADV 6 (0x05a8 -> 0x05ae) 00 00 00 00 00 0e 
-It is now cycle 7823
-It is now cycle 7824
-It is now cycle 7825
-It is now cycle 7826
-It is now cycle 7827
-It is now cycle 7828
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2843)
-ADV 6 (0x0bd1 -> 0x0bd7) 0b 64 0f 00 00 0e 
-It is now cycle 7829
-It is now cycle 7830
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 7831
-It is now cycle 7832
-It is now cycle 7833
-It is now cycle 7834
-ADV 4 (0x0561 -> 0x0565) 0e 09 ff 38 
-It is now cycle 7835
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 7836
-It is now cycle 7837
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3330)
-ADV 6 (0x0dbc -> 0x0dc2) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3330)
-ADV 6 (0x0dbc -> 0x0dc2) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3330)
-ADV 6 (0x0dbc -> 0x0dc2) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3330)
-ADV 6 (0x0dbc -> 0x0dc2) 0b 64 0f 00 00 0e 
-It is now cycle 7838
-It is now cycle 7839
-It is now cycle 7840
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x081b -> 0x0820) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x081b -> 0x0820) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x081b -> 0x0820) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x081b -> 0x0820) 01 ff ff ff ff 
-It is now cycle 7841
-It is now cycle 7842
-P   17 | zjmp -200 FAILED
-ADV 3 (0x05ae -> 0x05b1) 09 ff 38 
-It is now cycle 7843
-It is now cycle 7844
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0565 -> 0x056a) 01 ff ff ff ff 
-It is now cycle 7845
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c3d -> 0x0c42) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c3d -> 0x0c42) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c3d -> 0x0c42) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c3d -> 0x0c42) 01 ff ff ff ff 
-It is now cycle 7846
-It is now cycle 7847
-It is now cycle 7848
-P   18 | zjmp -200 OK
-It is now cycle 7849
-It is now cycle 7850
-It is now cycle 7851
-It is now cycle 7852
-P   17 | live -16777216
-ADV 5 (0x05b1 -> 0x05b6) 01 ff 00 00 00 
-It is now cycle 7853
-It is now cycle 7854
-It is now cycle 7855
-It is now cycle 7856
-It is now cycle 7857
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 7858
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b0f -> 0x0b14) 01 ff ff ff ff 
-It is now cycle 7859
-It is now cycle 7860
-It is now cycle 7861
-It is now cycle 7862
-It is now cycle 7863
-It is now cycle 7864
-It is now cycle 7865
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1898)
-ADV 6 (0x0820 -> 0x0826) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1886)
-ADV 6 (0x0820 -> 0x0826) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1890)
-ADV 6 (0x0820 -> 0x0826) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1894)
-ADV 6 (0x0820 -> 0x0826) 0b 64 0f 00 00 0e 
-It is now cycle 7866
-It is now cycle 7867
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0cfa -> 0x0cff) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0cfa -> 0x0cff) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0cfa -> 0x0cff) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0cfa -> 0x0cff) 01 ff ff ff ff 
-It is now cycle 7868
-It is now cycle 7869
-It is now cycle 7870
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2956)
-ADV 6 (0x0c42 -> 0x0c48) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2944)
-ADV 6 (0x0c42 -> 0x0c48) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2948)
-ADV 6 (0x0c42 -> 0x0c48) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2952)
-ADV 6 (0x0c42 -> 0x0c48) 0b 64 0f 00 00 0e 
-It is now cycle 7871
-It is now cycle 7872
-It is now cycle 7873
-It is now cycle 7874
-It is now cycle 7875
-It is now cycle 7876
-It is now cycle 7877
-It is now cycle 7878
-It is now cycle 7879
-It is now cycle 7880
-It is now cycle 7881
-It is now cycle 7882
-It is now cycle 7883
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2654)
-ADV 6 (0x0b14 -> 0x0b1a) 0b 64 0f 00 00 0e 
-It is now cycle 7884
-It is now cycle 7885
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 7886
-It is now cycle 7887
-It is now cycle 7888
-It is now cycle 7889
-It is now cycle 7890
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 7891
-P   17 | live -65025
-ADV 5 (0x05d3 -> 0x05d8) 01 ff ff 01 ff 
-It is now cycle 7892
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3141)
-ADV 6 (0x0cff -> 0x0d05) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3141)
-ADV 6 (0x0cff -> 0x0d05) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3141)
-ADV 6 (0x0cff -> 0x0d05) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3141)
-ADV 6 (0x0cff -> 0x0d05) 0b 64 0f 00 00 0e 
-It is now cycle 7893
-It is now cycle 7894
-It is now cycle 7895
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x075e -> 0x0763) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x075e -> 0x0763) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x075e -> 0x0763) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x075e -> 0x0763) 01 ff ff ff ff 
-It is now cycle 7896
-It is now cycle 7897
-It is now cycle 7898
-It is now cycle 7899
-ADV 4 (0x056f -> 0x0573) 0e 09 ff 38 
-It is now cycle 7900
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b80 -> 0x0b85) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b80 -> 0x0b85) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b80 -> 0x0b85) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b80 -> 0x0b85) 01 ff ff ff ff 
-It is now cycle 7901
-It is now cycle 7902
-It is now cycle 7903
-P   18 | zjmp -200 OK
-It is now cycle 7904
-It is now cycle 7905
-It is now cycle 7906
-It is now cycle 7907
-It is now cycle 7908
-It is now cycle 7909
-P   20 | live -16777216
-ADV 5 (0x0573 -> 0x0578) 01 ff 00 00 00 
-It is now cycle 7910
-It is now cycle 7911
-It is now cycle 7912
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 7913
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a52 -> 0x0a57) 01 ff ff ff ff 
-It is now cycle 7914
-It is now cycle 7915
-It is now cycle 7916
-It is now cycle 7917
-It is now cycle 7918
-It is now cycle 7919
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1499)
-ADV 6 (0x05db -> 0x05e1) 00 00 00 00 00 0e 
-It is now cycle 7920
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1709)
-ADV 6 (0x0763 -> 0x0769) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1697)
-ADV 6 (0x0763 -> 0x0769) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1701)
-ADV 6 (0x0763 -> 0x0769) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1705)
-ADV 6 (0x0763 -> 0x0769) 0b 64 0f 00 00 0e 
-It is now cycle 7921
-It is now cycle 7922
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c3d -> 0x0c42) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c3d -> 0x0c42) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c3d -> 0x0c42) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c3d -> 0x0c42) 01 ff ff ff ff 
-It is now cycle 7923
-It is now cycle 7924
-It is now cycle 7925
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2767)
-ADV 6 (0x0b85 -> 0x0b8b) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2755)
-ADV 6 (0x0b85 -> 0x0b8b) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2759)
-ADV 6 (0x0b85 -> 0x0b8b) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2763)
-ADV 6 (0x0b85 -> 0x0b8b) 0b 64 0f 00 00 0e 
-It is now cycle 7926
-It is now cycle 7927
-It is now cycle 7928
-It is now cycle 7929
-It is now cycle 7930
-It is now cycle 7931
-It is now cycle 7932
-It is now cycle 7933
-It is now cycle 7934
-It is now cycle 7935
-It is now cycle 7936
-It is now cycle 7937
-It is now cycle 7938
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2465)
-ADV 6 (0x0a57 -> 0x0a5d) 0b 64 0f 00 00 0e 
-It is now cycle 7939
-P   17 | zjmp -200 FAILED
-ADV 3 (0x05e1 -> 0x05e4) 09 ff 38 
-It is now cycle 7940
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 7941
-It is now cycle 7942
-It is now cycle 7943
-It is now cycle 7944
-It is now cycle 7945
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 7946
-It is now cycle 7947
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2952)
-ADV 6 (0x0c42 -> 0x0c48) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2952)
-ADV 6 (0x0c42 -> 0x0c48) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2952)
-ADV 6 (0x0c42 -> 0x0c48) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2952)
-ADV 6 (0x0c42 -> 0x0c48) 0b 64 0f 00 00 0e 
-It is now cycle 7948
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0595 -> 0x059a) 01 ff ff ff ff 
-It is now cycle 7949
-P   17 | live -16030705
-ADV 5 (0x05e4 -> 0x05e9) 01 ff 0b 64 0f 
-It is now cycle 7950
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x06a1 -> 0x06a6) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x06a1 -> 0x06a6) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x06a1 -> 0x06a6) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x06a1 -> 0x06a6) 01 ff ff ff ff 
-It is now cycle 7951
-It is now cycle 7952
-It is now cycle 7953
-It is now cycle 7954
-It is now cycle 7955
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ac3 -> 0x0ac8) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ac3 -> 0x0ac8) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ac3 -> 0x0ac8) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ac3 -> 0x0ac8) 01 ff ff ff ff 
-It is now cycle 7956
-It is now cycle 7957
-It is now cycle 7958
-P   18 | zjmp -200 OK
-It is now cycle 7959
-It is now cycle 7960
-It is now cycle 7961
-It is now cycle 7962
-It is now cycle 7963
-It is now cycle 7964
-It is now cycle 7965
-It is now cycle 7966
-It is now cycle 7967
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 7968
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0995 -> 0x099a) 01 ff ff ff ff 
-It is now cycle 7969
-It is now cycle 7970
-It is now cycle 7971
-It is now cycle 7972
-It is now cycle 7973
-It is now cycle 7974
-It is now cycle 7975
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1520)
-ADV 6 (0x06a6 -> 0x06ac) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1508)
-ADV 6 (0x06a6 -> 0x06ac) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1512)
-ADV 6 (0x06a6 -> 0x06ac) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1516)
-ADV 6 (0x06a6 -> 0x06ac) 0b 64 0f 00 00 0e 
-It is now cycle 7976
-It is now cycle 7977
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b80 -> 0x0b85) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b80 -> 0x0b85) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b80 -> 0x0b85) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b80 -> 0x0b85) 01 ff ff ff ff 
-It is now cycle 7978
-It is now cycle 7979
-It is now cycle 7980
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2578)
-ADV 6 (0x0ac8 -> 0x0ace) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2566)
-ADV 6 (0x0ac8 -> 0x0ace) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2570)
-ADV 6 (0x0ac8 -> 0x0ace) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2574)
-ADV 6 (0x0ac8 -> 0x0ace) 0b 64 0f 00 00 0e 
-It is now cycle 7981
-It is now cycle 7982
-It is now cycle 7983
-It is now cycle 7984
-It is now cycle 7985
-It is now cycle 7986
-It is now cycle 7987
-It is now cycle 7988
-It is now cycle 7989
-It is now cycle 7990
-It is now cycle 7991
-It is now cycle 7992
-It is now cycle 7993
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2276)
-ADV 6 (0x099a -> 0x09a0) 0b 64 0f 00 00 0e 
-It is now cycle 7994
-It is now cycle 7995
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 7996
-It is now cycle 7997
-It is now cycle 7998
-It is now cycle 7999
-It is now cycle 8000
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 8001
-ADV 2 (0x05eb -> 0x05ed) 0f 00 
-It is now cycle 8002
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2763)
-ADV 6 (0x0b85 -> 0x0b8b) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2763)
-ADV 6 (0x0b85 -> 0x0b8b) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2763)
-ADV 6 (0x0b85 -> 0x0b8b) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2763)
-ADV 6 (0x0b85 -> 0x0b8b) 0b 64 0f 00 00 0e 
-It is now cycle 8003
-ADV 4 (0x059f -> 0x05a3) 0e 09 ff 38 
-It is now cycle 8004
-It is now cycle 8005
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05e4 -> 0x05e9) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05e4 -> 0x05e9) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05e4 -> 0x05e9) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05e4 -> 0x05e9) 01 ff ff ff ff 
-It is now cycle 8006
-It is now cycle 8007
-It is now cycle 8008
-It is now cycle 8009
-It is now cycle 8010
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a06 -> 0x0a0b) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a06 -> 0x0a0b) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a06 -> 0x0a0b) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a06 -> 0x0a0b) 01 ff ff ff ff 
-It is now cycle 8011
-It is now cycle 8012
-It is now cycle 8013
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05a3 -> 0x05a8) 01 ff ff ff ff 
-P   18 | zjmp -200 OK
-It is now cycle 8014
-It is now cycle 8015
-It is now cycle 8016
-It is now cycle 8017
-It is now cycle 8018
-It is now cycle 8019
-It is now cycle 8020
-It is now cycle 8021
-It is now cycle 8022
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 8023
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x08d8 -> 0x08dd) 01 ff ff ff ff 
-It is now cycle 8024
-It is now cycle 8025
-It is now cycle 8026
-It is now cycle 8027
-It is now cycle 8028
-It is now cycle 8029
-It is now cycle 8030
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1331)
-ADV 6 (0x05e9 -> 0x05ef) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1319)
-ADV 6 (0x05e9 -> 0x05ef) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1323)
-ADV 6 (0x05e9 -> 0x05ef) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1327)
-ADV 6 (0x05e9 -> 0x05ef) 0b 64 0f 00 00 0e 
-It is now cycle 8031
-It is now cycle 8032
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ac3 -> 0x0ac8) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ac3 -> 0x0ac8) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ac3 -> 0x0ac8) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ac3 -> 0x0ac8) 01 ff ff ff ff 
-It is now cycle 8033
-It is now cycle 8034
-It is now cycle 8035
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2389)
-ADV 6 (0x0a0b -> 0x0a11) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2377)
-ADV 6 (0x0a0b -> 0x0a11) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2381)
-ADV 6 (0x0a0b -> 0x0a11) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2385)
-ADV 6 (0x0a0b -> 0x0a11) 0b 64 0f 00 00 0e 
-It is now cycle 8036
-It is now cycle 8037
-It is now cycle 8038
-It is now cycle 8039
-It is now cycle 8040
-It is now cycle 8041
-It is now cycle 8042
-It is now cycle 8043
-It is now cycle 8044
-It is now cycle 8045
-It is now cycle 8046
-It is now cycle 8047
-It is now cycle 8048
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2087)
-ADV 6 (0x08dd -> 0x08e3) 0b 64 0f 00 00 0e 
-It is now cycle 8049
-It is now cycle 8050
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 8051
-It is now cycle 8052
-ADV 4 (0x05ee -> 0x05f2) 0e 09 ff 38 
-It is now cycle 8053
-It is now cycle 8054
-It is now cycle 8055
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 8056
-It is now cycle 8057
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2574)
-ADV 6 (0x0ac8 -> 0x0ace) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2574)
-ADV 6 (0x0ac8 -> 0x0ace) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2574)
-ADV 6 (0x0ac8 -> 0x0ace) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2574)
-ADV 6 (0x0ac8 -> 0x0ace) 0b 64 0f 00 00 0e 
-It is now cycle 8058
-It is now cycle 8059
-It is now cycle 8060
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0527 -> 0x052c) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0527 -> 0x052c) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0527 -> 0x052c) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0527 -> 0x052c) 01 ff ff ff ff 
-It is now cycle 8061
-It is now cycle 8062
-P   17 | live -16777216
-ADV 5 (0x05f2 -> 0x05f7) 01 ff 00 00 00 
-It is now cycle 8063
-It is now cycle 8064
-It is now cycle 8065
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0949 -> 0x094e) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0949 -> 0x094e) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0949 -> 0x094e) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0949 -> 0x094e) 01 ff ff ff ff 
-It is now cycle 8066
-It is now cycle 8067
-It is now cycle 8068
-ADV 4 (0x05ad -> 0x05b1) 0e 09 ff 38 
-P   18 | zjmp -200 OK
-It is now cycle 8069
-It is now cycle 8070
-It is now cycle 8071
-It is now cycle 8072
-It is now cycle 8073
-It is now cycle 8074
-It is now cycle 8075
-It is now cycle 8076
-It is now cycle 8077
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 8078
-P   20 | live -16777216
-ADV 5 (0x05b1 -> 0x05b6) 01 ff 00 00 00 
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x081b -> 0x0820) 01 ff ff ff ff 
-It is now cycle 8079
-It is now cycle 8080
-It is now cycle 8081
-It is now cycle 8082
-It is now cycle 8083
-It is now cycle 8084
-It is now cycle 8085
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1142)
-ADV 6 (0x052c -> 0x0532) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1130)
-ADV 6 (0x052c -> 0x0532) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1134)
-ADV 6 (0x052c -> 0x0532) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1138)
-ADV 6 (0x052c -> 0x0532) 0b 64 0f 00 00 0e 
-It is now cycle 8086
-It is now cycle 8087
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a06 -> 0x0a0b) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a06 -> 0x0a0b) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a06 -> 0x0a0b) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a06 -> 0x0a0b) 01 ff ff ff ff 
-It is now cycle 8088
-It is now cycle 8089
-It is now cycle 8090
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2200)
-ADV 6 (0x094e -> 0x0954) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2188)
-ADV 6 (0x094e -> 0x0954) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2192)
-ADV 6 (0x094e -> 0x0954) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2196)
-ADV 6 (0x094e -> 0x0954) 0b 64 0f 00 00 0e 
-It is now cycle 8091
-It is now cycle 8092
-It is now cycle 8093
-It is now cycle 8094
-It is now cycle 8095
-It is now cycle 8096
-It is now cycle 8097
-It is now cycle 8098
-It is now cycle 8099
-It is now cycle 8100
-It is now cycle 8101
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0614 -> 0x0619) 01 ff ff ff ff 
-It is now cycle 8102
-It is now cycle 8103
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1898)
-ADV 6 (0x0820 -> 0x0826) 0b 64 0f 00 00 0e 
-It is now cycle 8104
-It is now cycle 8105
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 8106
-It is now cycle 8107
-It is now cycle 8108
-It is now cycle 8109
-It is now cycle 8110
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 8111
-It is now cycle 8112
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2385)
-ADV 6 (0x0a0b -> 0x0a11) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2385)
-ADV 6 (0x0a0b -> 0x0a11) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2385)
-ADV 6 (0x0a0b -> 0x0a11) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2385)
-ADV 6 (0x0a0b -> 0x0a11) 0b 64 0f 00 00 0e 
-It is now cycle 8113
-It is now cycle 8114
-It is now cycle 8115
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x046a -> 0x046f) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x046a -> 0x046f) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x046a -> 0x046f) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x046a -> 0x046f) 01 ff ff ff ff 
-It is now cycle 8116
-It is now cycle 8117
-P   20 | live -65025
-ADV 5 (0x05d3 -> 0x05d8) 01 ff ff 01 ff 
-It is now cycle 8118
-It is now cycle 8119
-It is now cycle 8120
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x088c -> 0x0891) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x088c -> 0x0891) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x088c -> 0x0891) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x088c -> 0x0891) 01 ff ff ff ff 
-It is now cycle 8121
-It is now cycle 8122
-It is now cycle 8123
-P   18 | zjmp -200 OK
-It is now cycle 8124
-It is now cycle 8125
-It is now cycle 8126
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1561)
-ADV 6 (0x0619 -> 0x061f) 00 00 00 00 00 0e 
-It is now cycle 8127
-It is now cycle 8128
-It is now cycle 8129
-It is now cycle 8130
-It is now cycle 8131
-It is now cycle 8132
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 8133
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x075e -> 0x0763) 01 ff ff ff ff 
-It is now cycle 8134
-It is now cycle 8135
-It is now cycle 8136
-It is now cycle 8137
-It is now cycle 8138
-It is now cycle 8139
-It is now cycle 8140
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 953)
-ADV 6 (0x046f -> 0x0475) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 941)
-ADV 6 (0x046f -> 0x0475) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 945)
-ADV 6 (0x046f -> 0x0475) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 949)
-ADV 6 (0x046f -> 0x0475) 0b 64 0f 00 00 0e 
-It is now cycle 8141
-It is now cycle 8142
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0949 -> 0x094e) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0949 -> 0x094e) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0949 -> 0x094e) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0949 -> 0x094e) 01 ff ff ff ff 
-It is now cycle 8143
-It is now cycle 8144
-It is now cycle 8145
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2011)
-ADV 6 (0x0891 -> 0x0897) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1999)
-ADV 6 (0x0891 -> 0x0897) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2003)
-ADV 6 (0x0891 -> 0x0897) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2007)
-ADV 6 (0x0891 -> 0x0897) 0b 64 0f 00 00 0e 
-It is now cycle 8146
-P   17 | zjmp -200 FAILED
-ADV 3 (0x061f -> 0x0622) 09 ff 38 
-It is now cycle 8147
-It is now cycle 8148
-It is now cycle 8149
-It is now cycle 8150
-It is now cycle 8151
-It is now cycle 8152
-It is now cycle 8153
-It is now cycle 8154
-It is now cycle 8155
-It is now cycle 8156
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0622 -> 0x0627) 01 ff ff ff ff 
-It is now cycle 8157
-It is now cycle 8158
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1709)
-ADV 6 (0x0763 -> 0x0769) 0b 64 0f 00 00 0e 
-It is now cycle 8159
-It is now cycle 8160
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 8161
-It is now cycle 8162
-It is now cycle 8163
-It is now cycle 8164
-It is now cycle 8165
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 8166
-It is now cycle 8167
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2196)
-ADV 6 (0x094e -> 0x0954) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2196)
-ADV 6 (0x094e -> 0x0954) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2196)
-ADV 6 (0x094e -> 0x0954) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2196)
-ADV 6 (0x094e -> 0x0954) 0b 64 0f 00 00 0e 
-It is now cycle 8168
-It is now cycle 8169
-It is now cycle 8170
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x03ad -> 0x03b2) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x03ad -> 0x03b2) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x03ad -> 0x03b2) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x03ad -> 0x03b2) 01 ff ff ff ff 
-It is now cycle 8171
-It is now cycle 8172
-It is now cycle 8173
-It is now cycle 8174
-It is now cycle 8175
-ADV 4 (0x05e0 -> 0x05e4) 0e 09 ff 38 
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x07cf -> 0x07d4) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x07cf -> 0x07d4) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x07cf -> 0x07d4) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x07cf -> 0x07d4) 01 ff ff ff ff 
-It is now cycle 8176
-It is now cycle 8177
-It is now cycle 8178
-P   18 | zjmp -200 OK
-It is now cycle 8179
-It is now cycle 8180
-It is now cycle 8181
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1575)
-ADV 6 (0x0627 -> 0x062d) 00 00 00 00 00 0e 
-It is now cycle 8182
-It is now cycle 8183
-It is now cycle 8184
-It is now cycle 8185
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05e4 -> 0x05e9) 01 ff ff ff ff 
-It is now cycle 8186
-It is now cycle 8187
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 8188
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x06a1 -> 0x06a6) 01 ff ff ff ff 
-It is now cycle 8189
-It is now cycle 8190
-It is now cycle 8191
-It is now cycle 8192
-It is now cycle 8193
-It is now cycle 8194
-It is now cycle 8195
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 764)
-ADV 6 (0x03b2 -> 0x03b8) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 752)
-ADV 6 (0x03b2 -> 0x03b8) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 756)
-ADV 6 (0x03b2 -> 0x03b8) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 760)
-ADV 6 (0x03b2 -> 0x03b8) 0b 64 0f 00 00 0e 
-It is now cycle 8196
-It is now cycle 8197
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x088c -> 0x0891) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x088c -> 0x0891) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x088c -> 0x0891) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x088c -> 0x0891) 01 ff ff ff ff 
-It is now cycle 8198
-It is now cycle 8199
-It is now cycle 8200
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1822)
-ADV 6 (0x07d4 -> 0x07da) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1810)
-ADV 6 (0x07d4 -> 0x07da) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1814)
-ADV 6 (0x07d4 -> 0x07da) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1818)
-ADV 6 (0x07d4 -> 0x07da) 0b 64 0f 00 00 0e 
-It is now cycle 8201
-P   17 | zjmp -200 FAILED
-ADV 3 (0x062d -> 0x0630) 09 ff 38 
-It is now cycle 8202
-It is now cycle 8203
-It is now cycle 8204
-It is now cycle 8205
-It is now cycle 8206
-It is now cycle 8207
-It is now cycle 8208
-It is now cycle 8209
-It is now cycle 8210
-P   20 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1331)
-ADV 6 (0x05e9 -> 0x05ef) 0b 64 0f 00 00 0e 
-It is now cycle 8211
-P   17 | live -16777216
-ADV 5 (0x0630 -> 0x0635) 01 ff 00 00 00 
-It is now cycle 8212
-It is now cycle 8213
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1520)
-ADV 6 (0x06a6 -> 0x06ac) 0b 64 0f 00 00 0e 
-It is now cycle 8214
-It is now cycle 8215
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 8216
-It is now cycle 8217
-It is now cycle 8218
-It is now cycle 8219
-It is now cycle 8220
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 8221
-It is now cycle 8222
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2007)
-ADV 6 (0x0891 -> 0x0897) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2007)
-ADV 6 (0x0891 -> 0x0897) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2007)
-ADV 6 (0x0891 -> 0x0897) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2007)
-ADV 6 (0x0891 -> 0x0897) 0b 64 0f 00 00 0e 
-It is now cycle 8223
-It is now cycle 8224
-It is now cycle 8225
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02f0 -> 0x02f5) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02f0 -> 0x02f5) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02f0 -> 0x02f5) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02f0 -> 0x02f5) 01 ff ff ff ff 
-It is now cycle 8226
-It is now cycle 8227
-It is now cycle 8228
-It is now cycle 8229
-It is now cycle 8230
-P   20 | zjmp -200 OK
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0712 -> 0x0717) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0712 -> 0x0717) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0712 -> 0x0717) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0712 -> 0x0717) 01 ff ff ff ff 
-It is now cycle 8231
-It is now cycle 8232
-It is now cycle 8233
-P   18 | zjmp -200 OK
-It is now cycle 8234
-It is now cycle 8235
-It is now cycle 8236
-It is now cycle 8237
-It is now cycle 8238
-It is now cycle 8239
-It is now cycle 8240
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0527 -> 0x052c) 01 ff ff ff ff 
-It is now cycle 8241
-It is now cycle 8242
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 8243
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x05e4 -> 0x05e9) 01 ff ff ff ff 
-It is now cycle 8244
-It is now cycle 8245
-It is now cycle 8246
-It is now cycle 8247
-It is now cycle 8248
-It is now cycle 8249
-It is now cycle 8250
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0652 -> 0x0657) 01 ff ff ff ff 
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 575)
-ADV 6 (0x02f5 -> 0x02fb) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 563)
-ADV 6 (0x02f5 -> 0x02fb) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 567)
-ADV 6 (0x02f5 -> 0x02fb) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 571)
-ADV 6 (0x02f5 -> 0x02fb) 0b 64 0f 00 00 0e 
-It is now cycle 8251
-It is now cycle 8252
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x07cf -> 0x07d4) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x07cf -> 0x07d4) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x07cf -> 0x07d4) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x07cf -> 0x07d4) 01 ff ff ff ff 
-It is now cycle 8253
-It is now cycle 8254
-It is now cycle 8255
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1633)
-ADV 6 (0x0717 -> 0x071d) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1621)
-ADV 6 (0x0717 -> 0x071d) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1625)
-ADV 6 (0x0717 -> 0x071d) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1629)
-ADV 6 (0x0717 -> 0x071d) 0b 64 0f 00 00 0e 
-It is now cycle 8256
-It is now cycle 8257
-It is now cycle 8258
-It is now cycle 8259
-It is now cycle 8260
-It is now cycle 8261
-It is now cycle 8262
-It is now cycle 8263
-It is now cycle 8264
-It is now cycle 8265
-P   20 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1142)
-ADV 6 (0x052c -> 0x0532) 0b 64 0f 00 00 0e 
-It is now cycle 8266
-It is now cycle 8267
-It is now cycle 8268
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1331)
-ADV 6 (0x05e9 -> 0x05ef) 0b 64 0f 00 00 0e 
-It is now cycle 8269
-It is now cycle 8270
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 8271
-It is now cycle 8272
-It is now cycle 8273
-It is now cycle 8274
-It is now cycle 8275
-ADV 8 (0x0657 -> 0x065f) ff ff ff 0b 64 0f 00 00 
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 8276
-It is now cycle 8277
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1818)
-ADV 6 (0x07d4 -> 0x07da) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1818)
-ADV 6 (0x07d4 -> 0x07da) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1818)
-ADV 6 (0x07d4 -> 0x07da) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1818)
-ADV 6 (0x07d4 -> 0x07da) 0b 64 0f 00 00 0e 
-It is now cycle 8278
-It is now cycle 8279
-It is now cycle 8280
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0233 -> 0x0238) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0233 -> 0x0238) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0233 -> 0x0238) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0233 -> 0x0238) 01 ff ff ff ff 
-It is now cycle 8281
-It is now cycle 8282
-It is now cycle 8283
-It is now cycle 8284
-It is now cycle 8285
-P   20 | zjmp -200 OK
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0655 -> 0x065a) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0655 -> 0x065a) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0655 -> 0x065a) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0655 -> 0x065a) 01 ff ff ff ff 
-It is now cycle 8286
-It is now cycle 8287
-It is now cycle 8288
-P   18 | zjmp -200 OK
-It is now cycle 8289
-It is now cycle 8290
-It is now cycle 8291
-It is now cycle 8292
-It is now cycle 8293
-It is now cycle 8294
-It is now cycle 8295
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x046a -> 0x046f) 01 ff ff ff ff 
-It is now cycle 8296
-It is now cycle 8297
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 8298
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0527 -> 0x052c) 01 ff ff ff ff 
-It is now cycle 8299
-It is now cycle 8300
-It is now cycle 8301
-It is now cycle 8302
-It is now cycle 8303
-It is now cycle 8304
-It is now cycle 8305
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 386)
-ADV 6 (0x0238 -> 0x023e) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 374)
-ADV 6 (0x0238 -> 0x023e) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 378)
-ADV 6 (0x0238 -> 0x023e) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 382)
-ADV 6 (0x0238 -> 0x023e) 0b 64 0f 00 00 0e 
-It is now cycle 8306
-It is now cycle 8307
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0712 -> 0x0717) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0712 -> 0x0717) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0712 -> 0x0717) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0712 -> 0x0717) 01 ff ff ff ff 
-It is now cycle 8308
-It is now cycle 8309
-It is now cycle 8310
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1444)
-ADV 6 (0x065a -> 0x0660) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1432)
-ADV 6 (0x065a -> 0x0660) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1436)
-ADV 6 (0x065a -> 0x0660) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1440)
-ADV 6 (0x065a -> 0x0660) 0b 64 0f 00 00 0e 
-It is now cycle 8311
-It is now cycle 8312
-It is now cycle 8313
-It is now cycle 8314
-It is now cycle 8315
-It is now cycle 8316
-It is now cycle 8317
-It is now cycle 8318
-It is now cycle 8319
-It is now cycle 8320
-P   20 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 953)
-ADV 6 (0x046f -> 0x0475) 0b 64 0f 00 00 0e 
-It is now cycle 8321
-It is now cycle 8322
-It is now cycle 8323
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1142)
-ADV 6 (0x052c -> 0x0532) 0b 64 0f 00 00 0e 
-It is now cycle 8324
-It is now cycle 8325
-ADV 4 (0x065f -> 0x0663) 0e 09 ff 38 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 8326
-It is now cycle 8327
-It is now cycle 8328
-It is now cycle 8329
-It is now cycle 8330
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 8331
-It is now cycle 8332
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1629)
-ADV 6 (0x0717 -> 0x071d) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1629)
-ADV 6 (0x0717 -> 0x071d) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1629)
-ADV 6 (0x0717 -> 0x071d) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1629)
-ADV 6 (0x0717 -> 0x071d) 0b 64 0f 00 00 0e 
-It is now cycle 8333
-It is now cycle 8334
-It is now cycle 8335
-P   17 | live -16030705
-ADV 5 (0x0663 -> 0x0668) 01 ff 0b 64 0f 
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0176 -> 0x017b) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0176 -> 0x017b) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0176 -> 0x017b) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0176 -> 0x017b) 01 ff ff ff ff 
-It is now cycle 8336
-It is now cycle 8337
-It is now cycle 8338
-It is now cycle 8339
-It is now cycle 8340
-P   20 | zjmp -200 OK
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0598 -> 0x059d) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0598 -> 0x059d) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0598 -> 0x059d) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0598 -> 0x059d) 01 ff ff ff ff 
-It is now cycle 8341
-It is now cycle 8342
-It is now cycle 8343
-P   18 | zjmp -200 OK
-It is now cycle 8344
-It is now cycle 8345
-It is now cycle 8346
-It is now cycle 8347
-It is now cycle 8348
-It is now cycle 8349
-It is now cycle 8350
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x03ad -> 0x03b2) 01 ff ff ff ff 
-It is now cycle 8351
-It is now cycle 8352
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 8353
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x046a -> 0x046f) 01 ff ff ff ff 
-It is now cycle 8354
-It is now cycle 8355
-It is now cycle 8356
-It is now cycle 8357
-It is now cycle 8358
-It is now cycle 8359
-It is now cycle 8360
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 197)
-ADV 6 (0x017b -> 0x0181) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 185)
-ADV 6 (0x017b -> 0x0181) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 189)
-ADV 6 (0x017b -> 0x0181) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 193)
-ADV 6 (0x017b -> 0x0181) 0b 64 0f 00 00 0e 
-It is now cycle 8361
-It is now cycle 8362
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0655 -> 0x065a) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0655 -> 0x065a) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0655 -> 0x065a) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0655 -> 0x065a) 01 ff ff ff ff 
-It is now cycle 8363
-It is now cycle 8364
-It is now cycle 8365
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1255)
-ADV 6 (0x059d -> 0x05a3) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1243)
-ADV 6 (0x059d -> 0x05a3) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1247)
-ADV 6 (0x059d -> 0x05a3) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1251)
-ADV 6 (0x059d -> 0x05a3) 0b 64 0f 00 00 0e 
-It is now cycle 8366
-It is now cycle 8367
-It is now cycle 8368
-It is now cycle 8369
-It is now cycle 8370
-It is now cycle 8371
-It is now cycle 8372
-It is now cycle 8373
-It is now cycle 8374
-It is now cycle 8375
-P   20 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 764)
-ADV 6 (0x03b2 -> 0x03b8) 0b 64 0f 00 00 0e 
-It is now cycle 8376
-It is now cycle 8377
-It is now cycle 8378
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 953)
-ADV 6 (0x046f -> 0x0475) 0b 64 0f 00 00 0e 
-It is now cycle 8379
-It is now cycle 8380
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 8381
-It is now cycle 8382
-It is now cycle 8383
-It is now cycle 8384
-It is now cycle 8385
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 8386
-It is now cycle 8387
-ADV 4 (0x066a -> 0x066e) 0e 09 ff 38 
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1440)
-ADV 6 (0x065a -> 0x0660) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1440)
-ADV 6 (0x065a -> 0x0660) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1440)
-ADV 6 (0x065a -> 0x0660) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1440)
-ADV 6 (0x065a -> 0x0660) 0b 64 0f 00 00 0e 
-It is now cycle 8388
-It is now cycle 8389
-It is now cycle 8390
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00b9 -> 0x00be) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00b9 -> 0x00be) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00b9 -> 0x00be) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00b9 -> 0x00be) 01 ff ff ff ff 
-It is now cycle 8391
-It is now cycle 8392
-It is now cycle 8393
-It is now cycle 8394
-It is now cycle 8395
-P   20 | zjmp -200 OK
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04db -> 0x04e0) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04db -> 0x04e0) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04db -> 0x04e0) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04db -> 0x04e0) 01 ff ff ff ff 
-It is now cycle 8396
-It is now cycle 8397
-P   17 | live -16777216
-ADV 5 (0x066e -> 0x0673) 01 ff 00 00 00 
-It is now cycle 8398
-P   18 | zjmp -200 OK
-It is now cycle 8399
-It is now cycle 8400
-It is now cycle 8401
-It is now cycle 8402
-It is now cycle 8403
-It is now cycle 8404
-It is now cycle 8405
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02f0 -> 0x02f5) 01 ff ff ff ff 
-It is now cycle 8406
-It is now cycle 8407
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 8408
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x03ad -> 0x03b2) 01 ff ff ff ff 
-It is now cycle 8409
-It is now cycle 8410
-It is now cycle 8411
-It is now cycle 8412
-It is now cycle 8413
-It is now cycle 8414
-It is now cycle 8415
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 8)
-ADV 6 (0x00be -> 0x00c4) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod -4)
-ADV 6 (0x00be -> 0x00c4) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 0)
-ADV 6 (0x00be -> 0x00c4) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 4)
-ADV 6 (0x00be -> 0x00c4) 0b 64 0f 00 00 0e 
-It is now cycle 8416
-It is now cycle 8417
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0598 -> 0x059d) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0598 -> 0x059d) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0598 -> 0x059d) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0598 -> 0x059d) 01 ff ff ff ff 
-It is now cycle 8418
-It is now cycle 8419
-It is now cycle 8420
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 1066)
-ADV 6 (0x04e0 -> 0x04e6) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 1054)
-ADV 6 (0x04e0 -> 0x04e6) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 1058)
-ADV 6 (0x04e0 -> 0x04e6) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1062)
-ADV 6 (0x04e0 -> 0x04e6) 0b 64 0f 00 00 0e 
-It is now cycle 8421
-It is now cycle 8422
-It is now cycle 8423
-It is now cycle 8424
-It is now cycle 8425
-It is now cycle 8426
-It is now cycle 8427
-It is now cycle 8428
-It is now cycle 8429
-It is now cycle 8430
-P   20 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 575)
-ADV 6 (0x02f5 -> 0x02fb) 0b 64 0f 00 00 0e 
-It is now cycle 8431
-It is now cycle 8432
-It is now cycle 8433
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 764)
-ADV 6 (0x03b2 -> 0x03b8) 0b 64 0f 00 00 0e 
-It is now cycle 8434
-It is now cycle 8435
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 8436
-P   17 | live -65025
-ADV 5 (0x0690 -> 0x0695) 01 ff ff 01 ff 
-It is now cycle 8437
-It is now cycle 8438
-It is now cycle 8439
-It is now cycle 8440
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 8441
-It is now cycle 8442
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1251)
-ADV 6 (0x059d -> 0x05a3) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1251)
-ADV 6 (0x059d -> 0x05a3) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1251)
-ADV 6 (0x059d -> 0x05a3) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1251)
-ADV 6 (0x059d -> 0x05a3) 0b 64 0f 00 00 0e 
-It is now cycle 8443
-It is now cycle 8444
-It is now cycle 8445
-P   10 | live -241
-ADV 5 (0x0ffc -> 0x1001) 01 ff ff ff 0f 
-P    9 | live -241
-ADV 5 (0x0ffc -> 0x1001) 01 ff ff ff 0f 
-P    7 | live -241
-ADV 5 (0x0ffc -> 0x1001) 01 ff ff ff 0f 
-P    2 | live -241
-ADV 5 (0x0ffc -> 0x1001) 01 ff ff ff 0f 
-It is now cycle 8446
-It is now cycle 8447
-It is now cycle 8448
-It is now cycle 8449
-It is now cycle 8450
-P   20 | zjmp -200 OK
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x041e -> 0x0423) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x041e -> 0x0423) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x041e -> 0x0423) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x041e -> 0x0423) 01 ff ff ff ff 
-It is now cycle 8451
-It is now cycle 8452
-It is now cycle 8453
-P   18 | zjmp -200 OK
-It is now cycle 8454
-It is now cycle 8455
-It is now cycle 8456
-It is now cycle 8457
-It is now cycle 8458
-It is now cycle 8459
-It is now cycle 8460
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0233 -> 0x0238) 01 ff ff ff ff 
-It is now cycle 8461
-It is now cycle 8462
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 8463
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02f0 -> 0x02f5) 01 ff ff ff ff 
-It is now cycle 8464
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1688)
-ADV 6 (0x0698 -> 0x069e) 00 00 00 00 00 0e 
-It is now cycle 8465
-It is now cycle 8466
-It is now cycle 8467
-It is now cycle 8468
-It is now cycle 8469
-It is now cycle 8470
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod -181)
-ADV 6 (0x0001 -> 0x0007) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod -193)
-ADV 6 (0x0001 -> 0x0007) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod -189)
-ADV 6 (0x0001 -> 0x0007) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod -185)
-ADV 6 (0x0001 -> 0x0007) 0b 64 0f 00 00 0e 
-It is now cycle 8471
-It is now cycle 8472
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04db -> 0x04e0) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04db -> 0x04e0) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04db -> 0x04e0) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x04db -> 0x04e0) 01 ff ff ff ff 
-It is now cycle 8473
-It is now cycle 8474
-It is now cycle 8475
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 877)
-ADV 6 (0x0423 -> 0x0429) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 865)
-ADV 6 (0x0423 -> 0x0429) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 869)
-ADV 6 (0x0423 -> 0x0429) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 873)
-ADV 6 (0x0423 -> 0x0429) 0b 64 0f 00 00 0e 
-It is now cycle 8476
-It is now cycle 8477
-It is now cycle 8478
-It is now cycle 8479
-It is now cycle 8480
-It is now cycle 8481
-It is now cycle 8482
-It is now cycle 8483
-It is now cycle 8484
-P   17 | zjmp -200 FAILED
-ADV 3 (0x069e -> 0x06a1) 09 ff 38 
-It is now cycle 8485
-P   20 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 386)
-ADV 6 (0x0238 -> 0x023e) 0b 64 0f 00 00 0e 
-It is now cycle 8486
-It is now cycle 8487
-It is now cycle 8488
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 575)
-ADV 6 (0x02f5 -> 0x02fb) 0b 64 0f 00 00 0e 
-It is now cycle 8489
-It is now cycle 8490
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 8491
-It is now cycle 8492
-It is now cycle 8493
-It is now cycle 8494
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x06a1 -> 0x06a6) 01 ff ff ff ff 
-It is now cycle 8495
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 8496
-It is now cycle 8497
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1062)
-ADV 6 (0x04e0 -> 0x04e6) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1062)
-ADV 6 (0x04e0 -> 0x04e6) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1062)
-ADV 6 (0x04e0 -> 0x04e6) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 1062)
-ADV 6 (0x04e0 -> 0x04e6) 0b 64 0f 00 00 0e 
-It is now cycle 8498
-It is now cycle 8499
-It is now cycle 8500
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f3f -> 0x0f44) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f3f -> 0x0f44) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f3f -> 0x0f44) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f3f -> 0x0f44) 01 ff ff ff ff 
-It is now cycle 8501
-It is now cycle 8502
-It is now cycle 8503
-It is now cycle 8504
-It is now cycle 8505
-P   20 | zjmp -200 OK
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0361 -> 0x0366) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0361 -> 0x0366) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0361 -> 0x0366) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0361 -> 0x0366) 01 ff ff ff ff 
-It is now cycle 8506
-It is now cycle 8507
-It is now cycle 8508
-P   18 | zjmp -200 OK
-It is now cycle 8509
-It is now cycle 8510
-It is now cycle 8511
-It is now cycle 8512
-It is now cycle 8513
-It is now cycle 8514
-It is now cycle 8515
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0176 -> 0x017b) 01 ff ff ff ff 
-It is now cycle 8516
-It is now cycle 8517
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 8518
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0233 -> 0x0238) 01 ff ff ff ff 
-It is now cycle 8519
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1702)
-ADV 6 (0x06a6 -> 0x06ac) 00 00 00 00 00 0e 
-It is now cycle 8520
-It is now cycle 8521
-It is now cycle 8522
-It is now cycle 8523
-It is now cycle 8524
-It is now cycle 8525
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3726)
-ADV 6 (0x0f44 -> 0x0f4a) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3714)
-ADV 6 (0x0f44 -> 0x0f4a) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3718)
-ADV 6 (0x0f44 -> 0x0f4a) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3722)
-ADV 6 (0x0f44 -> 0x0f4a) 0b 64 0f 00 00 0e 
-It is now cycle 8526
-It is now cycle 8527
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x041e -> 0x0423) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x041e -> 0x0423) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x041e -> 0x0423) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x041e -> 0x0423) 01 ff ff ff ff 
-It is now cycle 8528
-It is now cycle 8529
-It is now cycle 8530
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 688)
-ADV 6 (0x0366 -> 0x036c) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 676)
-ADV 6 (0x0366 -> 0x036c) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 680)
-ADV 6 (0x0366 -> 0x036c) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 684)
-ADV 6 (0x0366 -> 0x036c) 0b 64 0f 00 00 0e 
-It is now cycle 8531
-It is now cycle 8532
-It is now cycle 8533
-It is now cycle 8534
-It is now cycle 8535
-It is now cycle 8536
-It is now cycle 8537
-It is now cycle 8538
-It is now cycle 8539
-P   17 | zjmp -200 FAILED
-ADV 3 (0x06ac -> 0x06af) 09 ff 38 
-It is now cycle 8540
-P   20 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 197)
-ADV 6 (0x017b -> 0x0181) 0b 64 0f 00 00 0e 
-It is now cycle 8541
-It is now cycle 8542
-It is now cycle 8543
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 386)
-ADV 6 (0x0238 -> 0x023e) 0b 64 0f 00 00 0e 
-It is now cycle 8544
-It is now cycle 8545
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 8546
-It is now cycle 8547
-It is now cycle 8548
-It is now cycle 8549
-P   17 | live -16777216
-ADV 5 (0x06af -> 0x06b4) 01 ff 00 00 00 
-It is now cycle 8550
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 8551
-It is now cycle 8552
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 873)
-ADV 6 (0x0423 -> 0x0429) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 873)
-ADV 6 (0x0423 -> 0x0429) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 873)
-ADV 6 (0x0423 -> 0x0429) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 873)
-ADV 6 (0x0423 -> 0x0429) 0b 64 0f 00 00 0e 
-It is now cycle 8553
-It is now cycle 8554
-It is now cycle 8555
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e82 -> 0x0e87) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e82 -> 0x0e87) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e82 -> 0x0e87) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e82 -> 0x0e87) 01 ff ff ff ff 
-It is now cycle 8556
-It is now cycle 8557
-It is now cycle 8558
-It is now cycle 8559
-It is now cycle 8560
-P   20 | zjmp -200 OK
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02a4 -> 0x02a9) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02a4 -> 0x02a9) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02a4 -> 0x02a9) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02a4 -> 0x02a9) 01 ff ff ff ff 
-It is now cycle 8561
-It is now cycle 8562
-It is now cycle 8563
-P   18 | zjmp -200 OK
-It is now cycle 8564
-It is now cycle 8565
-It is now cycle 8566
-It is now cycle 8567
-It is now cycle 8568
-It is now cycle 8569
-It is now cycle 8570
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00b9 -> 0x00be) 01 ff ff ff ff 
-It is now cycle 8571
-It is now cycle 8572
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 8573
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0176 -> 0x017b) 01 ff ff ff ff 
-It is now cycle 8574
-It is now cycle 8575
-It is now cycle 8576
-It is now cycle 8577
-It is now cycle 8578
-It is now cycle 8579
-It is now cycle 8580
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3537)
-ADV 6 (0x0e87 -> 0x0e8d) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3525)
-ADV 6 (0x0e87 -> 0x0e8d) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3529)
-ADV 6 (0x0e87 -> 0x0e8d) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3533)
-ADV 6 (0x0e87 -> 0x0e8d) 0b 64 0f 00 00 0e 
-It is now cycle 8581
-It is now cycle 8582
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0361 -> 0x0366) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0361 -> 0x0366) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0361 -> 0x0366) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0361 -> 0x0366) 01 ff ff ff ff 
-It is now cycle 8583
-It is now cycle 8584
-It is now cycle 8585
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 499)
-ADV 6 (0x02a9 -> 0x02af) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 487)
-ADV 6 (0x02a9 -> 0x02af) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 491)
-ADV 6 (0x02a9 -> 0x02af) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 495)
-ADV 6 (0x02a9 -> 0x02af) 0b 64 0f 00 00 0e 
-It is now cycle 8586
-It is now cycle 8587
-It is now cycle 8588
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x06d1 -> 0x06d6) 01 ff ff ff ff 
-It is now cycle 8589
-It is now cycle 8590
-It is now cycle 8591
-It is now cycle 8592
-It is now cycle 8593
-It is now cycle 8594
-It is now cycle 8595
-P   20 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 8)
-ADV 6 (0x00be -> 0x00c4) 0b 64 0f 00 00 0e 
-It is now cycle 8596
-It is now cycle 8597
-It is now cycle 8598
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 197)
-ADV 6 (0x017b -> 0x0181) 0b 64 0f 00 00 0e 
-It is now cycle 8599
-It is now cycle 8600
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 8601
-It is now cycle 8602
-It is now cycle 8603
-It is now cycle 8604
-It is now cycle 8605
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 8606
-It is now cycle 8607
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 684)
-ADV 6 (0x0366 -> 0x036c) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 684)
-ADV 6 (0x0366 -> 0x036c) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 684)
-ADV 6 (0x0366 -> 0x036c) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 684)
-ADV 6 (0x0366 -> 0x036c) 0b 64 0f 00 00 0e 
-It is now cycle 8608
-It is now cycle 8609
-It is now cycle 8610
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0dc5 -> 0x0dca) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0dc5 -> 0x0dca) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0dc5 -> 0x0dca) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0dc5 -> 0x0dca) 01 ff ff ff ff 
-It is now cycle 8611
-It is now cycle 8612
-It is now cycle 8613
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1750)
-ADV 6 (0x06d6 -> 0x06dc) 00 00 00 00 00 0e 
-It is now cycle 8614
-It is now cycle 8615
-P   20 | zjmp -200 OK
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01e7 -> 0x01ec) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01e7 -> 0x01ec) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01e7 -> 0x01ec) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01e7 -> 0x01ec) 01 ff ff ff ff 
-It is now cycle 8616
-It is now cycle 8617
-It is now cycle 8618
-P   18 | zjmp -200 OK
-It is now cycle 8619
-It is now cycle 8620
-It is now cycle 8621
-It is now cycle 8622
-It is now cycle 8623
-It is now cycle 8624
-It is now cycle 8625
-P   20 | live -241
-ADV 5 (0x0ffc -> 0x1001) 01 ff ff ff 0f 
-It is now cycle 8626
-It is now cycle 8627
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 8628
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x00b9 -> 0x00be) 01 ff ff ff ff 
-It is now cycle 8629
-It is now cycle 8630
-It is now cycle 8631
-It is now cycle 8632
-It is now cycle 8633
-P   17 | zjmp -200 FAILED
-ADV 3 (0x06dc -> 0x06df) 09 ff 38 
-It is now cycle 8634
-It is now cycle 8635
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3348)
-ADV 6 (0x0dca -> 0x0dd0) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3336)
-ADV 6 (0x0dca -> 0x0dd0) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3340)
-ADV 6 (0x0dca -> 0x0dd0) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3344)
-ADV 6 (0x0dca -> 0x0dd0) 0b 64 0f 00 00 0e 
-It is now cycle 8636
-It is now cycle 8637
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02a4 -> 0x02a9) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02a4 -> 0x02a9) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02a4 -> 0x02a9) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x02a4 -> 0x02a9) 01 ff ff ff ff 
-It is now cycle 8638
-It is now cycle 8639
-It is now cycle 8640
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 310)
-ADV 6 (0x01ec -> 0x01f2) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 298)
-ADV 6 (0x01ec -> 0x01f2) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 302)
-ADV 6 (0x01ec -> 0x01f2) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 306)
-ADV 6 (0x01ec -> 0x01f2) 0b 64 0f 00 00 0e 
-It is now cycle 8641
-It is now cycle 8642
-It is now cycle 8643
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x06df -> 0x06e4) 01 ff ff ff ff 
-It is now cycle 8644
-It is now cycle 8645
-It is now cycle 8646
-It is now cycle 8647
-It is now cycle 8648
-It is now cycle 8649
-It is now cycle 8650
-P   20 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod -181)
-ADV 6 (0x0001 -> 0x0007) 0b 64 0f 00 00 0e 
-It is now cycle 8651
-It is now cycle 8652
-It is now cycle 8653
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 8)
-ADV 6 (0x00be -> 0x00c4) 0b 64 0f 00 00 0e 
-It is now cycle 8654
-It is now cycle 8655
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 8656
-It is now cycle 8657
-It is now cycle 8658
-It is now cycle 8659
-It is now cycle 8660
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 8661
-It is now cycle 8662
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 495)
-ADV 6 (0x02a9 -> 0x02af) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 495)
-ADV 6 (0x02a9 -> 0x02af) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 495)
-ADV 6 (0x02a9 -> 0x02af) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 495)
-ADV 6 (0x02a9 -> 0x02af) 0b 64 0f 00 00 0e 
-It is now cycle 8663
-It is now cycle 8664
-It is now cycle 8665
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d08 -> 0x0d0d) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d08 -> 0x0d0d) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d08 -> 0x0d0d) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d08 -> 0x0d0d) 01 ff ff ff ff 
-It is now cycle 8666
-It is now cycle 8667
-It is now cycle 8668
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1764)
-ADV 6 (0x06e4 -> 0x06ea) 00 00 00 00 00 0e 
-It is now cycle 8669
-It is now cycle 8670
-P   20 | zjmp -200 OK
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x012a -> 0x012f) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x012a -> 0x012f) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x012a -> 0x012f) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x012a -> 0x012f) 01 ff ff ff ff 
-It is now cycle 8671
-It is now cycle 8672
-It is now cycle 8673
-P   18 | zjmp -200 OK
-It is now cycle 8674
-It is now cycle 8675
-It is now cycle 8676
-It is now cycle 8677
-It is now cycle 8678
-It is now cycle 8679
-It is now cycle 8680
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f3f -> 0x0f44) 01 ff ff ff ff 
-It is now cycle 8681
-It is now cycle 8682
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 8683
-P   18 | live -241
-ADV 5 (0x0ffc -> 0x1001) 01 ff ff ff 0f 
-It is now cycle 8684
-It is now cycle 8685
-It is now cycle 8686
-It is now cycle 8687
-It is now cycle 8688
-P   17 | zjmp -200 FAILED
-ADV 3 (0x06ea -> 0x06ed) 09 ff 38 
-It is now cycle 8689
-It is now cycle 8690
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3159)
-ADV 6 (0x0d0d -> 0x0d13) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3147)
-ADV 6 (0x0d0d -> 0x0d13) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3151)
-ADV 6 (0x0d0d -> 0x0d13) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3155)
-ADV 6 (0x0d0d -> 0x0d13) 0b 64 0f 00 00 0e 
-It is now cycle 8691
-It is now cycle 8692
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01e7 -> 0x01ec) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01e7 -> 0x01ec) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01e7 -> 0x01ec) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x01e7 -> 0x01ec) 01 ff ff ff ff 
-It is now cycle 8693
-It is now cycle 8694
-It is now cycle 8695
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 121)
-ADV 6 (0x012f -> 0x0135) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 109)
-ADV 6 (0x012f -> 0x0135) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 113)
-ADV 6 (0x012f -> 0x0135) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 117)
-ADV 6 (0x012f -> 0x0135) 0b 64 0f 00 00 0e 
-It is now cycle 8696
-It is now cycle 8697
-It is now cycle 8698
-P   17 | live -16777216
-ADV 5 (0x06ed -> 0x06f2) 01 ff 00 00 00 
-It is now cycle 8699
-It is now cycle 8700
-It is now cycle 8701
-It is now cycle 8702
-It is now cycle 8703
-It is now cycle 8704
-It is now cycle 8705
-P   20 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3726)
-ADV 6 (0x0f44 -> 0x0f4a) 0b 64 0f 00 00 0e 
-It is now cycle 8706
-It is now cycle 8707
-It is now cycle 8708
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod -181)
-ADV 6 (0x0001 -> 0x0007) 0b 64 0f 00 00 0e 
-It is now cycle 8709
-It is now cycle 8710
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 8711
-It is now cycle 8712
-It is now cycle 8713
-It is now cycle 8714
-It is now cycle 8715
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 8716
-Cycle to die is now 1286
-It is now cycle 8717
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 306)
-ADV 6 (0x01ec -> 0x01f2) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 306)
-ADV 6 (0x01ec -> 0x01f2) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 306)
-ADV 6 (0x01ec -> 0x01f2) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 306)
-ADV 6 (0x01ec -> 0x01f2) 0b 64 0f 00 00 0e 
-It is now cycle 8718
-It is now cycle 8719
-It is now cycle 8720
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c4b -> 0x0c50) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c4b -> 0x0c50) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c4b -> 0x0c50) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c4b -> 0x0c50) 01 ff ff ff ff 
-It is now cycle 8721
-It is now cycle 8722
-It is now cycle 8723
-It is now cycle 8724
-It is now cycle 8725
-P   20 | zjmp -200 OK
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x006d -> 0x0072) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x006d -> 0x0072) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x006d -> 0x0072) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x006d -> 0x0072) 01 ff ff ff ff 
-It is now cycle 8726
-It is now cycle 8727
-It is now cycle 8728
-P   18 | zjmp -200 OK
-It is now cycle 8729
-It is now cycle 8730
-It is now cycle 8731
-It is now cycle 8732
-It is now cycle 8733
-It is now cycle 8734
-It is now cycle 8735
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e82 -> 0x0e87) 01 ff ff ff ff 
-It is now cycle 8736
-It is now cycle 8737
-P   17 | live -65025
-ADV 5 (0x070f -> 0x0714) 01 ff ff 01 ff 
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 8738
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0f3f -> 0x0f44) 01 ff ff ff ff 
-It is now cycle 8739
-It is now cycle 8740
-It is now cycle 8741
-It is now cycle 8742
-It is now cycle 8743
-It is now cycle 8744
-It is now cycle 8745
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2970)
-ADV 6 (0x0c50 -> 0x0c56) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2958)
-ADV 6 (0x0c50 -> 0x0c56) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2962)
-ADV 6 (0x0c50 -> 0x0c56) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2966)
-ADV 6 (0x0c50 -> 0x0c56) 0b 64 0f 00 00 0e 
-It is now cycle 8746
-It is now cycle 8747
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x012a -> 0x012f) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x012a -> 0x012f) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x012a -> 0x012f) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x012a -> 0x012f) 01 ff ff ff ff 
-It is now cycle 8748
-It is now cycle 8749
-It is now cycle 8750
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod -68)
-ADV 6 (0x0072 -> 0x0078) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod -80)
-ADV 6 (0x0072 -> 0x0078) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod -76)
-ADV 6 (0x0072 -> 0x0078) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod -72)
-ADV 6 (0x0072 -> 0x0078) 0b 64 0f 00 00 0e 
-It is now cycle 8751
-It is now cycle 8752
-It is now cycle 8753
-It is now cycle 8754
-It is now cycle 8755
-It is now cycle 8756
-It is now cycle 8757
-It is now cycle 8758
-It is now cycle 8759
-It is now cycle 8760
-P   20 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3537)
-ADV 6 (0x0e87 -> 0x0e8d) 0b 64 0f 00 00 0e 
-It is now cycle 8761
-It is now cycle 8762
-It is now cycle 8763
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3726)
-ADV 6 (0x0f44 -> 0x0f4a) 0b 64 0f 00 00 0e 
-It is now cycle 8764
-It is now cycle 8765
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1815)
-ADV 6 (0x0717 -> 0x071d) 00 00 00 00 00 0e 
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 8766
-It is now cycle 8767
-It is now cycle 8768
-It is now cycle 8769
-It is now cycle 8770
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 8771
-It is now cycle 8772
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 117)
-ADV 6 (0x012f -> 0x0135) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 117)
-ADV 6 (0x012f -> 0x0135) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 117)
-ADV 6 (0x012f -> 0x0135) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 117)
-ADV 6 (0x012f -> 0x0135) 0b 64 0f 00 00 0e 
-It is now cycle 8773
-It is now cycle 8774
-It is now cycle 8775
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b8e -> 0x0b93) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b8e -> 0x0b93) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b8e -> 0x0b93) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b8e -> 0x0b93) 01 ff ff ff ff 
-It is now cycle 8776
-It is now cycle 8777
-It is now cycle 8778
-It is now cycle 8779
-It is now cycle 8780
-P   20 | zjmp -200 OK
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fb0 -> 0x0fb5) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fb0 -> 0x0fb5) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fb0 -> 0x0fb5) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fb0 -> 0x0fb5) 01 ff ff ff ff 
-It is now cycle 8781
-It is now cycle 8782
-It is now cycle 8783
-P   18 | zjmp -200 OK
-It is now cycle 8784
-It is now cycle 8785
-P   17 | zjmp -200 FAILED
-ADV 3 (0x071d -> 0x0720) 09 ff 38 
-It is now cycle 8786
-It is now cycle 8787
-It is now cycle 8788
-It is now cycle 8789
-It is now cycle 8790
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0dc5 -> 0x0dca) 01 ff ff ff ff 
-It is now cycle 8791
-It is now cycle 8792
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 8793
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e82 -> 0x0e87) 01 ff ff ff ff 
-It is now cycle 8794
-It is now cycle 8795
-P   17 | live -16030705
-ADV 5 (0x0720 -> 0x0725) 01 ff 0b 64 0f 
-It is now cycle 8796
-It is now cycle 8797
-It is now cycle 8798
-It is now cycle 8799
-It is now cycle 8800
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2781)
-ADV 6 (0x0b93 -> 0x0b99) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2769)
-ADV 6 (0x0b93 -> 0x0b99) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2773)
-ADV 6 (0x0b93 -> 0x0b99) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2777)
-ADV 6 (0x0b93 -> 0x0b99) 0b 64 0f 00 00 0e 
-It is now cycle 8801
-It is now cycle 8802
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x006d -> 0x0072) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x006d -> 0x0072) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x006d -> 0x0072) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x006d -> 0x0072) 01 ff ff ff ff 
-It is now cycle 8803
-It is now cycle 8804
-It is now cycle 8805
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3839)
-ADV 6 (0x0fb5 -> 0x0fbb) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3827)
-ADV 6 (0x0fb5 -> 0x0fbb) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3831)
-ADV 6 (0x0fb5 -> 0x0fbb) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3835)
-ADV 6 (0x0fb5 -> 0x0fbb) 0b 64 0f 00 00 0e 
-It is now cycle 8806
-It is now cycle 8807
-It is now cycle 8808
-It is now cycle 8809
-It is now cycle 8810
-It is now cycle 8811
-It is now cycle 8812
-It is now cycle 8813
-It is now cycle 8814
-It is now cycle 8815
-P   20 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3348)
-ADV 6 (0x0dca -> 0x0dd0) 0b 64 0f 00 00 0e 
-It is now cycle 8816
-It is now cycle 8817
-It is now cycle 8818
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3537)
-ADV 6 (0x0e87 -> 0x0e8d) 0b 64 0f 00 00 0e 
-It is now cycle 8819
-It is now cycle 8820
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 8821
-It is now cycle 8822
-It is now cycle 8823
-It is now cycle 8824
-It is now cycle 8825
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 8826
-It is now cycle 8827
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod -72)
-ADV 6 (0x0072 -> 0x0078) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod -72)
-ADV 6 (0x0072 -> 0x0078) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod -72)
-ADV 6 (0x0072 -> 0x0078) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod -72)
-ADV 6 (0x0072 -> 0x0078) 0b 64 0f 00 00 0e 
-It is now cycle 8828
-It is now cycle 8829
-It is now cycle 8830
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ad1 -> 0x0ad6) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ad1 -> 0x0ad6) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ad1 -> 0x0ad6) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ad1 -> 0x0ad6) 01 ff ff ff ff 
-It is now cycle 8831
-It is now cycle 8832
-It is now cycle 8833
-It is now cycle 8834
-It is now cycle 8835
-P   20 | zjmp -200 OK
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ef3 -> 0x0ef8) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ef3 -> 0x0ef8) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ef3 -> 0x0ef8) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ef3 -> 0x0ef8) 01 ff ff ff ff 
-It is now cycle 8836
-It is now cycle 8837
-It is now cycle 8838
-P   18 | zjmp -200 OK
-It is now cycle 8839
-It is now cycle 8840
-It is now cycle 8841
-It is now cycle 8842
-It is now cycle 8843
-It is now cycle 8844
-It is now cycle 8845
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d08 -> 0x0d0d) 01 ff ff ff ff 
-It is now cycle 8846
-It is now cycle 8847
-ADV 4 (0x0727 -> 0x072b) 0e 09 ff 38 
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 8848
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0dc5 -> 0x0dca) 01 ff ff ff ff 
-It is now cycle 8849
-It is now cycle 8850
-It is now cycle 8851
-It is now cycle 8852
-It is now cycle 8853
-It is now cycle 8854
-It is now cycle 8855
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2592)
-ADV 6 (0x0ad6 -> 0x0adc) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2580)
-ADV 6 (0x0ad6 -> 0x0adc) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2584)
-ADV 6 (0x0ad6 -> 0x0adc) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2588)
-ADV 6 (0x0ad6 -> 0x0adc) 0b 64 0f 00 00 0e 
-It is now cycle 8856
-It is now cycle 8857
-P   17 | live -16777216
-ADV 5 (0x072b -> 0x0730) 01 ff 00 00 00 
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fb0 -> 0x0fb5) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fb0 -> 0x0fb5) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fb0 -> 0x0fb5) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0fb0 -> 0x0fb5) 01 ff ff ff ff 
-It is now cycle 8858
-It is now cycle 8859
-It is now cycle 8860
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3650)
-ADV 6 (0x0ef8 -> 0x0efe) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3638)
-ADV 6 (0x0ef8 -> 0x0efe) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3642)
-ADV 6 (0x0ef8 -> 0x0efe) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3646)
-ADV 6 (0x0ef8 -> 0x0efe) 0b 64 0f 00 00 0e 
-It is now cycle 8861
-It is now cycle 8862
-It is now cycle 8863
-It is now cycle 8864
-It is now cycle 8865
-It is now cycle 8866
-It is now cycle 8867
-It is now cycle 8868
-It is now cycle 8869
-It is now cycle 8870
-P   20 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3159)
-ADV 6 (0x0d0d -> 0x0d13) 0b 64 0f 00 00 0e 
-It is now cycle 8871
-It is now cycle 8872
-It is now cycle 8873
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3348)
-ADV 6 (0x0dca -> 0x0dd0) 0b 64 0f 00 00 0e 
-It is now cycle 8874
-It is now cycle 8875
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 8876
-It is now cycle 8877
-It is now cycle 8878
-It is now cycle 8879
-It is now cycle 8880
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 8881
-It is now cycle 8882
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3835)
-ADV 6 (0x0fb5 -> 0x0fbb) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3835)
-ADV 6 (0x0fb5 -> 0x0fbb) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3835)
-ADV 6 (0x0fb5 -> 0x0fbb) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3835)
-ADV 6 (0x0fb5 -> 0x0fbb) 0b 64 0f 00 00 0e 
-It is now cycle 8883
-It is now cycle 8884
-It is now cycle 8885
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a14 -> 0x0a19) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a14 -> 0x0a19) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a14 -> 0x0a19) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0a14 -> 0x0a19) 01 ff ff ff ff 
-It is now cycle 8886
-It is now cycle 8887
-It is now cycle 8888
-It is now cycle 8889
-It is now cycle 8890
-P   20 | zjmp -200 OK
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e36 -> 0x0e3b) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e36 -> 0x0e3b) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e36 -> 0x0e3b) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e36 -> 0x0e3b) 01 ff ff ff ff 
-It is now cycle 8891
-It is now cycle 8892
-It is now cycle 8893
-P   18 | zjmp -200 OK
-It is now cycle 8894
-It is now cycle 8895
-It is now cycle 8896
-P   17 | live -65025
-ADV 5 (0x074d -> 0x0752) 01 ff ff 01 ff 
-It is now cycle 8897
-It is now cycle 8898
-It is now cycle 8899
-It is now cycle 8900
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c4b -> 0x0c50) 01 ff ff ff ff 
-It is now cycle 8901
-It is now cycle 8902
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 8903
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d08 -> 0x0d0d) 01 ff ff ff ff 
-It is now cycle 8904
-It is now cycle 8905
-It is now cycle 8906
-It is now cycle 8907
-It is now cycle 8908
-It is now cycle 8909
-It is now cycle 8910
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2403)
-ADV 6 (0x0a19 -> 0x0a1f) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2391)
-ADV 6 (0x0a19 -> 0x0a1f) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2395)
-ADV 6 (0x0a19 -> 0x0a1f) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2399)
-ADV 6 (0x0a19 -> 0x0a1f) 0b 64 0f 00 00 0e 
-It is now cycle 8911
-It is now cycle 8912
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ef3 -> 0x0ef8) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ef3 -> 0x0ef8) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ef3 -> 0x0ef8) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0ef3 -> 0x0ef8) 01 ff ff ff ff 
-It is now cycle 8913
-It is now cycle 8914
-It is now cycle 8915
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3461)
-ADV 6 (0x0e3b -> 0x0e41) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3449)
-ADV 6 (0x0e3b -> 0x0e41) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3453)
-ADV 6 (0x0e3b -> 0x0e41) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3457)
-ADV 6 (0x0e3b -> 0x0e41) 0b 64 0f 00 00 0e 
-It is now cycle 8916
-It is now cycle 8917
-It is now cycle 8918
-It is now cycle 8919
-It is now cycle 8920
-It is now cycle 8921
-It is now cycle 8922
-It is now cycle 8923
-It is now cycle 8924
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1877)
-ADV 6 (0x0755 -> 0x075b) 00 00 00 00 00 0e 
-It is now cycle 8925
-P   20 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2970)
-ADV 6 (0x0c50 -> 0x0c56) 0b 64 0f 00 00 0e 
-It is now cycle 8926
-It is now cycle 8927
-It is now cycle 8928
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3159)
-ADV 6 (0x0d0d -> 0x0d13) 0b 64 0f 00 00 0e 
-It is now cycle 8929
-It is now cycle 8930
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 8931
-It is now cycle 8932
-It is now cycle 8933
-It is now cycle 8934
-It is now cycle 8935
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 8936
-It is now cycle 8937
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3646)
-ADV 6 (0x0ef8 -> 0x0efe) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3646)
-ADV 6 (0x0ef8 -> 0x0efe) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3646)
-ADV 6 (0x0ef8 -> 0x0efe) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3646)
-ADV 6 (0x0ef8 -> 0x0efe) 0b 64 0f 00 00 0e 
-It is now cycle 8938
-It is now cycle 8939
-It is now cycle 8940
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0957 -> 0x095c) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0957 -> 0x095c) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0957 -> 0x095c) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0957 -> 0x095c) 01 ff ff ff ff 
-It is now cycle 8941
-It is now cycle 8942
-It is now cycle 8943
-It is now cycle 8944
-P   17 | zjmp -200 FAILED
-ADV 3 (0x075b -> 0x075e) 09 ff 38 
-It is now cycle 8945
-P   20 | zjmp -200 OK
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d79 -> 0x0d7e) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d79 -> 0x0d7e) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d79 -> 0x0d7e) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0d79 -> 0x0d7e) 01 ff ff ff ff 
-It is now cycle 8946
-It is now cycle 8947
-It is now cycle 8948
-P   18 | zjmp -200 OK
-It is now cycle 8949
-It is now cycle 8950
-It is now cycle 8951
-It is now cycle 8952
-It is now cycle 8953
-It is now cycle 8954
-P   17 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x075e -> 0x0763) 01 ff ff ff ff 
-It is now cycle 8955
-P   20 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0b8e -> 0x0b93) 01 ff ff ff ff 
-It is now cycle 8956
-It is now cycle 8957
-P   14 | zjmp -200 OK
-P   13 | zjmp -200 OK
-P   11 | zjmp -200 OK
-P    4 | zjmp -200 OK
-It is now cycle 8958
-P   18 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0c4b -> 0x0c50) 01 ff ff ff ff 
-It is now cycle 8959
-It is now cycle 8960
-It is now cycle 8961
-It is now cycle 8962
-It is now cycle 8963
-It is now cycle 8964
-It is now cycle 8965
-P   10 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2214)
-ADV 6 (0x095c -> 0x0962) 0b 64 0f 00 00 0e 
-P    9 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 2202)
-ADV 6 (0x095c -> 0x0962) 0b 64 0f 00 00 0e 
-P    7 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 2206)
-ADV 6 (0x095c -> 0x0962) 0b 64 0f 00 00 0e 
-P    2 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 2210)
-ADV 6 (0x095c -> 0x0962) 0b 64 0f 00 00 0e 
-It is now cycle 8966
-It is now cycle 8967
-P   14 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e36 -> 0x0e3b) 01 ff ff ff ff 
-P   13 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e36 -> 0x0e3b) 01 ff ff ff ff 
-P   11 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e36 -> 0x0e3b) 01 ff ff ff ff 
-P    4 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0e36 -> 0x0e3b) 01 ff ff ff ff 
-It is now cycle 8968
-It is now cycle 8969
-It is now cycle 8970
-P    6 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 3272)
-ADV 6 (0x0d7e -> 0x0d84) 0b 64 0f 00 00 0e 
-P    5 | sti r15 0 -194
-       | -> store to 0 + -194 = -194 (with pc and mod 3260)
-ADV 6 (0x0d7e -> 0x0d84) 0b 64 0f 00 00 0e 
-P    3 | sti r15 0 -190
-       | -> store to 0 + -190 = -190 (with pc and mod 3264)
-ADV 6 (0x0d7e -> 0x0d84) 0b 64 0f 00 00 0e 
-P    1 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3268)
-ADV 6 (0x0d7e -> 0x0d84) 0b 64 0f 00 00 0e 
-It is now cycle 8971
-It is now cycle 8972
-It is now cycle 8973
-It is now cycle 8974
-It is now cycle 8975
-It is now cycle 8976
-It is now cycle 8977
-It is now cycle 8978
-It is now cycle 8979
-P   17 | sti r15 0 0
-       | -> store to 0 + 0 = 0 (with pc and mod 1891)
-ADV 6 (0x0763 -> 0x0769) 00 00 00 00 00 0e 
-It is now cycle 8980
-P   20 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2781)
-ADV 6 (0x0b93 -> 0x0b99) 0b 64 0f 00 00 0e 
-It is now cycle 8981
-It is now cycle 8982
-It is now cycle 8983
-P   18 | sti r15 0 -182
-       | -> store to 0 + -182 = -182 (with pc and mod 2970)
-ADV 6 (0x0c50 -> 0x0c56) 0b 64 0f 00 00 0e 
-It is now cycle 8984
-It is now cycle 8985
-P   10 | zjmp -200 OK
-P    9 | zjmp -200 OK
-P    7 | zjmp -200 OK
-P    2 | zjmp -200 OK
-It is now cycle 8986
-It is now cycle 8987
-It is now cycle 8988
-It is now cycle 8989
-It is now cycle 8990
-P    6 | zjmp -200 OK
-P    5 | zjmp -200 OK
-P    3 | zjmp -200 OK
-P    1 | zjmp -200 OK
-It is now cycle 8991
-It is now cycle 8992
-P   14 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3457)
-ADV 6 (0x0e3b -> 0x0e41) 0b 64 0f 00 00 0e 
-P   13 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3457)
-ADV 6 (0x0e3b -> 0x0e41) 0b 64 0f 00 00 0e 
-P   11 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3457)
-ADV 6 (0x0e3b -> 0x0e41) 0b 64 0f 00 00 0e 
-P    4 | sti r15 0 -186
-       | -> store to 0 + -186 = -186 (with pc and mod 3457)
-ADV 6 (0x0e3b -> 0x0e41) 0b 64 0f 00 00 0e 
-It is now cycle 8993
-It is now cycle 8994
-It is now cycle 8995
-P   10 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x089a -> 0x089f) 01 ff ff ff ff 
-P    9 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x089a -> 0x089f) 01 ff ff ff ff 
-P    7 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x089a -> 0x089f) 01 ff ff ff ff 
-P    2 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x089a -> 0x089f) 01 ff ff ff ff 
-It is now cycle 8996
-It is now cycle 8997
-It is now cycle 8998
-It is now cycle 8999
-P   17 | zjmp -200 FAILED
-ADV 3 (0x0769 -> 0x076c) 09 ff 38 
-It is now cycle 9000
-P   20 | zjmp -200 OK
-P    6 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0cbc -> 0x0cc1) 01 ff ff ff ff 
-P    5 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0cbc -> 0x0cc1) 01 ff ff ff ff 
-P    3 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0cbc -> 0x0cc1) 01 ff ff ff ff 
-P    1 | live -1
-Player 1 (Celebration Funebre v0.99pl42) is said to be alive
-ADV 5 (0x0cbc -> 0x0cc1) 01 ff ff ff ff 
-It is now cycle 9001
