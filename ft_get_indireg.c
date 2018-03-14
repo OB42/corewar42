@@ -6,23 +6,25 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 20:54:24 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/09 16:49:00 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/14 15:57:13 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "LIBFT/libft.h"
 #include "op.h"
 
-unsigned char	*ft_get_ind(t_ins *ins, unsigned char *curseur, int n_param)
+unsigned char	*ft_get_ind(t_ins *ins, unsigned char *curseur, int n_param,
+		unsigned char *init)
 {
 	//ft_printf("INDEX ");
 	if (n_param == 1)
 		ins->param[n_param] = 16 * *(curseur) + *(curseur + 1);
 	ins->size = ins->size + 2;
-	return(curseur + 2);
+	return(ft_oob(init, curseur + 2));
 }
 
-unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param)
+unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param,
+		unsigned char *init)
 {
 	//ft_printf("DIRECT ");
 	if(ft_strcmp (ins->name, "ldi") == 0 ||
@@ -33,7 +35,7 @@ unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param)
 	{
 		ins->size = ins->size + 2;
 		ins->param[n_param] = 256 * *(curseur) + *(curseur + 1);
-		return (curseur + 2);
+		return (ft_oob(init, curseur + 2));
 	}
 	else
 	{
@@ -45,10 +47,10 @@ unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param)
 	}
 }
 
-unsigned char	*ft_get_reg(t_ins *ins, unsigned char *curseur, int n_param)
+unsigned char	*ft_get_reg(t_ins *ins, unsigned char *curseur, int n_param,
+		unsigned char *init)
 {
-	//ft_printf("REGISTRE ");
 	ins->param[n_param] = *curseur;
 	ins->size = ins->size + 1;
-	return (curseur + 1);
+	return (ft_oob(init, curseur + 1));
 }

@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/13 21:47:33 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/14 15:56:57 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,12 +142,12 @@ struct	s_proc
 
 header_t		ft_get_header(int fd);
 t_champ			ft_get_champ(char *filename);
-void			ft_get_var(t_ins *ins, unsigned char *code_champ);
-t_ins			*ft_get_instru(unsigned char *code_champ);
+void			ft_get_var(t_ins *ins, unsigned char *code_champ, unsigned char *init);
+t_ins			*ft_get_instru(unsigned char *code_champ, unsigned char *init);
 int				ft_get_int(unsigned char *code_champ, int size);
-unsigned char	*ft_get_ind(t_ins *ins, unsigned char *curseur, int n_param);
-unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param);
-unsigned char	*ft_get_reg(t_ins *ins, unsigned char *curseur, int n_param);
+unsigned char	*ft_get_ind(t_ins *ins, unsigned char *curseur, int n_param, unsigned char *init);
+unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param, unsigned char *init);
+unsigned char	*ft_get_reg(t_ins *ins, unsigned char *curseur, int n_param, unsigned char *init);
 void			ft_loop(t_corewar corewar);
 void			ft_live(t_ins *ins, t_proc *proc);
 void			ft_ld(t_ins *ins, t_proc *proc);
@@ -176,3 +176,5 @@ void			ft_write_ram(int value, int size, unsigned char *ram);
 t_proc			*ft_del(t_proc *proc);
 t_proc			*ft_cycle_to_die(t_corewar *corewar, t_proc *proc);
 int				ft_val_ocp(int ocp, int param);
+void			ft_print_ocp(t_proc *proc);
+int				ft_conv(int value, t_proc *proc);

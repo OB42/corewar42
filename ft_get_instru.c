@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 15:54:36 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/13 15:25:12 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/14 17:05:39 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,31 +47,31 @@ int	ft_is_instruc(char c)
 	return (0);
 }
 
-void	ft_get_var(t_ins *ins, unsigned char *code_champ)
+void	ft_get_var(t_ins *ins, unsigned char *code_champ, unsigned char *init)
 {
 	if (ins->ocp < 0)
 		ins->ocp = 256 + ins->ocp;
 	if ((ins->ocp & 0x80) && (ins->ocp & 0x40))
-		code_champ = ft_get_ind(ins, code_champ, 0);
+		code_champ = ft_get_ind(ins, code_champ, 0, init);
 	else if (ins->ocp & 0x80)
-		code_champ = ft_get_dir(ins, code_champ, 0);
+		code_champ = ft_get_dir(ins, code_champ, 0, init);
 	else if (ins->ocp & 0x40)
-		code_champ = ft_get_reg(ins, code_champ, 0);
+		code_champ = ft_get_reg(ins, code_champ, 0, init);
 	if (ins->ocp & 0x20 && ins->ocp & 0x10)
-		code_champ = ft_get_ind(ins, code_champ, 1);
+		code_champ = ft_get_ind(ins, code_champ, 1, init);
 	else if (ins->ocp & 0x20)
-		code_champ = ft_get_dir(ins, code_champ, 1);
+		code_champ = ft_get_dir(ins, code_champ, 1, init);
 	else if (ins->ocp & 0x10)
-		code_champ = ft_get_reg(ins, code_champ, 1);
+		code_champ = ft_get_reg(ins, code_champ, 1, init);
 	if (ins->ocp & 8 && ins->ocp & 4)
-		code_champ = ft_get_ind(ins, code_champ, 2);
+		code_champ = ft_get_ind(ins, code_champ, 2, init);
 	else if (ins->ocp & 8)
-		code_champ = ft_get_dir(ins, code_champ, 2);
+		code_champ = ft_get_dir(ins, code_champ, 2, init);
 	else if (ins->ocp & 4)
-		code_champ = ft_get_reg(ins, code_champ, 2);
+		code_champ = ft_get_reg(ins, code_champ, 2, init);
 }
 
-t_ins	*ft_get_instru(unsigned char *code_champ)
+t_ins	*ft_get_instru(unsigned char *code_champ, unsigned char *init)
 {
 	t_op		*op_tab;
 	t_ins	*ins;
@@ -89,7 +89,7 @@ t_ins	*ft_get_instru(unsigned char *code_champ)
 		{
 			ins->size = ins->size + 1;
 			ins->ocp = (int) *(code_champ + 1);
-			ft_get_var(ins, code_champ + 2);
+			ft_get_var(ins, code_champ + 2, init);
 		}
 		else
 		{

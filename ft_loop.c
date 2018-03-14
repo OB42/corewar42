@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/13 23:14:22 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/14 17:03:29 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_val_proc(t_proc *lst_proc, t_corewar *corewar, int i, t_proc *init)
 	lst_proc->corewar = corewar;
 	lst_proc->nxt = init;
 	lst_proc->player = i + 1;
-	lst_proc->reg[1] = -1;
+	lst_proc->reg[1] = -lst_proc->player;
 	lst_proc->ins = NULL;
 	lst_proc->id = ft_get_procnb(lst_proc);
 	lst_proc->champ = corewar->tab_champ[0];
@@ -90,20 +90,21 @@ void	ft_loop(t_corewar corewar)
 		{
 			//system("clear");
 			//ft_print_arena(corewar.arena);
+			lst_proc->ins = ft_get_instru(lst_proc->curseur, lst_proc->init);
 			ft_verbose(lst_proc);
 			(lst_proc->ins->fun)(lst_proc->ins, lst_proc);
 			lst_proc->cycle = 0;
 			test = 1;
 		}
 		if (lst_proc->cycle <= 1)
-			lst_proc->ins = ft_get_instru(lst_proc->curseur);
+			lst_proc->ins = ft_get_instru(lst_proc->curseur, lst_proc->init);
 		if (lst_proc->ins == NULL && test == 0)
 		{
 			lst_proc->curseur += 1;
 			lst_proc->cycle = 0;
 		}
 		lst_proc = lst_proc->nxt;
-		if (lst_proc == NULL || corewar.cycle > 4800)
+		if (lst_proc == NULL || corewar.cycle > 4000)
 			exit(1);
 	}
 }
