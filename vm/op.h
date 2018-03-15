@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/15 01:02:40 by mlegeay          ###   ########.fr       */
+/*   Updated: 2018/03/15 04:31:14 by mlegeay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,6 @@
 # define REG_CODE	1
 # define DIR_CODE	2
 # define IND_CODE	3
-
-#define KNRM  "\x1B[0m"
-#define KRED  "\x1B[31m"
-#define KGRN  "\x1B[32m"
-#define KYEL  "\x1B[33m"
-#define KBLU  "\x1B[34m"
-#define KMAG  "\x1B[35m"
-#define KCYN  "\x1B[36m"
-#define KWHT  "\x1B[37m"
 
 #define MAX_ARGS_NUMBER	4
 #define MAX_PLAYERS		4
@@ -171,7 +162,7 @@ void			ft_fork(t_ins *ins, t_proc *proc);
 void			ft_sub(t_ins *ins, t_proc *proc);
 void			ft_add(t_ins *ins, t_proc *proc);
 void			load_arena(t_corewar *corewar);
-void			ft_print_arena(unsigned char *arena, t_corewar *corewar);
+void			ft_print_arena(unsigned char *arena);
 void			ft_lfork(t_ins *ins, t_proc *proc);
 void			ft_lldi(t_ins *ins, t_proc *proc);
 void			ft_lld(t_ins *ins, t_proc *proc);

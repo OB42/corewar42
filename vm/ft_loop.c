@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/14 23:33:44 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/15 04:30:13 by mlegeay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
 	return (proc);
 }
 
-void	ft_loop(t_corewar corewar)
+int		ft_loop(t_corewar corewar)
 {
 	t_proc *lst_proc;
 	int		test;
@@ -112,7 +112,8 @@ void	ft_loop(t_corewar corewar)
 		if (lst_proc == NULL || corewar.cycle > 7000)
 		{
 			ft_output_arena(corewar);
-			exit(1);
+			return (1);
 		}
 	}
+	return (0);
 }
