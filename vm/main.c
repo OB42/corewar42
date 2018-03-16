@@ -49,10 +49,20 @@ int main(int argc, char **argv)
 {
 	t_corewar	corewar;
 	t_ins			*instru;
+	int i;
 
+	i = 0;
 	instru = NULL;
 	corewar = ft_init_all(argc, argv);
 	load_arena(&corewar);
+
+	ft_printf("Introducing contestants...\n");
+	while (i < corewar.nb_champ)
+	{
+		ft_printf("* Player %i, weighing %i bytes, \"%s\" (\"%s\") !\n", i + 1, corewar.tab_champ[i].header.prog_size, corewar.tab_champ[i].header.prog_name, corewar.tab_champ[i].header.comment);
+		i++;
+	}
 	ft_loop(corewar);
+	ft_printf("Contestant %i, %s, has won !\n", corewar.last_live_id + 1, corewar.tab_champ[corewar.last_live_id].header.prog_name, corewar.tab_champ[corewar.last_live_id].header.comment);
 	return (0);
 }

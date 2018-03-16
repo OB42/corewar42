@@ -26,7 +26,7 @@ void	ft_val_proc(t_proc *lst_proc, t_corewar *corewar, int i, t_proc *init)
 	lst_proc->reg[1] = -lst_proc->player;
 	lst_proc->ins = NULL;
 	lst_proc->id = ft_get_procnb(lst_proc);
-	ft_printf("id = %d\n", lst_proc->id);
+//	ft_printf("id = %d\n", lst_proc->id);
 	lst_proc->champ = corewar->tab_champ[0];
 }
 

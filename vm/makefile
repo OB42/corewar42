@@ -49,10 +49,10 @@ clean :
 	rm -rf *.o
 	make clean -C LIBFT
 
-fclean : clean 
+fclean : clean
 	rm -rf $(NAME)
 	make fclean -C LIBFT
 
-re :	
+re :
 	make fclean
 	make
