@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/15 04:31:14 by mlegeay          ###   ########.fr       */
+/*   Updated: 2018/03/16 21:04:41 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,19 @@ typedef struct s_proc	t_proc;
 
 typedef struct s_ins	t_ins;
 
+typedef struct	s_par
+{
+	int type;
+	int val_type;
+	int value;
+}				t_par;
+
 struct	s_ins
 {
 	char	*name;
 	int		ocp;
 	int		param[3];
+	t_par	tab[3];
 	void	(*fun)(t_ins*, t_proc*);
 	int		size;
 	int		cycle;
@@ -139,19 +147,19 @@ struct	s_proc
 	int				last_live;
 	t_corewar		*corewar;
 	t_champ			champ;
-	int				reg[REG_NUMBER];
+	int				reg[REG_NUMBER + 1];
 	int				success;
 	struct s_proc	*nxt;
 };
 
 header_t		ft_get_header(int fd);
 t_champ			ft_get_champ(char *filename);
-void			ft_get_var(t_ins *ins, unsigned char *code_champ, unsigned char *init);
+void			ft_get_var(t_proc *proc, unsigned char *code_champ, unsigned char *init);
 t_ins			*ft_get_instru(unsigned char *code_champ, unsigned char *init);
 int				ft_get_int(unsigned char *code_champ, int size);
 unsigned char	*ft_get_ind(t_ins *ins, unsigned char *curseur, int n_param, unsigned char *init);
 unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param, unsigned char *init);
-unsigned char	*ft_get_reg(t_ins *ins, unsigned char *curseur, int n_param, unsigned char *init);
+unsigned char	*ft_get_reg(t_proc *proc, unsigned char *curseur, int n_param, unsigned char *init);
 int				ft_loop(t_corewar corewar);
 void			ft_live(t_ins *ins, t_proc *proc);
 void			ft_ld(t_ins *ins, t_proc *proc);
@@ -161,6 +169,7 @@ void			ft_sti(t_ins *ins, t_proc *proc);
 void			ft_fork(t_ins *ins, t_proc *proc);
 void			ft_sub(t_ins *ins, t_proc *proc);
 void			ft_add(t_ins *ins, t_proc *proc);
+void			ft_aff(t_ins *ins, t_proc *proc);
 void			load_arena(t_corewar *corewar);
 void			ft_print_arena(unsigned char *arena);
 void			ft_lfork(t_ins *ins, t_proc *proc);
@@ -176,13 +185,14 @@ int				ft_addlim(int decal);
 void			ft_print_proc(t_proc *proc);
 int				ft_get_procnb(t_proc *proc);
 void			ft_verbose(t_proc *proc);
-void			ft_write_ram(int value, int size, unsigned char *ram);
+void			ft_write_ram(int value, int size, unsigned char *ram, t_proc *proc);
 t_proc			*ft_del(t_proc *proc);
 t_proc			*ft_cycle_to_die(t_corewar *corewar, t_proc *proc);
 int				ft_val_ocp(int ocp, int param);
-void			ft_print_ocp(t_proc *proc);
+void			ft_print_ocp(t_proc *proc, int param1, int param2, int param3);
 int				ft_conv(int value, t_proc *proc);
 void			ft_print_nxt(unsigned char *init, unsigned char *curseur, int size);
 void			ft_update_ins(unsigned char *code_champ, unsigned char *init, t_proc *proc);
 void			ft_output_arena(t_corewar corewar);
 void			who_win(t_corewar *corewar);
+int				ft_decal(unsigned char *init, unsigned char *curseur, int decal);

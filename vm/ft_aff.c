@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sub.c                                           :+:      :+:    :+:   */
+/*   ft_aff.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/07 18:55:33 by mlegeay           #+#    #+#             */
-/*   Updated: 2018/03/16 16:10:30 by vburidar         ###   ########.fr       */
+/*   Created: 2018/03/16 16:16:23 by vburidar          #+#    #+#             */
+/*   Updated: 2018/03/16 17:04:35 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "op.h"
 
-void    ft_sub(t_ins *ins, t_proc *proc)
+void	ft_aff(t_ins *ins, t_proc *proc)
 {
-	proc->reg[ins->param[2]] =
-		proc->reg[ins->param[0]] -
-		proc->reg[ins->param[1]];
-	if (proc->reg[ins->param[2]] == 0)
-		proc->carry = 1;
-	else
-		proc->carry = 0;
+	proc->ins->param[1] = 0;
+	ft_printf("%c", ins->param[0] % 256);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }

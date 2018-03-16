@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_addlim.c                                        :+:      :+:    :+:   */
+/*   ft_print_value.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/09 14:37:31 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/16 21:02:10 by vburidar         ###   ########.fr       */
+/*   Created: 2018/03/16 18:26:26 by vburidar          #+#    #+#             */
+/*   Updated: 2018/03/16 18:33:01 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "LIBFT/libft.h"
-#include "op.h"
-
-int	ft_addlim (int decal)
+void	ft_print_value(int type, int val_type, t_proc *proc, int size)
 {
-	int ret;
-
-	ret = decal % MEM_SIZE;
-	if(ft_abs(ret) > IDX_MOD && ft_abs(MEM_SIZE - ret) > IDX_MOD)
-		ret = decal % IDX_MOD;
-	if (ft_abs(MEM_SIZE - ret) < IDX_MOD)
-		return (ret - MEM_SIZE);
+	if (type == 1)
+		ft_printf("%d", proc->reg[val_type]);
+	else if (type == 2)
+		ft_printf("%d", val_type);
 	else
-		return (ret);
+		ft_printf("%d", ft_get_int(ft_oob(proc->init,
+			proc->curseur + val_type), size));
 }

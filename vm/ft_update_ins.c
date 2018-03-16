@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 18:15:43 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/14 19:13:12 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/16 20:54:35 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_update_ins(unsigned char *code_champ, unsigned char *init,  t_proc *proc
 	else
 	{
 		proc->ins->ocp = *(code_champ + 1);
-		ft_get_var(proc->ins, code_champ + 2, init);
+		ft_get_var(proc, code_champ + 2, init);
 	}
+	//ft_printf("%d\n", proc->ins->param[1]);
 }

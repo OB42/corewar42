@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 18:49:00 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/14 22:09:38 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/16 18:58:16 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_print_ldi(t_proc *proc)
 	if (proc->ins->param[2] < REG_NUMBER && proc->ins->ocp > 115)
 	{
 		ft_printf("P%5d | %s", proc->id, proc->ins->name);
-		ft_print_ocp(proc);
+		ft_print_ocp(proc, 0, 0, 0);
 		ft_printf("\n       | -> load from %d + %d = %d (with pc and mod %d)\n", 
 				tmp1, tmp2, tmp1 + tmp2, proc->curseur - proc->init + tmp1 + tmp2);
 	}

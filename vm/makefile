@@ -18,6 +18,7 @@ SRC = main.c\
 	  ft_fork.c\
 	  ft_andorxor.c\
 	  ft_zjmp.c\
+	  ft_aff.c\
 	  ft_oob.c\
 	  ft_print_instru.c\
 	  ft_addlim.c\
@@ -28,7 +29,8 @@ SRC = main.c\
 	  ft_val_ocp.c\
 	  ft_print_nxt.c\
 	  ft_update_ins.c\
-	  ft_output_arena.c
+	  ft_output_arena.c\
+	  ft_and.c\
 
 
 OBJ = $(SRC:.c=.o)

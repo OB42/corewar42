@@ -6,31 +6,25 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 19:09:01 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/14 23:33:46 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/16 21:29:07 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "LIBFT/libft.h"
 #include "op.h"
 
-void	ft_print_sti(t_proc *proc)
+void	ft_print_sti(t_proc *proc, int val_1, int val_2)
 {
-	int tmp1;
-	int tmp2;
+	unsigned char *tmp;
 	
+	tmp = NULL;
 	if (ft_val_ocp(proc->ins->ocp, 0) == 1 && proc->success == 1)
 	{
-		tmp1 = ft_conv(proc->ins->param[1], proc);
-		tmp2 = proc->ins->param[2];
-		if (proc->ins->ocp & 4)
-		{
-			tmp2 = proc->reg[proc->ins->param[2]];
-			//ft_printf("reg[%d] = %d\n", proc->ins->param[2], tmp2);
-		}
 		ft_printf("P%5d | %s", proc->id, proc->ins->name);
-		ft_print_ocp(proc);
+		ft_print_ocp(proc, 0, 0, 0);
+		tmp = ft_oob(proc->init, proc->curseur + val_1 + val_2);
 		ft_printf("\n       | -> store to %d + %d = %d (with pc and mod %d)\n",
-				tmp1, tmp2, tmp1 + tmp2, proc->curseur - proc->init + tmp1 + tmp2);
+				val_1, val_2, val_1 + val_2, tmp - proc->init);
 	}
 	ft_print_instru(proc);
 }
@@ -38,34 +32,21 @@ void	ft_print_sti(t_proc *proc)
 void	ft_sti(t_ins *ins, t_proc *proc)
 {
 	int				val_1;
+	int				val_2;
 	unsigned char	*tmp;
 
 	val_1 = 0;
+	val_2 = 0;
 	proc->success = 1;
 	if (ft_val_ocp(ins->ocp, 0) == 1)
 	{
-		if ((ins->ocp & 0x20) && (ins->ocp & 0x10))
-			val_1 = *ft_oob(proc->init, proc->curseur + ins->param[1]);
-		else if (ins->ocp & 0x20)
-			val_1 = ins->param[1];
-		else if (ins->ocp & 0x10)
-			val_1 = proc->reg[ins->param[1]];
-		if (ins->ocp & 4)
-		{
-			//if (ins->param[2] < REG_SIZE)
-				tmp = ft_oob(proc->init, proc->curseur + val_1
-					+ proc->reg[ins->param[2]]);
-			//else
-			//{
-			//	proc->success = 0;
-			//	tmp = NULL;
-			//}
-		}
-		else
-			tmp = ft_oob(proc->init, proc->curseur + val_1 + ins->param[2]);
-		//if (proc->success == 1)
-			ft_write_ram(proc->reg[ins->param[0]], 4, tmp);
+		val_1 = ins->tab[1].val_type % MEM_SIZE;
+		val_1 = ft_decal(proc->init, proc->curseur, val_1);
+		val_2 = ins->tab[2].val_type % MEM_SIZE;
+		val_2 = ft_decal(proc->init, proc->curseur, val_2);
+		tmp = ft_oob(proc->init, proc->curseur + val_1 + val_2);
+		ft_write_ram(proc->reg[ins->param[0]], 4, tmp, proc);
 	}
-	ft_print_sti(proc);
+	ft_print_sti(proc, val_1, val_2);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }
