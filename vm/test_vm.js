@@ -42,6 +42,15 @@ var test = (files, err, stdout, stderr, callback) => {
 		zaz = zaz.split('\n');
 		var first_diff = -1;
 		var n_diff = 0;
+		var difo = {}
+		for (var i = 0; i < zaz.length && i < vburidar.length; i++)
+		{
+			if (zaz[i] != vburidar[i])
+			{
+				zaz[i] = `\x1b[31m${zaz[i]}\x1b[0m`;
+				vburidar[i] = `\x1b[31m${zaz[i]}\x1b[0m`;
+			}
+		}
 		for (var i = 0; i < zaz.length && i < vburidar.length; i++)
 		{
 			if (zaz[i] != vburidar[i])
@@ -50,8 +59,14 @@ var test = (files, err, stdout, stderr, callback) => {
 				if (first_diff == -1)
 				{
 					msg_arr.push(`First diff at line ${i}:`);
-					msg_arr.push(`Zaz:	${zaz[i]}`);
-					msg_arr.push(`Us:	${vburidar[i]}`);
+					msg_arr.push(`Zaz:`);
+					msg_arr.push('_______________________________');
+					msg_arr = msg_arr.concat(zaz.slice(i - 2, i + 3));
+					msg_arr.push('_______________________________');
+					msg_arr.push(`Us:`);
+					msg_arr.push('_______________________________');
+					msg_arr = msg_arr.concat(vburidar.slice(i - 2, i + 3));
+					msg_arr.push('_______________________________');
 					first_diff = i;
 				}
 			}
