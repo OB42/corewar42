@@ -105,14 +105,15 @@ void	ft_print_special(t_proc *proc)
 	}
 	if (ft_strcmp(proc->ins->name, "live") == 0)
 	{
-		ft_printf(" %d", proc->ins->param[0]);	
+		ft_printf(" %d", proc->ins->param[0]);
 		init = proc;
 		param = proc->ins->param[0];
 		while (proc->nxt != init && param != 100)
 		{
 			if (param == proc->reg[1])
 			{
-				ft_printf("\nPlayer %d (%s) is said to be alive", proc->player, proc->champ.header.prog_name);
+				ft_printf("\nPlayer %d (%s) is said to be alive",
+				-proc->ins->param[0], proc->corewar->tab_champ[-proc->ins->param[0] - 1].header.prog_name);
 				param = 100;
 			}
 			else
