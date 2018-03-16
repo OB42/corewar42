@@ -48,7 +48,7 @@ var test = (files, err, stdout, stderr, callback) => {
 			if (zaz[i] != vburidar[i])
 			{
 				zaz[i] = `\x1b[31m${zaz[i]}\x1b[0m`;
-				vburidar[i] = `\x1b[31m${zaz[i]}\x1b[0m`;
+				vburidar[i] = `\x1b[31m${vburidar[i]}\x1b[0m`;
 			}
 		}
 		for (var i = 0; i < zaz.length && i < vburidar.length; i++)
