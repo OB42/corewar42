@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 21:38:10 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/16 22:28:15 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/16 22:38:00 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_or(t_ins *ins, t_proc *proc)
 {
 	ft_print_or(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
-	proc->reg[ins->param[2]] = (ins->tab[0].val_type || ins->tab[1].val_type);
+	proc->reg[ins->param[2]] = (ins->tab[0].val_type | ins->tab[1].val_type);
 }
 
 
