@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 13:47:23 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/16 21:34:22 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/16 22:28:02 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,8 @@ int		ft_invalid_print(char *name)
 	if (ft_strcmp(name, "ld") == 0)
 		return (1);
 	if (ft_strcmp(name, "and") == 0)
+		return (1);
+	if (ft_strcmp(name, "or") == 0)
 		return (1);
 	return (0);
 }
