@@ -37,6 +37,11 @@ void	ft_print_or(t_proc *proc)
 	ft_print_instru(proc);
 }
 
+void	ft_print_xor(t_proc *proc)
+{
+	ft_print_or(proc);
+}
+
 void	ft_or(t_ins *ins, t_proc *proc)
 {
 	ft_print_or(proc);
@@ -74,4 +79,5 @@ void	ft_xor(t_ins *ins, t_proc *proc)
 		val2 = proc->reg[ins->param[1]];
 	proc->reg[ins->param[2]] = ((val1 || val2) && !(val1 && val2));
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
+	ft_print_xor(proc);
 }

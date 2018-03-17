@@ -55,8 +55,6 @@ unsigned char reverse(unsigned char b) {
 
 void ft_print_ocp_suite(t_proc *proc, int mask_1, int mask_2, int param, int type)
 {
-
-
 	if (proc->ins->ocp & mask_2 && proc->ins->ocp & mask_1
 			&& type)
 		ft_printf(" %d", proc->ins->tab[param].val_type);
@@ -160,6 +158,8 @@ int		ft_invalid_print(char *name)
 	if (ft_strcmp(name, "and") == 0)
 		return (1);
 	if (ft_strcmp(name, "or") == 0)
+		return (1);
+	if (ft_strcmp(name, "xor") == 0)
 		return (1);
 	return (0);
 }

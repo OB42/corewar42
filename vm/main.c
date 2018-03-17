@@ -63,6 +63,6 @@ int main(int argc, char **argv)
 		i++;
 	}
 	ft_loop(corewar);
-	ft_printf("Contestant %i, %s, has won !\n", corewar.last_live_id + 1, corewar.tab_champ[corewar.last_live_id].header.prog_name, corewar.tab_champ[corewar.last_live_id].header.comment);
+	ft_printf("Contestant %i, \"%s\", has won !\n", corewar.last_live_id + 1, corewar.tab_champ[corewar.last_live_id].header.prog_name, corewar.tab_champ[corewar.last_live_id].header.comment);
 	return (0);
 }
