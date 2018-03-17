@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:48:38 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/17 15:20:25 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/17 16:17:04 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,10 @@ void	ft_print_st(t_proc *proc)
 
 void	ft_st(t_ins *ins, t_proc *proc)
 {
-	unsigned char *tmp;
+	unsigned char	*tmp;
+	int				value;
 
+	value = proc->ins->param[1];
 	if (proc->ins->ocp == 80 || proc->ins->ocp == 112)
 	{
 		if (ins->param[0] == 0)
@@ -46,7 +48,9 @@ void	ft_st(t_ins *ins, t_proc *proc)
 			proc->carry = 0;
 		if ((ins->ocp & 0x20) && (ins->ocp & 0x10))
 		{
-			tmp = ft_oob(proc->init, proc->curseur + ins->param[1] % IDX_MOD);
+			if (value > 37768)
+				value -= 65536;
+			tmp = ft_oob(proc->init, proc->curseur + value % IDX_MOD);
 			ft_write_ram(proc->reg[ins->param[0]], 4, tmp, proc);
 		}
 		else
