@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 18:49:00 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/17 11:18:17 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/17 11:24:01 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_print_ldi(t_proc *proc)
 		ft_print_ocp(proc, 1, 1, 0);
 		ft_printf("\n       | -> load from %d + %d = %d (with pc and mod %d)\n",
 				val_1, val_2, val_1 + val_2,
-				ft_oob(proc->init , proc->curseur + val_1 + val_2) - proc->init);
+				ft_oob(proc->init , proc->curseur + (val_1 + val_2) % IDX_MOD) - proc->init);
 	}
 	ft_print_instru(proc);
 }
@@ -39,7 +39,7 @@ void	ft_ldi(t_ins *ins, t_proc *proc)
 
 	val_1 = proc->ins->tab[0].val_type;
 	val_2 = proc->ins->tab[1].val_type;
-	tmp = ft_oob(proc->init, proc->curseur + val_1 + val_2);
+	tmp = ft_oob(proc->init, proc->curseur + (val_1 + val_2) % IDX_MOD);
 	if (proc->ins->param[2] < REG_NUMBER && proc->ins->ocp > 115)
 		proc->reg[ins->param[2]] = ft_get_int(ft_oob(proc->init, tmp), REG_SIZE);
 	ft_print_ldi(proc);

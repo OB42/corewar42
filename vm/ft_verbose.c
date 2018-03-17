@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 13:47:23 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/16 22:28:02 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/17 11:31:50 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,41 +71,10 @@ void ft_print_ocp_suite(t_proc *proc, int mask_1, int mask_2, int param, int typ
 
 void ft_print_ocp(t_proc *proc, int param1, int param2, int param3)
 {
-	if (proc->corewar->cycle == 945)
-	{
-		//
-		//2   1  0
-		//0   2  4
-		//
-		//6	  4  2
-		//01 01 10 00
-		//00 10 10 00
-		///ocp = ocp << (4 - param * 2);
-	//	ocp = ocp >> 6;
-	//	ft_printf("(%i %hhu %i %i)", param, ocp, (4 - param * 2), ((param + 1) * 2));
-//		proc->ins->ocp = ocp;
-
-	}
 	ft_print_ocp_suite(proc, 0x40, 0x80, 0, param1);
 	ft_print_ocp_suite(proc, 0x10, 0x20, 1, param2);
 	ft_print_ocp_suite(proc, 0x4, 0x8, 2, param3);
-	/*if (proc->ins->ocp & 0x80)
-		ft_printf(" %d", ft_conv(proc->ins->param[0], proc));
-	else if (proc->ins->ocp & 0x40 && param1 == 1)
-		ft_printf(" r%d", proc->ins->param[0]);
-	else if (proc->ins->ocp & 0x40 && param1 == 0)
-		ft_printf(" %d", proc->reg[proc->ins->param[0]]);
-	if (proc->ins->ocp & 0x20)
-		ft_printf(" %d", ft_conv(proc->ins->param[1], proc));
-	else if (proc->ins->ocp & 0x10)
-		ft_printf(" r%d", proc->ins->param[1]);
-	if (proc->ins->ocp & 0x8)
-		ft_printf(" %d", ft_conv(proc->ins->param[2], proc));
-	else if (proc->ins->ocp & 0x4 && ft_strcmp(proc->ins->name, "sti"))
-		ft_printf(" r%d", proc->ins->param[2]);
-	else if (ft_strcmp(proc->ins->name, "sti") == 0 && (proc->ins->ocp & 4))
-		ft_printf(" %d", proc->reg[proc->ins->param[2]]);
-*/}
+}
 
 void	ft_print_special(t_proc *proc)
 {
@@ -160,6 +129,8 @@ int		ft_invalid_print(char *name)
 	if (ft_strcmp(name, "or") == 0)
 		return (1);
 	if (ft_strcmp(name, "xor") == 0)
+		return (1);
+	if (ft_strcmp(name, "add") == 0)
 		return (1);
 	return (0);
 }
