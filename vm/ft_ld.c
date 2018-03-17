@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:57:09 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/17 12:21:35 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/17 12:30:48 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,21 +39,22 @@ void	ft_ld(t_ins *ins, t_proc *proc)
 	}
 	else
 		ins->size = 1;
-	//ft_printf("reg[%d] = %d\n", ins->param[1], proc->reg[ins->param[1]]);
 	ft_print_ld(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }
 
 void	ft_lld(t_ins *ins, t_proc *proc)
 {
-	if ((ins->ocp & 0x80) && (ins->ocp & 0x40))
-		proc->reg[ins->param[1]] = *(ft_oob(proc->init, proc->curseur
-		+ ins->param[0] % MEM_SIZE));
-	else
-		proc->reg[ins->param[1]] = ins->param[0];
-	if (ins->param[0] == 0)
-		proc->carry = 1;
-	else
-		proc->carry = 0;
+	int val_1;
+
+	if ((ins->ocp == 144 || ins->ocp == 208) && ins->param[1] < REG_NUMBER + 1)
+	{
+		val_1 = ft_decal(proc->init, proc->curseur, ins->tab[0].val_type);
+		proc->reg[ins->param[1]] = ins->tab[0].val_type;
+		if (ins->tab[0].val_type == 0)
+			proc->carry = 1;
+		else
+			proc->carry = 0;
+	}
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }
