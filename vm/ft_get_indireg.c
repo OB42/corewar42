@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 20:54:24 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/16 22:09:07 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/17 12:18:57 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param,
 		ins->size = ins->size + 2;
 		ins->param[n_param] = 256 * *(curseur) + *(curseur + 1);
 		ins->tab[n_param].val_type = ins->param[n_param];
+		ins->tab[n_param].type = 2;
 		return (ft_oob(init, curseur + 2));
 	}
 	else
@@ -58,6 +59,7 @@ unsigned char	*ft_get_reg(t_proc *proc, unsigned char *curseur, int n_param,
 	proc->ins->param[n_param] = *curseur;
 	if (proc->ins->param[n_param] < REG_NUMBER + 1)
 		proc->ins->tab[n_param].val_type = proc->reg[proc->ins->param[n_param]];
+	proc->ins->tab[n_param].type = 1;
 	proc->ins->size = proc->ins->size + 1;
 	return (ft_oob(init, curseur + 1));
 }
