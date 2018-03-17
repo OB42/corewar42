@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 18:11:38 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/16 15:18:11 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/17 16:44:05 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ t_proc	*ft_cycle_to_die(t_corewar *corewar, t_proc *proc)
 	while (proc && id > proc->id)
 	{
 		id = proc->id;
+		//ft_printf(" %d, live = %d, last_live = %d\n", proc->id, proc->live, proc->last_live);
 		if (proc->live == 0)
 		{
 			ft_printf("Process %d hasn't lived for %d cycles (CTD %d)\n", proc->id,
-				proc->last_live, corewar->ctd_obj);
+				proc->last_live + 1, corewar->ctd_obj);
 			proc = ft_del(proc);
 		}
 		else
@@ -48,5 +49,6 @@ t_proc	*ft_cycle_to_die(t_corewar *corewar, t_proc *proc)
 		return (proc);
 	while (proc->id < ft_get_procnb(proc) - 1)
 		proc = proc->nxt;
+	//ft_printf("fin ctd courrant = %d ctd obj = %d\n", corewar->ctd_cur, corewar->ctd_obj);
 	return (proc);
 }

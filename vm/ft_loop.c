@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/16 20:31:20 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/17 16:47:42 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_val_proc(t_proc *lst_proc, t_corewar *corewar, int i, t_proc *init)
 {
 	ft_bzero(lst_proc, sizeof(t_proc));
 	lst_proc->curseur = corewar->arena + i * (MEM_SIZE / corewar->nb_champ);
-	lst_proc->live = 1;
+	lst_proc->live = 0;
 	lst_proc->init = corewar->arena;
 	lst_proc->corewar = corewar;
 	lst_proc->nxt = init;
@@ -88,18 +88,15 @@ int		ft_loop(t_corewar corewar)
 	{
 		test = 0;
 		lst_proc = ft_cycle(lst_proc, &corewar);
-		if (lst_proc == NULL)
-			exit(1);
+		if (lst_proc == NULL || corewar.ctd_obj < 0)
+			return (1);
 		if (lst_proc->cycle > 1 && lst_proc->cycle == lst_proc->ins->cycle)
 		{
-			//system("clear");
-			//ft_print_arena(corewar.arena);
 			ft_update_ins(lst_proc->curseur, lst_proc->init, lst_proc);
 			ft_verbose(lst_proc);
 			(lst_proc->ins->fun)(lst_proc->ins, lst_proc);
 			lst_proc->cycle = 0;
 			test = 1;
-			//ft_print_nxt(lst_proc->init, lst_proc->curseur, 200);
 		}
 		if (lst_proc->cycle <= 1)
 			lst_proc->ins = ft_get_instru(lst_proc->curseur, lst_proc->init);
@@ -109,12 +106,6 @@ int		ft_loop(t_corewar corewar)
 			lst_proc->cycle = 0;
 		}
 		lst_proc = lst_proc->nxt;
-		if (lst_proc == NULL || corewar.ctd_obj < 0 || corewar.cycle == CYCLE_TO_DIE/*|| corewar.cycle > 5000*/)
-		{
-			ft_cycle_to_die(&corewar, lst_proc);
-			ft_output_arena(corewar);
-			return (1);
-		}
 	}
-	return (0);
+	return (1);
 }
