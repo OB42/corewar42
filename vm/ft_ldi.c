@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 18:49:00 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/16 18:58:16 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/17 11:18:17 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,18 @@
 
 void	ft_print_ldi(t_proc *proc)
 {
-	int tmp1;
-	int tmp2;
+	int val_1;
+	int val_2;
 
-	tmp1 = ft_conv(proc->ins->param[0], proc);
-	tmp2 = ft_conv(proc->ins->param[1], proc);
-	if (proc->ins->param[2] < REG_NUMBER && proc->ins->ocp > 115)
+	val_1 = proc->ins->tab[0].val_type;
+	val_2 = proc->ins->tab[1].val_type;
+	if (proc->ins->param[2] < REG_NUMBER)
 	{
 		ft_printf("P%5d | %s", proc->id, proc->ins->name);
-		ft_print_ocp(proc, 0, 0, 0);
+		ft_print_ocp(proc, 1, 1, 0);
 		ft_printf("\n       | -> load from %d + %d = %d (with pc and mod %d)\n",
-				tmp1, tmp2, tmp1 + tmp2, proc->curseur - proc->init + tmp1 + tmp2);
+				val_1, val_2, val_1 + val_2,
+				ft_oob(proc->init , proc->curseur + val_1 + val_2) - proc->init);
 	}
 	ft_print_instru(proc);
 }
@@ -36,13 +37,11 @@ void	ft_ldi(t_ins *ins, t_proc *proc)
 	int val_2;
 	unsigned char *tmp;
 
-	val_1 = ft_addlim(proc->ins->param[0]);
-	val_2 = ft_addlim(proc->ins->param[1]);
-	tmp = ft_oob(proc->init, proc->curseur + ft_addlim(val_1) + ft_addlim(val_2));
+	val_1 = proc->ins->tab[0].val_type;
+	val_2 = proc->ins->tab[1].val_type;
+	tmp = ft_oob(proc->init, proc->curseur + val_1 + val_2);
 	if (proc->ins->param[2] < REG_NUMBER && proc->ins->ocp > 115)
-	{
-		proc->reg[ins->param[2]] = ft_get_int(ft_oob(proc->init, proc->curseur + val_1 + val_2), REG_SIZE);
-	}
+		proc->reg[ins->param[2]] = ft_get_int(ft_oob(proc->init, tmp), REG_SIZE);
 	ft_print_ldi(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }
