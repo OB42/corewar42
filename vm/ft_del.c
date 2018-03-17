@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 14:53:49 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/14 22:12:53 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/17 16:55:47 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ t_proc	*ft_del(t_proc *lst_proc)
 	curseur = lst_proc;
 	while (curseur->nxt->id != lst_proc->id)
 		curseur = curseur->nxt;
-	curseur->nxt = lst_proc->nxt;
-	if (curseur->nxt == curseur)
+	if (curseur == lst_proc)
 		return (NULL);
-	else
-		return (curseur->nxt);
+	curseur->nxt = lst_proc->nxt;
+	return (curseur->nxt);
 }
