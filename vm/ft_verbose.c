@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 13:47:23 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/17 12:52:42 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/17 13:44:46 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void ft_print_ocp_suite(t_proc *proc, int mask_1, int mask_2, int param, int typ
 		ft_printf(" %d", ft_decal(proc->init,
 			proc->curseur, proc->ins->param[param]));
 	else if (proc->ins->ocp & mask_2)
-		ft_printf(" %d", proc->ins->param[param], proc);
+		ft_printf(" %d", proc->ins->tab[param].val_type, proc);
 	else if (proc->ins->ocp & mask_1 && type)
 		ft_printf(" %d", proc->ins->tab[param].val_type);
 	else if (proc->ins->ocp & mask_1)
@@ -133,6 +133,8 @@ int		ft_invalid_print(char *name)
 	if (ft_strcmp(name, "add") == 0)
 		return (1);
 	if (ft_strcmp(name, "fork") == 0)
+		return (1);
+	if (ft_strcmp(name, "zjmp") == 0)
 		return (1);
 	return (0);
 }
