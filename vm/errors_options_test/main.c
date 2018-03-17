@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 13:06:45 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/17 19:39:17 by rthys            ###   ########.fr       */
+/*   Updated: 2018/03/17 20:39:16 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ t_corewar		ft_init_all(int argc, char **argv)
 		else
 			corewar.tab_champ[++champ] = ft_get_champ(argv[i++], &corewar);
 	}
+	corewar.ctd_obj = CYCLE_TO_DIE;
 	return (corewar);
 }
 
