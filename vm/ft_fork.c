@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 20:35:25 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/14 23:22:09 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/17 13:03:59 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,14 @@ t_proc	*ft_find_init(t_proc *proc)
 }
 
 
+void	ft_print_fork(t_ins *ins, t_proc *proc)
+{
+	ft_printf("P%5d | %s", proc->id, proc->ins->name);
+	ft_printf(" %d", ins->param[0]);
+	ft_printf(" (%d)\n", ft_oob(proc->init, proc->curseur + ins->param[0]) - proc->init);
+	ft_print_instru(proc);
+}
+
 void	ft_fork(t_ins *ins, t_proc *proc)
 {
 	t_proc *new;
@@ -68,6 +76,7 @@ void	ft_fork(t_ins *ins, t_proc *proc)
 	init->nxt = new;
 	new->ins = NULL;
 	new->cycle = 0;
+	ft_print_fork(ins, proc);
 	proc->curseur = proc->curseur + 3;
 	new->ins = ft_get_instru(new->curseur, proc->init);
 }
