@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:48:38 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/16 18:02:35 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/17 14:07:51 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,8 @@ void	ft_print_st(t_proc *proc)
 	if (proc->ins->ocp == 80 || proc->ins->ocp == 112)
 	{
 		ft_printf("P%5d | %s", proc->id, proc->ins->name);
-		ft_printf(" r%d", proc->ins->param[0]);
-		if (proc->ins->ocp == 80)
-			ft_printf(" %d\n", proc->ins->param[1]);
-		else
-			ft_printf(" %d\n", ft_addlim(proc->ins->param[1]));
+		ft_printf(" r%d %d", proc->ins->param[0], proc->ins->param[1]);
+		ft_printf("\n");
 	}
 	else
 		proc->ins->size = 1;
