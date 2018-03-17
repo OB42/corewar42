@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 13:47:23 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/17 15:27:30 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/17 16:01:56 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	ft_print_special(t_proc *proc)
 	t_proc	*init;
 	int		param;
 
+	param = 0;
 	if (ft_strcmp(proc->ins->name, "live") == 0)
 	{
 		ft_printf(" %d", proc->ins->param[0]);
@@ -94,6 +95,8 @@ int		ft_invalid_print(char *name)
 		return (1);
 	if (ft_strcmp(name, "lld") == 0)
 		return (1);
+	if (ft_strcmp(name, "live") == 0)
+		return (1);
 	return (0);
 }
 
@@ -104,7 +107,7 @@ void	ft_verbose(t_proc *proc)
 		ft_printf("P%5d | %s", proc->id, proc->ins->name);
 		ft_print_ocp(proc, 0, 0, 0);
 		if (proc->ins->ocp == 0 && ft_strcmp("live", proc->ins->name) != 0)
-			ft_printf(" %d", ft_conv(proc->ins->param[0], proc));
+			ft_printf(" %d", proc->ins->param[0], proc);
 		ft_print_special(proc);
 		if (ft_strcmp(proc->ins->name, "zjmp") != 0 && ft_strcmp(proc->ins->name, "sti") != 0)
 		{
