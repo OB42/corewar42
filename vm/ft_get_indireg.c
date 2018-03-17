@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 20:54:24 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/17 12:18:57 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/17 13:33:25 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param,
 		ins->param[n_param] = 256 * *(curseur) + *(curseur + 1);
 		ins->tab[n_param].val_type = ins->param[n_param];
 		ins->tab[n_param].type = 2;
+		if (ins->tab[n_param].val_type	> 32768)
+			ins->tab[n_param].val_type -= 65536;
 		return (ft_oob(init, curseur + 2));
 	}
 	else
