@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:22:00 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/17 16:51:55 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/17 17:01:44 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_print_live(t_proc *proc)
 	int param;
 
 	param = proc->ins->param[0];
+	if (param == 0)
+		param = 999999;
 	ft_printf("P%5d | %s %d\n", proc->id, proc->ins->name, proc->ins->param[0]);
 	if (proc->ins->param[0] > 2147483647)
 		proc->ins->tab[0].val_type -= 4294967295;
