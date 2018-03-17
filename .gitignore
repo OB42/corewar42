@@ -2,4 +2,4 @@
 *.a
 asm/mine/*.cor
 asm/asm
-corewar/corewar
+vm/corewar

@@ -88,7 +88,7 @@ t_ins	*ft_get_instru(unsigned char *code_champ, unsigned char *init)
 		if (op_tab[(int)*(code_champ) - 1].ocp == 1)
 		{
 			ins->size = ins->size + 1;
-			ins->ocp = (int) *(code_champ + 1);
+			ins->ocp = /*(int)*/ *(code_champ + 1);
 			init++;
 		}
 		else

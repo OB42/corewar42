@@ -89,7 +89,7 @@ var test = (files, err, stdout, stderr, callback) => {
 		pass(msg_arr, `${files[0]} vs ${files[1]}`, files[2]);
 	callback();
 };
-exec(`rm errors/*; make -C ../asm; ${c.filter(x => !(fs.existsSync('../asm/mine/' +x))).map(x => `../asm/asm ../asm/mine/${x.replace('.cor', '.s')}`).join(';')}; make fclean -C ../asm`, () => {
+exec(`rm errors/*; make -C ../asm; ${c.filter(x => !(fs.existsSync('../asm/mine/' +x))).map(x => `../asm/asm ../asm/mine/${x.replace('.cor', '.s')}`).join(';')}`, () => {
 	exec(`make`, (err, stdout, stderr) => {
 		if (stderr.length)
 			return (console.log(stderr));

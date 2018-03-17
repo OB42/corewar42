@@ -109,7 +109,7 @@ int		ft_loop(t_corewar corewar)
 			lst_proc->cycle = 0;
 		}
 		lst_proc = lst_proc->nxt;
-		if (lst_proc == NULL || corewar.ctd_obj < 0 || corewar.cycle > 150)
+		if (lst_proc == NULL || corewar.ctd_obj < 0 /*|| corewar.cycle > 5000*/)
 		{
 			ft_output_arena(corewar);
 			return (1);

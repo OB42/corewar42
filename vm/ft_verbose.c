@@ -46,9 +46,17 @@ int		ft_conv(int param, t_proc *proc)
 	}
 	return (param);
 }
+unsigned char reverse(unsigned char b) {
+   b = (b & 0xF0) >> 4 | (b & 0x0F) << 4;
+   b = (b & 0xCC) >> 2 | (b & 0x33) << 2;
+   b = (b & 0xAA) >> 1 | (b & 0x55) << 1;
+   return b;
+}
 
 void ft_print_ocp_suite(t_proc *proc, int mask_1, int mask_2, int param, int type)
 {
+
+
 	if (proc->ins->ocp & mask_2 && proc->ins->ocp & mask_1
 			&& type)
 		ft_printf(" %d", proc->ins->tab[param].val_type);
@@ -65,6 +73,21 @@ void ft_print_ocp_suite(t_proc *proc, int mask_1, int mask_2, int param, int typ
 
 void ft_print_ocp(t_proc *proc, int param1, int param2, int param3)
 {
+	if (proc->corewar->cycle == 945)
+	{
+		//
+		//2   1  0
+		//0   2  4
+		//
+		//6	  4  2
+		//01 01 10 00
+		//00 10 10 00
+		///ocp = ocp << (4 - param * 2);
+	//	ocp = ocp >> 6;
+	//	ft_printf("(%i %hhu %i %i)", param, ocp, (4 - param * 2), ((param + 1) * 2));
+//		proc->ins->ocp = ocp;
+
+	}
 	ft_print_ocp_suite(proc, 0x40, 0x80, 0, param1);
 	ft_print_ocp_suite(proc, 0x10, 0x20, 1, param2);
 	ft_print_ocp_suite(proc, 0x4, 0x8, 2, param3);

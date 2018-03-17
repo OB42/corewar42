@@ -16,12 +16,13 @@
 void	ft_print_sti(t_proc *proc, int val_1, int val_2)
 {
 	unsigned char *tmp;
-	
+
 	tmp = NULL;
 	if (ft_val_ocp(proc->ins->ocp, 0) == 1 && proc->success == 1)
 	{
 		ft_printf("P%5d | %s", proc->id, proc->ins->name);
-		ft_print_ocp(proc, 0, 0, 0);
+//		ft_print_ocp(proc, 0, 0, 0);
+		ft_printf(" r%d %d %d", proc->ins->param[0], val_1, val_2);
 		tmp = ft_oob(proc->init, proc->curseur + val_1 + val_2);
 		ft_printf("\n       | -> store to %d + %d = %d (with pc and mod %d)\n",
 				val_1, val_2, val_1 + val_2, tmp - proc->init);
