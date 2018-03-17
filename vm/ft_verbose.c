@@ -6,46 +6,13 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 13:47:23 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/17 14:27:50 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/17 15:27:30 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "LIBFT/libft.h"
 #include "op.h"
 
-int		ft_valid_instru(char *name)
-{
-	if (ft_strcmp(name, "sti") == 0)
-		return (1);
-	if (ft_strcmp(name, "zjmp") == 0)
-		return (1);
-	if (ft_strcmp(name, "fork") == 0)
-		return (1);
-	if (ft_strcmp(name, "live") == 0)
-		return (1);
-	if (ft_strcmp(name, "ldi") == 0)
-		return (1);
-	return (0);
-}
-
-int		ft_conv(int param, t_proc *proc)
-{
-	int ret;
-
-	if (ft_valid_instru(proc->ins->name))
-	{
-		ret = param % MEM_SIZE;
-		if (ft_strcmp(proc->ins->name, "live") == 0)
-			return ((char) ret);
-		if(ft_abs(ret) > IDX_MOD && ft_abs(MEM_SIZE - ret) > IDX_MOD)
-			ret = param % IDX_MOD;
-		if (ft_abs(MEM_SIZE - ret) < IDX_MOD)
-				return (ret - MEM_SIZE);
-		else
-			return (ret);
-	}
-	return (param);
-}
 unsigned char reverse(unsigned char b) {
    b = (b & 0xF0) >> 4 | (b & 0x0F) << 4;
    b = (b & 0xCC) >> 2 | (b & 0x33) << 2;
@@ -80,18 +47,6 @@ void	ft_print_special(t_proc *proc)
 	t_proc	*init;
 	int		param;
 
-	if (ft_strcmp(proc->ins->name, "fork") == 0)
-		ft_printf(" (%d)", proc->curseur - proc->init + ft_conv(proc->ins->param[0], proc));
-	if (ft_strcmp(proc->ins->name, "zjmp") == 0)
-	{
-		if (proc->carry == 1)
-			ft_printf(" OK\n");
-		else
-		{
-			ft_printf(" FAILED\n");
-			ft_print_instru(proc);
-		}
-	}
 	if (ft_strcmp(proc->ins->name, "live") == 0)
 	{
 		ft_printf(" %d", proc->ins->param[0]);
