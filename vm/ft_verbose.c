@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 13:47:23 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/17 14:21:43 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/17 14:27:50 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,8 @@ int		ft_invalid_print(char *name)
 	if (ft_strcmp(name, "add") == 0)
 		return (1);
 	if (ft_strcmp(name, "fork") == 0)
+		return (1);
+	if (ft_strcmp(name, "lfork") == 0)
 		return (1);
 	if (ft_strcmp(name, "zjmp") == 0)
 		return (1);
