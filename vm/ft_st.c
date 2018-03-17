@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:48:38 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/17 15:11:57 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/17 15:20:25 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_st(t_ins *ins, t_proc *proc)
 			proc->carry = 0;
 		if ((ins->ocp & 0x20) && (ins->ocp & 0x10))
 		{
-			tmp = ft_oob(proc->init, proc->curseur + ft_addlim(ins->param[1]));
+			tmp = ft_oob(proc->init, proc->curseur + ins->param[1] % IDX_MOD);
 			ft_write_ram(proc->reg[ins->param[0]], 4, tmp, proc);
 		}
 		else
