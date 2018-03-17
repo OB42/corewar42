@@ -75,7 +75,7 @@ void	ft_fork(t_ins *ins, t_proc *proc)
 	t_proc *new;
 	t_proc	*init;
 
-	new = malloc(sizeof(t_proc));
+	new = pr_malloc(sizeof(t_proc));
 	new = ft_memmove(new, proc, sizeof(t_proc));
 	new->curseur = ft_oob(proc->init, proc->curseur + ins->param[0] % IDX_MOD);
 	new->id = ft_get_procnb(proc);
@@ -94,7 +94,7 @@ void	ft_lfork(t_ins *ins, t_proc *proc)
 	t_proc *new;
 	t_proc	*init;
 
-	new = malloc(sizeof(t_proc));
+	new = pr_malloc(sizeof(t_proc));
 	new = ft_memmove(new, proc, sizeof(t_proc));
 	new->curseur = ft_oob(proc->init, proc->curseur + ins->param[0] % MEM_SIZE);
 	new->id = ft_get_procnb(proc);

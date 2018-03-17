@@ -67,7 +67,7 @@ t_champ		ft_get_champ(char *filename)
 	}
 	champ.header = ft_get_header(fd);
 	val_read = read(fd, &code, champ.header.prog_size);
-	if (!(champ.code = malloc(champ.header.prog_size * sizeof(char))))
+	if (!(champ.code = pr_malloc(champ.header.prog_size * sizeof(char))))
 		exit(1);
 	ft_ncpy(champ.code, code, champ.header.prog_size);
 	return (champ);

@@ -80,7 +80,7 @@ t_ins	*ft_get_instru(unsigned char *code_champ, unsigned char *init)
 	op_tab = ft_get_op_tab();
 	if (ft_is_instruc(*code_champ))
 	{
-		ins = malloc(sizeof(t_ins));
+		ins = pr_malloc(sizeof(t_ins));
 		ft_bzero(ins, sizeof(t_ins));
 		ins->name = op_tab[(int)*(code_champ) - 1].name;
 		ins->fun = op_tab[(int)*(code_champ) - 1].fun;

@@ -14,9 +14,11 @@
  * les tailles sont en octets.
  * ** On part du principe qu'un int fait 32 bits. Est-ce vrai chez vous ?
  * */
-
+# ifndef OP_H
+# define OP_H
 #include "LIBFT/libft.h"
-
+#include <stdlib.h>
+#include <unistd.h>
 #define IND_SIZE	2
 #define REG_SIZE	4
 #define DIR_SIZE	REG_SIZE
@@ -152,6 +154,8 @@ struct	s_proc
 	struct s_proc	*nxt;
 };
 
+void			*pr_malloc(size_t n);
+void			pr_free(void *p);
 header_t		ft_get_header(int fd);
 t_champ			ft_get_champ(char *filename);
 void			ft_get_var(t_proc *proc, unsigned char *code_champ, unsigned char *init);
@@ -196,3 +200,4 @@ void			ft_update_ins(unsigned char *code_champ, unsigned char *init, t_proc *pro
 void			ft_output_arena(t_corewar corewar);
 void			who_win(t_corewar *corewar);
 int				ft_decal(unsigned char *init, unsigned char *curseur, int decal);
+#endif

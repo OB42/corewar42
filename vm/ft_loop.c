@@ -37,7 +37,7 @@ t_proc	*ft_init_proc(t_corewar *corewar)
 	int		i;
 
 	i = 0;
-	if (!(lst_proc = malloc(sizeof(t_proc))))
+	if (!(lst_proc = pr_malloc(sizeof(t_proc))))
 		exit(1);
 	init = lst_proc;
 	lst_proc->id = 0;
@@ -45,7 +45,7 @@ t_proc	*ft_init_proc(t_corewar *corewar)
 	i++;
 	while(corewar->tab_champ[i].code)
 	{
-		if (!(lst_proc->nxt = malloc(sizeof(t_proc))))
+		if (!(lst_proc->nxt = pr_malloc(sizeof(t_proc))))
 			exit(1);
 		lst_proc = lst_proc->nxt;
 		ft_val_proc(lst_proc, corewar, i, init);
