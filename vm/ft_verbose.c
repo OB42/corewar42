@@ -69,34 +69,18 @@ void	ft_print_special(t_proc *proc)
 
 int		ft_invalid_print(char *name)
 {
-	if (ft_strcmp(name, "sti") == 0)
-		return (1);
-	if (ft_strcmp(name, "st") == 0)
-		return (1);
-	if (ft_strcmp(name, "ldi") == 0)
-		return (1);
-	if (ft_strcmp(name, "lldi") == 0)
-		return (1);
-	if (ft_strcmp(name, "ld") == 0)
-		return (1);
-	if (ft_strcmp(name, "and") == 0)
-		return (1);
-	if (ft_strcmp(name, "or") == 0)
-		return (1);
-	if (ft_strcmp(name, "xor") == 0)
-		return (1);
-	if (ft_strcmp(name, "add") == 0)
-		return (1);
-	if (ft_strcmp(name, "fork") == 0)
-		return (1);
-	if (ft_strcmp(name, "lfork") == 0)
-		return (1);
-	if (ft_strcmp(name, "zjmp") == 0)
-		return (1);
-	if (ft_strcmp(name, "lld") == 0)
-		return (1);
-	if (ft_strcmp(name, "live") == 0)
-		return (1);
+	static char *a[14] = {
+		"sti", "st", "ldi", "lldi", "ld", "and", "or", "xor", "add",
+	"fork", "lfork", "zjmp", "lld", "live"
+	};
+	int i;
+
+	i = 0;
+	while (i < 14)
+	{
+		if (!(ft_strcmp(name, a[i++])))
+			return (1);
+	}
 	return (0);
 }
 
