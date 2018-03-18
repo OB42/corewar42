@@ -19,15 +19,15 @@
 void	ft_output_arena(t_corewar *corewar)
 {
 	int i;
-	int fd;
 
-	fd = open("dumpv", O_WRONLY);
 	i = 0;
 	while (i < MEM_SIZE)
 	{
 		if (i % 64 == 0)
-			ft_printfd(fd, "\n0x%04x : ", i);
-		ft_printfd(fd, "%02x ", corewar->arena[i]);
+			ft_printf("%s0x%04x : ", i ? "\n" : "", i);
+		ft_printf("%02x ", corewar->arena[i]);
 		i++;
 	}
+	ft_printf("\n");
+	exit(0);
 }
