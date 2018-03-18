@@ -78,17 +78,17 @@ t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
 	return (proc);
 }
 
-int		ft_loop(t_corewar corewar)
+int		ft_loop(t_corewar *corewar)
 {
 	t_proc *lst_proc;
 	int		test;
 
-	lst_proc = ft_init_proc(&corewar);
+	lst_proc = ft_init_proc(corewar);
 	while (lst_proc)
 	{
 		test = 0;
-		lst_proc = ft_cycle(lst_proc, &corewar);
-		if (lst_proc == NULL || corewar.ctd_obj < 0)
+		lst_proc = ft_cycle(lst_proc, corewar);
+		if (lst_proc == NULL || corewar->ctd_obj < 0)
 			return (1);
 		if (lst_proc->cycle > 1 && lst_proc->cycle == lst_proc->ins->cycle)
 		{

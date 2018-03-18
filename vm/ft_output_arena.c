@@ -16,7 +16,7 @@
 #include "LIBFT/libft.h"
 #include "op.h"
 
-void	ft_output_arena(t_corewar corewar)
+void	ft_output_arena(t_corewar *corewar)
 {
 	int i;
 	int fd;
@@ -27,7 +27,7 @@ void	ft_output_arena(t_corewar corewar)
 	{
 		if (i % 64 == 0)
 			ft_printfd(fd, "\n0x%04x : ", i);
-		ft_printfd(fd, "%02x ", corewar.arena[i]);
+		ft_printfd(fd, "%02x ", corewar->arena[i]);
 		i++;
 	}
 }

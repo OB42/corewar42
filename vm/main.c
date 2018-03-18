@@ -28,21 +28,24 @@ void	ft_print_code(t_champ champ)
 	}
 }
 
-t_corewar	ft_init_all(int argc, char **argv)
+void	ft_init_all(int argc, char **argv, t_corewar *corewar)
 {
 	int i;
-	t_corewar	corewar;
 
 	i = 1;
-	ft_bzero(&corewar, sizeof(t_corewar));
+	if (argc < 2)
+	{
+		write(2, "Usage: ./corewar blablabla\n", 27);
+		exit(1);
+	}
+	ft_bzero(corewar, sizeof(t_corewar));
 	while (i < argc)
 	{
-		corewar.tab_champ[i - 1] = ft_get_champ(argv[i]);
+		corewar->tab_champ[i - 1] = ft_get_champ(argv[i]);
 		i++;
 	}
-	corewar.nb_champ = i - 1;
-	corewar.ctd_obj = CYCLE_TO_DIE;
-	return (corewar);
+	corewar->nb_champ = i - 1;
+	corewar->ctd_obj = CYCLE_TO_DIE;
 }
 
 int main(int argc, char **argv)
@@ -53,16 +56,15 @@ int main(int argc, char **argv)
 
 	i = 0;
 	instru = NULL;
-	corewar = ft_init_all(argc, argv);
+	ft_init_all(argc, argv, &corewar);
 	load_arena(&corewar);
-
 	ft_printf("Introducing contestants...\n");
 	while (i < corewar.nb_champ)
 	{
 		ft_printf("* Player %i, weighing %i bytes, \"%s\" (\"%s\") !\n", i + 1, corewar.tab_champ[i].header.prog_size, corewar.tab_champ[i].header.prog_name, corewar.tab_champ[i].header.comment);
 		i++;
 	}
-	ft_loop(corewar);
+	ft_loop(&corewar);
 	ft_printf("Contestant %i, \"%s\", has won !\n", corewar.last_live_id + 1, corewar.tab_champ[corewar.last_live_id].header.prog_name, corewar.tab_champ[corewar.last_live_id].header.comment);
 	return (0);
 }

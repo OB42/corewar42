@@ -164,7 +164,7 @@ int				ft_get_int(unsigned char *code_champ, int size);
 unsigned char	*ft_get_ind(t_ins *ins, unsigned char *curseur, int n_param, unsigned char *init);
 unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param, unsigned char *init);
 unsigned char	*ft_get_reg(t_proc *proc, unsigned char *curseur, int n_param, unsigned char *init);
-int				ft_loop(t_corewar corewar);
+int				ft_loop(t_corewar *corewar);
 void			ft_live(t_ins *ins, t_proc *proc);
 void			ft_ld(t_ins *ins, t_proc *proc);
 void			ft_st(t_ins	*ins, t_proc *proc);
@@ -197,7 +197,7 @@ void			ft_print_ocp(t_proc *proc, int param1, int param2, int param3);
 int				ft_conv(int value, t_proc *proc);
 void			ft_print_nxt(unsigned char *init, unsigned char *curseur, int size);
 void			ft_update_ins(unsigned char *code_champ, unsigned char *init, t_proc *proc);
-void			ft_output_arena(t_corewar corewar);
+void			ft_output_arena(t_corewar *corewar);
 void			who_win(t_corewar *corewar);
 int				ft_decal(unsigned char *init, unsigned char *curseur, int decal);
 #endif
