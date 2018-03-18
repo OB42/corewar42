@@ -31,10 +31,7 @@ void    ft_add(t_ins *ins, t_proc *proc)
 		proc->reg[ins->param[2]] =
 	   		proc->reg[ins->param[0]] +
 			proc->reg[ins->param[1]];
-		if (ins->param[2] == 0)
-			proc->carry = 1;
-		else
-			proc->carry = 0;
+		proc->carry = !(proc->reg[ins->param[2]]);
 	}
 	ft_print_add(proc, ins);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
