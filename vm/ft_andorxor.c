@@ -33,6 +33,7 @@ void	ft_or(t_ins *ins, t_proc *proc)
 	{
 		proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 		proc->reg[ins->param[2]] = (ins->tab[0].val_type | ins->tab[1].val_type);
+		proc->carry = !(proc->reg[ins->param[2]]);
 	}
 }
 
@@ -43,6 +44,7 @@ void	ft_and(t_ins *ins, t_proc *proc)
 	{
 		proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 		proc->reg[ins->param[2]] = (ins->tab[0].val_type & ins->tab[1].val_type);
+		proc->carry = !(proc->reg[ins->param[2]]);
 	}
 }
 
@@ -54,5 +56,6 @@ void	ft_xor(t_ins *ins, t_proc *proc)
 	{
 		proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 		proc->reg[ins->param[2]] = (ins->tab[0].val_type ^ ins->tab[1].val_type);
+		proc->carry = !(proc->reg[ins->param[2]]);
 	}
 }
