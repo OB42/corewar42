@@ -139,8 +139,7 @@ typedef struct	s_corewar
 	unsigned int	n_rank;
 	unsigned int	a_rank;
 	int				select;
-	unsigned int	dump;
-
+	long long				dump;
 }				t_corewar;
 
 struct	s_proc

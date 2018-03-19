@@ -48,7 +48,7 @@ void			ft_print_code(t_champ champ)
 	{
 		ft_printf("%02x ", champ.code[i]);
 		i++;
-		if ((i % 16) == 0)
+		if ((i % 16) == 0)//TEMPORARY
 			ft_printf("\n");
 	}
 }
