@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:48:38 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/17 16:17:04 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 16:19:00 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	ft_print_st(t_proc *proc)
 	value = proc->ins->param[1];
 	if (value > 32768)
 		value -= 65536;
-	if (proc->ins->ocp == 80 || proc->ins->ocp == 112)
+	if ((proc->ins->tab[0].type == 1 && proc->ins->tab[1].type != 0
+			&& proc->ins->tab[2].type == 0) && proc->ins->fail == 0)
 	{
 		ft_printf("P%5d | %s", proc->id, proc->ins->name);
 		if (proc->ins->tab[1].type == 1)
@@ -40,13 +41,14 @@ void	ft_st(t_ins *ins, t_proc *proc)
 	int				value;
 
 	value = proc->ins->param[1];
-	if (proc->ins->ocp == 80 || proc->ins->ocp == 112)
+	if ((proc->ins->tab[0].type == 1 && proc->ins->tab[1].type != 0
+			&& proc->ins->tab[2].type == 0) && proc->ins->fail == 0)
 	{
 		if (ins->param[0] == 0)
 			proc->carry = 1;
 		else
 			proc->carry = 0;
-		if ((ins->ocp & 0x20) && (ins->ocp & 0x10))
+		if (((ins->ocp & 0x20) && (ins->ocp & 0x10)) || (ins->ocp & 0x20))
 		{
 			if (value > 37768)
 				value -= 65536;

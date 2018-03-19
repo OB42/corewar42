@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:22:00 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/17 17:01:44 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 16:33:58 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_print_live(t_proc *proc)
 	ft_printf("P%5d | %s %d\n", proc->id, proc->ins->name, proc->ins->param[0]);
 	if (proc->ins->param[0] > 2147483647)
 		proc->ins->tab[0].val_type -= 4294967295;
-	if (ft_abs(param) <= proc->corewar->nb_champ)
+	if (ft_abs(param) <= proc->corewar->nb_champ && param < 0)
 		ft_printf("Player %d (%s) is said to be alive\n",
 			-param, proc->corewar->tab_champ[-param - 1].header.prog_name);
 	ft_print_instru(proc);

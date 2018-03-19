@@ -6,7 +6,7 @@
 /*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 18:38:08 by mlegeay           #+#    #+#             */
-/*   Updated: 2018/03/17 11:33:27 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 16:09:32 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void	ft_print_add(t_proc *proc, t_ins *ins)
 {
-	if (ins->param[0] < REG_NUMBER + 1 && ins->param[1] < REG_NUMBER
-			&& ins->param[2] < REG_NUMBER && ins->ocp == 84)
+	if (proc->ins->fail == 0 && ins->ocp == 84)
 	{
 		ft_printf("P%5d | %s", proc->id, proc->ins->name);
 		ft_print_ocp(proc, 0, 0 ,0);
@@ -26,7 +25,7 @@ void	ft_print_add(t_proc *proc, t_ins *ins)
 
 void    ft_add(t_ins *ins, t_proc *proc)
 {
-	if (ins->param[2] < REG_NUMBER + 1 && ins->ocp == 84)
+	if (proc->ins->fail == 0 && ins->ocp == 0x54)
 	{
 		proc->reg[ins->param[2]] =
 	   		proc->reg[ins->param[0]] +

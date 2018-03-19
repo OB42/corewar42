@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 13:47:23 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/17 16:01:56 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 16:13:00 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,14 +69,14 @@ void	ft_print_special(t_proc *proc)
 
 int		ft_invalid_print(char *name)
 {
-	static char *a[14] = {
+	static char *a[15] = {
 		"sti", "st", "ldi", "lldi", "ld", "and", "or", "xor", "add",
-	"fork", "lfork", "zjmp", "lld", "live"
+	"fork", "lfork", "zjmp", "lld", "live", "sub"
 	};
 	int i;
 
 	i = 0;
-	while (i < 14)
+	while (i < 15)
 	{
 		if (!(ft_strcmp(name, a[i++])))
 			return (1);

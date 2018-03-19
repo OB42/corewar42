@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 19:09:01 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/17 15:06:42 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 15:42:15 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 void	ft_print_sti(t_proc *proc, int val_1, int val_2)
 {
-	if (ft_val_ocp(proc->ins->ocp, 0) == 1 && proc->success == 1)
+	if (proc->ins->tab[0].type == 1 && proc->ins->tab[1].type > 0
+			&& proc->ins->tab[2].type > 0 && proc->ins->fail == 0)
 	{
 		ft_printf("P%5d | %s", proc->id, proc->ins->name);
 		ft_printf(" r%d %d %d", proc->ins->param[0], val_1, val_2);
@@ -34,8 +35,8 @@ void	ft_sti(t_ins *ins, t_proc *proc)
 
 	val_1 = 0;
 	val_2 = 0;
-	proc->success = 1;
-	if (ft_val_ocp(ins->ocp, 0) == 1)
+	if (ins->tab[0].type == 1 && ins->tab[1].type > 0 && ins->tab[2].type > 0
+			&& proc->ins->fail == 0)
 	{
 		val_1 = ins->tab[1].val_type;
 		val_2 = ins->tab[2].val_type;

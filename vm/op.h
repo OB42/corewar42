@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/17 16:09:19 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 15:29:20 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ struct	s_ins
 	int		size;
 	int		cycle;
 	int		nb_param;
+	int		fail;
 };
 
 typedef	struct	s_op
