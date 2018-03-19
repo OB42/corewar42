@@ -6,15 +6,13 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 12:56:03 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/13 22:52:26 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 12:25:44 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include <stdint.h>
 #include "LIBFT/libft.h"
 #include "op.h"
@@ -52,22 +50,27 @@ void	ft_ncpy(unsigned char *dest, char *src, int n)
 	}
 }
 
-t_champ		ft_get_champ(char *filename)
+t_champ		ft_get_champ(char *filename, t_corewar *corewar)
 {
 	int		fd;
 	t_champ	champ;
-	char	code[10000];
+	char	code[CHAMP_MAX_SIZE];
 	int		val_read;
 
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-	{
-		ft_printf("file does not exist\n");
-		exit(1);
-	}
+		error_end("No such file", 6, filename);
+	else if (!ft_strequ(&filename[ft_strlen(filename) - 4], ".cor"))
+		error_end("Not a .cor file", 2, filename);
+	ft_valid_champ(fd, filename);
 	champ.header = ft_get_header(fd);
 	val_read = read(fd, &code, champ.header.prog_size);
-	if (!(champ.code = pr_malloc(champ.header.prog_size * sizeof(char))))
+	if (corewar->select == 1)
+		champ.rank = corewar->n_rank;
+	else
+		champ.rank = corewar->a_rank++;
+	corewar->select = 0;
+	if (!(champ.code = malloc(champ.header.prog_size * sizeof(char))))
 		exit(1);
 	ft_ncpy(champ.code, code, champ.header.prog_size);
 	return (champ);

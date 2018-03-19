@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/17 16:09:19 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 12:23:48 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,17 @@
  * ** On part du principe qu'un int fait 32 bits. Est-ce vrai chez vous ?
  * */
 #ifndef OP_H
-#define OP_H
+# define OP_H
+
 # include "LIBFT/libft.h"
-# include <stdlib.h>
 # include <unistd.h>
+# include <stdlib.h>
+
 # define IND_SIZE	2
 # define REG_SIZE	4
 # define DIR_SIZE	REG_SIZE
+
+
 # define REG_CODE	1
 # define DIR_CODE	2
 # define IND_CODE	3
@@ -49,12 +53,21 @@
 # define NBR_LIVE		21
 # define MAX_CHECKS		10
 
+/**
+ *  ***
+ *   **/
+
 typedef char	t_arg_type;
 
 # define T_REG		1
 # define T_DIR		2
 # define T_IND		4
 # define T_LAB		8
+
+/**
+ * ***
+ * **/
+
 # define PROG_NAME_LENGTH	(128)
 # define COMMENT_LENGTH		(2048)
 # define COREWAR_EXEC_MAGIC	0xea83f3
@@ -108,23 +121,26 @@ typedef struct	s_champ
 	unsigned char	*code;
 	int				placed;
 	int				color;
-	int				nbr;
+	unsigned int	rank;
 }				t_champ;
 
 typedef struct	s_corewar
 {
-	char	arena_id[MEM_SIZE + 1];
+	char			arena_id[MEM_SIZE + 1];
 	unsigned char	arena[MEM_SIZE + 1];
-	int		nb_champ;
-	t_champ	tab_champ[6];
-	int		ctd_obj;
-	int		ctd_cur;
-	int		nb_live;
-	int		cycle;
-	int		check;
-	int		last_live_id;
-	int		dump;
-	int		verbose;
+	int				nb_champ;
+	t_champ			tab_champ[6];
+	int				ctd_obj;
+	int				ctd_cur;
+	int				nb_live;
+	int				cycle;
+	int				check;
+	int				last_live_id;
+	unsigned int	n_rank;
+	unsigned int	a_rank;
+	int				select;
+	unsigned int	dump;
+
 }				t_corewar;
 
 struct	s_proc
@@ -149,7 +165,7 @@ struct	s_proc
 void			*pr_malloc(size_t n);
 void			pr_free(void *p);
 header_t		ft_get_header(int fd);
-t_champ			ft_get_champ(char *filename);
+t_champ			ft_get_champ(char *filename, t_corewar *corewar);
 void			ft_get_var(t_proc *proc, unsigned char *code_champ, unsigned char *init);
 t_ins			*ft_get_instru(unsigned char *code_champ, unsigned char *init);
 int				ft_get_int(unsigned char *code_champ, int size);
@@ -192,4 +208,9 @@ void			ft_update_ins(unsigned char *code_champ, unsigned char *init, t_proc *pro
 void			ft_output_arena(t_corewar *corewar);
 void			who_win(t_corewar *corewar);
 int				ft_decal(unsigned char *init, unsigned char *curseur, int decal);
+int				nbr_champs(int argc, char **argv);
+void			error_end(char *error, int id_error, char *info);
+int				get_options(int i, char **av, t_corewar *corewar);
+void			ft_valid_champ(int fd, char *filename);
+
 #endif

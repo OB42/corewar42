@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 10:53:35 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/14 21:04:20 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 13:11:55 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include <string.h>
 # include <wchar.h>
+# include <string.h>
 
 /*
 **FT_PRINTF
@@ -80,6 +81,8 @@ char				*ft_strcpy(char *dest, const char *src);
 size_t				ft_strlen(const char *s);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 int					ft_atoi(const char *str);
+unsigned int		ft_uatoi(const char *str);
+unsigned long		ft_ulongatoi(const char *str);
 int					ft_isdigit(int c);
 char				*ft_strdup(const char *str);
 char				*ft_strchr(const char *s, int c);
@@ -96,6 +99,9 @@ int					ft_strcmp(const char *s1, const char *s2);
 char				**ft_strsplit(const char *str, char c);
 int					ft_abs(int value);
 char				*ft_strncpy(char *dest, const char *src, size_t n);
+int					ft_strequ(const char *s1, const char *s2);
+void				ft_putendl(const char *str);
+void				ft_putnbr(int n);
 
 /*
 **INITIALISATION OF ARRAYS

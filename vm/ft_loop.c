@@ -88,8 +88,11 @@ int		ft_loop(t_corewar *corewar)
 	{
 		test = 0;
 		lst_proc = ft_cycle(lst_proc, corewar);
-		if (lst_proc == NULL || corewar->ctd_obj < 0)
+		if (lst_proc == NULL || corewar->ctd_obj < 0 )//|| corewar->cycle == 100)
+		{
+		//	ft_output_arena(corewar);
 			return (1);
+		}
 		if (lst_proc->cycle > 1 && lst_proc->cycle == lst_proc->ins->cycle)
 		{
 			ft_update_ins(lst_proc->curseur, lst_proc->init, lst_proc);
@@ -98,6 +101,7 @@ int		ft_loop(t_corewar *corewar)
 			lst_proc->cycle = 0;
 			test = 1;
 		}
+
 		if (lst_proc->cycle <= 1)
 			lst_proc->ins = ft_get_instru(lst_proc->curseur, lst_proc->init);
 		if (lst_proc->ins == NULL && test == 0)
@@ -106,6 +110,7 @@ int		ft_loop(t_corewar *corewar)
 			lst_proc->cycle = 0;
 		}
 		lst_proc = lst_proc->nxt;
+
 	}
 	return (1);
 }
