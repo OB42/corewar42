@@ -84,14 +84,14 @@ var test = (files, err, stdout, stderr, callback) => {
 		pass(msg_arr, `${files[0]}`, files[2]);
 	callback();
 };
-	exec(`make`, (err, stdout, stderr) => {
-		if (stderr.length)
-			return (console.log(stderr));
-		async.eachLimit(t, 4, function(files, callback) {
-			exec(`./corewar ${files[0]}`,
-			(err, stdout, stderr) => {
-				test(files, err, stdout, stderr, callback);
-			});
-		}, function(err) {
+exec(`make re`, (err, stdout, stderr) => {
+	if (stderr.length)
+		return (console.log(stderr));
+	async.eachLimit(t, 4, function(files, callback) {
+		exec(`./corewar ${files[0]}`,
+		(err, stdout, stderr) => {
+			test(files, err, stdout, stderr, callback);
 		});
+	}, function(err) {
 	});
+});
