@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:57:09 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/19 16:12:34 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 17:26:18 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,8 @@ void	ft_print_ld(t_proc *proc)
 
 void	ft_ld(t_ins *ins, t_proc *proc)
 {
-	int val_1;
-
 	if ((ins->ocp == 144 || ins->ocp == 208) && proc->ins->fail == 0)
 	{
-		val_1 = ft_decal(proc->init, proc->curseur, ins->tab[0].val_type) % IDX_MOD;
 		proc->reg[ins->param[1]] = ins->tab[0].val_type;
 		if (ins->tab[0].val_type == 0)
 			proc->carry = 1;
@@ -44,11 +41,8 @@ void	ft_ld(t_ins *ins, t_proc *proc)
 
 void	ft_lld(t_ins *ins, t_proc *proc)
 {
-	int val_1;
-
 	if ((ins->ocp == 144 || ins->ocp == 208) && proc->ins->fail == 0)
 	{
-		val_1 = ft_decal(proc->init, proc->curseur, ins->tab[0].val_type);
 		proc->reg[ins->param[1]] = ins->tab[0].val_type;
 		if (ins->tab[0].val_type == 0)
 			proc->carry = 1;

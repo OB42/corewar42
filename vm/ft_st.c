@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:48:38 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/19 16:19:00 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 17:31:08 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,7 @@ void	ft_st(t_ins *ins, t_proc *proc)
 	if ((proc->ins->tab[0].type == 1 && proc->ins->tab[1].type != 0
 			&& proc->ins->tab[2].type == 0) && proc->ins->fail == 0)
 	{
-		if (ins->param[0] == 0)
-			proc->carry = 1;
-		else
-			proc->carry = 0;
+		proc->carry = !(ins->param[0]);
 		if (((ins->ocp & 0x20) && (ins->ocp & 0x10)) || (ins->ocp & 0x20))
 		{
 			if (value > 37768)

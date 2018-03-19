@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 18:49:00 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/19 16:07:39 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 17:51:17 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,10 @@ void	ft_ldi(t_ins *ins, t_proc *proc)
 	tmp = ft_oob(proc->init, proc->curseur + (val_1 + val_2) % IDX_MOD);
 	if (proc->ins->fail == 0 && proc->ins->tab[0].type != 0 &&
 			proc->ins->tab[1].type != 0 && proc->ins->tab[2].type == 1)
+	{
 		proc->reg[ins->param[2]] = ft_get_int(ft_oob(proc->init, tmp), REG_SIZE);
+		proc->carry = !(proc->reg[ins->param[2]]);
+	}
 	ft_print_ldi(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }
@@ -64,6 +67,10 @@ void	ft_lldi(t_ins *ins, t_proc *proc)
 	tmp = ft_oob(proc->init, proc->curseur + (val_1 + val_2));
 	if (proc->ins->fail == 0 && proc->ins->tab[0].type != 0 &&
 			proc->ins->tab[1].type != 0 && proc->ins->tab[2].type == 1)
+	{
+		proc->reg[ins->param[2]] = ft_get_int(ft_oob(proc->init, tmp), REG_SIZE);
+		proc->carry = !(proc->reg[ins->param[2]]);
+	}
 	ft_print_ldi(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }
