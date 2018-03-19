@@ -6,12 +6,11 @@
 /*   By: rthys <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 11:12:08 by rthys             #+#    #+#             */
-/*   Updated: 2018/03/17 19:43:12 by rthys            ###   ########.fr       */
+/*   Updated: 2018/03/19 12:35:02 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "LIBFT/libft.h"
-#include <unistd.h>
 #include "op.h"
 
 /*static void		champ_name(int fd, unsigned char *buff, char *filename)

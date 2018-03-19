@@ -6,12 +6,12 @@
 /*   By: rthys <rthys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 09:50:29 by rthys             #+#    #+#             */
-/*   Updated: 2018/03/17 19:23:00 by rthys            ###   ########.fr       */
+/*   Updated: 2018/03/19 12:58:50 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "LIBFT/libft.h"
+#include "op.h"
 
 void			error_end(char *error, int id_error, char *info)
 {

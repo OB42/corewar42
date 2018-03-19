@@ -39,6 +39,8 @@ SRC		= ft_atoi.c\
 		  ft_putchar.c\
 		  ft_putendl.c\
 		  ft_putnbr.c\
+		  ft_uatoi.c\
+		  ft_ulongatoi.c\
 
 			
 OBJ		= $(SRC:.c=.o)

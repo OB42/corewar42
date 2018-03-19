@@ -30,6 +30,7 @@ SRC = main.c\
 	  ft_print_nxt.c\
 	  ft_update_ins.c\
 	  ft_output_arena.c\
+	  pr_malloc.c\
 	  error.c\
 	  error_2.c\
 	  options.c\

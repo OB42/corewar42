@@ -6,7 +6,7 @@
 /*   By: rthys <rthys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 10:50:03 by rthys             #+#    #+#             */
-/*   Updated: 2018/03/17 19:25:28 by rthys            ###   ########.fr       */
+/*   Updated: 2018/03/19 13:36:50 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,20 @@ int				nbr_champs(int argc, char **argv)
 unsigned int	options_value(int i, char **av)
 {
 	unsigned int	value;
+	unsigned long	check_value;
 
 	value = 0;
-	if (ft_atoi(av[i + 1]) > 0)
-		value = ft_atoi(av[i + 1]);
+	check_value = ft_ulongatoi(av[i + 1]);
+	if (ft_strlen(av[i] + 1) > 10 || check_value > UINT_MAX)
+	{
+		ft_printf("\x1b[31mWarning : \x1b[0mValue '%s' is too high\n", av[i + 1]);
+		if (ft_strequ(av[i], "-n"))
+			value = 1;
+		else
+			value = -1;
+	}
+	else
+		value = ft_uatoi(av[i + 1]);
 	return (value);
 }
 
@@ -94,7 +104,7 @@ int				valid_options(int i, char **av)
 		error_end("This option must be followed by a positive number", 5, av[i]);
 	while (j < (int)ft_strlen(av[i + 1]))
 	{
-		if ((av[i + 1][j] >= '0' && av[i + 1][j] <= '9'))
+		if ((av[i + 1][j] >= '0' && av[i + 1][j] <= '9') || (av[i + 1][j] == '+' && j == 0))
 			j++;
 		else
 			error_end("This option must be followed by a positive number", 5, av[i]);
@@ -107,8 +117,7 @@ int				get_options(int i, char **av, t_corewar *corewar)
 	if (ft_strequ(av[i], "-dump") && valid_options(i, av))
 	{
 		corewar->dump = options_value(i, av);
-		if (corewar->dump > 0)
-			i += 2;
+		i += 2;
 		return (i);
 	}
 	else if (ft_strequ(av[i], "-n") && valid_options(i, av))
@@ -124,5 +133,7 @@ int				get_options(int i, char **av, t_corewar *corewar)
 		i += 2;
 		return (i);
 	}
+	else
+		error_end("Not a valid option", 12, av[i]);
 	return (0);
 }
