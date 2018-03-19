@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/16 16:16:23 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/19 19:42:58 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 20:06:30 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_aff(t_ins *ins, t_proc *proc)
 	if (proc->ins->fail == 0)
 	{
 		proc->ins->param[1] = 0;
-		ft_printf("%c", ins->param[0] % 256);
+		//ft_printf("%c", ins->param[0] % 256);
 		if (ins->param[0] % 256 == 0)
 			proc->carry = 1;
 		else

@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/19 19:44:31 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 19:57:09 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,6 @@ int		ft_loop(t_corewar *corewar)
 			lst_proc->cycle = 0;
 			test = 1;
 		}
-
 		if (lst_proc->cycle <= 1)
 			lst_proc->ins = ft_get_instru(lst_proc->curseur, lst_proc->init);
 		if (lst_proc->ins == NULL && test == 0)
