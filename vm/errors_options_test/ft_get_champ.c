@@ -6,15 +6,13 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 12:56:03 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/17 19:18:36 by rthys            ###   ########.fr       */
+/*   Updated: 2018/03/19 12:25:44 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include <stdint.h>
 #include "LIBFT/libft.h"
 #include "op.h"
