@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 21:38:10 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/19 17:32:18 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 18:15:10 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ void	ft_or(t_ins *ins, t_proc *proc)
 	if (proc->ins->tab[0].type != 0 && proc->ins->tab[1].type != 0
 			&& proc->ins->tab[2].type == 1 && proc->ins->fail == 0)
 	{
-		proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 		proc->reg[ins->param[2]] = (ins->tab[0].val_type | ins->tab[1].val_type);
 		proc->carry = !(proc->reg[ins->param[2]]);
 	}
+	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }
 
 void	ft_and(t_ins *ins, t_proc *proc)
@@ -43,10 +43,10 @@ void	ft_and(t_ins *ins, t_proc *proc)
 	if (proc->ins->tab[0].type != 0 && proc->ins->tab[1].type != 0
 			&& proc->ins->tab[2].type == 1 && proc->ins->fail == 0)
 	{
-		proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 		proc->reg[ins->param[2]] = (ins->tab[0].val_type & ins->tab[1].val_type);
 		proc->carry = !(proc->reg[ins->param[2]]);
 	}
+	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }
 
 void	ft_xor(t_ins *ins, t_proc *proc)
@@ -55,8 +55,8 @@ void	ft_xor(t_ins *ins, t_proc *proc)
 	if (proc->ins->tab[0].type != 0 && proc->ins->tab[1].type != 0
 			&& proc->ins->tab[2].type == 1 && proc->ins->fail == 0)
 	{
-		proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 		proc->reg[ins->param[2]] = (ins->tab[0].val_type ^ ins->tab[1].val_type);
 		proc->carry = !(proc->reg[ins->param[2]]);
 	}
+	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }

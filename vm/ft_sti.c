@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 19:09:01 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/19 17:38:27 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 19:35:36 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,10 @@ void	ft_sti(t_ins *ins, t_proc *proc)
 		val_2 = ins->tab[2].val_type;
 		tmp = ft_oob(proc->init, proc->curseur + (val_1 + val_2) % IDX_MOD);
 		ft_write_ram(proc->reg[ins->param[0]], 4, tmp, proc);
-		proc->carry = !(proc->reg[ins->param[0]]);
+		if (proc->reg[ins->param[0]] == 0)
+			proc->carry = 1;
+		else
+			proc->carry = 0;
 	}
 	ft_print_sti(proc, val_1, val_2);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
