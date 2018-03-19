@@ -89,9 +89,7 @@ int		ft_loop(t_corewar *corewar)
 		test = 0;
 		lst_proc = ft_cycle(lst_proc, corewar);
 		if (lst_proc == NULL || corewar->ctd_obj < 0)
-		{
 			return (1);
-		}
 		if (lst_proc->cycle > 1 && lst_proc->cycle == lst_proc->ins->cycle)
 		{
 			ft_update_ins(lst_proc->curseur, lst_proc->init, lst_proc);
@@ -113,7 +111,7 @@ int		ft_loop(t_corewar *corewar)
 		{
 			if (corewar->dump > -1)
 				ft_output_arena(corewar);
-				return (1);
+			return (1);
 		}
 	}
 	return (1);
