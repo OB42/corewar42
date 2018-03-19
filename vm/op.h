@@ -6,7 +6,8 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/19 15:29:20 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 16:41:44 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 12:23:48 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +15,44 @@
  * les tailles sont en octets.
  * ** On part du principe qu'un int fait 32 bits. Est-ce vrai chez vous ?
  * */
-# ifndef OP_H
+#ifndef OP_H
 # define OP_H
-#include "LIBFT/libft.h"
-#include <stdlib.h>
-#include <unistd.h>
-#define IND_SIZE	2
-#define REG_SIZE	4
-#define DIR_SIZE	REG_SIZE
+
+# include "LIBFT/libft.h"
+# include <unistd.h>
+# include <stdlib.h>
+
+# define IND_SIZE	2
+# define REG_SIZE	4
+# define DIR_SIZE	REG_SIZE
 
 
 # define REG_CODE	1
 # define DIR_CODE	2
 # define IND_CODE	3
 
-#define MAX_ARGS_NUMBER	4
-#define MAX_PLAYERS		4
-#define MEM_SIZE		(4*1024)
-#define IDX_MOD			(MEM_SIZE / 8)
-#define CHAMP_MAX_SIZE	(MEM_SIZE / 6)
+# define MAX_ARGS_NUMBER	4
+# define MAX_PLAYERS		4
+# define MEM_SIZE		(4*1024)
+# define IDX_MOD			(MEM_SIZE / 8)
+# define CHAMP_MAX_SIZE	(MEM_SIZE / 6)
 
-#define COMMENT_CHAR	'#'
-#define LABEL_CHAR		':'
-#define DIRECT_CHAR		'%'
-#define SEPARATOR_CHAR	','
+# define COMMENT_CHAR	'#'
+# define LABEL_CHAR		':'
+# define DIRECT_CHAR		'%'
+# define SEPARATOR_CHAR	','
 
-#define LABEL_CHARS		"abcdefghijklmnopqrstuvwxyz_0123456789"
+# define LABEL_CHARS		"abcdefghijklmnopqrstuvwxyz_0123456789"
 
-#define NAME_CMD_STRING	".name"
-#define COMMENT_CMD_STRING	".comment"
+# define NAME_CMD_STRING	".name"
+# define COMMENT_CMD_STRING	".comment"
 
-#define REG_NUMBER		16
+# define REG_NUMBER		16
 
-#define CYCLE_TO_DIE	1536
-#define CYCLE_DELTA		50
-#define NBR_LIVE		21
-#define MAX_CHECKS		10
+# define CYCLE_TO_DIE	1536
+# define CYCLE_DELTA		50
+# define NBR_LIVE		21
+# define MAX_CHECKS		10
 
 /**
  *  ***
@@ -57,10 +60,10 @@
 
 typedef char	t_arg_type;
 
-#define T_REG		1
-#define T_DIR		2
-#define T_IND		4
-#define T_LAB		8
+# define T_REG		1
+# define T_DIR		2
+# define T_IND		4
+# define T_LAB		8
 
 /**
  * ***
@@ -120,20 +123,25 @@ typedef struct	s_champ
 	unsigned char	*code;
 	int				placed;
 	int				color;
+	unsigned int	rank;
 }				t_champ;
 
 typedef struct	s_corewar
 {
-	char	arena_id[MEM_SIZE + 1];
+	char			arena_id[MEM_SIZE + 1];
 	unsigned char	arena[MEM_SIZE + 1];
-	int		nb_champ;
-	t_champ	tab_champ[6];
-	int		ctd_obj;
-	int		ctd_cur;
-	int		nb_live;
-	int		cycle;
-	int		check;
-	int		last_live_id;
+	int				nb_champ;
+	t_champ			tab_champ[6];
+	int				ctd_obj;
+	int				ctd_cur;
+	int				nb_live;
+	int				cycle;
+	int				check;
+	int				last_live_id;
+	unsigned int	n_rank;
+	unsigned int	a_rank;
+	int				select;
+	long long				dump;
 }				t_corewar;
 
 struct	s_proc
@@ -158,7 +166,7 @@ struct	s_proc
 void			*pr_malloc(size_t n);
 void			pr_free(void *p);
 header_t		ft_get_header(int fd);
-t_champ			ft_get_champ(char *filename);
+t_champ			ft_get_champ(char *filename, t_corewar *corewar);
 void			ft_get_var(t_proc *proc, unsigned char *code_champ, unsigned char *init);
 t_ins			*ft_get_instru(unsigned char *code_champ, unsigned char *init);
 int				ft_get_int(unsigned char *code_champ, int size);
@@ -201,4 +209,9 @@ void			ft_update_ins(unsigned char *code_champ, unsigned char *init, t_proc *pro
 void			ft_output_arena(t_corewar *corewar);
 void			who_win(t_corewar *corewar);
 int				ft_decal(unsigned char *init, unsigned char *curseur, int decal);
+int				nbr_champs(int argc, char **argv);
+void			error_end(char *error, int id_error, char *info);
+int				get_options(int i, char **av, t_corewar *corewar);
+void			ft_valid_champ(int fd, char *filename);
+
 #endif

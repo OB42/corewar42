@@ -13,8 +13,6 @@
 #include <stdlib.h>
 #include "op.h"
 
-
-
 void	ft_print_andorxor(t_proc *proc)
 {
 	if (proc->ins->tab[0].type != 0 && proc->ins->tab[1].type != 0
@@ -50,7 +48,6 @@ void	ft_and(t_ins *ins, t_proc *proc)
 		proc->carry = !(proc->reg[ins->param[2]]);
 	}
 }
-
 
 void	ft_xor(t_ins *ins, t_proc *proc)
 {
