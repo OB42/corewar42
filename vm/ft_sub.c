@@ -6,7 +6,7 @@
 /*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 18:55:33 by mlegeay           #+#    #+#             */
-/*   Updated: 2018/03/19 16:12:06 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 17:40:37 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,8 @@ void    ft_sub(t_ins *ins, t_proc *proc)
 		proc->reg[ins->param[2]] =
 			proc->reg[ins->param[0]] -
 			proc->reg[ins->param[1]];
-		if (proc->reg[ins->param[2]] == 0)
-			proc->carry = 1;
-		else
-			proc->carry = 0;
+		proc->carry = !(proc->reg[ins->param[2]]);
 	}
-	else
-		proc->carry = 0;
 	ft_print_sub(proc, ins);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }
