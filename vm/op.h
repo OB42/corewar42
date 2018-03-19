@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/19 19:40:22 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/19 23:16:18 by mlegeay          ###   ########.fr       */
 /*   Updated: 2018/03/19 12:23:48 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -207,7 +207,6 @@ int				ft_conv(int value, t_proc *proc);
 void			ft_print_nxt(unsigned char *init, unsigned char *curseur, int size);
 void			ft_update_ins(unsigned char *code_champ, unsigned char *init, t_proc *proc);
 void			ft_output_arena(t_corewar *corewar);
-void			who_win(t_corewar *corewar);
 int				ft_decal(unsigned char *init, unsigned char *curseur, int decal);
 int				nbr_champs(int argc, char **argv);
 void			error_end(char *error, int id_error, char *info);
