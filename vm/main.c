@@ -39,7 +39,7 @@ void	ft_init_all(int argc, char **argv, t_corewar *corewar)
 		exit(1);
 	}
 	ft_bzero(corewar, sizeof(t_corewar));
-	while (i < argc)
+	while (i < argc && i <= MAX_PLAYERS)
 	{
 		corewar->tab_champ[i - 1] = ft_get_champ(argv[i]);
 		i++;
