@@ -92,7 +92,11 @@ var test = (files, err, stdout, stderr, callback) => {
 exec(`rm errors/*; make -C ../asm; ${c.filter(x => !(fs.existsSync('../asm/mine/' +x))).map(x => `../asm/asm ../asm/mine/${x.replace('.cor', '.s')}`).join(';')}`, () => {
 	exec(`make re`, (err, stdout, stderr) => {
 		if (stderr.length)
-			return (console.log(stderr));
+		{
+			console.log(stderr);
+			if (!(stderr.match("creating archive")))
+				return (0);
+		}
 		async.eachLimit(t, 4, function(files, callback) {
 			exec(`./corewar ../asm/mine/${files[0]} ../asm/mine/${files[1]}`,
 			(err, stdout, stderr) => {

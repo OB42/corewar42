@@ -86,7 +86,11 @@ var test = (files, err, stdout, stderr, callback) => {
 };
 exec(`make re`, (err, stdout, stderr) => {
 	if (stderr.length)
-		return (console.log(stderr));
+	{
+		console.log(stderr);
+		if (!(stderr.match("creating archive")))
+			return (0);
+	}
 	async.eachLimit(t, 4, function(files, callback) {
 		exec(`./corewar ${files[0]}`,
 		(err, stdout, stderr) => {
