@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:57:09 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 16:21:18 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 21:33:36 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_lld(t_ins *ins, t_proc *proc)
 	if ((ins->ocp == 144 || ins->ocp == 208) && proc->ins->fail == 0)
 	{
 		proc->reg[ins->param[1]] = ins->tab[0].val_type;
-		if (ins->tab[0].val_type == 0)
+		if (ins->param[0] == 0)
 			proc->carry = 1;
 		else
 			proc->carry = 0;

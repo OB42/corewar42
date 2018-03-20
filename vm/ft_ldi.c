@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 18:49:00 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 17:34:30 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 21:57:50 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	ft_ldi(t_ins *ins, t_proc *proc)
 	{
 		proc->reg[ins->param[2]] = ft_get_int(proc->init,
 			ft_oob(proc->init, tmp), REG_SIZE);
-		proc->carry = !(proc->reg[ins->param[2]]);
 	}
 	ft_print_ldi(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
@@ -71,7 +70,10 @@ void	ft_lldi(t_ins *ins, t_proc *proc)
 	{
 		proc->reg[ins->param[2]] = ft_get_int(proc->init,
 			ft_oob(proc->init, tmp), REG_SIZE);
-		proc->carry = !(proc->reg[ins->param[2]]);
+		if (proc->reg[ins->param[2]] == 0)
+			proc->carry = 1;
+		else
+			proc->carry = 0;
 	}
 	ft_print_ldi(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
