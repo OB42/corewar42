@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:48:38 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 15:03:05 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 15:20:09 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_print_st(t_proc *proc)
 			ft_printf(" r%d %d", proc->ins->param[0], value);
 		ft_printf("\n");
 	}
-	else
+	else if (proc->ins->ocp < 64)
 		proc->ins->size = 1;
 	ft_print_instru(proc);
 }
