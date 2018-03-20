@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 21:38:27 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 22:41:39 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
 {
 	static int	max_id = 1;
 
+	max_id = ft_get_procnb(proc) - 1;
 	if ((corewar->ctd_cur == corewar->ctd_obj || corewar->ctd_obj < 0)
 		&& proc->id == max_id)
 	{
@@ -100,6 +101,7 @@ int		ft_loop(t_corewar *corewar)
 			if (lst_proc->ins != NULL)
 				(lst_proc->ins->fun)(lst_proc->ins, lst_proc);
 			lst_proc->cycle = 0;
+			//ft_printf("corewar CTD = %d ecart = %d\n", corewar->ctd_obj, corewar->ctd_cur);
 			//ft_printf("proc[%d] -> ram[%d] = %d proc->carry = %d\n", lst_proc->id, lst_proc->curseur - lst_proc->init, *lst_proc->curseur, lst_proc->carry);
 			test = 1;
 		}
