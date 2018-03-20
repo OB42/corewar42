@@ -105,12 +105,6 @@ int		ft_loop(t_corewar *corewar)
 			lst_proc->curseur = ft_oob(lst_proc->init, lst_proc->curseur + 1);
 			lst_proc->cycle = 0;
 		}
-		if (corewar->cycle == corewar->dump)
-		{
-			if (corewar->dump > -1)
-				ft_output_arena(corewar);
-			return (1);
-		}
 		lst_proc = lst_proc->nxt;
 		if (corewar->cycle == corewar->dump)
 		{

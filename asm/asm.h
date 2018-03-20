@@ -44,7 +44,7 @@
 # define DIR_CODE				2
 # define IND_CODE				3
 # define MEM_SIZE				(4*1024)
-# define CHAMP_MAX_SIZE			(MEM_SIZE / 6) * 256
+# define CHAMP_MAX_SIZE			(MEM_SIZE / 6)
 # define COMMENT_CHAR			'#'
 # define COMMENT_CHAR_2			';'
 # define LABEL_CHAR				':'
@@ -59,7 +59,7 @@
 # define T_R					T_REG
 # define T_D					T_DIR
 # define T_I					T_IND
-# define DATA				content
+# define DATA					content
 # define SZ						sizeof
 # define PROG_NAME_LENGTH		(128)
 # define COMMENT_LENGTH			(2048)

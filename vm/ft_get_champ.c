@@ -57,6 +57,7 @@ t_champ		ft_get_champ(char *filename, t_corewar *corewar)
 	char	code[CHAMP_MAX_SIZE];
 	int		val_read;
 
+	ft_bzero(&champ, sizeof(t_champ));
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		error_end("No such file", 6, filename);

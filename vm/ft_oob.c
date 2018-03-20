@@ -25,7 +25,7 @@ unsigned char	*ft_oob(unsigned char *init, unsigned char *dest)
 {
 	unsigned char *tmp;
 
-	if (dest - init == 4096)
+	if (dest - init == 4097)
 		return (init);
 	else if (dest - init > MEM_SIZE)
 	{

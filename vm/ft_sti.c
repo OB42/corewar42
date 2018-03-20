@@ -43,11 +43,11 @@ void	ft_sti(t_ins *ins, t_proc *proc)
 		tmp = ft_oob(proc->init, proc->curseur + (val_1 + val_2) % IDX_MOD);
 		ft_write_ram(proc->reg[ins->param[0]], 4, tmp, proc);
 		//ft_printf("%d\n", proc->reg[ins->param[0]]);
-		if (proc->reg[ins->param[0]] == 0)
+	/*	if (proc->reg[ins->param[0]] == 0)
 			proc->carry = 1;
 		else
 			proc->carry = 0;
-	}
+	*/}
 	ft_print_sti(proc, val_1, val_2);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }

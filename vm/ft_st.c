@@ -27,7 +27,7 @@ void	ft_print_st(t_proc *proc)
 		if (proc->ins->tab[1].type == 1)
 			ft_printf(" r%d %d", proc->ins->param[0], proc->ins->param[1]);
 		else
-			ft_printf(" r%d %d", proc->ins->param[0], value);	
+			ft_printf(" r%d %d", proc->ins->param[0], value);
 		ft_printf("\n");
 	}
 	else
@@ -44,7 +44,7 @@ void	ft_st(t_ins *ins, t_proc *proc)
 	if ((proc->ins->tab[0].type == 1 && proc->ins->tab[1].type != 0
 			&& proc->ins->tab[2].type == 0) && proc->ins->fail == 0)
 	{
-		proc->carry = !(ins->param[0]);
+	//	proc->carry = !(ins->param[0]);
 		if (((ins->ocp & 0x20) && (ins->ocp & 0x10)) || (ins->ocp & 0x20))
 		{
 			if (value > 37768)
