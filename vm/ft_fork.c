@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 20:35:25 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/19 18:22:46 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 15:47:52 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,14 @@ void	ft_fork(t_ins *ins, t_proc *proc)
 {
 	t_proc *new;
 	t_proc	*init;
+	int		value;
 
+	value = ins->param[0];
+	if (value > 32768)
+		value = value - 65536;
 	new = pr_malloc(sizeof(t_proc));
 	new = ft_memmove(new, proc, sizeof(t_proc));
-	new->curseur = ft_oob(proc->init, proc->curseur + ins->param[0] % IDX_MOD);
+	new->curseur = ft_oob(proc->init, proc->curseur + value % IDX_MOD);
 	new->id = ft_get_procnb(proc);
 	init = ft_find_init(proc);
 	new->nxt = init->nxt;
@@ -85,7 +89,7 @@ void	ft_fork(t_ins *ins, t_proc *proc)
 	new->ins = NULL;
 	new->cycle = 0;
 	ft_print_fork(proc);
-	proc->curseur = proc->curseur + 3;
+	proc->curseur = ft_oob(proc->init, proc->curseur + 3);
 	new->ins = ft_get_instru(new->curseur, proc->init);
 }
 
@@ -93,10 +97,14 @@ void	ft_lfork(t_ins *ins, t_proc *proc)
 {
 	t_proc *new;
 	t_proc	*init;
+	int		value;
 
+	value = ins->param[0];
+	if (value > 32768)
+		value -= 65536;
 	new = pr_malloc(sizeof(t_proc));
 	new = ft_memmove(new, proc, sizeof(t_proc));
-	new->curseur = ft_oob(proc->init, proc->curseur + ins->param[0] % MEM_SIZE);
+	new->curseur = ft_oob(proc->init, proc->curseur + value % MEM_SIZE);
 	new->id = ft_get_procnb(proc);
 	init = ft_find_init(proc);
 	new->nxt = init->nxt;
@@ -104,6 +112,6 @@ void	ft_lfork(t_ins *ins, t_proc *proc)
 	new->ins = NULL;
 	new->cycle = 0;
 	ft_print_fork(proc);
-	proc->curseur = proc->curseur + 3;
+	proc->curseur = ft_oob(proc->init, proc->curseur + 3);
 	new->ins = ft_get_instru(new->curseur, proc->init);
 }
