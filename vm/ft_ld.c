@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:57:09 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/19 18:15:36 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 15:05:28 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_ld(t_ins *ins, t_proc *proc)
 		else
 			proc->carry = 0;
 	}
-	else
+	else if (ins->ocp != 144 && ins->ocp != 208)
 		ins->size = 1;
 	ft_print_ld(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);

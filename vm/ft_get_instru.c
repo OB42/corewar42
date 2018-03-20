@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 15:54:36 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/19 19:54:12 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 15:00:45 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,8 @@ t_ins	*ft_get_instru(unsigned char *code_champ, unsigned char *init)
 		if (op_tab[(int)*(code_champ) - 1].ocp == 1)
 		{
 			ins->size = ins->size + 1;
-			ins->ocp = /*(int)*/ *(code_champ + 1);
+			ins->ocp = /*(int)*/ *ft_oob(init, code_champ + 1);
+			//ft_printf("%d %s %d\n", ins->ocp, ins->name, code_champ - init);
 			init++;
 		}
 		else
