@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 18:11:38 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/17 16:56:25 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 16:31:00 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_proc	*ft_cycle_to_die(t_corewar *corewar, t_proc *proc)
 		if (proc->live == 0)
 		{
 			ft_printf("Process %d hasn't lived for %d cycles (CTD %d)\n", proc->id,
-				proc->last_live + 1, corewar->ctd_obj);
+				proc->last_live, corewar->ctd_obj);
 			proc = ft_del(proc);
 		}
 		else

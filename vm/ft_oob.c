@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 15:51:26 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 14:58:25 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 16:42:20 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ unsigned char	*ft_oob(unsigned char *init, unsigned char *dest)
 {
 	unsigned char *tmp;
 
-	//if (dest - init == 4097)
-	//	return (init);
 	if (dest - init >= MEM_SIZE)
 	{
 		tmp = init + (dest - init) % MEM_SIZE;

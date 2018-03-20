@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 16:00:05 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 16:30:45 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,13 @@ t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
 {
 	static int	max_id = 1;
 
+	if (corewar->ctd_cur == corewar->ctd_obj && proc->id == max_id)
+	{
+		proc = ft_cycle_to_die(corewar, proc);
+		if (proc == NULL)
+			return (NULL);
+		max_id = ft_get_procnb(proc) - 1;
+	}
 	if (proc->id > max_id)
 		max_id = proc->id;
 	if (proc->id == max_id)
@@ -65,13 +72,6 @@ t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
 		corewar->cycle++;
 		corewar->ctd_cur++;
 		ft_printf("It is now cycle %d\n", corewar->cycle);
-	}
-	if (corewar->ctd_cur == corewar->ctd_obj)
-	{
-		proc = ft_cycle_to_die(corewar, proc);
-		if (proc == NULL)
-			return (NULL);
-		max_id = ft_get_procnb(proc) - 1;
 	}
 	proc->cycle++;
 	proc->last_live++;
