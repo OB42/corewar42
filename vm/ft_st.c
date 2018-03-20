@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:48:38 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 15:20:09 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 16:19:43 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,12 @@ void	ft_st(t_ins *ins, t_proc *proc)
 		else
 			proc->reg[ins->param[1]] = proc->reg[ins->param[0]];
 	}
-	//else
+	else if (ins->ocp & 8 && ins->ocp & 4)
+		ins->size -= 2;
+	else if (ins->ocp & 8)
+		ins->size -= 4;
+	else if (ins->ocp & 4)
+		ins->size -= 1;
 	//	ft_printf("FAIL %d %d %d %d\n", proc->ins->tab[0].type, proc->ins->tab[1].type, proc->ins->tab[2].type, proc->ins->fail);
 	ft_print_st(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
