@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 17:29:43 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 18:49:31 by vburidar         ###   ########.fr       */
 /*   Updated: 2018/03/19 12:23:48 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -141,6 +141,7 @@ typedef struct	s_corewar
 	unsigned int	n_rank;
 	unsigned int	a_rank;
 	int				select;
+	int				id_max;
 	long long				dump;
 }				t_corewar;
 

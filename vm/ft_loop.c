@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 18:34:52 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 19:21:34 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_val_proc(t_proc *lst_proc, t_corewar *corewar, int i, t_proc *init)
 	lst_proc->reg[1] = -lst_proc->player;
 	lst_proc->ins = NULL;
 	lst_proc->id = ft_get_procnb(lst_proc);
+	corewar->id_max++;
 //	ft_printf("id = %d\n", lst_proc->id);
 	lst_proc->champ = corewar->tab_champ[0];
 }
@@ -37,6 +38,7 @@ t_proc	*ft_init_proc(t_corewar *corewar)
 	int		i;
 
 	i = 0;
+	corewar->id_max = 1;
 	if (!(lst_proc = pr_malloc(sizeof(t_proc))))
 		exit(1);
 	init = lst_proc;
