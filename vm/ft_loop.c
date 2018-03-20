@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 19:21:34 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 20:41:17 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,8 @@ int		ft_loop(t_corewar *corewar)
 		{
 			//ft_print_arena(corewar->arena);
 			ft_update_ins(lst_proc->curseur, lst_proc->init, lst_proc);
-			(lst_proc->ins->fun)(lst_proc->ins, lst_proc);
+			if (lst_proc->ins != NULL)
+				(lst_proc->ins->fun)(lst_proc->ins, lst_proc);
 			lst_proc->cycle = 0;
 			test = 1;
 		}
