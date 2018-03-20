@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 18:11:38 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 22:03:09 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 22:10:37 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_proc	*ft_cycle_to_die(t_corewar *corewar, t_proc *proc)
 			proc = proc->nxt;
 		}
 	}
-	if (corewar->nb_live > NBR_LIVE || corewar->check >= MAX_CHECKS)
+	if (corewar->nb_live >= NBR_LIVE || corewar->check >= MAX_CHECKS)
 	{
 		corewar->check = 0;
 		corewar->ctd_obj -= CYCLE_DELTA;
