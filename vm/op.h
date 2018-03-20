@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 16:29:01 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 17:29:43 by vburidar         ###   ########.fr       */
 /*   Updated: 2018/03/19 12:23:48 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -169,7 +169,7 @@ header_t		ft_get_header(int fd);
 t_champ			ft_get_champ(char *filename, t_corewar *corewar);
 void			ft_get_var(t_proc *proc, unsigned char *code_champ, unsigned char *init);
 t_ins			*ft_get_instru(unsigned char *code_champ, unsigned char *init);
-int				ft_get_int(unsigned char *code_champ, int size);
+int				ft_get_int(unsigned char *init, unsigned char *code_champ, int size);
 unsigned char	*ft_get_ind(t_ins *ins, unsigned char *curseur, int n_param, unsigned char *init);
 unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param, unsigned char *init);
 unsigned char	*ft_get_reg(t_proc *proc, unsigned char *curseur, int n_param, unsigned char *init);

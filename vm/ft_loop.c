@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 16:30:45 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 18:34:52 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
 {
 	static int	max_id = 1;
 
-	if (corewar->ctd_cur == corewar->ctd_obj && proc->id == max_id)
+	if ((corewar->ctd_cur == corewar->ctd_obj || corewar->ctd_obj < 0)
+		&& proc->id == max_id)
 	{
 		proc = ft_cycle_to_die(corewar, proc);
 		if (proc == NULL)
@@ -88,7 +89,7 @@ int		ft_loop(t_corewar *corewar)
 	{
 		test = 0;
 		lst_proc = ft_cycle(lst_proc, corewar);
-		if (lst_proc == NULL || corewar->ctd_obj < 0)
+		if (lst_proc == NULL)
 			return (1);
 		//ft_printf("proc[%d] -> ram[%d] = %d\n", lst_proc->id, lst_proc->curseur - lst_proc->init, *lst_proc->curseur);
 		if (lst_proc->cycle > 1 && lst_proc->cycle == lst_proc->ins->cycle)
