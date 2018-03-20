@@ -8,7 +8,7 @@ var c = ['ultima.cor',
 var fs = require('fs');
 const {exec} = require('child_process');
 var t = [];
-c.forEach(x => c.forEach(y => t.push([x, y, t.length])));
+c.forEach(y => t.push([y, y, t.length]));
 if (process.argv.length == 4 && !isNaN(process.argv[2] * 1) && !isNaN(process.argv[3] * 1))
 	t = t.slice(process.argv[2] * 1, process.argv[3] * 1);
 path = require("path");
