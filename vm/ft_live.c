@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:22:00 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 20:31:34 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 22:04:46 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	ft_print_live(t_proc *proc)
 void	ft_live(t_ins *ins, t_proc *proc)
 {
 	proc->corewar->nb_live += 1;
-	proc->live = 1;
+	if (proc->corewar->ctd_obj > 0)
+		proc->live = 1;
 	proc->last_live = 0;
 	ins->size = ins->size;
 	ins->param[0] = ft_get_int(proc->init, proc->curseur + 1, 4);

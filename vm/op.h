@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 18:49:31 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 21:45:14 by vburidar         ###   ########.fr       */
 /*   Updated: 2018/03/19 12:23:48 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -50,7 +50,7 @@
 # define REG_NUMBER		16
 
 # define CYCLE_TO_DIE	1536
-# define CYCLE_DELTA		50
+# define CYCLE_DELTA	50
 # define NBR_LIVE		21
 # define MAX_CHECKS		10
 
