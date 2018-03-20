@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 18:15:43 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 15:28:26 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 17:29:50 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 void	ft_update_ins(unsigned char *code_champ, unsigned char *init,  t_proc *proc)
 {
 	if (proc->ins->ocp == 0)
-		proc->ins->param[0] = ft_get_int(code_champ + 1, proc->ins->size);
+		proc->ins->param[0] = ft_get_int(init,
+		code_champ + 1, proc->ins->size);
 	else
 	{
 		proc->ins->ocp = *ft_oob(init, code_champ + 1);

@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:22:00 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 15:06:06 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 17:27:40 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_live(t_ins *ins, t_proc *proc)
 	proc->live = 1;
 	proc->last_live = 0;
 	ins->size = ins->size;
-	ins->param[0] = ft_get_int(proc->curseur + 1, 4);
+	ins->param[0] = ft_get_int(proc->init, proc->curseur + 1, 4);
 	ft_print_live(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + 5);
 }

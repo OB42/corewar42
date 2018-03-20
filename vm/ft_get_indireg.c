@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 20:54:24 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 16:36:42 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 17:28:38 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ unsigned char	*ft_get_ind(t_ins *ins, unsigned char *curseur, int n_param,
 	unsigned char *tmp;
 
 	ins->tab[n_param].type = 3;
-	ins->tab[n_param].val_type = 256 * *ft_oob(init, curseur) + *ft_oob(init, curseur + 1);
+	ins->tab[n_param].val_type = 256 * *ft_oob(init, curseur)
+		+ *ft_oob(init, curseur + 1);
 	ins->param[n_param] = ins->tab[n_param].val_type;
 	tmp = ft_oob(init, curseur + ins->tab[n_param].val_type - ins->size - 2  + 1);
 	if (ft_strcmp(ins->name, "lld") == 0)
-		ins->tab[n_param].val_type = ft_get_int(tmp, 2);
+		ins->tab[n_param].val_type = ft_get_int(init, tmp, 2);
 	else	
-		ins->tab[n_param].val_type = ft_get_int(tmp, 4);
+		ins->tab[n_param].val_type = ft_get_int(init, tmp, 4);
 	ins->size = ins->size + 2;
 	return(ft_oob(init, curseur + 2));
 }

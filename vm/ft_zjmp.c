@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 21:40:52 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 16:24:00 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/20 17:50:29 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_zjmp(t_ins *ins, t_proc *proc)
 	if (proc->carry == 1)
 	{
 		ft_printf(" OK\n");
-		proc->curseur = ft_oob(proc->init, proc->curseur + value);
+		proc->curseur = ft_oob(proc->init, proc->curseur + value % IDX_MOD);
 	}
 	else
 	{
