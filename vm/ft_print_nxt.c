@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 17:45:21 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/21 17:56:37 by mlegeay          ###   ########.fr       */
+/*   Updated: 2018/03/19 16:31:32 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,4 @@ void	ft_print_nxt(unsigned char *init, unsigned char *curseur, int size)
 	}
 	ft_printf("\n");
 }
+
