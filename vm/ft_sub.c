@@ -6,7 +6,7 @@
 /*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 18:55:33 by mlegeay           #+#    #+#             */
-/*   Updated: 2018/03/20 15:05:54 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/21 17:44:44 by mlegeay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_print_sub(t_proc *proc, t_ins *ins)
 	ft_print_instru(proc);
 }
 
-void    ft_sub(t_ins *ins, t_proc *proc)
+void	ft_sub(t_ins *ins, t_proc *proc)
 {
 	if (proc->ins->ocp == 0x54 && proc->ins->fail == 0)
 	{

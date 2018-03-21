@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 19:09:01 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/21 16:26:48 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/21 17:45:25 by mlegeay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	ft_sti(t_ins *ins, t_proc *proc)
 		if (ins->tab[2].type ==  1)
 			ins->size -= 1;
 	}
-	*/ft_print_sti(proc, val_1, val_2);
+	*/
+	ft_print_sti(proc, val_1, val_2);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }

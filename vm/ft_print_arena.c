@@ -6,14 +6,14 @@
 /*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:46 by mlegeay           #+#    #+#             */
-/*   Updated: 2018/03/14 22:52:13 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/21 17:50:32 by mlegeay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "LIBFT/libft.h"
 #include "op.h"
 
-void    ft_print_arena(unsigned char	*arena)
+void		ft_print_arena(unsigned char *arena)
 {
 	unsigned int i;
 
