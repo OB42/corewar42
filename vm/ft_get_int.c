@@ -6,14 +6,17 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 16:34:04 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 18:48:57 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/21 17:53:23 by mlegeay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** ft_printf("emplacement ram = %d, ram %p\n", ram - proc->init, ram);
+*/
 #include "LIBFT/libft.h"
 #include "op.h"
 
-int	ft_pow(int time, int val)
+int		ft_pow(int time, int val)
 {
 	int i;
 	int ret;
@@ -30,11 +33,10 @@ int	ft_pow(int time, int val)
 
 void	ft_write_ram(int value, int size, unsigned char *ram, t_proc *proc)
 {
-	int i;
-	unsigned long max;
+	int				i;
+	unsigned long	max;
 
 	i = 0;
-	//ft_printf("emplacement ram = %d, ram %p\n", ram - proc->init, ram);
 	max = ft_pow(size * 2, 16);
 	if (value < 0)
 		max = max + value;
@@ -47,16 +49,17 @@ void	ft_write_ram(int value, int size, unsigned char *ram, t_proc *proc)
 	}
 }
 
-int	ft_get_int(unsigned char *init, unsigned char *code_champ, int size)
+int		ft_get_int(unsigned char *init, unsigned char *code_champ, int size)
 {
 	int i;
 	int ret;
-	
+
 	i = size;
 	ret = 0;
 	while (i > 0)
 	{
-		ret = ret + *ft_oob(init, code_champ + i - 1) * ft_pow((size - i), 256);
+		ret = ret + *ft_oob(init, code_champ + i - 1)
+			* ft_pow((size - i), 256);
 		i = i - 1;
 	}
 	return (ret);

@@ -6,8 +6,8 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 18:15:43 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/21 18:09:48 by vburidar         ###   ########.fr       */
-/*                                                                            */
+/*   Updated: 2018/03/21 18:10:49 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/21 16:56:15 by mlegeay          ###   ########.fr       */
 /* ************************************************************************** */
 
 #include "LIBFT/libft.h"
@@ -26,7 +26,8 @@ int		ft_no_ocp(char *name)
 	return (0);
 }
 
-void	ft_update_ins(unsigned char *code_champ, unsigned char *init,  t_proc *proc)
+void	ft_update_ins(unsigned char *code_champ, unsigned char *init,
+		t_proc *proc)
 {
 	if (ft_no_ocp(proc->ins->name) == 1)
 	{
