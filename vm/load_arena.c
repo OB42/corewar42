@@ -37,6 +37,7 @@ static int	load_champ(t_corewar *corewar, int id)
 	{
 		if (corewar->arena_id[i] == 0)
 		{
+			corewar->last_live_id = id;
 			place_champ(corewar, i, id);
 			return (1);
 		}
