@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_addlim.c                                        :+:      :+:    :+:   */
+/*   options2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/09 14:37:31 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/21 17:07:38 by mlegeay          ###   ########.fr       */
+/*   Created: 2018/03/21 16:42:20 by mlegeay           #+#    #+#             */
+/*   Updated: 2018/03/21 16:43:59 by mlegeay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "LIBFT/libft.h"
 #include "op.h"
 
-int		ft_addlim(int decal)
+int		nbr_champs(int argc, char **argv)
 {
-	int ret;
+	int i;
+	int champs;
 
-	ret = decal % MEM_SIZE;
-	if (ft_abs(ret) > IDX_MOD && ft_abs(MEM_SIZE - ret) > IDX_MOD)
-		ret = decal % IDX_MOD;
-	if (ft_abs(MEM_SIZE - ret) < IDX_MOD)
-		return (ret - MEM_SIZE);
-	else
-		return (ret);
+	i = 1;
+	champs = 0;
+	while (i < argc)
+	{
+		if (ft_strequ(&argv[i][ft_strlen(argv[i]) - 4], ".cor"))
+			champs++;
+		i++;
+	}
+	return (champs);
 }

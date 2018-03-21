@@ -6,14 +6,15 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 18:15:43 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/21 16:19:16 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/21 16:56:15 by mlegeay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "LIBFT/libft.h"
 #include "op.h"
 
-void	ft_update_ins(unsigned char *code_champ, unsigned char *init,  t_proc *proc)
+void	ft_update_ins(unsigned char *code_champ, unsigned char *init,
+		t_proc *proc)
 {
 	if (proc->ins->ocp == 0)
 		proc->ins->param[0] = ft_get_int(init,

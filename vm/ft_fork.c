@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 20:35:25 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 21:27:40 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/21 17:14:27 by mlegeay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,15 @@ int		ft_get_procnb(t_proc *proc)
 
 t_proc	*ft_find_init(t_proc *proc)
 {
-	int id;
-	int min;
+	int		id;
+	int		min;
 	t_proc	*best;
 
 	id = proc->id;
 	min = proc->id;
 	best = proc;
 	proc = proc->nxt;
-	while(proc->id != id)
+	while (proc->id != id)
 	{
 		if (proc->id < min)
 		{
@@ -52,7 +52,6 @@ t_proc	*ft_find_init(t_proc *proc)
 	}
 	return (best);
 }
-
 
 void	ft_print_fork(t_proc *proc)
 {
@@ -72,7 +71,7 @@ void	ft_print_fork(t_proc *proc)
 
 void	ft_fork(t_ins *ins, t_proc *proc)
 {
-	t_proc *new;
+	t_proc	*new;
 	t_proc	*init;
 	int		value;
 
@@ -96,7 +95,7 @@ void	ft_fork(t_ins *ins, t_proc *proc)
 
 void	ft_lfork(t_ins *ins, t_proc *proc)
 {
-	t_proc *new;
+	t_proc	*new;
 	t_proc	*init;
 	int		value;
 

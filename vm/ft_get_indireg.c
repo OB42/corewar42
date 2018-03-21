@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 20:54:24 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 21:25:52 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/21 17:19:58 by mlegeay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,30 +26,28 @@ unsigned char	*ft_get_ind(t_ins *ins, unsigned char *curseur, int n_param,
 	value = ins->param[n_param];
 	if (value > 32768)
 		value -= 65536;
-	tmp = ft_oob(init, curseur + value % IDX_MOD - ins->size - 2  + 1);
+	tmp = ft_oob(init, curseur + value % IDX_MOD - ins->size - 2 + 1);
 	if (ft_strcmp(ins->name, "lld") == 0)
 		ins->tab[n_param].val_type = ft_get_int(init, tmp, 2);
-	else	
+	else
 		ins->tab[n_param].val_type = ft_get_int(init, tmp, 4);
 	ins->size = ins->size + 2;
-	return(ft_oob(init, curseur + 2));
+	return (ft_oob(init, curseur + 2));
 }
 
 unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param,
 		unsigned char *init)
 {
 	ins->tab[n_param].type = 2;
-	if(ft_strcmp (ins->name, "ldi") == 0 ||
-		ft_strcmp (ins->name, "sti") == 0 ||
-		ft_strcmp (ins->name, "lldi") == 0 ||
-		ft_strcmp (ins->name, " ") == 0 ||
-		ft_strcmp (ins->name, " ") == 0)
+	if (ft_strcmp(ins->name, "ldi") == 0 || ft_strcmp(ins->name, "sti")
+			== 0 || ft_strcmp(ins->name, "lldi") == 0 || ft_strcmp(ins->name,
+				" ") == 0 || ft_strcmp(ins->name, " ") == 0)
 	{
 		ins->size = ins->size + 2;
 		ins->param[n_param] = 256 * *ft_oob(init, curseur)
 			+ *ft_oob(init, curseur + 1);
 		ins->tab[n_param].val_type = ins->param[n_param];
-		if (ins->tab[n_param].val_type	> 32768)
+		if (ins->tab[n_param].val_type > 32768)
 			ins->tab[n_param].val_type -= 65536;
 		return (ft_oob(init, curseur + 2));
 	}
