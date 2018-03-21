@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:48:38 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 20:30:15 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/21 15:21:11 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_print_st(t_proc *proc)
 	if (value > 32768)
 		value -= 65536;
 	if ((proc->ins->tab[0].type == 1 && proc->ins->tab[1].type != 0
-			&& proc->ins->tab[2].type == 0) && proc->ins->fail == 0)
+		) && proc->ins->param[0] > 0 && proc->ins->param[0] < REG_NUMBER + 1)
 	{
 		ft_printf("P%5d | %s", proc->id, proc->ins->name);
 		if (proc->ins->tab[1].type == 1)
@@ -42,9 +42,8 @@ void	ft_st(t_ins *ins, t_proc *proc)
 
 	value = proc->ins->param[1];
 	if ((proc->ins->tab[0].type == 1 && proc->ins->tab[1].type != 0
-			) && proc->ins->fail == 0)
+		) && proc->ins->param[0] > 0 && proc->ins->param[0] < REG_NUMBER + 1)
 	{
-	//	proc->carry = !(ins->param[0]);
 		if (((ins->ocp & 0x20) && (ins->ocp & 0x10)) || (ins->ocp & 0x20))
 		{
 			if (value > 37768)
@@ -55,13 +54,13 @@ void	ft_st(t_ins *ins, t_proc *proc)
 		else
 			proc->reg[ins->param[1]] = proc->reg[ins->param[0]];
 	}
-	else if (ins->ocp & 8 && ins->ocp & 4)
+	if (ins->ocp & 8 && ins->ocp & 4)
 		ins->size -= 2;
 	else if (ins->ocp & 8)
 		ins->size -= 4;
 	else if (ins->ocp & 4)
 		ins->size -= 1;
-	//	ft_printf("FAIL %d %d %d %d\n", proc->ins->tab[0].type, proc->ins->tab[1].type, proc->ins->tab[2].type, proc->ins->fail);
+	//ft_printf("FAIL %d %d %d %d\n", proc->ins->tab[0].type, proc->ins->tab[1].type, proc->ins->tab[2].type, proc->ins->fail);
 	ft_print_st(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }
