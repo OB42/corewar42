@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/21 16:20:59 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/21 17:31:11 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,8 @@ int		ft_loop(t_corewar *corewar)
 		lst_proc = ft_cycle(lst_proc, corewar);
 		if (lst_proc == NULL)
 			return (1);
-		//if (lst_proc->id == 26)
-			//ft_printf("proc[%d] -> ram[%d] = %d\n", lst_proc->id, lst_proc->curseur - lst_proc->init, *lst_proc->curseur, lst_proc->carry);
+		//if (lst_proc->id == 21 && lst_proc->ins)
+		//	ft_printf("proc[%d] -> ram[%d] = %d size = %d\n", lst_proc->id, lst_proc->curseur - lst_proc->init, *lst_proc->curseur, lst_proc->carry, lst_proc->ins->size);
 		if (lst_proc->cycle > 1 && lst_proc->cycle == lst_proc->ins->cycle)
 		{
 			//ft_print_arena(corewar->arena);
