@@ -45,21 +45,6 @@
 # define LABEL_CHARS		"abcdefghijklmnopqrstuvwxyz_0123456789"
 
 # define NAME_CMD_STRING	".name"
-	int		cycle;
-	int		nb_param;
-	int		fail;
-};
-
-typedef	struct	s_op
-{
-	char	*name;
-	int		nb_param;
-	int		param[3];
-	int		length;
-	int		ocp;
-	int		size_no_ocp;
-	void	(*fun)(t_ins*, t_proc*);
-}				t_op;
 # define COMMENT_CMD_STRING	".comment"
 
 # define REG_NUMBER		16
@@ -107,6 +92,21 @@ struct	s_ins
 	t_par	tab[3];
 	void	(*fun)(t_ins*, t_proc*);
 	int		size;
+	int		cycle;
+	int		nb_param;
+	int		fail;
+};
+
+typedef	struct	s_op
+{
+	char	*name;
+	int		nb_param;
+	int		param[3];
+	int		length;
+	int		ocp;
+	int		size_no_ocp;
+	void	(*fun)(t_ins*, t_proc*);
+}				t_op;
 
 typedef struct	header_s
 {
