@@ -6,9 +6,14 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 13:06:45 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/19 18:54:21 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/21 16:51:59 by mlegeay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** if % 16 == 0 TEMPORARY (print_code)
+**while (1); RETIRER COMMENT POUR CHECKER RANK (main)
+*/
 
 #include "LIBFT/libft.h"
 #include "op.h"
@@ -23,18 +28,18 @@ static void		ft_display_contestant(t_corewar *corewar, int mode)
 		ft_printf("Introducing contestants...\n");
 		while (i < corewar->nb_champ)
 		{
-			ft_printf("* Player %u, weighing %i bytes, \"%s\" (\"%s\") !\n",\
-			corewar->tab_champ[i].rank, corewar->tab_champ[i].header.prog_size, \
-			corewar->tab_champ[i].header.prog_name, \
+			ft_printf("* Player %u, weighing %i bytes, \"%s\" (\"%s\") !\n",
+			corewar->tab_champ[i].rank, corewar->tab_champ[i].header.prog_size,
+			corewar->tab_champ[i].header.prog_name,
 			corewar->tab_champ[i].header.comment);
 			i++;
 		}
 	}
 	else if (mode == 1)
 	{
-		ft_printf("Contestant %u, \"%s\", has won !\n", \
-		corewar->tab_champ[corewar->last_live_id].rank,\
-		corewar->tab_champ[corewar->last_live_id].header.prog_name, \
+		ft_printf("Contestant %u, \"%s\", has won !\n",
+		corewar->tab_champ[corewar->last_live_id].rank,
+		corewar->tab_champ[corewar->last_live_id].header.prog_name,
 		corewar->tab_champ[corewar->last_live_id].header.comment);
 	}
 }
@@ -48,14 +53,14 @@ void			ft_print_code(t_champ champ)
 	{
 		ft_printf("%02x ", champ.code[i]);
 		i++;
-		if ((i % 16) == 0)//TEMPORARY
+		if ((i % 16) == 0)
 			ft_printf("\n");
 	}
 }
 
 static void		ft_init_all(int argc, char **argv, t_corewar *corewar)
 {
-	int 		i;
+	int			i;
 	int			champ;
 
 	i = 1;
@@ -77,7 +82,7 @@ static void		ft_init_all(int argc, char **argv, t_corewar *corewar)
 	corewar->ctd_obj = CYCLE_TO_DIE;
 }
 
-int 			main(int argc, char **argv)
+int				main(int argc, char **argv)
 {
 	t_corewar	corewar;
 	t_ins		*instru;
@@ -88,7 +93,6 @@ int 			main(int argc, char **argv)
 		ft_init_all(argc, argv, &corewar);
 		load_arena(&corewar);
 		ft_display_contestant(&corewar, 0);
-		//while (1); RETIRER COMMENT POUR CHECKER RANK
 		ft_loop(&corewar);
 		ft_display_contestant(&corewar, 1);
 	}

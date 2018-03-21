@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_proc.c                                    :+:      :+:    :+:   */
+/*   options2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/09 16:36:10 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/21 17:45:56 by mlegeay          ###   ########.fr       */
+/*   Created: 2018/03/21 16:42:20 by mlegeay           #+#    #+#             */
+/*   Updated: 2018/03/21 16:43:59 by mlegeay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "LIBFT/libft.h"
 #include "op.h"
 
-void	ft_print_proc(t_proc *proc)
+int		nbr_champs(int argc, char **argv)
 {
-	ft_printf("P%5d | %s", proc->id, proc->ins->name);
-	ft_printf(" %d %d %d\n", proc->ins->param[0],
-			proc->ins->param[1], proc->ins->param[2]);
+	int i;
+	int champs;
+
+	i = 1;
+	champs = 0;
+	while (i < argc)
+	{
+		if (ft_strequ(&argv[i][ft_strlen(argv[i]) - 4], ".cor"))
+			champs++;
+		i++;
+	}
+	return (champs);
 }

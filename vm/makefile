@@ -34,6 +34,7 @@ SRC = main.c\
 	  error.c\
 	  error_2.c\
 	  options.c\
+	  options2.c\
 
 
 OBJ = $(SRC:.c=.o)
