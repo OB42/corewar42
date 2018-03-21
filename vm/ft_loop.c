@@ -42,7 +42,7 @@ t_proc	*ft_init_proc(t_corewar *corewar)
 	init = new;
 	curseur = new;
 	ft_val_proc(new, corewar, i);
-	new->next = new;
+	new->nxt = new;
 	new->id = 1;
 	i++;
 	while(corewar->tab_champ[i].code)
