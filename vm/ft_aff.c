@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/16 16:16:23 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/21 17:27:39 by mlegeay          ###   ########.fr       */
+/*   Updated: 2018/03/21 22:02:52 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ void	ft_aff(t_ins *ins, t_proc *proc)
 {
 	if (proc->ins->fail == 0 && proc->ins->ocp == 64)
 		proc->ins->param[1] = 0;
+	else if (ins->tab[0].type == 3)
+		ins->size = 3;
+	else if (ins->tab[0].type == 2)
+		ins->size = 5;
+	else if (ins->tab[0].type == 1)
+		ins->size = 2;
 	else
 		ins->size = 1;
 	ft_print_aff(ins, proc);

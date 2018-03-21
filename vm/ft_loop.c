@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/21 18:25:07 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/21 22:03:45 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,46 +14,48 @@
 #include "LIBFT/libft.h"
 #include "op.h"
 
-void	ft_val_proc(t_proc *lst_proc, t_corewar *corewar, int i, t_proc *init)
+void	ft_val_proc(t_proc *new, t_corewar *corewar, int i)
 {
-	ft_bzero(lst_proc, sizeof(t_proc));
-	lst_proc->curseur = corewar->arena + i * (MEM_SIZE / corewar->nb_champ);
-	lst_proc->live = 0;
-	lst_proc->init = corewar->arena;
-	lst_proc->corewar = corewar;
-	lst_proc->nxt = init;
-	lst_proc->player = i + 1;
-	lst_proc->reg[1] = -lst_proc->player;
-	lst_proc->ins = NULL;
-	lst_proc->id = ft_get_procnb(lst_proc);
+	ft_bzero(new, sizeof(t_proc));
+	new->curseur = corewar->arena + i * (MEM_SIZE / corewar->nb_champ);
+	new->live = 0;
+	new->init = corewar->arena;
+	new->corewar = corewar;
+	new->player = i + 1;
+	new->reg[1] = -new->player;
+	new->ins = NULL;
 	corewar->id_max++;
-//	ft_printf("id = %d\n", lst_proc->id);
-	lst_proc->champ = corewar->tab_champ[0];
+	new->champ = corewar->tab_champ[0];
 }
 
 t_proc	*ft_init_proc(t_corewar *corewar)
 {
-	t_proc	*lst_proc;
+	t_proc	*new;
 	t_proc	*init;
+	t_proc	*curseur;
 	int		i;
 
 	i = 0;
 	corewar->id_max = 1;
-	if (!(lst_proc = pr_malloc(sizeof(t_proc))))
+	if (!(new = pr_malloc(sizeof(t_proc))))
 		exit(1);
-	init = lst_proc;
-	lst_proc->id = 0;
-	ft_val_proc(lst_proc, corewar, i, init);
+	init = new;
+	curseur = new;
+	ft_val_proc(new, corewar, i);
+	new->id = 1;
 	i++;
 	while(corewar->tab_champ[i].code)
 	{
-		if (!(lst_proc->nxt = pr_malloc(sizeof(t_proc))))
+		if (!(new = pr_malloc(sizeof(t_proc))))
 			exit(1);
-		lst_proc = lst_proc->nxt;
-		ft_val_proc(lst_proc, corewar, i, init);
+		ft_val_proc(new, corewar, i);
+		init->nxt = new;
+		new->nxt = curseur;
+		curseur = new;
+		new->id = i + 1;
 		i++;
 	}
-	return (lst_proc);
+	return (new);
 }
 
 t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
