@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 22:41:39 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/21 16:20:59 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,8 @@ int		ft_loop(t_corewar *corewar)
 		lst_proc = ft_cycle(lst_proc, corewar);
 		if (lst_proc == NULL)
 			return (1);
+		//if (lst_proc->id == 26)
+			//ft_printf("proc[%d] -> ram[%d] = %d\n", lst_proc->id, lst_proc->curseur - lst_proc->init, *lst_proc->curseur, lst_proc->carry);
 		if (lst_proc->cycle > 1 && lst_proc->cycle == lst_proc->ins->cycle)
 		{
 			//ft_print_arena(corewar->arena);
@@ -101,8 +103,7 @@ int		ft_loop(t_corewar *corewar)
 			if (lst_proc->ins != NULL)
 				(lst_proc->ins->fun)(lst_proc->ins, lst_proc);
 			lst_proc->cycle = 0;
-			//ft_printf("corewar CTD = %d ecart = %d\n", corewar->ctd_obj, corewar->ctd_cur);
-			//ft_printf("proc[%d] -> ram[%d] = %d proc->carry = %d\n", lst_proc->id, lst_proc->curseur - lst_proc->init, *lst_proc->curseur, lst_proc->carry);
+			//ft_printf("proc[%d] -> ram[%d] = %d", lst_proc->id, lst_proc->curseur - lst_proc->init, *lst_proc->curseur, lst_proc->carry);
 			test = 1;
 		}
 		if (lst_proc->cycle <= 1)
