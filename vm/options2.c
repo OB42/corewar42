@@ -6,7 +6,7 @@
 /*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/21 16:42:20 by mlegeay           #+#    #+#             */
-/*   Updated: 2018/03/21 16:43:59 by mlegeay          ###   ########.fr       */
+/*   Updated: 2018/03/22 02:01:54 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ int		nbr_champs(int argc, char **argv)
 			champs++;
 		i++;
 	}
+	if (champs > MAX_PLAYERS)
+		error_end("Too much champions", 13, NULL);
 	return (champs);
 }
