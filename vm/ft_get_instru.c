@@ -69,7 +69,8 @@ void	ft_get_var(t_proc *proc, unsigned char *code_champ, unsigned char *init)
 		code_champ = ft_get_dir(proc->ins, code_champ, 2, init);
 	else if (proc->ins->ocp & 4)
 		code_champ = ft_get_reg(proc, code_champ, 2, init);
-	else if (proc->ins->ocp & 2 || proc->ins->ocp & 1)
+//	else if (proc->ins->ocp & 2 || proc->ins->ocp & 1)
+	else if ((proc->ins->ocp & 1 || proc->ins->ocp & 2) /*&& (ft_strcmp(proc->ins->name, "and") || ft_strcmp(proc->ins->name, "live"))*/)
 		proc->ins->fail = 1;
 }
 

@@ -79,6 +79,12 @@ t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
 		corewar->cycle++;
 		corewar->ctd_cur++;
 		ft_printf("It is now cycle %d\n", corewar->cycle);
+                if (corewar->cycle == corewar->dump)
+                {
+                        if (corewar->dump > -1)
+                                ft_output_arena(corewar);
+                        exit(0);
+                }
 	}
 	proc->cycle++;
 	proc->last_live++;
@@ -117,12 +123,12 @@ int		ft_loop(t_corewar *corewar)
 			lst_proc->cycle = 0;
 		}
 		lst_proc = lst_proc->nxt;
-		if (corewar->cycle == corewar->dump)
+/*		if (corewar->cycle == corewar->dump)
 		{
 			if (corewar->dump > -1)
 				ft_output_arena(corewar);
 			return (1);
 		}
-	}
+*/	}
 	return (1);
 }
