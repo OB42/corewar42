@@ -37,7 +37,7 @@ void	ft_update_ins(unsigned char *code_champ, unsigned char *init,
 	else
 	{
 		proc->ins->ocp = *ft_oob(init, code_champ + 1);
-		if ((proc->ins->ocp & 1 || proc->ins->ocp & 2) && ft_strcmp(proc->ins->name, "and"))
+		if ((proc->ins->ocp & 1 || proc->ins->ocp & 2) && (ft_strcmp(proc->ins->name, "and") || ft_strcmp(proc->ins->name, "live")))
 			proc->ins->fail = 1;
 		ft_get_var(proc, ft_oob(init, code_champ + 2), init);
 	}
