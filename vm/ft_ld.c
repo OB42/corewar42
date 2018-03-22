@@ -23,6 +23,16 @@ void	ft_print_ld(t_proc *proc)
 	ft_print_instru(proc);
 }
 
+void	ft_print_lld(t_proc *proc, int value)
+{
+	if((proc->ins->ocp == 144 || proc->ins->ocp == 208) &&  proc->ins->fail == 0)
+	{
+		ft_printf("P%5d | %s", proc->id, proc->ins->name);
+		ft_printf(" %d r%d\n", value, proc->ins->param[1]);
+	}
+	ft_print_instru(proc);
+}	
+
 void	ft_ld(t_ins *ins, t_proc *proc)
 {
 	if ((ins->ocp == 144 || ins->ocp == 208) && proc->ins->fail == 0)
@@ -64,6 +74,6 @@ void	ft_lld(t_ins *ins, t_proc *proc)
 		ins->size -= 4;
 	else if (ins->ocp & 4)
 		ins->size -= 1;
-	ft_print_ld(proc);
+	ft_print_lld(proc, value);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }
