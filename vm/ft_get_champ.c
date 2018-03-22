@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 12:56:03 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/21 17:16:42 by mlegeay          ###   ########.fr       */
+/*   Updated: 2018/03/22 02:34:39 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ t_champ			ft_get_champ(char *filename, t_corewar *corewar)
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		error_end("No such file", 6, filename);
-	else if (!ft_strequ(&filename[ft_strlen(filename) - 4], ".cor"))
+	else if ((ft_strlen(filename) < 5) || \
+	(!ft_strequ(&filename[ft_strlen(filename) - 4], ".cor")))
 		error_end("Not a .cor file", 2, filename);
 	ft_valid_champ(fd, filename);
 	champ.header = ft_get_header(fd);
