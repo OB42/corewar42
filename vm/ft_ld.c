@@ -58,7 +58,7 @@ void	ft_lld(t_ins *ins, t_proc *proc)
 	int value;
 
 	value = ins->tab[0].val_type;
-	if (value > 32768)
+	if (ins->tab[0].type == 3 && value > 32768)
 		value = value - 65536;
 	if ((ins->ocp == 144 || ins->ocp == 208) && proc->ins->fail == 0)
 	{
