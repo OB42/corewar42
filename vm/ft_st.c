@@ -21,7 +21,8 @@ void	ft_print_st(t_proc *proc)
 	if (value > 32768)
 		value -= 65536;
 	if ((proc->ins->tab[0].type == 1 && proc->ins->tab[1].type != 0
-		) && proc->ins->param[0] > 0 && proc->ins->param[0] < REG_NUMBER + 1)
+		) && proc->ins->param[0] > 0 && proc->ins->param[0] < REG_NUMBER + 1
+	   && (proc->ins->tab[1].type != 1 || proc->ins->param[1] < REG_NUMBER + 1))
 	{
 		ft_printf("P%5d | %s", proc->id, proc->ins->name);
 		if (proc->ins->tab[1].type == 1)
@@ -42,7 +43,8 @@ void	ft_st(t_ins *ins, t_proc *proc)
 
 	value = proc->ins->param[1];
 	if ((proc->ins->tab[0].type == 1 && proc->ins->tab[1].type != 0
-		) && proc->ins->param[0] > 0 && proc->ins->param[0] < REG_NUMBER + 1)
+		) && proc->ins->param[0] > 0 && proc->ins->param[0] < REG_NUMBER + 1
+	   && (proc->ins->tab[1].type != 1 || proc->ins->param[1] < REG_NUMBER + 1))
 	{
 		if (((ins->ocp & 0x20) && (ins->ocp & 0x10)) || (ins->ocp & 0x20))
 		{
