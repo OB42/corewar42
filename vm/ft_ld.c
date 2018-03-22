@@ -33,10 +33,6 @@ void	ft_ld(t_ins *ins, t_proc *proc)
 		else
 			proc->carry = 0;
 	}
-	//else if (ins->ocp < 16)
-	//	ins->size = 1;
-	//else if (ins->ocp > 240)
-	//	ins->size = 5;
 	else if (ins->ocp & 8 && ins->ocp & 4)
 		ins->size -= 2;
 	else if (ins->ocp & 8)
@@ -49,18 +45,25 @@ void	ft_ld(t_ins *ins, t_proc *proc)
 
 void	ft_lld(t_ins *ins, t_proc *proc)
 {
+	int value;
+
+	value = ins->tab[0].val_type;
+	if (value > 32768)
+		value = value - 65536;
 	if ((ins->ocp == 144 || ins->ocp == 208) && proc->ins->fail == 0)
 	{
-		proc->reg[ins->param[1]] = ins->tab[0].val_type;
+		proc->reg[ins->param[1]] = value;
 		if (ins->param[0] == 0)
 			proc->carry = 1;
 		else
 			proc->carry = 0;
 	}
-	else if (ins->ocp < 16)
-		ins->size = 1;
-	else if (ins->ocp > 240)
-		ins->size = 5;
+	else if (ins->ocp & 8 && ins->ocp & 4)
+		ins->size -= 2;
+	else if (ins->ocp & 8)
+		ins->size -= 4;
+	else if (ins->ocp & 4)
+		ins->size -= 1;
 	ft_print_ld(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }
