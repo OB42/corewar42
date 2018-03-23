@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 18:49:00 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/21 18:15:29 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/23 14:52:02 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,11 @@ void	ft_print_ldi(t_proc *proc)
 		ft_printf("P%5d | %s", proc->id, proc->ins->name);
 		ft_print_ocp(proc, 1, 1, 0);
 		if (ft_strcmp(proc->ins->name, "ldi") == 0)
-			ft_printf("\n       | -> load from %d + %d = %d (with pc and mod %d)\n", val_1, val_2, val_1 + val_2, proc->curseur +
-					(val_1 + val_2) % IDX_MOD - proc->init);
+		{
+			ft_printf("\n       | -> load from %d + %d = ", val_1, val_2);
+			ft_printf("%d (with pc and mod %d)\n", val_1 + val_2,
+				proc->curseur + (val_1 + val_2) % IDX_MOD - proc->init);
+		}
 		else
 			ft_printf("\n       | -> load from %d + %d = %d (with pc %d)\n",
 				val_1, val_2, val_1 + val_2,

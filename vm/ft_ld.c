@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:57:09 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/21 16:51:01 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/23 14:44:04 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 void	ft_print_ld(t_proc *proc)
 {
-	if((proc->ins->ocp == 144 || proc->ins->ocp == 208) &&  proc->ins->fail == 0)
+	if ((proc->ins->ocp == 144 || proc->ins->ocp == 208)
+		&& proc->ins->fail == 0)
 	{
 		ft_printf("P%5d | %s", proc->id, proc->ins->name);
 		ft_printf(" %d r%d\n", proc->ins->tab[0].val_type, proc->ins->param[1]);
@@ -25,13 +26,14 @@ void	ft_print_ld(t_proc *proc)
 
 void	ft_print_lld(t_proc *proc, int value)
 {
-	if((proc->ins->ocp == 144 || proc->ins->ocp == 208) &&  proc->ins->fail == 0)
+	if ((proc->ins->ocp == 144 || proc->ins->ocp == 208)
+		&& proc->ins->fail == 0)
 	{
 		ft_printf("P%5d | %s", proc->id, proc->ins->name);
 		ft_printf(" %d r%d\n", value, proc->ins->param[1]);
 	}
 	ft_print_instru(proc);
-}	
+}
 
 void	ft_ld(t_ins *ins, t_proc *proc)
 {
