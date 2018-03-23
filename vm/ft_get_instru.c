@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 15:54:36 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/23 14:42:01 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/23 15:45:34 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ft_get_var(t_proc *proc, unsigned char *code_champ, unsigned char *init)
 		code_champ = ft_get_dir(proc->ins, code_champ, 2, init);
 	else if (proc->ins->ocp & 4)
 		code_champ = ft_get_reg(proc, code_champ, 2, init);
-	else if (proc->ins->ocp & 1 || proc->ins->ocp & 2)
+	else if ((proc->ins->ocp & 1 || proc->ins->ocp & 2))
 		proc->ins->fail = 1;
 }
 
