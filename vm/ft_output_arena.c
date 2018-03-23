@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 20:37:59 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/14 21:19:12 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/23 14:21:43 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,11 @@ void	ft_output_arena(t_corewar *corewar)
 	}
 	ft_printf("\n");
 	exit(0);
+}
+
+int		ft_dump(t_corewar *corewar)
+{
+	if (corewar->dump < -1)
+		ft_output_arena(corewar);
+	return (0);
 }

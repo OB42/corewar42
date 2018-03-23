@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 15:54:36 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/21 21:29:22 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/23 14:20:13 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,8 @@ void	ft_get_var(t_proc *proc, unsigned char *code_champ, unsigned char *init)
 		code_champ = ft_get_dir(proc->ins, code_champ, 2, init);
 	else if (proc->ins->ocp & 4)
 		code_champ = ft_get_reg(proc, code_champ, 2, init);
-//	else if (proc->ins->ocp & 2 || proc->ins->ocp & 1)
-	else if ((proc->ins->ocp & 1 || proc->ins->ocp & 2) /*&& (ft_strcmp(proc->ins->name, "and") || ft_strcmp(proc->ins->name, "live"))*/)
-		proc->ins->fail = 1;
+	else if (proc->ins->ocp & 1 || proc->ins->ocp & 2)
+			proc->ins->fail = 1;
 }
 
 t_ins	*ft_get_instru(unsigned char *code_champ, unsigned char *init)
@@ -91,7 +90,7 @@ t_ins	*ft_get_instru(unsigned char *code_champ, unsigned char *init)
 		if (op_tab[(int)*(code_champ) - 1].ocp == 1)
 		{
 			ins->size = ins->size + 1;
-			ins->ocp = /*(int)*/ *ft_oob(init, code_champ + 1);
+			ins->ocp = *ft_oob(init, code_champ + 1);
 			init++;
 		}
 		else

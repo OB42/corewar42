@@ -6,29 +6,22 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 18:11:38 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 22:46:12 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/23 14:32:58 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "LIBFT/libft.h"
 #include "op.h"
 
-t_proc	*ft_cycle_to_die(t_corewar *corewar, t_proc *proc)
+t_proc	*ft_check_live(t_proc *proc, int id, t_corewar *corewar)
 {
-	t_proc	*init;
-	int		id;
-
-	corewar->check += 1;
-	id = ft_get_procnb(proc);
-	init = proc;
 	while (proc && id > proc->id)
 	{
 		id = proc->id;
-		//ft_printf(" %d, live = %d, last_live = %d\n", proc->id, proc->live, proc->last_live);
 		if (proc->live == 0)
 		{
-			ft_printf("Process %d hasn't lived for %d cycles (CTD %d)\n", proc->id,
-				proc->last_live, corewar->ctd_obj);
+			ft_printf("Process %d hasn't lived for %d cycles (CTD %d)\n",
+				proc->id, proc->last_live, corewar->ctd_obj);
 			proc = ft_del(proc);
 		}
 		else
@@ -37,6 +30,16 @@ t_proc	*ft_cycle_to_die(t_corewar *corewar, t_proc *proc)
 			proc = proc->nxt;
 		}
 	}
+	return (proc);
+}
+
+t_proc	*ft_cycle_to_die(t_corewar *corewar, t_proc *proc)
+{
+	int		id;
+
+	corewar->check += 1;
+	id = ft_get_procnb(proc);
+	proc = ft_check_live(proc, id, corewar);
 	if (corewar->nb_live >= NBR_LIVE || corewar->check >= MAX_CHECKS)
 	{
 		corewar->check = 0;
@@ -49,6 +52,5 @@ t_proc	*ft_cycle_to_die(t_corewar *corewar, t_proc *proc)
 		return (proc);
 	while (proc->id < ft_get_procnb(proc) - 1)
 		proc = proc->nxt;
-	//ft_printf("fin ctd courrant = %d ctd obj = %d\n", corewar->ctd_cur, corewar->ctd_obj);
 	return (proc);
 }

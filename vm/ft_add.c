@@ -6,7 +6,7 @@
 /*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 18:38:08 by mlegeay           #+#    #+#             */
-/*   Updated: 2018/03/21 18:27:13 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/23 14:28:32 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	ft_print_add(t_proc *proc, t_ins *ins)
 
 void	ft_add(t_ins *ins, t_proc *proc)
 {
-	//ft_printf("ft_add\n");
 	if (proc->ins->fail == 0 && ins->ocp == 0x54)
 	{
 		proc->reg[ins->param[2]] =

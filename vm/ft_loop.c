@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/21 22:03:45 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/03/23 14:28:11 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_val_proc(t_proc *new, t_corewar *corewar, int i)
 	new->player = i + 1;
 	new->reg[1] = -new->player;
 	new->ins = NULL;
+	new->id = i + 1;
 	corewar->id_max++;
 	new->champ = corewar->tab_champ[0];
 }
@@ -43,9 +44,8 @@ t_proc	*ft_init_proc(t_corewar *corewar)
 	curseur = new;
 	ft_val_proc(new, corewar, i);
 	new->nxt = new;
-	new->id = 1;
 	i++;
-	while(corewar->tab_champ[i].code)
+	while (corewar->tab_champ[i].code)
 	{
 		if (!(new = pr_malloc(sizeof(t_proc))))
 			exit(1);
@@ -53,7 +53,6 @@ t_proc	*ft_init_proc(t_corewar *corewar)
 		init->nxt = new;
 		new->nxt = curseur;
 		curseur = new;
-		new->id = i + 1;
 		i++;
 	}
 	return (new);
@@ -72,19 +71,13 @@ t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
 			return (NULL);
 		max_id = ft_get_procnb(proc) - 1;
 	}
-	if (proc->id > max_id)
-		max_id = proc->id;
 	if (proc->id == max_id)
 	{
 		corewar->cycle++;
 		corewar->ctd_cur++;
 		ft_printf("It is now cycle %d\n", corewar->cycle);
-                if (corewar->cycle == corewar->dump)
-                {
-                        if (corewar->dump > -1)
-                                ft_output_arena(corewar);
-                        exit(0);
-                }
+		if (corewar->cycle == corewar->dump)
+			exit(ft_dump(corewar));
 	}
 	proc->cycle++;
 	proc->last_live++;
@@ -93,42 +86,29 @@ t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
 
 int		ft_loop(t_corewar *corewar)
 {
-	t_proc *lst_proc;
+	t_proc	*lst_proc;
 	int		test;
 
 	lst_proc = ft_init_proc(corewar);
-	while (lst_proc)
+	while ((lst_proc = ft_cycle(lst_proc, corewar)) && lst_proc)
 	{
 		test = 0;
-		lst_proc = ft_cycle(lst_proc, corewar);
-		if (lst_proc == NULL)
-			return (1);
-		//if (lst_proc->id == 21 && lst_proc->ins)
-		//	ft_printf("proc[%d] -> ram[%d] = %d size = %d\n", lst_proc->id, lst_proc->curseur - lst_proc->init, *lst_proc->curseur, lst_proc->carry, lst_proc->ins->size);
 		if (lst_proc->cycle > 1 && lst_proc->cycle == lst_proc->ins->cycle)
 		{
-			//ft_print_arena(corewar->arena);
 			ft_update_ins(lst_proc->curseur, lst_proc->init, lst_proc);
 			if (lst_proc->ins != NULL)
 				(lst_proc->ins->fun)(lst_proc->ins, lst_proc);
 			lst_proc->cycle = 0;
-			//ft_printf("proc[%d] -> ram[%d] = %d", lst_proc->id, lst_proc->curseur - lst_proc->init, *lst_proc->curseur, lst_proc->carry);
 			test = 1;
 		}
 		if (lst_proc->cycle <= 1)
 			lst_proc->ins = ft_get_instru(lst_proc->curseur, lst_proc->init);
-		if (lst_proc->ins == NULL && test == 0)
+		if (test == 0 && lst_proc->ins == NULL)
 		{
 			lst_proc->curseur = ft_oob(lst_proc->init, lst_proc->curseur + 1);
 			lst_proc->cycle = 0;
 		}
 		lst_proc = lst_proc->nxt;
-/*		if (corewar->cycle == corewar->dump)
-		{
-			if (corewar->dump > -1)
-				ft_output_arena(corewar);
-			return (1);
-		}
-*/	}
+	}
 	return (1);
 }
