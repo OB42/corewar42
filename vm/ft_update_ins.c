@@ -5,9 +5,9 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/14 18:15:43 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/23 14:40:13 by vburidar         ###   ########.fr       */
-/*   Updated: 2018/03/21 16:56:15 by mlegeay          ###   ########.fr       */
+/*   Created: 2018/03/23 14:58:28 by vburidar          #+#    #+#             */
+/*   Updated: 2018/03/23 14:59:11 by vburidar         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "LIBFT/libft.h"
@@ -37,7 +37,8 @@ void	ft_update_ins(unsigned char *code_champ, unsigned char *init,
 	else
 	{
 		proc->ins->ocp = *ft_oob(init, code_champ + 1);
-		if ((proc->ins->ocp & 1 || proc->ins->ocp & 2) && (ft_strcmp(proc->ins->name, "and")))
+		if ((proc->ins->ocp & 1 || proc->ins->ocp & 2)
+			&& (ft_strcmp(proc->ins->name, "and")))
 			proc->ins->fail = 1;
 		ft_get_var(proc, ft_oob(init, code_champ + 2), init);
 	}
