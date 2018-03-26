@@ -18,23 +18,25 @@
 
 t_op	*ft_get_op_tab(void)
 {
-	static t_op op_tab[17] = {{"live", 1, 10, 0, 4, ft_live},
-	{"ld", 2, 5, 1, 0, ft_ld},
-	{"st", 2, 5, 1, 0, ft_st},
-	{"add", 3, 10, 1, 0, ft_add},
-	{"sub", 3, 10, 1, 0, ft_sub},
-	{"and", 3, 6, 1, 0, ft_and},
-	{"or", 3, 6, 1, 0, ft_or},
-	{"xor", 3, 6, 1, 0, ft_xor},
-	{"zjmp", 1, 20, 0, 2, ft_zjmp},
-	{"ldi", 3, 25, 1, 0, ft_ldi},
-	{"sti", 3, 25, 1, 0, ft_sti},
-	{"fork", 1, 800, 0, 2, ft_fork},
-	{"lld", 2, 10, 1, 0, ft_lld},
-	{"lldi", 3, 50, 1, 0, ft_lldi},
-	{"lfork", 1, 1000, 0, 2, ft_lfork},
-	{"aff", 1, 2, 1, 0, ft_aff},
-	{0, 0, 0, 0, 0, 0}};
+	static t_op op_tab[17] =
+	{
+	{"live", 1, {T_D}, 10, 0, 4, ft_live},
+	{"ld", 2, {T_D | T_I, T_R}, 5, 1, 0, ft_ld},
+	{"st", 2, {T_R, T_I | T_R}, 5, 1, 0, ft_st},
+	{"add", 3, {T_R, T_R, T_R}, 10, 1, 0, ft_add},
+	{"sub", 3, {T_R, T_R, T_R}, 10, 1, 0, ft_sub},
+	{"and", 3, {T_R | T_D | T_I, T_R | T_I | T_D, T_R}, 6, 1, 0, ft_and},
+	{"or", 3, {T_R | T_I | T_D, T_R | T_I | T_D, T_R}, 6, 1, 0, ft_or},
+	{"xor", 3, {T_R | T_I | T_D, T_R | T_I | T_D, T_R}, 6, 1, 0, ft_xor},
+	{"zjmp", 1, {T_D}, 20, 0, 2, ft_zjmp},
+	{"ldi", 3, {T_R | T_D | T_I, T_D | T_R, T_R}, 25, 1, 0, ft_ldi},
+	{"sti", 3, {T_R, T_R | T_D | T_I, T_D | T_R}, 25, 1, 0, ft_sti},
+	{"fork", 1, {T_D}, 800, 0, 2, ft_fork},
+	{"lld", 2, {T_D | T_I, T_R}, 10, 1, 0, ft_lld},
+	{"lldi", 3, {T_R | T_D | T_I, T_D | T_R, T_R}, 50, 1, 0, ft_lldi},
+	{"lfork", 1, {T_D}, 1000, 0, 2, ft_lfork},
+	{"aff", 1, {T_R}, 2, 1, 0, ft_aff},
+	{0, 0, {0}, 0, 0, 0, 0}};
 
 	return (op_tab);
 }

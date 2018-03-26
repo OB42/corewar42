@@ -64,7 +64,9 @@ typedef char	t_arg_type;
 # define T_DIR		2
 # define T_IND		4
 # define T_LAB		8
-
+# define T_R					T_REG
+# define T_D					T_DIR
+# define T_I					T_IND
 /**
  * ***
  * **/
@@ -126,6 +128,12 @@ typedef struct	s_champ
 	unsigned int	rank;
 }				t_champ;
 
+typedef struct	s_mask
+{
+	char			a;	
+	char			b;	
+}				t_mask;
+
 typedef struct	s_corewar
 {
 	char			arena_id[MEM_SIZE + 1];
@@ -163,6 +171,7 @@ struct	s_proc
 	int				success;
 	struct s_proc	*nxt;
 };
+
 
 void			*pr_malloc(size_t n);
 void			pr_free(void *p);
@@ -213,5 +222,5 @@ int				nbr_champs(int argc, char **argv);
 void			error_end(char *error, int id_error, char *info);
 int				get_options(int i, char **av, t_corewar *corewar);
 void			ft_valid_champ(int fd, char *filename);
-
+int				ft_dump(t_corewar *corewar);
 #endif
