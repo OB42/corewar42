@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/22 18:21:35 by rthys            ###   ########.fr       */
+/*   Updated: 2018/03/26 18:17:41 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,10 @@
 # define CYCLE_DELTA	50
 # define NBR_LIVE		21
 # define MAX_CHECKS		10
+
+# define ABS 140
+# define ORD 100
+# define INF 75
 
 /**
  *  ***
@@ -112,7 +116,6 @@ typedef struct	s_visu
 {
 	char	*name;
 	WINDOW	*win;
-
 }		t_visu;
 
 typedef struct	header_s
@@ -221,9 +224,12 @@ int				nbr_champs(int argc, char **argv);
 void			error_end(char *error, int id_error, char *info);
 int				get_options(int i, char **av, t_corewar *corewar);
 void			ft_valid_champ(int fd, char *filename);
+void			define_colors(void);
 void			global_visu(t_corewar *corewar);
+void			visu_credits(t_corewar *corewar);
 void			visu_ctd(t_corewar *corewar);
 void			visu_acycle(t_corewar *corewar);
 void			visu_champs_nbr(t_corewar *corewar);
+void			visu_contestants(t_corewar *corewar);
 
 #endif
