@@ -6,7 +6,7 @@
 /*   By: rthys <rthys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 08:37:18 by rthys            #+#    #+#              */
-/*   Updated: 2018/03/26 18:18:06 by rthys            ###   ########.fr       */
+/*   Updated: 2018/03/28 20:56:46 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,9 +94,15 @@ static void	visu_corner(WINDOW *win)
 	}
 }
 
-void		global_visu(t_corewar *corewar)
+void		global_visu(t_corewar *corewar, t_proc *lst_proc)
 {
+	int 	i;
+	t_proc	*u_proc;
+
+	i = 0;
 	corewar->visu.win = initscr();
+	noecho();
+	curs_set(0);
 	start_color();
 	define_colors();
 	wattron(corewar->visu.win, A_STANDOUT);
@@ -108,6 +114,16 @@ void		global_visu(t_corewar *corewar)
 	visu_credits(corewar);
 	visu_ctd(corewar);
 	visu_acycle(corewar);
-	visu_champs_nbr(corewar);
+	visu_delta(corewar);
+	visu_nbr_lives(corewar);
 	visu_contestants(corewar);
+	u_proc = lst_proc;
+	while (i < corewar->nb_champ)
+	{
+		visu_champs_arena(corewar, u_proc->pc,\
+		corewar->tab_champ[i].header.prog_size,\
+		corewar->tab_champ[i].color);
+		u_proc = u_proc->nxt;
+		i++;
+	}
 }

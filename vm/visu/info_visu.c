@@ -6,7 +6,7 @@
 /*   By: rthys <rthys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 14:43:38 by rthys             #+#    #+#             */
-/*   Updated: 2018/03/26 17:41:10 by rthys            ###   ########.fr       */
+/*   Updated: 2018/03/28 20:56:54 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,8 @@ void		define_colors(void)
 
 void		visu_ctd(t_corewar *corewar)
 {
-	mvwprintw(corewar->visu.win, 12, INF + 3, "Cycle to Die : %d", \
+	mvwprintw(corewar->visu.win, 10, INF + 3, "Cycle to Die : %d", \
 	corewar->ctd_obj);
-	wrefresh(corewar->visu.win);
-}
-
-void		visu_champs_nbr(t_corewar *corewar)
-{
-	mvwprintw(corewar->visu.win, 10, INF + 3, "Champions : %d", corewar->nb_champ);
 	wrefresh(corewar->visu.win);
 }
 
@@ -60,15 +54,16 @@ void		visu_contestants(t_corewar *corewar)
 	int y;
 
 	i = 0;
-	y = 14;
+	y = 18;
 	mvwprintw(corewar->visu.win, y, INF + 3, "Champions :");
 	y += 2;
 	while (i < corewar->nb_champ && i < 6)
 	{
-		corewar->tab_champ[i].color = COLOR_PAIR(i + 1);
+		corewar->tab_champ[i].color = i + 1;
 		wattron(corewar->visu.win, COLOR_PAIR(i + 1));
 		mvwprintw(corewar->visu.win, y, INF + 3, "%u . %s", \
 		corewar->tab_champ[i].rank, corewar->tab_champ[i].header.prog_name);
+		wattroff(corewar->visu.win, COLOR_PAIR(i + 1));
 		i++;
 		y += 2;
 		wrefresh(corewar->visu.win);

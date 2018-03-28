@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 13:06:45 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/22 18:21:27 by rthys            ###   ########.fr       */
+/*   Updated: 2018/03/28 20:57:03 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ static void		ft_init_all(int argc, char **argv, t_corewar *corewar)
 	corewar->n_rank = 1;
 	corewar->select = 0;
 	corewar->dump = -1;
+	corewar->nb_proc = 0;
+	corewar->visu_on = 0;
 	while (i < argc)
 	{
 		if (argv[i][0] == '-')
@@ -92,11 +94,11 @@ int				main(int argc, char **argv)
 	{
 		ft_init_all(argc, argv, &corewar);
 		load_arena(&corewar);
-		global_visu(&corewar);
-		while (1);
-		ft_display_contestant(&corewar, 0);
+		if (corewar.visu_on == 0)
+			ft_display_contestant(&corewar, 0);
 		ft_loop(&corewar);
-		ft_display_contestant(&corewar, 1);
+		if (corewar.visu_on == 0)
+			ft_display_contestant(&corewar, 1);
 	}
 	else
 		error_end(NULL, 0, NULL);
