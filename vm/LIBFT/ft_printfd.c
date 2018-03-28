@@ -135,8 +135,7 @@ int			ft_printfd(int fd, const char *format, ...)
 				ft_flag((format + 1), &ap, &len, tabf) - len.len_flag;
 			format = format + len.len_flag - 1;
 		}
-		if (*format)
-			format = format + 1;
+		format += !!(*format);
 	}
 	va_end(ap);
 	return (format - init + len.len_str);

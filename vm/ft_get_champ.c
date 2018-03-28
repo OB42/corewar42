@@ -23,13 +23,13 @@ uint32_t		swap_int32(uint32_t val)
 	return (val << 16) | (val >> 16);
 }
 
-header_t		ft_get_header(int fd)
+t_header		ft_get_header(int fd)
 {
-	header_t		header;
+	t_header		header;
 	unsigned int	test;
 
 	test = 0;
-	read(fd, &(header), sizeof(header_t));
+	read(fd, &(header), sizeof(t_header));
 	header.magic = swap_int32(header.magic);
 	header.prog_size = swap_int32(header.prog_size);
 	return (header);

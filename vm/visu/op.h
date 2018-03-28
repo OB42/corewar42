@@ -79,7 +79,7 @@ typedef char	t_arg_type;
 
 typedef struct s_proc	t_proc;
 
-typedef struct s_ins	t_ins;
+typedef struct t_ins	t_ins;
 
 typedef struct	s_par
 {
@@ -88,7 +88,7 @@ typedef struct	s_par
 	int value;
 }				t_par;
 
-struct	s_ins
+struct	t_ins
 {
 	char	*name;
 	int		ocp;
@@ -125,11 +125,11 @@ typedef struct	header_s
 	unsigned int	prog_size;
 	char			comment[COMMENT_LENGTH + 1];
 }
-header_t;
+t_header;
 
 typedef struct	s_champ
 {
-	header_t		header;
+	t_header		header;
 	unsigned char	*code;
 	int				placed;
 	int				color;
@@ -177,7 +177,7 @@ struct	s_proc
 
 void			*pr_malloc(size_t n);
 void			pr_free(void *p);
-header_t		ft_get_header(int fd);
+t_header		ft_get_header(int fd);
 t_champ			ft_get_champ(char *filename, t_corewar *corewar);
 void			ft_get_var(t_proc *proc, unsigned char *code_champ, unsigned char *init);
 t_ins			*ft_get_instru(unsigned char *code_champ, unsigned char *init);
