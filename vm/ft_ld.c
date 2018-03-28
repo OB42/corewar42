@@ -15,11 +15,13 @@
 
 void	ft_print_ld(t_proc *proc)
 {
-	if ((proc->ins->ocp == 144 || proc->ins->ocp == 146 || proc->ins->ocp == 208)
+	if ((proc->ins->ocp == 144 || proc->ins->ocp == 146
+		|| proc->ins->ocp == 208)
 		&& proc->ins->param[1] > 0 && proc->ins->param[1] < REG_NUMBER + 1)
 	{
 		ft_printf("P%5d | %s", proc->id, proc->ins->name);
-		ft_printf(" %d r%d\n", proc->ins->tab[0].val_type, proc->ins->param[1]);
+		ft_printf(" %d r%d\n", proc->ins->tab[0].val_type,
+		proc->ins->param[1]);
 	}
 	ft_print_instru(proc);
 }
@@ -37,7 +39,8 @@ void	ft_print_lld(t_proc *proc, int value)
 
 void	ft_ld(t_ins *ins, t_proc *proc)
 {
-	if ((ins->ocp == 144 || ins->ocp == 146 || ins->ocp == 208) && ins->param[1] > 0
+	if ((ins->ocp == 144 || ins->ocp == 146 || ins->ocp == 208)
+		&& ins->param[1] > 0
 		&& ins->param[1] < REG_NUMBER + 1)
 	{
 		proc->reg[ins->param[1]] = ins->tab[0].val_type;

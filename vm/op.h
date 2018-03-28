@@ -103,7 +103,6 @@ typedef	struct	s_op
 {
 	char	*name;
 	int		nb_param;
-	int		param[3];
 	int		length;
 	int		ocp;
 	int		size_no_ocp;
