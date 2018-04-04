@@ -6,7 +6,7 @@
 /*   By: rthys <rthys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 14:43:38 by rthys             #+#    #+#             */
-/*   Updated: 2018/03/28 20:56:58 by rthys            ###   ########.fr       */
+/*   Updated: 2018/04/04 15:53:06 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,47 +14,51 @@
 
 void		visu_delta(t_corewar *corewar)
 {
-	mvwprintw(corewar->visu.win, 12, INF + 3, "CYCLE_DELTA : %u", CYCLE_DELTA);
+	mvwprintw(corewar->visu.win, 16, INF + 3, "CYCLE_DELTA : %-3u", CYCLE_DELTA);
 	wrefresh(corewar->visu.win);
 }
 
 void	visu_nbr_lives(t_corewar *corewar)
 {
-	mvwprintw(corewar->visu.win, 14, INF + 3, "NBR_LIVES : %d", corewar->nb_live);
+	mvwprintw(corewar->visu.win, 19, INF + 3, "NBR_LIVES : %-4d", corewar->nb_live);
 	wrefresh(corewar->visu.win);
 }
 
 void	visu_processes(t_corewar *corewar, int proc)
 {
-	mvwprintw(corewar->visu.win, 16, INF + 3, "Processes : %d", proc);
+	mvwprintw(corewar->visu.win, 22, INF + 3, "Processes : %-4d", proc);
 	wrefresh(corewar->visu.win);
 }
 
-void		visu_champs_arena(t_corewar *corewar, int pos, int prog_size, int color)
+void		visu_cbs(t_corewar *corewar)
+{
+	mvwprintw(corewar->visu.win, 13, INF + 3, "Cycle/s : %-3d", corewar->cbs);
+	wrefresh(corewar->visu.win);
+}
+
+void		visu_champs_arena(t_corewar *corewar)
 {
 	int	y;
 	int	x;
 	int	i;
 
-	x = ((pos % 62) + 3);
-	y = ((pos / 62) + 1);
-	i = pos;
-	while (i < prog_size + pos)
+	x = 3;
+	y = 1;
+	i = 0;
+	while (i < MEM_SIZE)
 	{
-		while (x < 75)
+		while (x < INF)
 		{
-			wattron(corewar->visu.win, COLOR_PAIR(color));
-			mvwprintw(corewar->visu.win, y, x, "%02x ", corewar->arena[i % MEM_SIZE]);
-			wattroff(corewar->visu.win, COLOR_PAIR(color));
+			wattron(corewar->visu.win, COLOR_PAIR(corewar->arena_id[i]));
+			mvwprintw(corewar->visu.win, y, x, "%02x ", corewar->arena[i]);
+			wattroff(corewar->visu.win, COLOR_PAIR(corewar->arena_id[i]));
+			i++;
 			x += 3;
-			if (i + 1 > prog_size + pos)
-				break ;
-					i++;
 		}
 		y++;
-		if (y > 62)
-			y -= 61;
+		if (y > 64)
+			y -= 63;
 		x = 3;
-
 	}
+	wrefresh(corewar->visu.win);
 }

@@ -38,6 +38,8 @@ SRC = main.c\
 	  global_visu.c\
 	  info_visu.c\
 	  info_visu_2.c\
+	  info_visu_3.c\
+	  info_visu_4.c\
 	  credits_visu.c\
 
 

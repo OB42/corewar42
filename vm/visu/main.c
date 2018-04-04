@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 13:06:45 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/28 20:57:03 by rthys            ###   ########.fr       */
+/*   Updated: 2018/04/04 20:13:50 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,7 @@ static void		ft_display_contestant(t_corewar *corewar, int mode)
 	{
 		ft_printf("Contestant %u, \"%s\", has won !\n",
 		corewar->tab_champ[corewar->last_live_id].rank,
-		corewar->tab_champ[corewar->last_live_id].header.prog_name,
-		corewar->tab_champ[corewar->last_live_id].header.comment);
+		corewar->tab_champ[corewar->last_live_id].header.prog_name);
 	}
 }
 
@@ -58,14 +57,8 @@ void			ft_print_code(t_champ champ)
 	}
 }
 
-static void		ft_init_all(int argc, char **argv, t_corewar *corewar)
+static void		ft_init_values(t_corewar *corewar, int argc, char **argv)
 {
-	int			i;
-	int			champ;
-
-	i = 1;
-	champ = -1;
-	ft_bzero(corewar, sizeof(t_corewar));
 	if ((corewar->nb_champ = nbr_champs(argc, argv)) == 0)
 		error_end(NULL, 0, NULL);
 	corewar->a_rank = 1;
@@ -74,6 +67,23 @@ static void		ft_init_all(int argc, char **argv, t_corewar *corewar)
 	corewar->dump = -1;
 	corewar->nb_proc = 0;
 	corewar->visu_on = 0;
+	corewar->verb = 0;
+	if (CBS > 0)
+		corewar->cbs = CBS;
+	else
+		corewar->cbs = 100;
+	corewar->visu.run = 1;
+}
+
+static void		ft_init_all(int argc, char **argv, t_corewar *corewar)
+{
+	int			i;
+	int			champ;
+
+	i = 1;
+	champ = -1;
+	ft_bzero(corewar, sizeof(t_corewar));
+	ft_init_values(corewar, argc, argv);
 	while (i < argc)
 	{
 		if (argv[i][0] == '-')
@@ -99,6 +109,8 @@ int				main(int argc, char **argv)
 		ft_loop(&corewar);
 		if (corewar.visu_on == 0)
 			ft_display_contestant(&corewar, 1);
+		else
+			visu_winner(&corewar);
 	}
 	else
 		error_end(NULL, 0, NULL);

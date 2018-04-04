@@ -6,7 +6,7 @@
 /*   By: rthys <rthys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 10:50:03 by rthys             #+#    #+#             */
-/*   Updated: 2018/03/28 20:57:17 by rthys            ###   ########.fr       */
+/*   Updated: 2018/04/04 20:14:06 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,32 +31,6 @@ void			next_arank(t_corewar *corewar)
 		else
 			i++;
 	}
-}
-
-int				available_nrank(t_corewar *corewar)
-{
-	int i;
-	int unavailable;
-
-	i = 0;
-	unavailable = 0;
-	while (i < corewar->nb_champ)
-	{
-		if (corewar->n_rank == corewar->tab_champ[i].rank)
-		{
-			if (unavailable == 1)
-				corewar->a_rank++;
-			unavailable = 1;
-			corewar->n_rank = corewar->a_rank;
-			i = -1;
-		}
-		i++;
-	}
-	if (unavailable == 1)
-		corewar->a_rank = corewar->n_rank;
-	else if (unavailable == 0 && corewar->n_rank == corewar->a_rank)
-		next_arank(corewar);
-	return (1);
 }
 
 unsigned int	options_value(int i, char **av)
@@ -118,21 +92,23 @@ int				get_options(int i, char **av, t_corewar *corewar)
 	{
 		corewar->dump = options_value(i, av);
 		i += 2;
-		return (i);
 	}
 	else if (ft_strequ(av[i], "-n") && valid_options(i, av))
 	{
 		n_option(corewar, av, i);
 		i += 2;
-		return (i);
 	}
 	else if (ft_strequ(av[i], "-visu"))
 	{
 		corewar->visu_on = 1;
 		i++;
-		return (i);
+	}
+	else if (ft_strequ(av[i], "-v"))
+	{
+		corewar->verb = 1;
+		i++;
 	}
 	else
 		error_end("Not a valid option", 12, av[i]);
-	return (0);
+	return (i);
 }

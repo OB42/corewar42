@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/28 20:56:42 by rthys            ###   ########.fr       */
+/*   Updated: 2018/04/04 20:13:06 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
 	max_id = ft_get_procnb(proc) - 1;
 	if (corewar->visu_on == 1)
 		visu_processes(corewar, max_id);
-	while (1);
 	if ((corewar->ctd_cur == corewar->ctd_obj || corewar->ctd_obj < 0)
 		&& proc->id == max_id)
 	{
@@ -78,13 +77,15 @@ t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
 	{
 		corewar->cycle++;
 		corewar->ctd_cur++;
-		if (corewar->visu_on == 0)
+		if (corewar->visu_on == 0 && corewar->verb == 1)
 			ft_printf("It is now cycle %d\n", corewar->cycle);
 		if (corewar->cycle == corewar->dump)
 			exit(ft_dump(corewar));
 	}
 	proc->cycle++;
 	proc->last_live++;
+	if (corewar->visu_on == 1)
+		visu_speed(corewar);
 	return (proc);
 }
 
@@ -92,18 +93,27 @@ int		ft_loop(t_corewar *corewar)
 {
 	t_proc	*lst_proc;
 	int		test;
+	char		inp;
 
 	lst_proc = ft_init_proc(corewar);
-	if (corewar->visu_on == 1)
-		global_visu(corewar, lst_proc);
 	while ((lst_proc = ft_cycle(lst_proc, corewar)) && lst_proc)
 	{
+		if (corewar->visu_on == 1)
+		{
+			global_visu(corewar);
+			if ((inp = wgetch(corewar->visu.win)))
+				visu_inp(corewar, inp);
+		}
 		test = 0;
 		if (lst_proc->cycle > 1 && lst_proc->cycle == lst_proc->ins->cycle)
 		{
 			ft_update_ins(lst_proc->curseur, lst_proc->init, lst_proc);
 			if (lst_proc->ins != NULL)
-				(lst_proc->ins->fun)(lst_proc->ins, lst_proc);
+			{
+				(lst_proc->ins->fun)(lst_proc->ins, lst_proc, corewar);
+				corewar->visu.change = 1;
+			}
+
 			lst_proc->cycle = 0;
 			test = 1;
 		}
