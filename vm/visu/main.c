@@ -68,10 +68,7 @@ static void		ft_init_values(t_corewar *corewar, int argc, char **argv)
 	corewar->nb_proc = 0;
 	corewar->visu_on = 0;
 	corewar->verb = 0;
-	if (CBS > 0)
-		corewar->cbs = CBS;
-	else
-		corewar->cbs = 100;
+	corewar->cbs = "NORMAL";
 	corewar->visu.run = 1;
 }
 

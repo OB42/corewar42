@@ -6,7 +6,7 @@
 /*   By: rthys <rthys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 14:43:38 by rthys             #+#    #+#             */
-/*   Updated: 2018/04/04 21:42:59 by rthys            ###   ########.fr       */
+/*   Updated: 2018/04/06 18:39:43 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,36 +61,55 @@ void		visu_winner(t_corewar *corewar)
 	}
 }
 
-void		visu_speed(t_corewar *corewar)
+void		visu_speed_2(t_corewar *corewar)
 {
-	if (corewar->cycle <= 1000)
-		usleep(825000 / corewar->cbs);
-	else if (corewar->cycle > 1000 && corewar->cycle <= 1900)
-		usleep(400000 / corewar->cbs);
-	else if (corewar->cycle > 1900 && corewar->cycle <= 3000)
-		usleep(200000 / corewar->cbs);
+	if (corewar->nb_champ == 3)
+	{
+		if (ft_strequ("SLOW", corewar->cbs))
+			usleep(250000 / 20);
+		else if (ft_strequ("NORMAL", corewar->cbs))
+			usleep(250000 / 200);
+		else if (ft_strequ("FAST", corewar->cbs))
+			usleep(150000 / 500);
+	}
+	else if (corewar->nb_champ == 4)
+	{
+		if (ft_strequ("SLOW", corewar->cbs))
+			usleep(150000 / 20);
+		else if (ft_strequ("NORMAL", corewar->cbs))
+			usleep(150000 / 200);
+		else if (ft_strequ("FAST", corewar->cbs))
+			usleep(50000 / 500);
+	}
+	else
+	{
+		corewar->cbs = "Max (Locked : > 4 champions)";
+		visu_cbs(corewar);
+	}
 }
 
-void		visu_inp(t_corewar *corewar, char inp)
+void		visu_speed(t_corewar *corewar)
 {
-	if (inp == 27)
+	if (corewar->nb_champ == 1)
 	{
-		endwin();
-		exit(0);
+		if (ft_strequ("SLOW", corewar->cbs))
+			usleep(850000 / 20);
+		else if (ft_strequ("NORMAL", corewar->cbs))
+			usleep(850000 / 200);
+		else if (ft_strequ("FAST", corewar->cbs))
+			usleep(850000 / 500);
 	}
-	else if (inp == '+' && corewar->cbs <= 195)
+	else if (corewar->nb_champ == 2)
 	{
-		corewar->cbs += 5;
-		visu_cbs(corewar);
+		if (ft_strequ("SLOW", corewar->cbs))
+			usleep(650000 / 40);
+		else if (ft_strequ("NORMAL", corewar->cbs))
+			usleep(650000 / 400);
+		else if (ft_strequ("FAST", corewar->cbs))
+			usleep(650000 / 600);
 	}
-	else if (inp == '-' && corewar->cbs >= 55)
-	{
-		corewar->cbs -= 5;
-		visu_cbs(corewar);
-	}
-	else if (inp == ' ')
-		visu_run(corewar);
-	wrefresh(corewar->visu.win);
+	else
+		visu_speed_2(corewar);
 }
 
 void		visu_run(t_corewar *corewar)

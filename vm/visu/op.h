@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/04/04 21:51:43 by rthys            ###   ########.fr       */
+/*   Updated: 2018/04/06 18:27:29 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@
 # define NAME_CMD_STRING	".name"
 # define COMMENT_CMD_STRING	".comment"
 # define REG_NUMBER		16
-# define CYCLE_TO_DIE	900
+# define CYCLE_TO_DIE	1536
 # define CYCLE_DELTA	50
 # define NBR_LIVE		21
 # define MAX_CHECKS		10
@@ -54,7 +54,6 @@
 # define ABS 255
 # define ORD 66
 # define INF 195
-# define CBS 50
 
 typedef struct s_proc	t_proc;
 typedef char			t_arg_type;
@@ -112,7 +111,7 @@ typedef struct	s_corewar
 	int				id_max;
 	long long		dump;
 	int			visu_on;
-	int			cbs;
+	char			*cbs;
 	int			verb;
 	t_visu			visu;
 }				t_corewar;
@@ -243,5 +242,6 @@ void			visu_inp(t_corewar *corewar, char inp);
 void			visu_cbs(t_corewar *corewar);
 void			visu_winner(t_corewar *corewar);
 void			visu_speed(t_corewar *corewar);
+void			visu_mod_speed(t_corewar *corewar, char inp);
 void			visu_keys(t_corewar *corewar);
 #endif

@@ -12,6 +12,43 @@
 
 #include "op.h"
 
+void	visu_mod_speed(t_corewar *corewar, char inp)
+{
+	if (ft_strequ("SLOW", corewar->cbs) && inp == '+')
+		corewar->cbs = "NORMAL";
+	else if (ft_strequ("NORMAL", corewar->cbs))
+	{
+		if (inp == '+')
+			corewar->cbs = "FAST";
+		else
+			corewar->cbs = "SLOW";
+	}
+	else if (ft_strequ("FAST", corewar->cbs))
+	{
+		if (inp == '+')
+			corewar->cbs = "MAX";
+		else
+			corewar->cbs = "NORMAL";
+	}
+	else if (ft_strequ("MAX", corewar->cbs) && inp == '-')
+		corewar->cbs = "FAST";
+	visu_cbs(corewar);
+}
+
+void		visu_inp(t_corewar *corewar, char inp)
+{
+	if (inp == 27)
+	{
+		endwin();
+		exit(0);
+	}
+	else if (inp == '+' || inp == '-')
+		visu_mod_speed(corewar, inp);
+	else if (inp == ' ')
+		visu_run(corewar);
+	wrefresh(corewar->visu.win);
+}
+
 void	visu_keys(t_corewar *corewar)
 {
 	mvwprintw(corewar->visu.win, 36, INF + 3, "'+' : +5 Cycle/s");

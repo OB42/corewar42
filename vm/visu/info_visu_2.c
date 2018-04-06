@@ -6,7 +6,7 @@
 /*   By: rthys <rthys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 14:43:38 by rthys             #+#    #+#             */
-/*   Updated: 2018/04/04 15:53:06 by rthys            ###   ########.fr       */
+/*   Updated: 2018/04/06 18:27:19 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	visu_processes(t_corewar *corewar, int proc)
 
 void		visu_cbs(t_corewar *corewar)
 {
-	mvwprintw(corewar->visu.win, 13, INF + 3, "Cycle/s : %-3d", corewar->cbs);
+	mvwprintw(corewar->visu.win, 13, INF + 3, "Speed : %-27s", corewar->cbs);
 	wrefresh(corewar->visu.win);
 }
 
