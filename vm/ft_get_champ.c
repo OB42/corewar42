@@ -72,7 +72,7 @@ t_champ			ft_get_champ(char *filename, t_corewar *corewar)
 	else
 		champ.rank = corewar->a_rank++;
 	corewar->select = 0;
-	if (!(champ.code = malloc(champ.header.prog_size * sizeof(char))))
+	if (!(champ.code = pr_malloc(champ.header.prog_size * sizeof(char))))
 		exit(1);
 	ft_ncpy(champ.code, code, champ.header.prog_size);
 	return (champ);

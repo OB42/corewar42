@@ -21,7 +21,10 @@ t_proc	*ft_del(t_proc *lst_proc)
 	while (curseur->nxt->id != lst_proc->id)
 		curseur = curseur->nxt;
 	if (curseur == lst_proc)
+	{
+		pr_free(lst_proc);
 		return (NULL);
+	}
 	curseur->nxt = lst_proc->nxt;
 	return (curseur->nxt);
 }

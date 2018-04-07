@@ -88,6 +88,7 @@ int		ft_loop(t_corewar *corewar)
 {
 	t_proc	*lst_proc;
 	int		test;
+	int		i;
 
 	lst_proc = ft_init_proc(corewar);
 	while ((lst_proc = ft_cycle(lst_proc, corewar)) && lst_proc)
@@ -102,13 +103,21 @@ int		ft_loop(t_corewar *corewar)
 			test = 1;
 		}
 		if (lst_proc->cycle <= 1)
+		{
 			lst_proc->ins = ft_get_instru(lst_proc->curseur, lst_proc->init);
+		}
 		if (test == 0 && lst_proc->ins == NULL)
 		{
 			lst_proc->curseur = ft_oob(lst_proc->init, lst_proc->curseur + 1);
 			lst_proc->cycle = 0;
 		}
 		lst_proc = lst_proc->nxt;
+	}
+	i = 0;
+	while (i < corewar->nb_champ)
+	{
+		pr_free(corewar->tab_champ[i].code);
+		i++;
 	}
 	return (1);
 }
