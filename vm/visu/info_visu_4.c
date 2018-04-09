@@ -6,7 +6,7 @@
 /*   By: rthys <rthys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 14:43:38 by rthys             #+#    #+#             */
-/*   Updated: 2018/04/09 15:59:31 by rthys            ###   ########.fr       */
+/*   Updated: 2018/04/06 19:18:17 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	visu_mod_speed(t_corewar *corewar, char inp)
 	visu_cbs(corewar);
 }
 
-void	visu_inp(t_corewar *corewar, char inp)
+void		visu_inp(t_corewar *corewar, char inp)
 {
 	if (inp == 27)
 	{

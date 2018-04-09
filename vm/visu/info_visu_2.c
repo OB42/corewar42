@@ -6,23 +6,21 @@
 /*   By: rthys <rthys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 14:43:38 by rthys             #+#    #+#             */
-/*   Updated: 2018/04/09 16:03:28 by rthys            ###   ########.fr       */
+/*   Updated: 2018/04/06 18:27:19 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "op.h"
 
-void	visu_delta(t_corewar *corewar)
+void		visu_delta(t_corewar *corewar)
 {
-	mvwprintw(corewar->visu.win, 16, INF + 3, "CYCLE_DELTA : %-3u", \
-	CYCLE_DELTA);
+	mvwprintw(corewar->visu.win, 16, INF + 3, "CYCLE_DELTA : %-3u", CYCLE_DELTA);
 	wrefresh(corewar->visu.win);
 }
 
 void	visu_nbr_lives(t_corewar *corewar)
 {
-	mvwprintw(corewar->visu.win, 19, INF + 3, "NBR_LIVES : %-4d", \
-	corewar->nb_live);
+	mvwprintw(corewar->visu.win, 19, INF + 3, "NBR_LIVES : %-4d", corewar->nb_live);
 	wrefresh(corewar->visu.win);
 }
 
@@ -32,14 +30,13 @@ void	visu_processes(t_corewar *corewar, int proc)
 	wrefresh(corewar->visu.win);
 }
 
-void	visu_cbs(t_corewar *corewar)
+void		visu_cbs(t_corewar *corewar)
 {
-	mvwprintw(corewar->visu.win, 13, INF + 3, "Speed : %-27s", \
-	corewar->cbs);
+	mvwprintw(corewar->visu.win, 13, INF + 3, "Speed : %-27s", corewar->cbs);
 	wrefresh(corewar->visu.win);
 }
 
-void	visu_champs_arena(t_corewar *corewar)
+void		visu_champs_arena(t_corewar *corewar)
 {
 	int	y;
 	int	x;

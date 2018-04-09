@@ -6,7 +6,7 @@
 /*   By: rthys <rthys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 10:50:03 by rthys             #+#    #+#             */
-/*   Updated: 2018/04/09 16:05:04 by rthys            ###   ########.fr       */
+/*   Updated: 2018/04/04 20:14:06 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int				valid_options(int i, char **av)
 	return (1);
 }
 
-static void		n_option(t_corewar *corewar, char **av, int i)
+static void			n_option(t_corewar *corewar, char **av, int i)
 {
 	corewar->select = 1;
 	corewar->n_rank = options_value(i, av);

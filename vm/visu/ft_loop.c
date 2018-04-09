@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 14:37:40 by vburidar          #+#    #+#             */
-/*   Updated: 2018/04/09 16:26:20 by rthys            ###   ########.fr       */
+/*   Updated: 2018/04/04 20:13:06 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,15 +58,6 @@ t_proc	*ft_init_proc(t_corewar *corewar)
 	return (new);
 }
 
-int		ft_cycle_2(t_corewar *corewar, t_proc *proc, int *max_id)
-{
-	proc = ft_cycle_to_die(corewar, proc);
-	if (proc == NULL)
-		return (0);
-	*max_id = ft_get_procnb(proc) - 1;
-	return (1);
-}
-
 t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
 {
 	static int	max_id = 1;
@@ -76,8 +67,12 @@ t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
 		visu_processes(corewar, max_id);
 	if ((corewar->ctd_cur == corewar->ctd_obj || corewar->ctd_obj < 0)
 		&& proc->id == max_id)
-		if (!ft_cycle_2(corewar, proc, &max_id))
+	{
+		proc = ft_cycle_to_die(corewar, proc);
+		if (proc == NULL)
 			return (NULL);
+		max_id = ft_get_procnb(proc) - 1;
+	}
 	if (proc->id == max_id)
 	{
 		corewar->cycle++;
@@ -94,23 +89,11 @@ t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
 	return (proc);
 }
 
-void	ft_loop_2(t_corewar *corewar, t_proc *lst_proc, int *test)
-{
-	ft_update_ins(lst_proc->curseur, lst_proc->init, lst_proc);
-	if (lst_proc->ins != NULL)
-	{
-		(lst_proc->ins->fun)(lst_proc->ins, lst_proc, corewar);
-		corewar->visu.change = 1;
-	}
-	lst_proc->cycle = 0;
-	*test = 1;
-}
-
 int		ft_loop(t_corewar *corewar)
 {
 	t_proc	*lst_proc;
 	int		test;
-	char	inp;
+	char		inp;
 
 	lst_proc = ft_init_proc(corewar);
 	while ((lst_proc = ft_cycle(lst_proc, corewar)) && lst_proc)
@@ -123,7 +106,17 @@ int		ft_loop(t_corewar *corewar)
 		}
 		test = 0;
 		if (lst_proc->cycle > 1 && lst_proc->cycle == lst_proc->ins->cycle)
-			ft_loop_2(corewar, lst_proc, &test);
+		{
+			ft_update_ins(lst_proc->curseur, lst_proc->init, lst_proc);
+			if (lst_proc->ins != NULL)
+			{
+				(lst_proc->ins->fun)(lst_proc->ins, lst_proc, corewar);
+				corewar->visu.change = 1;
+			}
+
+			lst_proc->cycle = 0;
+			test = 1;
+		}
 		if (lst_proc->cycle <= 1)
 			lst_proc->ins = ft_get_instru(lst_proc->curseur, lst_proc->init);
 		if (test == 0 && lst_proc->ins == NULL)
