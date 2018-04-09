@@ -104,6 +104,7 @@ int		ft_loop(t_corewar *corewar)
 		}
 		if (lst_proc->cycle <= 1)
 		{
+			pr_free(lst_proc->ins);
 			lst_proc->ins = ft_get_instru(lst_proc->curseur, lst_proc->init);
 		}
 		if (test == 0 && lst_proc->ins == NULL)
