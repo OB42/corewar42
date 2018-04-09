@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rthys <rthys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/20 08:37:18 by rthys            #+#    #+#              */
-/*   Updated: 2018/04/04 20:13:36 by rthys            ###   ########.fr       */
+/*   Created: 2018/04/09 16:03:54 by rthys             #+#    #+#             */
+/*   Updated: 2018/04/09 16:04:13 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static void	visu_corner(WINDOW *win)
 		while (x <= ABS)
 		{
 			if ((y == 0 && x == 0) || (y == ORD - 1 && x == 0) || \
-			(y == 0 && x ==  ABS - 1) || (y == ORD - 1 && x == ABS - 1))
+			(y == 0 && x == ABS - 1) || (y == ORD - 1 && x == ABS - 1))
 				mvwprintw(win, y, x, " ");
 			x++;
 		}
@@ -116,7 +116,6 @@ void		global_visu(t_corewar *corewar)
 	if (corewar->visu.change == 1)
 	{
 		visu_champs_arena(corewar);
-		//visu_hl(corewar, i, 0);
 		corewar->visu.change = 0;
 	}
 	i++;

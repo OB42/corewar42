@@ -6,7 +6,7 @@
 /*   By: rthys <rthys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 14:43:38 by rthys             #+#    #+#             */
-/*   Updated: 2018/04/04 20:13:41 by rthys            ###   ########.fr       */
+/*   Updated: 2018/04/09 15:57:27 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ void		visu_contestants(t_corewar *corewar)
 
 	i = 0;
 	y = 25;
-	mvwprintw(corewar->visu.win, y, INF + 3, "Champions (%d) :", corewar->nb_champ);
+	mvwprintw(corewar->visu.win, y, INF + 3, "Champions (%d) :", \
+	corewar->nb_champ);
 	y += 2;
 	while (i < corewar->nb_champ && i < 6)
 	{
