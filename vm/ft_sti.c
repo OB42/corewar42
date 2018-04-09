@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 19:09:01 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/23 14:57:52 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/04/04 20:13:18 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_print_sti(t_proc *proc, int val_1, int val_2)
 	ft_print_instru(proc);
 }
 
-void	ft_sti(t_ins *ins, t_proc *proc)
+void	ft_sti(t_ins *ins, t_proc *proc, t_corewar *corewar)
 {
 	int				val_1;
 	int				val_2;
@@ -43,6 +43,7 @@ void	ft_sti(t_ins *ins, t_proc *proc)
 		tmp = ft_oob(proc->init, proc->curseur + (val_1 + val_2) % IDX_MOD);
 		ft_write_ram(proc->reg[ins->param[0]], 4, tmp, proc);
 	}
-	ft_print_sti(proc, val_1, val_2);
+	if (corewar->visu_on == 0 && corewar->verb == 1)
+		ft_print_sti(proc, val_1, val_2);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }

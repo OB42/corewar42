@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 18:11:38 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/23 14:32:58 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/04/04 20:12:09 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ t_proc	*ft_check_live(t_proc *proc, int id, t_corewar *corewar)
 		id = proc->id;
 		if (proc->live == 0)
 		{
-			ft_printf("Process %d hasn't lived for %d cycles (CTD %d)\n",
+			if (corewar->visu_on == 0 && corewar->verb == 1)
+				ft_printf("Process %d hasn't lived for %d cycles (CTD %d)\n",
 				proc->id, proc->last_live, corewar->ctd_obj);
 			proc = ft_del(proc);
 		}
@@ -44,7 +45,8 @@ t_proc	*ft_cycle_to_die(t_corewar *corewar, t_proc *proc)
 	{
 		corewar->check = 0;
 		corewar->ctd_obj -= CYCLE_DELTA;
-		ft_printf("Cycle to die is now %d\n", corewar->ctd_obj);
+		if (corewar->visu_on == 0 && corewar->verb == 1)
+			ft_printf("Cycle to die is now %d\n", corewar->ctd_obj);
 	}
 	corewar->ctd_cur = 0;
 	corewar->nb_live = 0;

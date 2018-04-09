@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 20:35:25 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/21 21:37:11 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/04/04 20:12:18 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	ft_print_fork(t_proc *proc)
 	ft_print_instru(proc);
 }
 
-void	ft_fork(t_ins *ins, t_proc *proc)
+void	ft_fork(t_ins *ins, t_proc *proc, t_corewar *corewar)
 {
 	t_proc	*new;
 	t_proc	*init;
@@ -88,12 +88,13 @@ void	ft_fork(t_ins *ins, t_proc *proc)
 	init->nxt = new;
 	new->ins = NULL;
 	new->cycle = 0;
-	ft_print_fork(proc);
+	if (corewar->visu_on == 0 && corewar->verb == 1)
+		ft_print_fork(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + 3);
 	new->ins = ft_get_instru(new->curseur, proc->init);
 }
 
-void	ft_lfork(t_ins *ins, t_proc *proc)
+void	ft_lfork(t_ins *ins, t_proc *proc, t_corewar *corewar)
 {
 	t_proc	*new;
 	t_proc	*init;
@@ -112,7 +113,8 @@ void	ft_lfork(t_ins *ins, t_proc *proc)
 	init->nxt = new;
 	new->ins = NULL;
 	new->cycle = 0;
-	ft_print_fork(proc);
+	if (corewar->visu_on == 0 && corewar->verb == 1)
+		ft_print_fork(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + 3);
 	new->ins = ft_get_instru(new->curseur, proc->init);
 }

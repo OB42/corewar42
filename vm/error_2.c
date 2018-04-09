@@ -6,7 +6,7 @@
 /*   By: rthys <rthys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 09:50:29 by rthys             #+#    #+#             */
-/*   Updated: 2018/03/19 12:58:50 by rthys            ###   ########.fr       */
+/*   Updated: 2018/04/04 20:11:45 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void			error_end(char *error, int id_error, char *info)
 {
 	if (id_error == 0)
 	{
-		ft_putendl("Usage: ./corewar [-dump N] [[-n N] <champion.cor>] ...");
+		ft_putstr("Usage: ./corewar [-visu] [-v] [-dump N] [[-n N] "); 				ft_putendl("<champion.cor>] ...");
+		ft_putendl("	-visu: Activates visualizer");
+		ft_putendl("	-v: Enables verbosity");
 		ft_putendl("	-dump N: Dumps memory after N cycles then exits");
 		ft_putendl("	-n N: Number N assigned to the following champion");
 	}

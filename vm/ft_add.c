@@ -6,7 +6,7 @@
 /*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 18:38:08 by mlegeay           #+#    #+#             */
-/*   Updated: 2018/03/23 14:28:32 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/04/04 20:11:50 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_print_add(t_proc *proc, t_ins *ins)
 	ft_print_instru(proc);
 }
 
-void	ft_add(t_ins *ins, t_proc *proc)
+void	ft_add(t_ins *ins, t_proc *proc, t_corewar *corewar)
 {
 	if (proc->ins->fail == 0 && ins->ocp == 0x54)
 	{
@@ -32,6 +32,7 @@ void	ft_add(t_ins *ins, t_proc *proc)
 			proc->reg[ins->param[1]];
 		proc->carry = !(proc->reg[ins->param[2]]);
 	}
-	ft_print_add(proc, ins);
+	if (corewar->visu_on == 0 && corewar->verb == 1)
+		ft_print_add(proc, ins);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }

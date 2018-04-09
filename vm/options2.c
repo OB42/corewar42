@@ -6,13 +6,39 @@
 /*   By: mlegeay <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/21 16:42:20 by mlegeay           #+#    #+#             */
-/*   Updated: 2018/03/22 02:01:54 by rthys            ###   ########.fr       */
+/*   Updated: 2018/04/04 20:14:12 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "op.h"
 
-int		nbr_champs(int argc, char **argv)
+int				available_nrank(t_corewar *corewar)
+{
+	int i;
+	int unavailable;
+
+	i = 0;
+	unavailable = 0;
+	while (i < corewar->nb_champ)
+	{
+		if (corewar->n_rank == corewar->tab_champ[i].rank)
+		{
+			if (unavailable == 1)
+				corewar->a_rank++;
+			unavailable = 1;
+			corewar->n_rank = corewar->a_rank;
+			i = -1;
+		}
+		i++;
+	}
+	if (unavailable == 1)
+		corewar->a_rank = corewar->n_rank;
+	else if (unavailable == 0 && corewar->n_rank == corewar->a_rank)
+		next_arank(corewar);
+	return (1);
+}
+
+int			nbr_champs(int argc, char **argv)
 {
 	int i;
 	int champs;

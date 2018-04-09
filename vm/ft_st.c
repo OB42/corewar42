@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:48:38 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/23 15:54:45 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/04/04 20:13:13 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_resize_ins(t_ins *ins)
 		ins->size -= 1;
 }
 
-void	ft_st(t_ins *ins, t_proc *proc)
+void	ft_st(t_ins *ins, t_proc *proc, t_corewar *corewar)
 {
 	unsigned char	*tmp;
 	int				value;
@@ -67,6 +67,7 @@ void	ft_st(t_ins *ins, t_proc *proc)
 			proc->reg[ins->param[1]] = proc->reg[ins->param[0]];
 	}
 	ft_resize_ins(ins);
-	ft_print_st(proc);
+	if (corewar->visu_on == 0 && corewar->verb == 1)
+		ft_print_st(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }

@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/16 16:16:23 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/21 22:02:52 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/04/04 20:11:59 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_print_aff(t_ins *ins, t_proc *proc)
 	ft_print_instru(proc);
 }
 
-void	ft_aff(t_ins *ins, t_proc *proc)
+void	ft_aff(t_ins *ins, t_proc *proc, t_corewar *corewar)
 {
 	if (proc->ins->fail == 0 && proc->ins->ocp == 64)
 		proc->ins->param[1] = 0;
@@ -44,6 +44,7 @@ void	ft_aff(t_ins *ins, t_proc *proc)
 		ins->size = 2;
 	else
 		ins->size = 1;
-	ft_print_aff(ins, proc);
+	if (corewar->visu_on == 0 && corewar->verb == 1)
+		ft_print_aff(ins, proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }

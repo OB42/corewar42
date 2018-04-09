@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:57:09 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/23 15:39:37 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/04/04 20:12:22 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_print_lld(t_proc *proc, int value)
 	ft_print_instru(proc);
 }
 
-void	ft_ld(t_ins *ins, t_proc *proc)
+void	ft_ld(t_ins *ins, t_proc *proc, t_corewar *corewar)
 {
 	if ((ins->ocp == 144 || ins->ocp == 146 || ins->ocp == 208)
 		&& ins->param[1] > 0
@@ -55,11 +55,12 @@ void	ft_ld(t_ins *ins, t_proc *proc)
 		ins->size -= 4;
 	else if (ins->ocp & 4)
 		ins->size -= 1;
-	ft_print_ld(proc);
+	if (corewar->visu_on == 0 && corewar->verb == 1)
+		ft_print_ld(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }
 
-void	ft_lld(t_ins *ins, t_proc *proc)
+void	ft_lld(t_ins *ins, t_proc *proc, t_corewar *corewar)
 {
 	int value;
 
@@ -80,6 +81,7 @@ void	ft_lld(t_ins *ins, t_proc *proc)
 		ins->size -= 4;
 	else if (ins->ocp & 4)
 		ins->size -= 1;
-	ft_print_lld(proc, value);
+	if (corewar->visu_on == 0 && corewar->verb == 1)
+		ft_print_lld(proc, value);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }

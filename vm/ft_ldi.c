@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 18:49:00 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/23 14:52:02 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/04/04 20:12:26 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_print_ldi(t_proc *proc)
 	ft_print_instru(proc);
 }
 
-void	ft_ldi(t_ins *ins, t_proc *proc)
+void	ft_ldi(t_ins *ins, t_proc *proc, t_corewar *corewar)
 {
 	int				val_1;
 	int				val_2;
@@ -54,11 +54,12 @@ void	ft_ldi(t_ins *ins, t_proc *proc)
 		proc->reg[ins->param[2]] = ft_get_int(proc->init,
 			ft_oob(proc->init, tmp), REG_SIZE);
 	}
-	ft_print_ldi(proc);
+	if (corewar->visu_on == 0 && corewar->verb == 1)
+		ft_print_ldi(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }
 
-void	ft_lldi(t_ins *ins, t_proc *proc)
+void	ft_lldi(t_ins *ins, t_proc *proc, t_corewar *corewar)
 {
 	int				val_1;
 	int				val_2;
@@ -77,6 +78,7 @@ void	ft_lldi(t_ins *ins, t_proc *proc)
 		else
 			proc->carry = 0;
 	}
-	ft_print_ldi(proc);
+	if (corewar->visu_on == 0 && corewar->verb == 1)
+		ft_print_ldi(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
 }

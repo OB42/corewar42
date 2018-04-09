@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 15:22:00 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 22:04:46 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/04/04 20:13:00 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_print_live(t_proc *proc)
 	ft_print_instru(proc);
 }
 
-void	ft_live(t_ins *ins, t_proc *proc)
+void	ft_live(t_ins *ins, t_proc *proc, t_corewar *corewar)
 {
 	proc->corewar->nb_live += 1;
 	if (proc->corewar->ctd_obj > 0)
@@ -40,6 +40,7 @@ void	ft_live(t_ins *ins, t_proc *proc)
 	proc->last_live = 0;
 	ins->size = ins->size;
 	ins->param[0] = ft_get_int(proc->init, proc->curseur + 1, 4);
-	ft_print_live(proc);
+	if (corewar->visu_on == 0 && corewar->verb == 1)
+		ft_print_live(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + 5);
 }
