@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 16:25:17 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 21:45:14 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/04/06 18:27:29 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include "LIBFT/libft.h"
 # include <unistd.h>
 # include <stdlib.h>
+# include <ncurses.h>
 
 # define IND_SIZE	2
 # define REG_SIZE	4
@@ -50,6 +51,10 @@
 # define COMMENT_LENGTH		(2048)
 # define COREWAR_EXEC_MAGIC	0xea83f3
 
+# define ABS 255
+# define ORD 66
+# define INF 195
+
 typedef struct s_proc	t_proc;
 typedef char			t_arg_type;
 typedef struct s_ins	t_ins;
@@ -61,28 +66,15 @@ typedef struct	s_par
 	int		value;
 }				t_par;
 
-struct			s_ins
-{
-	char	*name;
-	int		ocp;
-	int		param[3];
-	t_par	tab[3];
-	void	(*fun)(t_ins*, t_proc*);
-	int		size;
-	int		cycle;
-	int		nb_param;
-	int		fail;
-};
 
-typedef	struct	s_op
+
+typedef struct	s_visu
 {
 	char	*name;
-	int		nb_param;
-	int		length;
-	int		ocp;
-	int		size_no_ocp;
-	void	(*fun)(t_ins*, t_proc*);
-}				t_op;
+	WINDOW	*win;
+	int		run;
+	int	change;
+}		t_visu;
 
 typedef struct	s_header
 {
@@ -100,13 +92,6 @@ typedef struct	s_champ
 	int				color;
 	unsigned int	rank;
 }				t_champ;
-
-typedef struct	s_mask
-{
-	char			a;
-	char			b;
-}				t_mask;
-
 typedef struct	s_corewar
 {
 	char			arena_id[MEM_SIZE + 1];
@@ -116,6 +101,7 @@ typedef struct	s_corewar
 	int				ctd_obj;
 	int				ctd_cur;
 	int				nb_live;
+	int				nb_proc;
 	int				cycle;
 	int				check;
 	int				last_live_id;
@@ -124,7 +110,42 @@ typedef struct	s_corewar
 	int				select;
 	int				id_max;
 	long long		dump;
+	int			visu_on;
+	char			*cbs;
+	int			verb;
+	t_visu			visu;
 }				t_corewar;
+
+struct			s_ins
+{
+	char	*name;
+	int		ocp;
+	int		param[3];
+	t_par	tab[3];
+	void	(*fun)(t_ins*, t_proc*, t_corewar*);
+	int		size;
+	int		cycle;
+	int		nb_param;
+	int		fail;
+};
+
+typedef	struct	s_op
+{
+	char	*name;
+	int		nb_param;
+	int		length;
+	int		ocp;
+	int		size_no_ocp;
+	void	(*fun)(t_ins*, t_proc*, t_corewar*);
+}				t_op;
+
+
+
+typedef struct	s_mask
+{
+	char			a;
+	char			b;
+}				t_mask;
 
 struct			s_proc
 {
@@ -160,24 +181,24 @@ unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param,
 unsigned char	*ft_get_reg(t_proc *proc, unsigned char *curseur, int n_param,
 	unsigned char *init);
 int				ft_loop(t_corewar *corewar);
-void			ft_live(t_ins *ins, t_proc *proc);
-void			ft_ld(t_ins *ins, t_proc *proc);
-void			ft_st(t_ins	*ins, t_proc *proc);
-void			ft_ldi(t_ins *ins, t_proc *proc);
-void			ft_sti(t_ins *ins, t_proc *proc);
-void			ft_fork(t_ins *ins, t_proc *proc);
-void			ft_sub(t_ins *ins, t_proc *proc);
-void			ft_add(t_ins *ins, t_proc *proc);
-void			ft_aff(t_ins *ins, t_proc *proc);
+void			ft_live(t_ins *ins, t_proc *proc, t_corewar *corewar);
+void			ft_ld(t_ins *ins, t_proc *proc, t_corewar *corewar);
+void			ft_st(t_ins *ins, t_proc *proc, t_corewar *corewar);
+void			ft_ldi(t_ins *ins, t_proc *proc, t_corewar *corewar);
+void			ft_sti(t_ins *ins, t_proc *proc, t_corewar *corewar);
+void			ft_fork(t_ins *ins, t_proc *proc, t_corewar *corewar);
+void			ft_sub(t_ins *ins, t_proc *proc, t_corewar *corewar);
+void			ft_add(t_ins *ins, t_proc *proc, t_corewar *corewar);
+void			ft_aff(t_ins *ins, t_proc *proc, t_corewar *corewar);
 void			load_arena(t_corewar *corewar);
 void			ft_print_arena(unsigned char *arena);
-void			ft_lfork(t_ins *ins, t_proc *proc);
-void			ft_lldi(t_ins *ins, t_proc *proc);
-void			ft_lld(t_ins *ins, t_proc *proc);
-void			ft_and(t_ins *ins, t_proc *proc);
-void			ft_or(t_ins *ins, t_proc *proc);
-void			ft_xor(t_ins *ins, t_proc *proc);
-void			ft_zjmp(t_ins *ins, t_proc *proc);
+void			ft_lfork(t_ins *ins, t_proc *proc, t_corewar *corewar);
+void			ft_lldi(t_ins *ins, t_proc *proc, t_corewar *corewar);
+void			ft_lld(t_ins *ins, t_proc *proc, t_corewar *corewar);
+void			ft_and(t_ins *ins, t_proc *proc, t_corewar *corewar);
+void			ft_or(t_ins *ins, t_proc *proc, t_corewar *corewar);
+void			ft_xor(t_ins *ins, t_proc *proc, t_corewar *corewar);
+void			ft_zjmp(t_ins *ins, t_proc *proc, t_corewar *corewar);
 void			ft_print_instru(t_proc *lst_proc);
 unsigned char	*ft_oob(unsigned char *init, unsigned char *dest);
 int				ft_addlim(int decal);
@@ -203,4 +224,24 @@ void			error_end(char *error, int id_error, char *info);
 int				get_options(int i, char **av, t_corewar *corewar);
 void			ft_valid_champ(int fd, char *filename);
 int				ft_dump(t_corewar *corewar);
+void			define_colors(void);
+int				nbr_champs(int argc, char **argv);
+int			available_nrank(t_corewar *corewar);
+void			next_arank(t_corewar *corewar);
+void			global_visu(t_corewar *corewar);
+void			visu_credits(t_corewar *corewar);
+void			visu_ctd(t_corewar *corewar);
+void			visu_acycle(t_corewar *corewar);
+void			visu_contestants(t_corewar *corewar);
+void			visu_delta(t_corewar *corewar);
+void			visu_processes(t_corewar *corewar, int proc);
+void			visu_nbr_lives(t_corewar *corewar);
+void			visu_champs_arena(t_corewar *corewar);
+void			visu_run(t_corewar *corewar);
+void			visu_inp(t_corewar *corewar, char inp);
+void			visu_cbs(t_corewar *corewar);
+void			visu_winner(t_corewar *corewar);
+void			visu_speed(t_corewar *corewar);
+void			visu_mod_speed(t_corewar *corewar, char inp);
+void			visu_keys(t_corewar *corewar);
 #endif
