@@ -86,17 +86,26 @@ int				main(int argc, char **argv)
 {
 	t_corewar	corewar;
 	t_ins		*instru;
+	int i;
 
 	instru = NULL;
 	if (argc > 1)
 	{
 		ft_init_all(argc, argv, &corewar);
 		load_arena(&corewar);
-		ft_display_contestant(&corewar, 0);
+		if (corewar.visu_on == 0)
+			ft_display_contestant(&corewar, 0);
 		ft_loop(&corewar);
-		ft_display_contestant(&corewar, 1);
+		if (corewar.visu_on == 0)
+			ft_display_contestant(&corewar, 1);
+		else
+			visu_winner(&corewar);
 	}
 	else
 		error_end(NULL, 0, NULL);
+	i = 0;
+	while (i < corewar.nb_champ)
+		pr_free(corewar.tab_champ[i++].code);
 	return (0);
 }
+
