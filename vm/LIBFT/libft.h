@@ -23,7 +23,6 @@
 */
 int					ft_printf(const char *format, ...);
 
-
 /*
 **FT_PRINTFD
 */
