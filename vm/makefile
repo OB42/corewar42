@@ -35,6 +35,12 @@ SRC = main.c\
 	  error_2.c\
 	  options.c\
 	  options2.c\
+	  global_visu.c\
+	  info_visu.c\
+	  info_visu_2.c\
+	  info_visu_3.c\
+	  info_visu_4.c\
+	  credits_visu.c\
 
 
 OBJ = $(SRC:.c=.o)
@@ -43,16 +49,16 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	make -C LIBFT
-	gcc -fsanitize=address -Wall -Wextra -Werror -o $(NAME) $(OBJ) -L. LIBFT/libft.a
+	gcc -Wall -Wextra -Werror -o $(NAME) $(OBJ) -L. LIBFT/libft.a -lncurses
 
 $(FT_PRINTF):
 	make all -C LIBFT
 
 %.o : %.c
-	gcc -fsanitize=address -o $@ -c $< -g -Wall -Wextra -Werror
+	gcc -o $@ -c $< -g -Wall -Wextra -Werror
 
 clean :
-	rm -rf *.o
+	rm -rf $(OBJ)
 	make clean -C LIBFT
 
 fclean : clean

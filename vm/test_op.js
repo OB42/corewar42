@@ -92,7 +92,7 @@ exec(`make re`, (err, stdout, stderr) => {
 			return (0);
 	}
 	async.eachLimit(t, 4, function(files, callback) {
-		exec(`./corewar ${files[0]}`,
+		exec(`./corewar -v ${files[0]}`,
 		(err, stdout, stderr) => {
 			test(files, err, stdout, stderr, callback);
 		});

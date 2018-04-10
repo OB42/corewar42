@@ -54,7 +54,7 @@ $(NAME)	: $(OBJ)
 	gcc -o $@ -c $< -Wall -Wextra -Werror
 
 clean	:
-	rm -rf *.o
+	rm -rf $(OBJ)
 
 fclean	: clean
 	rm -rf $(NAME)

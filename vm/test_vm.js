@@ -98,7 +98,7 @@ exec(`rm errors/*; make -C ../asm; ${c.filter(x => !(fs.existsSync('../asm/mine/
 				return (0);
 		}
 		async.eachLimit(t, 4, function(files, callback) {
-			exec(`./corewar ../asm/mine/${files[0]} ../asm/mine/${files[1]}`, {maxBuffer: 1024 * 1024 * 64},
+			exec(`./corewar -v ../asm/mine/${files[0]} ../asm/mine/${files[1]}`, {maxBuffer: 1024 * 1024 * 64},
 			(err, stdout, stderr) => {
 			
 				test(files, err, stdout, stderr, callback);
