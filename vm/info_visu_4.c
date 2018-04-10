@@ -12,7 +12,7 @@
 
 #include "op.h"
 
-void	visu_mod_speed(t_corewar *corewar, char inp)
+void		visu_mod_speed(t_corewar *corewar, char inp)
 {
 	if (ft_strequ("SLOW", corewar->cbs) && inp == '+')
 		corewar->cbs = "NORMAL";
@@ -49,7 +49,7 @@ void		visu_inp(t_corewar *corewar, char inp)
 	wrefresh(corewar->visu.win);
 }
 
-void	visu_keys(t_corewar *corewar)
+void		visu_keys(t_corewar *corewar)
 {
 	if (corewar->nb_champ <= 4)
 	{

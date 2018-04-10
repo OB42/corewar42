@@ -108,7 +108,7 @@ exec(`make`, (err, stdout, stderr) => {
 	exec(/*`${c.filter(x => !(fs.existsSync('../asm/mine/' +x))).map(x => `../asm/asm ../asm/mine/${x.replace('.cor', '.s')}`).join(';')};*/` ../asm/rcorewar -v 31 ../asm/mine/${f}`, {maxBuffer: 512 * 1024 * 1024},
 		(err, zazout, stderr) => {
 			console.log(f);
-			exec(`./corewar ../asm/mine/${f}`, {maxBuffer: 512 * 1024 * 1024},
+			exec(`./corewar -v ../asm/mine/${f}`, {maxBuffer: 512 * 1024 * 1024},
 			(err2, vbout, stderr2) => {
 				test(f, zazout.split("\n"), vbout.split("\n"), stderr2 || "" , callback);
 			});

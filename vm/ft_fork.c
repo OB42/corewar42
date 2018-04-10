@@ -92,7 +92,7 @@ void	ft_fork(t_ins *ins, t_proc *proc, t_corewar *corewar)
 	if (corewar->visu_on == 0 && corewar->verb == 1)
 		ft_print_fork(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + 3);
-	new->ins = ft_get_instru(new->curseur, proc->init);
+	new->ins = ft_get_instru(new->curseur, proc->init, 0);
 }
 
 void	ft_lfork(t_ins *ins, t_proc *proc, t_corewar *corewar)
@@ -118,5 +118,5 @@ void	ft_lfork(t_ins *ins, t_proc *proc, t_corewar *corewar)
 	if (corewar->visu_on == 0 && corewar->verb == 1)
 		ft_print_fork(proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + 3);
-	new->ins = ft_get_instru(new->curseur, proc->init);
+	new->ins = ft_get_instru(new->curseur, proc->init, 0);
 }

@@ -50,32 +50,27 @@
 # define PROG_NAME_LENGTH	(128)
 # define COMMENT_LENGTH		(2048)
 # define COREWAR_EXEC_MAGIC	0xea83f3
-
 # define ABS 255
 # define ORD 66
 # define INF 195
+# define LPROC lst_proc
 
 typedef struct s_proc	t_proc;
 typedef char			t_arg_type;
 typedef struct s_ins	t_ins;
-
 typedef struct	s_par
 {
 	int		type;
 	int		val_type;
 	int		value;
 }				t_par;
-
-
-
 typedef struct	s_visu
 {
 	char	*name;
 	WINDOW	*win;
 	int		run;
-	int	change;
-}		t_visu;
-
+	int		change;
+}				t_visu;
 typedef struct	s_header
 {
 	unsigned int	magic;
@@ -83,7 +78,6 @@ typedef struct	s_header
 	unsigned int	prog_size;
 	char			comment[COMMENT_LENGTH + 1];
 }				t_header;
-
 typedef struct	s_champ
 {
 	t_header		header;
@@ -110,12 +104,11 @@ typedef struct	s_corewar
 	int				select;
 	int				id_max;
 	long long		dump;
-	int			visu_on;
+	int				visu_on;
 	char			*cbs;
-	int			verb;
+	int				verb;
 	t_visu			visu;
 }				t_corewar;
-
 struct			s_ins
 {
 	char	*name;
@@ -128,7 +121,6 @@ struct			s_ins
 	int		nb_param;
 	int		fail;
 };
-
 typedef	struct	s_op
 {
 	char	*name;
@@ -138,15 +130,11 @@ typedef	struct	s_op
 	int		size_no_ocp;
 	void	(*fun)(t_ins*, t_proc*, t_corewar*);
 }				t_op;
-
-
-
 typedef struct	s_mask
 {
 	char			a;
 	char			b;
 }				t_mask;
-
 struct			s_proc
 {
 	int				id;
@@ -171,7 +159,8 @@ t_header		ft_get_header(int fd);
 t_champ			ft_get_champ(char *filename, t_corewar *corewar);
 void			ft_get_var(t_proc *proc, unsigned char *code_champ,
 	unsigned char *init);
-t_ins			*ft_get_instru(unsigned char *code_champ, unsigned char *init);
+t_ins			*ft_get_instru(unsigned char *code_champ, unsigned char *init,
+	void *old);
 int				ft_get_int(unsigned char *init, unsigned char *code_champ,
 	int size);
 unsigned char	*ft_get_ind(t_ins *ins, unsigned char *curseur, int n_param,
@@ -180,7 +169,7 @@ unsigned char	*ft_get_dir(t_ins *ins, unsigned char *curseur, int n_param,
 	unsigned char *init);
 unsigned char	*ft_get_reg(t_proc *proc, unsigned char *curseur, int n_param,
 	unsigned char *init);
-int				ft_loop(t_corewar *corewar);
+void			ft_loop(t_corewar *corewar);
 void			ft_live(t_ins *ins, t_proc *proc, t_corewar *corewar);
 void			ft_ld(t_ins *ins, t_proc *proc, t_corewar *corewar);
 void			ft_st(t_ins *ins, t_proc *proc, t_corewar *corewar);
@@ -226,7 +215,7 @@ void			ft_valid_champ(int fd, char *filename);
 int				ft_dump(t_corewar *corewar);
 void			define_colors(void);
 int				nbr_champs(int argc, char **argv);
-int			available_nrank(t_corewar *corewar);
+int				available_nrank(t_corewar *corewar);
 void			next_arank(t_corewar *corewar);
 void			global_visu(t_corewar *corewar);
 void			visu_credits(t_corewar *corewar);

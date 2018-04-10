@@ -55,7 +55,8 @@ void		visu_contestants(t_corewar *corewar)
 
 	i = 0;
 	y = 25;
-	mvwprintw(corewar->visu.win, y, INF + 3, "Champions (%d) :", corewar->nb_champ);
+	mvwprintw(corewar->visu.win, y, INF + 3, "Champions (%d) :",
+	corewar->nb_champ);
 	y += 2;
 	while (i < corewar->nb_champ && i < 6)
 	{

@@ -95,7 +95,7 @@ int				main(int argc, char **argv)
 {
 	t_corewar	corewar;
 	t_ins		*instru;
-	int		i;
+	int			i;
 
 	instru = NULL;
 	if (argc > 1)

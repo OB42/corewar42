@@ -12,42 +12,14 @@
 
 #include "op.h"
 
-/*void		visu_hl(t_corewar *corewar, int i, int mode)
-{
-	int x;
-	int y;
-
-	x = ((i % 64) * 3) + 3;
-	y = (i / 64) + 1;
-	if (mode == 0)
-	{
-		if (x == 3 && y == 1) 
-			visu_hl(corewar, MEM_SIZE - 1, 1);
-		else
-			visu_hl(corewar, i - 1, 1);
-		if (y > 64)
-			y -= 63;
-		wattron(corewar->visu.win, A_STANDOUT | COLOR_PAIR(corewar->arena_id[i]));
-		mvwprintw(corewar->visu.win, y, x, "%02x", corewar->arena[i]);
-		wattroff(corewar->visu.win, A_STANDOUT | COLOR_PAIR(corewar->arena_id[i]));
-	}
-	else
-	{
-		if (y > 64)
-			y -= 63;
-		wattron(corewar->visu.win, COLOR_PAIR(corewar->arena_id[i]));
-		mvwprintw(corewar->visu.win, y, x, "%02x", corewar->arena[i]);
-		wattroff(corewar->visu.win, COLOR_PAIR(corewar->arena_id[i]));
-	}
-}*/
-
 void		visu_winner(t_corewar *corewar)
 {
 	char inp;
 
 	inp = 0;
 	wattron(corewar->visu.win, COLOR_PAIR(corewar->last_live_id + 1));
-	mvwprintw(corewar->visu.win, 45, INF + 3, "Constestant %u, \"%s\", has won !", \
+	mvwprintw(corewar->visu.win, 45, INF + 3,
+		"Constestant %u, \"%s\", has won !", \
 	corewar->tab_champ[corewar->last_live_id].rank, \
 	corewar->tab_champ[corewar->last_live_id].header.prog_name);
 	wattroff(corewar->visu.win, COLOR_PAIR(corewar->last_live_id + 1));

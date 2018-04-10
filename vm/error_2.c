@@ -17,7 +17,8 @@ void			error_end(char *error, int id_error, char *info)
 {
 	if (id_error == 0)
 	{
-		ft_putstr("Usage: ./corewar [-visu] [-v] [-dump N] [[-n N] "); 				ft_putendl("<champion.cor>] ...");
+		ft_putstr("Usage: ./corewar [-visu] [-v] [-dump N] [[-n N] ");
+		ft_putendl("<champion.cor>] ...");
 		ft_putendl("	-visu: Activates visualizer");
 		ft_putendl("	-v: Enables verbosity");
 		ft_putendl("	-dump N: Dumps memory after N cycles then exits");

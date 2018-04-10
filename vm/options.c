@@ -14,9 +14,9 @@
 #include <limits.h>
 #include "op.h"
 
-void			next_arank(t_corewar *corewar)
+void				next_arank(t_corewar *corewar)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	corewar->a_rank = 1;
@@ -33,7 +33,7 @@ void			next_arank(t_corewar *corewar)
 	}
 }
 
-unsigned int	options_value(int i, char **av)
+unsigned int		options_value(int i, char **av)
 {
 	unsigned int	value;
 	unsigned long	check_value;
@@ -54,7 +54,7 @@ unsigned int	options_value(int i, char **av)
 	return (value);
 }
 
-int				valid_options(int i, char **av)
+int					valid_options(int i, char **av)
 {
 	int j;
 
@@ -86,7 +86,7 @@ static void			n_option(t_corewar *corewar, char **av, int i)
 	}
 }
 
-int				get_options(int i, char **av, t_corewar *corewar)
+int					get_options(int i, char **av, t_corewar *corewar)
 {
 	if (ft_strequ(av[i], "-dump") && valid_options(i, av))
 	{

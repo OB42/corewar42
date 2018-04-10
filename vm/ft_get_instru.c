@@ -72,11 +72,13 @@ void	ft_get_var(t_proc *proc, unsigned char *code_champ, unsigned char *init)
 		proc->ins->fail = 1;
 }
 
-t_ins	*ft_get_instru(unsigned char *code_champ, unsigned char *init)
+t_ins	*ft_get_instru(unsigned char *code_champ, unsigned char *init,
+	void *old)
 {
 	t_op	*op_tab;
 	t_ins	*ins;
 
+	pr_free(old);
 	ins = NULL;
 	op_tab = ft_get_op_tab();
 	if (ft_is_instruc(*code_champ))

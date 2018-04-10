@@ -12,10 +12,10 @@
 
 #include "op.h"
 
-int				available_nrank(t_corewar *corewar)
+int	available_nrank(t_corewar *corewar)
 {
-	int i;
-	int unavailable;
+	int	i;
+	int	unavailable;
 
 	i = 0;
 	unavailable = 0;
@@ -38,10 +38,10 @@ int				available_nrank(t_corewar *corewar)
 	return (1);
 }
 
-int			nbr_champs(int argc, char **argv)
+int	nbr_champs(int argc, char **argv)
 {
-	int i;
-	int champs;
+	int	i;
+	int	champs;
 
 	i = 1;
 	champs = 0;

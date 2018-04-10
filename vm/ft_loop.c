@@ -68,18 +68,16 @@ t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
 	if ((corewar->ctd_cur == corewar->ctd_obj || corewar->ctd_obj < 0)
 		&& proc->id == max_id)
 	{
-		proc = ft_cycle_to_die(corewar, proc);
-		if (proc == NULL)
+		if ((proc = ft_cycle_to_die(corewar, proc)) == NULL)
 			return (NULL);
 		max_id = ft_get_procnb(proc) - 1;
 	}
 	if (proc->id == max_id)
 	{
-		corewar->cycle++;
 		corewar->ctd_cur++;
 		if (corewar->visu_on == 0 && corewar->verb == 1)
-			ft_printf("It is now cycle %d\n", corewar->cycle);
-		if (corewar->cycle == corewar->dump)
+			ft_printf("It is now cycle %d\n", corewar->cycle + 1);
+		if ((corewar->cycle++ + 1) == corewar->dump)
 			exit(ft_dump(corewar));
 	}
 	proc->cycle++;
@@ -89,45 +87,42 @@ t_proc	*ft_cycle(t_proc *proc, t_corewar *corewar)
 	return (proc);
 }
 
-int		ft_loop(t_corewar *corewar)
+char	update_visu(t_corewar *corewar, char inp)
 {
-	t_proc	*lst_proc;
-	int		test;
+	if (corewar->visu_on == 1)
+	{
+		global_visu(corewar);
+		if ((inp = wgetch(corewar->visu.win)))
+			visu_inp(corewar, inp);
+	}
+	return (inp);
+}
+
+void	ft_loop(t_corewar *corewar)
+{
+	t_proc		*lst_proc;
+	int			dif;
 	char		inp;
 
 	lst_proc = ft_init_proc(corewar);
 	while ((lst_proc = ft_cycle(lst_proc, corewar)) && lst_proc)
 	{
-		if (corewar->visu_on == 1)
-		{
-			global_visu(corewar);
-			if ((inp = wgetch(corewar->visu.win)))
-				visu_inp(corewar, inp);
-		}
-		test = 0;
-		if (lst_proc->cycle > 1 && lst_proc->cycle == lst_proc->ins->cycle)
+		inp = update_visu(corewar, inp);
+		dif = (lst_proc->cycle > 1 && lst_proc->cycle == lst_proc->ins->cycle);
+		if (dif)
 		{
 			ft_update_ins(lst_proc->curseur, lst_proc->init, lst_proc);
-			if (lst_proc->ins != NULL)
-			{
+			if ((corewar->visu.change = (lst_proc->ins != NULL)))
 				(lst_proc->ins->fun)(lst_proc->ins, lst_proc, corewar);
-				corewar->visu.change = 1;
-			}
-
 			lst_proc->cycle = 0;
-			test = 1;
 		}
 		if (lst_proc->cycle <= 1)
-		{
-			pr_free(lst_proc->ins);
-			lst_proc->ins = ft_get_instru(lst_proc->curseur, lst_proc->init);
-		}
-		if (test == 0 && lst_proc->ins == NULL)
+			LPROC->ins = ft_get_instru(LPROC->curseur, LPROC->init, LPROC->ins);
+		if (!dif && lst_proc->ins == NULL)
 		{
 			lst_proc->curseur = ft_oob(lst_proc->init, lst_proc->curseur + 1);
 			lst_proc->cycle = 0;
 		}
 		lst_proc = lst_proc->nxt;
 	}
-	return (1);
 }
