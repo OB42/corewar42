@@ -45,6 +45,7 @@ void	ft_write_ram(int value, int size, unsigned char *ram, t_proc *proc)
 	while (i < size)
 	{
 		*ft_oob(proc->init, ram + i) = max / ft_pow((size - i - 1) * 2, 16);
+		*ft_oob((unsigned char *)&(proc->corewar->arena_id[0]), ram + i - 1) = proc->player;
 		i = i + 1;
 	}
 }
