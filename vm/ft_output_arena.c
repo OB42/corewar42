@@ -34,7 +34,6 @@ void	ft_output_arena(t_corewar *corewar)
 
 int		ft_dump(t_corewar *corewar)
 {
-	if (corewar->dump < -1)
-		ft_output_arena(corewar);
+	ft_output_arena(corewar);
 	return (0);
 }
