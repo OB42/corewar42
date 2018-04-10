@@ -104,6 +104,7 @@ int				main(int argc, char **argv)
 		load_arena(&corewar);
 		if (corewar.visu_on == 0)
 			ft_display_contestant(&corewar, 0);
+		corewar.nb_proc = corewar.nb_champ;
 		ft_loop(&corewar);
 		if (corewar.visu_on == 0)
 			ft_display_contestant(&corewar, 1);

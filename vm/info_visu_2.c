@@ -26,7 +26,7 @@ void	visu_nbr_lives(t_corewar *corewar)
 
 void	visu_processes(t_corewar *corewar, int proc)
 {
-	mvwprintw(corewar->visu.win, 22, INF + 3, "Processes : %-4d", proc);
+	mvwprintw(corewar->visu.win, 22, INF + 3, "Processes : %-4d", corewar->nb_proc + proc - proc);
 	wrefresh(corewar->visu.win);
 }
 

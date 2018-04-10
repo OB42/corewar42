@@ -75,6 +75,7 @@ void	ft_fork(t_ins *ins, t_proc *proc, t_corewar *corewar)
 	t_proc	*init;
 	int		value;
 
+	corewar->nb_proc++;
 	value = ins->param[0];
 	if (value > 32768)
 		value = value - 65536;
@@ -100,6 +101,7 @@ void	ft_lfork(t_ins *ins, t_proc *proc, t_corewar *corewar)
 	t_proc	*init;
 	int		value;
 
+	corewar->nb_proc++;
 	value = ins->param[0];
 	if (value > 32768)
 		value -= 65536;

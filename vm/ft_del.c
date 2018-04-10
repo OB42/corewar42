@@ -18,6 +18,7 @@ t_proc	*ft_del(t_proc *lst_proc)
 	t_proc *curseur;
 	void *workaround;
 
+	lst_proc->corewar->nb_proc--;
 	curseur = lst_proc;
 	while (curseur->nxt->id != lst_proc->id)
 		curseur = curseur->nxt;
