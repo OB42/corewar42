@@ -89,26 +89,17 @@ static void			n_option(t_corewar *corewar, char **av, int i)
 int					get_options(int i, char **av, t_corewar *corewar)
 {
 	if (ft_strequ(av[i], "-dump") && valid_options(i, av))
-	{
-		corewar->dump = options_value(i, av);
-		i += 2;
-	}
+		corewar->dump = options_value(i++, av);
 	else if (ft_strequ(av[i], "-n") && valid_options(i, av))
-	{
-		n_option(corewar, av, i);
-		i += 2;
-	}
+		n_option(corewar, av, i++);
 	else if (ft_strequ(av[i], "-visu"))
-	{
 		corewar->visu_on = 1;
-		i++;
-	}
 	else if (ft_strequ(av[i], "-v"))
-	{
 		corewar->verb = 1;
-		i++;
-	}
+	else if (ft_strequ(av[i], "-a"))
+		corewar->aff = 1;
 	else
-		error_end("Not a valid option", 12, av[i]);
+		error_end("Not a valid option", 12, av[i--]);
+	i++;
 	return (i);
 }

@@ -19,6 +19,7 @@ void			error_end(char *error, int id_error, char *info)
 	{
 		ft_putstr("Usage: ./corewar [-visu] [-v] [-dump N] [[-n N] ");
 		ft_putendl("<champion.cor>] ...");
+		ft_putendl("	-a: Prints output from aff (Default is to hide it)");
 		ft_putendl("	-visu: Activates visualizer");
 		ft_putendl("	-v: Enables verbosity");
 		ft_putendl("	-dump N: Dumps memory after N cycles then exits");

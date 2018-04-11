@@ -108,6 +108,7 @@ typedef struct	s_corewar
 	char			*cbs;
 	int				verb;
 	t_visu			visu;
+	int				aff;
 }				t_corewar;
 struct			s_ins
 {

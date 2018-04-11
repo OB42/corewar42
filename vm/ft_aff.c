@@ -34,16 +34,18 @@ void	ft_print_aff(t_ins *ins, t_proc *proc)
 
 void	ft_aff(t_ins *ins, t_proc *proc, t_corewar *corewar)
 {
-	if (proc->ins->fail == 0 && proc->ins->ocp == 64)
-		proc->ins->param[1] = 0;
-	else if (ins->tab[0].type == 3)
-		ins->size = 3;
-	else if (ins->tab[0].type == 2)
-		ins->size = 5;
-	else if (ins->tab[0].type == 1)
+	if (ins->tab[0].type == 1)
 		ins->size = 2;
 	else
+	{
 		ins->size = 1;
+		proc->ins->fail = 1;
+	}
+	if (proc->ins->fail == 0 && proc->ins->ocp == 64)
+		proc->ins->param[1] = 0;
+	if (!(corewar->visu_on) && !(proc->ins->fail)
+	&& corewar->aff && !(proc->ins->fail))
+		ft_printf("Aff: %c\n", proc->reg[proc->ins->param[0]]);
 	if (corewar->visu_on == 0 && corewar->verb == 1)
 		ft_print_aff(ins, proc);
 	proc->curseur = ft_oob(proc->init, proc->curseur + ins->size + 1);
