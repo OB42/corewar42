@@ -117,7 +117,7 @@ int			ft_printf(const char *format, ...)
 	va_list		ap;
 	const char	*init;
 	t_len		len;
-	t_tabf		tabf[15];
+	t_tabf		tabf[16];
 
 	va_start(ap, format);
 	init = format;
