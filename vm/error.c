@@ -13,50 +13,6 @@
 #include "LIBFT/libft.h"
 #include "op.h"
 
-/*
-**static void		champ_name(int fd, unsigned char *buff, char *filename)
-**{
-**	int ret;
-**	int i;
-**
-**	i = 0;
-**	ret = read(fd, buff, PROG_NAME_LENGTH + 1);
-**	if (ret <= 0)
-**		error_end("Champion's name is invalid", 7, filename);
-**	buff[ret] = '\0';
-**	if (!ft_strlen((char *)buff))
-**		error_end("Champion's name is invalid", 7, filename);
-**	while (buff[i])
-**	{
-**		if (buff[i] > 176 || buff[i] < 32)
-**			error_end("Champion's name is invalid", 7, filename);
-**		i++;
-**	}
-**}
-**
-**static void	champ_comment(int fd, unsigned char *buff, char *filename)
-**{
-**	int ret;
-**	int i;
-**
-**	i = 0;
-**	ret = read(fd, buff, COMMENT_LENGTH + 1);
-**	if (ret <= 0)
-**		error_end("Champion's comment is invalid", 8, filename);
-**	buff[ret] = '\0';
-**	if (!ft_strlen((char *)buff))
-**		error_end("Champion's comment is invalid", 8, filename);
-**	while (buff[i])
-**	{
-**		if (buff[i] > 176 || buff[i] < 32)
-**			error_end("Champion's comment is invalid", 8, filename);
-**		i++;
-**
-**	}
-**}
-** call it in replace lseek in ft_valid_champ ifyou want to use it
-*/
-
 static void			check_magic(unsigned char *buff, char *filename)
 {
 	if ((buff[0] != (unsigned char)(COREWAR_EXEC_MAGIC >> 24)) || \
