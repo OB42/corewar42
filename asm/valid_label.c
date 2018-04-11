@@ -14,7 +14,7 @@
 
 int			valid_label(char *label)
 {
-	while (*label && label[1])
+	while (*label)
 	{
 		if (!ft_strchr(LABEL_CHARS, *label))
 			print_error(ERR_INVALID_LABEL);
