@@ -15,10 +15,17 @@
 char	**while_blank(char *str, char **words, int save, int w)
 {
 	int s;
+	int	sc;
 
 	s = 0;
+	sc = 0;
 	while (str[s] && (ft_strchr(" \t\n", str[s]) || str[s] == SEPARATOR_CHAR))
+	{
+		if (sc && str[s] == SEPARATOR_CHAR)
+			print_error(ERR_SYNTAX);
+		sc = (str[s] == SEPARATOR_CHAR);
 		s++;
+	}
 	if (save)
 		return (while_char(str + s, words, save, w));
 	if (str[s])
