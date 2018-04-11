@@ -10,21 +10,22 @@
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY: all, asm, corewar, clean, fclean, re
-
 NAME = corewar
 
-all:
+.PHONY: all, clean, $(NAME), fclean, re
+
+all: $(NAME)
+
+$(NAME):
 	make -C ./asm
 	make -C ./vm
-corewar:
-	make -C ./vm
-asm:
-	make -C ./asm
+
 clean:
 	make -C ./vm clean
 	make -C ./asm clean
+
 fclean:
 	make -C ./vm fclean
 	make -C ./asm fclean
+
 re: fclean all
