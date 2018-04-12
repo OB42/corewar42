@@ -6,11 +6,11 @@
 #    By: obenazzo <obenazzo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/29 11:52:57 by obenazzo          #+#    #+#              #
-#    Updated: 2018/04/11 12:36:06 by rthys            ###   ########.fr        #
+#    Updated: 2018/04/12 18:55:44 by rthys            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY: all, every, clean, fclean, re, corewar, asm
+.PHONY: all every clean fclean re corewar asm
 
 NAME = every
 
@@ -19,17 +19,17 @@ all:	$(NAME)
 $(NAME): corewar asm
 
 corewar:
-	make -C ./vm/
+	make -C ./vm_dir/
 
 asm:
-	make -C ./asm/
+	make -C ./asm_dir/
 
 clean:
-	make -C ./vm/ clean
-	make -C ./asm/ clean
+	make -C ./vm_dir/ clean
+	make -C ./asm_dir/ clean
 
 fclean:
-	make -C ./vm/ fclean
-	make -C ./asm/ fclean
+	make -C ./vm_dir/ fclean
+	make -C ./asm_dir/ fclean
 
 re: fclean all
