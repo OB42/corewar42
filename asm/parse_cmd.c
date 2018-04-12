@@ -36,14 +36,15 @@ void	cmd_buffering(char *dest, int fd, char *line, int type)
 	{
 		if (ft_strchr(temp, '"'))
 		{
+			if (ft_strchr(temp, '"') - temp + ft_strlen(dest) >
+			(type ? COMMENT_LENGTH : PROG_NAME_LENGTH))
+				print_error(ERR_INVALID_COMMAND);
 			ft_strncpy(dest + ft_strlen(dest), temp,
 			ft_strchr(temp, '"') - temp);
 			check_line(ft_strchr(temp, '"') + 1);
-			pr_free(line);
-			break ;
+			return (pr_free(line));
 		}
-		if (ft_strlen(temp) + ft_strlen(dest) >
-		(type ? COMMENT_LENGTH : PROG_NAME_LENGTH))
+		if (ft_strlen(temp) + ft_strlen(dest) > (type ? C_LENGTH : PN_LENGTH))
 			print_error(ERR_INVALID_COMMAND);
 		ft_strcpy(dest + ft_strlen(dest), temp);
 		ft_memcpy(dest + ft_strlen(dest), "\n", 2);
