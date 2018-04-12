@@ -6,7 +6,7 @@
 #    By: obenazzo <obenazzo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/29 11:52:57 by obenazzo          #+#    #+#              #
-#    Updated: 2018/04/12 18:55:44 by rthys            ###   ########.fr        #
+#    Updated: 2018/04/12 21:21:08 by rthys            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,20 @@ NAME = every
 
 all:	$(NAME)
 
+
 $(NAME): corewar asm
 
-corewar:
+corewar: libcor
 	make -C ./vm_dir/
 
-asm:
+asm: libasm
 	make -C ./asm_dir/
+
+libasm:
+	@make -C ./asm_dir/libft/
+
+libcor:
+	@make -C ./vm_dir/libft/
 
 clean:
 	make -C ./vm_dir/ clean
