@@ -3,3 +3,4 @@
 asm/mine/*.cor
 asm/asm
 vm/corewar
+.DS_Store
