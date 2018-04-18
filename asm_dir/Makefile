@@ -6,7 +6,7 @@
 #    By: obenazzo <obenazzo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/29 11:52:57 by obenazzo          #+#    #+#              #
-#    Updated: 2018/04/12 19:33:52 by rthys            ###   ########.fr        #
+#    Updated: 2018/04/12 21:54:28 by rthys            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -111,6 +111,8 @@ LIST_LIB = ./libft/srcs/ft_atoi.c \
 		   ./libft/srcs/ft_wcslen.c \
 		   ./libft/srcs/ft_lltoa.c \
 		   ./libft/srcs/ft_ulltoa_base.c
+
+INC_LIB = ./libft/includes/libft.h
 
 LIST_OBJ = $(LIST_SRC:.c=.o)
 
