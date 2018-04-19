@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 15:51:26 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/20 17:28:44 by vburidar         ###   ########.fr       */
+/*   Updated: 2018/04/19 19:22:24 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ unsigned char	*ft_oob(unsigned char *init, unsigned char *dest)
 			return (tmp);
 	}
 	else if (dest - init < 0)
-		return (init + (dest - init) + MEM_SIZE);
+		return (MEM_SIZE + init + (dest - init) % MEM_SIZE);
 	return (dest);
 }
