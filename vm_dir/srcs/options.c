@@ -6,7 +6,7 @@
 /*   By: rthys <rthys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 10:50:03 by rthys             #+#    #+#             */
-/*   Updated: 2018/04/20 03:09:25 by rthys            ###   ########.fr       */
+/*   Updated: 2018/04/20 11:28:39 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ unsigned int		options_value(int i, char **av)
 	}
 	else
 		value = ft_uatoi(av[i + 1]);
+	if (value == 0 && ft_strequ(av[i], "-n"))
+	{
+		ft_printf("\x1b[31mWarning : \x1b[0mRank must be over 0\n");
+		value = 1;
+	}
 	return (value);
 }
 
@@ -63,7 +68,7 @@ int					valid_options(int i, char **av)
 			5, av[i]);
 	while (j < (int)ft_strlen(av[i + 1]))
 	{
-		if ((av[i + 1][j] > '0' && av[i + 1][j] <= '9') ||
+		if ((av[i + 1][j] >= '0' && av[i + 1][j] <= '9') ||
 				(av[i + 1][j] == '+' && j == 0))
 			j++;
 		else
