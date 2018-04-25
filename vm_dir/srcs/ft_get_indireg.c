@@ -6,7 +6,7 @@
 /*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 20:54:24 by vburidar          #+#    #+#             */
-/*   Updated: 2018/03/21 17:19:58 by mlegeay          ###   ########.fr       */
+/*   Updated: 2018/04/25 18:42:55 by vburidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ unsigned char	*ft_get_ind(t_ins *ins, unsigned char *curseur, int n_param,
 		value -= 65536;
 	tmp = ft_oob(init, curseur + value % IDX_MOD - ins->size - 2 + 1);
 	if (ft_strcmp(ins->name, "lld") == 0)
-		ins->tab[n_param].val_type = ft_get_int(init, tmp, 2);
+		ins->tab[n_param].val_type = ft_get_int(init,
+		ft_oob(init, curseur + value - ins->size - 2 + 1), 2);
 	else
 		ins->tab[n_param].val_type = ft_get_int(init, tmp, 4);
 	ins->size = ins->size + 2;
