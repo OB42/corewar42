@@ -3,107 +3,95 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vburidar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: obenazzo <obenazzo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/28 19:08:38 by vburidar          #+#    #+#             */
-/*   Updated: 2018/02/26 16:50:29 by vburidar         ###   ########.fr       */
+/*   Created: 2017/12/02 10:16:35 by obenazzo          #+#    #+#             */
+/*   Updated: 2018/04/12 16:37:43 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include "../includes/ft_printf.h"
 #include "../includes/get_next_line.h"
 
-int	ft_test_stock(char **line, char **stock)
+int		new_fd(int const fd, t_list *t, t_list **fds)
 {
-	char		*tmp;
-
-	if (ft_memchr(*stock, '\n', ft_strlen(*stock)) != NULL)
+	if (!t || !(t->content = malloc(sizeof(t_fd))) ||
+	(((t_fd *)(t->content))->r = read(fd, ((t_fd *)(t->content))->b, BS)) == -1)
 	{
-		*(char*)ft_memchr(*stock, '\n', ft_strlen(*stock)) = '\0';
-		tmp = *line;
-		*line = ft_strjoin(*line, *stock);
-		ft_memdel((void**)&tmp);
-		(*stock)[ft_strlen(*stock)] = '\n';
-		tmp = *stock;
-		*stock = ft_strsub(ft_memchr(*stock, '\n', ft_strlen(*stock)) + 1,
-				0, ft_strlen(ft_memchr(*stock, '\n', ft_strlen(*stock))) - 1);
-		ft_memdel((void**)&tmp);
-		if (stock[0][0] == '\0')
-			ft_memdel((void**)stock);
-		return (1);
-	}
-	tmp = *line;
-	*line = ft_strjoin(*line, *stock);
-	ft_memdel((void**)&tmp);
-	return (0);
-}
-
-int	ft_modif_buf(int ret, char **stock, char buf[BUFF_SIZE], char **line)
-{
-	char *tmp;
-
-	tmp = *stock;
-	*stock = ft_strsub(ft_memchr(buf, '\n', ret) + 1, 0, buf + ret -
-			(char*)ft_memchr(buf, '\n', ret) - 1);
-	ft_memdel((void**)&tmp);
-	(*stock)[buf + ret - (char*)ft_memchr(buf, '\n', ret) - 1] = '\0';
-	if (stock[0][0] == '\0')
-		ft_memdel((void**)stock);
-	*(char*)ft_memchr(buf, '\n', ret) = '\0';
-	tmp = *line;
-	*line = ft_strjoin(*line, buf);
-	ft_memdel((void**)&tmp);
-	return (1);
-}
-
-int	ft_test_buf(int ret, char buf[BUFF_SIZE], char **stock, char **line)
-{
-	int		len;
-	char	*tmp;
-	char	*tmp2;
-
-	len = ret;
-	while (ft_memchr(buf, '\0', len) != NULL)
-	{
-		ft_memmove(ft_memchr(buf, '\0', len), ft_memchr(buf, '\0', len) + 1,
-				ret - ft_strlen(buf));
-		buf[len - 1] = '\0';
-		len = len - 1;
-	}
-	if (ft_memchr(buf, '\n', ret) != NULL)
-		return (ft_modif_buf(ret, stock, buf, line));
-	tmp = *line;
-	tmp2 = ft_strsub(buf, 0, len);
-	*line = ft_strjoin(*line, tmp2);
-	ft_memdel((void**)&tmp);
-	ft_memdel((void**)&tmp2);
-	return (0);
-}
-
-int	get_next_line(const int fd, char **line)
-{
-	static char	*stock;
-	char		buf[BUFF_SIZE];
-	int			ret;
-
-	if (line == NULL)
-		return (-1);
-	if (!(*line = malloc(sizeof(char))))
-		return (-1);
-	line[0][0] = '\0';
-	if (stock != NULL && ft_test_stock(line, &stock))
-		return (1);
-	while ((ret = read(fd, buf, BUFF_SIZE)) > 0)
-	{
-		if (ft_test_buf(ret, buf, &stock, line))
-			return (1);
-	}
-	if (ret < 0)
-		return (-1);
-	if (ret == 0 && line[0][0] == '\0')
+		(t && t->content) ? free(t->content) : 0;
+		t ? free(t) : 0;
 		return (0);
-	ft_memdel((void**)&stock);
+	}
+	((t_fd *)(t->content))->b[((t_fd *)(t->content))->r] = 0;
+	((t_fd *)(t->content))->fd = fd;
+	ft_lstadd(fds, t);
 	return (1);
+}
+
+t_fd	*get_fd(int const fd)
+{
+	static struct s_list	*fds;
+	struct s_list			*t;
+
+	if (fd < 0 || BUFF_SIZE < 1)
+		return (0);
+	t = fds;
+	while (t)
+	{
+		if (((t_fd *)(t->content))->fd == fd)
+			return (t->content);
+		t = t->next;
+	}
+	return (new_fd(fd, ft_lstnew(0, 0), &fds) ? get_fd(fd) : 0);
+}
+
+char	*reall(char *str, int size)
+{
+	char *temp;
+
+	if (!(temp = malloc(size + 1)))
+		return (0);
+	if (str)
+	{
+		ft_strncpy(temp, str, size);
+		free(str);
+	}
+	else
+		temp[0] = 0;
+	temp[size] = 0;
+	return (temp);
+}
+
+int		get_next_line_part(char **line, t_fd *t)
+{
+	size_t	i;
+	size_t	l;
+	int		r;
+
+	r = 0;
+	if (!t->b[0] && (!t->r || (r = read(t->fd, t->b, BUFF_SIZE)) < 1))
+		return (r == -1 ? -1 : (t->r && *line && *line[0]));
+	if (r)
+		t->b[r] = 0;
+	i = (size_t)ft_strchr(t->b, 10);
+	l = ft_strlen(t->b);
+	i = i ? (i - (size_t)t->b) : l;
+	if (!(*line = reall(*line, (*line ? ft_strlen(*line) : 0) + i)))
+		return (-1);
+	ft_strncpy(*line + ft_strlen(*line), t->b, i);
+	if (i < l && ft_strncpy(t->b, t->b + i + 1, BUFF_SIZE - i))
+		return (1);
+	if ((r = read(t->fd, t->b, BUFF_SIZE)) == -1)
+		return (-1);
+	t->b[r] = 0;
+	return (get_next_line_part(line, t));
+}
+
+int		get_next_line(int const fd, char **line)
+{
+	t_fd *t;
+
+	if (!(t = get_fd(fd)))
+		return (-1);
+	*line = 0;
+	return (get_next_line_part(line, t));
 }
