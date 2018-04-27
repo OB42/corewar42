@@ -12,7 +12,7 @@
 
 #include <unistd.h>
 #include <stdlib.h>
-#include "../includes/libft.h"
+#include "../includes/ft_printf.h"
 #include "../includes/get_next_line.h"
 
 int	ft_test_stock(char **line, char **stock)
@@ -23,7 +23,7 @@ int	ft_test_stock(char **line, char **stock)
 	{
 		*(char*)ft_memchr(*stock, '\n', ft_strlen(*stock)) = '\0';
 		tmp = *line;
-		*line = ft_strjoin(*line, *stock, 0);
+		*line = ft_strjoin(*line, *stock);
 		ft_memdel((void**)&tmp);
 		(*stock)[ft_strlen(*stock)] = '\n';
 		tmp = *stock;
@@ -35,7 +35,7 @@ int	ft_test_stock(char **line, char **stock)
 		return (1);
 	}
 	tmp = *line;
-	*line = ft_strjoin(*line, *stock, 0);
+	*line = ft_strjoin(*line, *stock);
 	ft_memdel((void**)&tmp);
 	return (0);
 }
@@ -53,7 +53,7 @@ int	ft_modif_buf(int ret, char **stock, char buf[BUFF_SIZE], char **line)
 		ft_memdel((void**)stock);
 	*(char*)ft_memchr(buf, '\n', ret) = '\0';
 	tmp = *line;
-	*line = ft_strjoin(*line, buf, 0);
+	*line = ft_strjoin(*line, buf);
 	ft_memdel((void**)&tmp);
 	return (1);
 }
@@ -76,7 +76,7 @@ int	ft_test_buf(int ret, char buf[BUFF_SIZE], char **stock, char **line)
 		return (ft_modif_buf(ret, stock, buf, line));
 	tmp = *line;
 	tmp2 = ft_strsub(buf, 0, len);
-	*line = ft_strjoin(*line, tmp2, 0);
+	*line = ft_strjoin(*line, tmp2);
 	ft_memdel((void**)&tmp);
 	ft_memdel((void**)&tmp2);
 	return (0);
