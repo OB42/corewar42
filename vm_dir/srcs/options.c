@@ -6,7 +6,7 @@
 /*   By: rthys <rthys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 10:50:03 by rthys             #+#    #+#             */
-/*   Updated: 2018/04/04 20:14:06 by rthys            ###   ########.fr       */
+/*   Updated: 2018/04/26 20:26:19 by rthys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,14 @@ unsigned int		options_value(int i, char **av)
 	}
 	else
 		value = ft_uatoi(av[i + 1]);
+	if (value == 0)
+	{
+		ft_printf("\x1b[31mWarning : \x1b[0mOption Value must be over 0");
+		if (ft_strequ(av[i], "-dump") && (value = -1))
+			ft_printf(" -> Dump set to -1\n");
+		else if (ft_strequ(av[i], "-n") && (value = 1))
+			ft_printf(" -> Rank back to default\n");
+	}
 	return (value);
 }
 

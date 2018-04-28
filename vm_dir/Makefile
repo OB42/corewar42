@@ -6,7 +6,7 @@
 #    By: obenazzo <obenazzo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/29 11:52:57 by obenazzo          #+#    #+#              #
-#    Updated: 2018/04/12 19:35:39 by rthys            ###   ########.fr        #
+#    Updated: 2018/04/18 20:37:27 by rthys            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,51 @@ LIST_SRC = main.c\
 	  info_visu_4.c\
 	  credits_visu.c\
 
+LIST_LIBSRC = ./libft/srcs/ft_atoi.c\
+		  ./libft/srcs/ft_bzero.c\
+		  ./libft/srcs/ft_char_str.c\
+		  ./libft/srcs/ft_concat.c\
+		  ./libft/srcs/ft_fill_buff.c\
+		  ./libft/srcs/ft_filltab.c\
+		  ./libft/srcs/ft_getwchar.c\
+		  ./libft/srcs/ft_isdigit.c\
+		  ./libft/srcs/ft_itoa_base.c\
+		  ./libft/srcs/ft_modif_len.c\
+		  ./libft/srcs/ft_plus_space.c\
+		  ./libft/srcs/ft_precision.c\
+		  ./libft/srcs/ft_printf.c\
+		  ./libft/srcs/ft_printfd.c\
+		  ./libft/srcs/ft_putchar.c\
+		  ./libft/srcs/ft_secure_strsub.c\
+		  ./libft/srcs/ft_signed_nb_pt.c\
+		  ./libft/srcs/ft_strcat.c\
+		  ./libft/srcs/ft_strchr.c\
+		  ./libft/srcs/ft_strcpy.c\
+		  ./libft/srcs/ft_strncpy.c\
+		  ./libft/srcs/ft_strdup.c\
+		  ./libft/srcs/ft_strjoin.c\
+		  ./libft/srcs/ft_strlen.c\
+		  ./libft/srcs/ft_strsub.c\
+		  ./libft/srcs/ft_tools.c\
+		  ./libft/srcs/ft_unsigned_nb.c\
+		  ./libft/srcs/get_next_line.c\
+		  ./libft/srcs/ft_memchr.c\
+		  ./libft/srcs/ft_memdel.c\
+		  ./libft/srcs/ft_memmove.c\
+		  ./libft/srcs/ft_bnull.c\
+		  ./libft/srcs/ft_strcmp.c\
+		  ./libft/srcs/ft_strsplit.c\
+		  ./libft/srcs/ft_abs.c\
+		  ./libft/srcs/ft_strequ.c\
+		  ./libft/srcs/ft_putstr.c\
+		  ./libft/srcs/ft_putchar.c\
+		  ./libft/srcs/ft_putendl.c\
+		  ./libft/srcs/ft_putnbr.c\
+		  ./libft/srcs/ft_uatoi.c\
+		  ./libft/srcs/ft_ulongatoi.c
+
+LIB_INC = ./libft/includes/libft.h \
+	  ./libft/includes/get_next_line.h
 
 LIST_OBJ = $(LIST_SRC:.c=.o)
 
@@ -94,7 +139,7 @@ clean :
 
 fclean : clean
 	rm -rf $(NAME)
-	rm -rf ../corewar
+	rm -f ../corewar
 	make fclean -C libft
 
 re :

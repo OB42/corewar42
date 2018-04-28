@@ -1,16 +1,16 @@
 const {exec} = require('child_process');
 
 path = require("path");
-exec('rm vm_champs/*.cor;rm mine/*.cor;rm temp_test;make re', () => {
+exec(`cp ${__dirname}/../../champs/*.s ${__dirname}/mine; cp ${__dirname}/../../champs/*.s ${__dirname}/vm_champs; rm ${__dirname}/vm_champs/*.cor;rm ${__dirname}/mine/*.cor;rm temp_test;make re -C ${__dirname}/..`, () => {
 	var P = 0;
 	var F = 0;
 	var arr = (fs = require('fs'))
-	.readdirSync('./mine');
+	.readdirSync(__dirname + '/mine');
 	arr.forEach((filename, i) => {
-		var a = path.resolve(`mine/${filename}`).slice(0, -2);
-		var b = path.resolve(`vm_champs/${filename}`).slice(0, -2);
-		exec(`./asm ${a}.s`, (err, stdout, stderr) => {
-			exec(`./rasm ${b}.s`, (berr, bstdout, bstderr) => {
+		var a = path.resolve(`${__dirname}/mine/${filename}`).slice(0, -2);
+		var b = path.resolve(`${__dirname}/vm_champs/${filename}`).slice(0, -2);
+		exec(`${__dirname}/../asm_cure ${a}.s`, (err, stdout, stderr) => {
+			exec(`${__dirname}/rasm ${b}.s`, (berr, bstdout, bstderr) => {
 				var ar = stdout + stderr;
 				var br = bstdout + bstderr;
 				if (ar.match("Writing output") && br.match("Writing output"))
@@ -31,7 +31,7 @@ exec('rm vm_champs/*.cor;rm mine/*.cor;rm temp_test;make re', () => {
 					fail(filename, "My ASM probably crashed", ar);
 				else if (!(ar.match("Writing output")) && (br.match("Writing output")))
 				{
-					exec(`./rcorewar ${b}.cor`, (err, stdout, stderr) => {
+					exec(`${__dirname}/rcorewar ${b}.cor`, (err, stdout, stderr) => {
 						if ((stderr + stdout).match(/error/i))
 							pass(filename, "Corewar and my ASM both returned an error.", stdout + stderr);
 						else if (!(a.includes('inv')))
@@ -55,13 +55,13 @@ exec('rm vm_champs/*.cor;rm mine/*.cor;rm temp_test;make re', () => {
 		show_msg(title, text);
 		console.log(`\x1b[31mFAILING ${F++ +1}/${arr.length} tests\x1b[0m`, filename);
 		if (P + F == arr.length)
-			exec('rm */*.cor;rm temp_hex_mine; rm temp_hex_vm_champs', () => {});
+			exec('rm ${__dirname}/*/*.cor;rm temp_hex_mine; rm temp_hex_vm_champs', () => {});
 	}
 	var pass = (filename, title, text) =>
 	{
 		show_msg(title, text);
 		console.log(`\x1b[32mPASSING ${P++ +1}/${arr.length} tests\x1b[0m`, filename);
 		if (P + F == arr.length)
-			exec('rm */*.cor;rm temp_hex_mine; rm temp_hex_vm_champs', () => {});
+			exec('rm ${__dirname}/*/*.cor;rm temp_hex_mine; rm temp_hex_vm_champs', () => {});
 	}
 });
